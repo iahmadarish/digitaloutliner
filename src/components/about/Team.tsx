@@ -59,7 +59,7 @@ export default function LeadershipMessage() {
                     </div>
                     <div className="ml-4">
                       <p className="text-sm font-medium text-gray-900">Chief Executive Officer</p>
-                      <p className="text-sm text-blue-600">Digital Outliner</p>
+                      <p className="text-sm text-blue-600">URSOFTS</p>
                     </div>
                   </div>
                 </div>

@@ -423,7 +423,7 @@ export default function ServiceDetail() {
                     </motion.div>
                     <motion.div whileHover={{ x: 5 }} className="flex items-center">
                       <Mail className="h-5 w-5 mr-3" />
-                      <span>admin@digitaloutliner.com</span>
+                      <span>admin@ursofts.com</span>
                     </motion.div>
                     <motion.div whileHover={{ x: 5 }} className="flex items-start">
                       <MapPin className="h-5 w-5 mr-3 mt-0.5" />
@@ -531,7 +531,7 @@ export default function ServiceDetail() {
                 className="bg-gray-900 text-white rounded-xl shadow-lg"
               >
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-4">Why Choose Digital Outliner</h3>
+                  <h3 className="text-xl font-bold mb-4">Why Choose URSOFTS</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {[
                       { number: "3+", text: "Years Experience" },

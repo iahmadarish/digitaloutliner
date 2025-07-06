@@ -55,7 +55,7 @@ const DarkAccordionComponent = () => {
             <div className="absolute -top-1 sm:-top-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full opacity-60"></div>
           </div>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-            Since February 2025, Digital outliner has been delivering comprehensive business solutions with innovation, quality, and unwavering commitment to client success.
+            Since February 2025, URSOFTS has been delivering comprehensive business solutions with innovation, quality, and unwavering commitment to client success.
           </p>
         </div>
 
@@ -182,7 +182,7 @@ const DarkAccordionComponent = () => {
               </h2>
             </div>
             <p className="text-gray-300 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0">
-              Join hundreds of satisfied clients who trust Digital outliner for their business success. Let's discuss how we can help you achieve your goals.
+              Join hundreds of satisfied clients who trust URSOFTS for their business success. Let's discuss how we can help you achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <button className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-400/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center text-sm sm:text-base">

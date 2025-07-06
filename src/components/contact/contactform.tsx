@@ -211,8 +211,8 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white mb-1">Email</h3>
-                    <a href="mailto:admin@digitaloutliner.com" className="text-purple-400 hover:text-purple-300 transition-colors">
-                      admin@digitaloutliner.com
+                    <a href="mailto:admin@ursofts.com" className="text-purple-400 hover:text-purple-300 transition-colors">
+                      admin@ursofts.com
                     </a>
                   </div>
                 </div>
