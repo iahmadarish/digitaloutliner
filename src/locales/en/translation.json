@@ -1,0 +1,36 @@
+{
+  "services": "Services",
+  "projects": "Projects",
+  "blog": "Blog",
+  "about": "About",
+  "contact": "Contact",
+
+  "experience_title": "Experience You Can Count On",
+  "experience_description": "Since February 2025, Digital outliner has been delivering comprehensive business solutions with innovation, quality, and unwavering commitment to client success.",
+
+  "services_list": [
+    {
+      "title": "Financial Excellence You Can Trust",
+      "subtitle": "Accounting & Financial Services",
+      "description": "With expertise in VAT, tax, and audit services, Digital outliner ensures your business maintains financial accuracy and regulatory compliance.",
+      "stats": "500+ Clients Served"
+    },
+    {
+      "title": "Creative Solutions That Captivate",
+      "subtitle": "Design & Digital Marketing",
+      "description": "From stunning graphic design to user-focused website development, we craft digital experiences that elevate your brand.",
+      "stats": "100+ Brands Transformed"
+    },
+    {
+      "title": "Strategic Partnership for Growth",
+      "subtitle": "IT Consultancy & Business Support",
+      "description": "Digital outliner provides comprehensive IT consultancy, networking, photography, and support for government incentives.",
+      "stats": "24/7 Support Available"
+    }
+  ],
+
+  "cta_title": "Ready to Transform Your Business?",
+  "cta_description": "Join hundreds of satisfied clients who trust Digital outliner for their business success.",
+  "cta_button_primary": "Get Started Today",
+  "cta_button_secondary": "Schedule Consultation"
+}
