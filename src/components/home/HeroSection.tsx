@@ -5,7 +5,7 @@ const MatchingHeroSection = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-tr from-[#000] via-[#220404] to-[#000] relative overflow-hidden">
       {/* Background geometric patterns with enhanced effects */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/30 rotate-45 animate-pulse"></div>
@@ -40,8 +40,8 @@ const MatchingHeroSection = () => {
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-300 leading-tight">
-                You need Custom web and app solutions for grow your business? 
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+                You need Custom <span className="text-blue-500"></span> web and app solutions for grow your business? 
                 
               </h1>
             </div>

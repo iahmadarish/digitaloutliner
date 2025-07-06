@@ -1,12 +1,11 @@
 import type React from "react"
-import { Link } from "react-router-dom"
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 import logo from "@/assets/logo2.png"
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white font-family-small">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="px-18 py-16">
+        <div className="grid items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -32,43 +31,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-white hover:text-blue-800 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-white hover:text-blue-800 transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-white hover:text-blue-800 transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="text-white hover:text-blue-800 transition-colors">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-white hover:text-blue-800 transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-white hover:text-blue-800 transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Services */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
@@ -85,17 +47,17 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="text-white hover:text-blue-800 transition-colors">
-                  Office Accessories Supply
+                  Graphics Design
                 </a>
               </li>
               <li>
                 <a href="#" className="text-white hover:text-blue-800 transition-colors">
-                  Accounting & Taxation
+                  Digital Marketing
                 </a>
               </li>
               <li>
                 <a href="#" className="text-white hover:text-blue-800 transition-colors">
-                  IT Consultancy & Hardware
+                  2D/3D design
                 </a>
               </li>
             </ul>
