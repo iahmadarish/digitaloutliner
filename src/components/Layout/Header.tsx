@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { Menu, X, Phone, Mail } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import type { Variants } from "framer-motion"
-import logo from "@/assets/logo.png"
+import logo from "@/assets/logo2.png"
 import { Link } from "react-router-dom"
 
 const HexaCodeNavbar = () => {

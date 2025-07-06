@@ -26,7 +26,7 @@ const MatchingHeroSection = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative z-10 mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-18 py-16 pt-20 sm:pt-32">
+      <div className="relative z-10 mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-40 py-16 pt-20 sm:pt-32">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 md:space-y-8">
@@ -41,9 +41,8 @@ const MatchingHeroSection = () => {
 
               {/* Main Heading */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-300 leading-tight">
-                Custom Web & Apps Dev   Agency 
+                You need Custom web and app solutions for grow your business? 
                 
-
               </h1>
             </div>
 

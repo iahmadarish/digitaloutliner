@@ -1,7 +1,7 @@
 import type React from "react"
 import { Link } from "react-router-dom"
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
-
+import logo from "@/assets/logo2.png"
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white font-family-small">
@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-            <p className="text-3xl">My Agency</p>
+              <img src={logo} alt="" />
             </div>
             <p className="text-white text-sm leading-relaxed">
               Leading construction and engineering firm providing innovative solutions for infrastructure development

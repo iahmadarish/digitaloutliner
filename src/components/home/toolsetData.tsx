@@ -1,22 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { 
-  Code, 
-  Server, 
-  GitBranch, 
-  Database, 
-  Cloud, 
-  Globe,
-  Terminal,
-  Layers,
-  Settings,
-  Zap,
-  Shield,
-  Monitor,
-  type LucideIcon
-} from 'lucide-react';
-
 interface Tool {
-  icon: LucideIcon;
+  image: string; // image url
   name: string;
   color: string;
 }
@@ -29,66 +13,117 @@ interface ToolsetCategory {
 
 const toolsetData: ToolsetCategory[] = [
   {
-    title: "Front-End",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Web Development",
+    description: "Modern and scalable web solutions tailored to your business needs.",
     icons: [
-      { icon: Code, name: "React", color: "bg-gray-600" },
-      { icon: Layers, name: "Next.js", color: "bg-gray-600" },
-      { icon: Zap, name: "Vite", color: "bg-gray-600" },
-      { icon: Settings, name: "Tailwind", color: "bg-gray-600" },
-      { icon: Globe, name: "TypeScript", color: "bg-gray-600" },
-      { icon: Monitor, name: "Figma", color: "bg-gray-600" }
+      {
+        name: "React",
+        color: "bg-gray-800",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
+      },
+      {
+        name: "Next.js",
+        color: "bg-teal-500",
+        image: "https://img.icons8.com/fluent-systems-filled/200/FFFFFF/nextjs.png"
+      },
+      {
+        name: "Tailwind CSS",
+        color: "bg-black",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png"
+      },
+      {
+        name: "TypeScript",
+        color: "bg-blue-700",
+        image: "/images/typescript.png"
+      },
+      {
+        name: "Node.js",
+        color: "bg-green-700",
+        image: "/images/nodejs.png"
+      },
+      {
+        name: "Vite",
+        color: "bg-purple-700",
+        image: "/images/vite.png"
+      }
     ]
   },
   {
     title: "Back-End",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Crafting visually compelling brand identities and UI/UX designs.",
     icons: [
-      { icon: Server, name: "Node.js", color: "bg-gray-600" },
-      { icon: Database, name: "Express", color: "bg-gray-600" },
-      { icon: Shield, name: "MongoDB", color: "bg-gray-600" },
-      { icon: Code, name: "Python", color: "bg-gray-600" },
-      { icon: Layers, name: "Django", color: "bg-gray-600" },
-      { icon: Terminal, name: "FastAPI", color: "bg-gray-600" }
+      {
+        name: "Node js",
+        color: "bg-pink-500",
+        image: "/images/figma.png"
+      },
+      {
+        name: "Photoshop",
+        color: "bg-blue-600",
+        image: "/images/photoshop.png"
+      },
+      {
+        name: "Illustrator",
+        color: "bg-orange-500",
+        image: "/images/illustrator.png"
+      },
+      {
+        name: "Canva",
+        color: "bg-green-500",
+        image: "/images/canva.png"
+      },
+      {
+        name: "Framer",
+        color: "bg-black",
+        image: "/images/framer.png"
+      },
+      {
+        name: "Adobe XD",
+        color: "bg-purple-600",
+        image: "/images/xd.png"
+      }
     ]
-  },
+  }
+  ,
   {
     title: "Version Control",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Crafting visually compelling brand identities and UI/UX designs.",
     icons: [
-      { icon: GitBranch, name: "Git", color: "bg-gray-600" },
-      { icon: Globe, name: "GitHub", color: "bg-gray-600" },
-      { icon: Layers, name: "GitLab", color: "bg-gray-600" },
-      { icon: Settings, name: "Bitbucket", color: "bg-gray-600" },
-      { icon: Code, name: "VS Code", color: "bg-gray-600" },
-      { icon: Terminal, name: "CLI Tools", color: "bg-gray-600" }
-    ]
-  },
-  {
-    title: "Databases",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    icons: [
-      { icon: Database, name: "PostgreSQL", color: "bg-gray-600" },
-      { icon: Shield, name: "MySQL", color: "bg-gray-600" },
-      { icon: Layers, name: "Redis", color: "bg-gray-600" },
-      { icon: Globe, name: "MongoDB", color: "bg-gray-600" },
-      { icon: Settings, name: "Firebase", color: "bg-gray-600" },
-      { icon: Server, name: "SQLite", color: "bg-gray-600" }
-    ]
-  },
-  {
-    title: "DevOps And Hosting",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    icons: [
-      { icon: Cloud, name: "AWS", color: "bg-gray-600" },
-      { icon: Globe, name: "Vercel", color: "bg-gray-600" },
-      { icon: Server, name: "Docker", color: "bg-gray-600" },
-      { icon: Settings, name: "Netlify", color: "bg-gray-600" },
-      { icon: Shield, name: "Kubernetes", color: "bg-gray-600" },
-      { icon: Terminal, name: "CI/CD", color: "bg-gray-600" }
+      {
+        name: "Node js",
+        color: "bg-pink-500",
+        image: "/images/figma.png"
+      },
+      {
+        name: "Photoshop",
+        color: "bg-blue-600",
+        image: "/images/photoshop.png"
+      },
+      {
+        name: "Illustrator",
+        color: "bg-orange-500",
+        image: "/images/illustrator.png"
+      },
+      {
+        name: "Canva",
+        color: "bg-green-500",
+        image: "/images/canva.png"
+      },
+      {
+        name: "Framer",
+        color: "bg-black",
+        image: "/images/framer.png"
+      },
+      {
+        name: "Adobe XD",
+        color: "bg-purple-600",
+        image: "/images/xd.png"
+      }
     ]
   }
 ];
+
+
 
 const ToolsetComponent = () => {
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
@@ -141,11 +176,10 @@ const ToolsetComponent = () => {
                 }
               }}
               data-index={index}
-              className={`bg-gray-900 rounded-lg p-6 border border-gray-700 transition-all duration-500 ${
-                visibleCards.has(index) 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              }`}
+              className={`bg-gray-900 rounded-lg p-6 border border-gray-700 transition-all duration-500 ${visibleCards.has(index)
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+                }`}
             >
               <h3 className="text-xl font-bold text-white mb-3">
                 {category.title}
@@ -155,19 +189,18 @@ const ToolsetComponent = () => {
               </p>
 
               {/* Icons Grid - 2 rows of 3 */}
-              <div className="grid grid-cols-3 gap-3">
-                {category.icons.map((tool, toolIndex) => {
-                  const IconComponent = tool.icon;
-                  return (
-                    <div
-                      key={toolIndex}
-                      className="bg-gray-700 rounded-full w-12 h-12 flex items-center justify-center hover:bg-gray-600 transition-colors duration-200"
-                    >
-                      <IconComponent className="w-6 h-6 text-white" />
-                    </div>
-                  );
-                })}
-              </div>
+              {category.icons.map((tool, toolIndex) => (
+                <div
+                  key={toolIndex}
+                  className={`${tool.color} rounded-full w-12 h-12 flex items-center flex-col justify-center hover:opacity-80 transition duration-200`}
+                >
+                  <img
+                    src={tool.image}
+                    alt={tool.name}
+                    className="w-6 h-6 object-contain"
+                  />
+                </div>
+              ))}
             </div>
           ))}
         </div>
@@ -183,11 +216,10 @@ const ToolsetComponent = () => {
                 }
               }}
               data-index={index + 3}
-              className={`bg-gray-900 rounded-lg p-6 border border-gray-700 transition-all duration-500 ${
-                visibleCards.has(index + 3) 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              }`}
+              className={`bg-gray-900 rounded-lg p-6 border border-gray-700 transition-all duration-500 ${visibleCards.has(index + 3)
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+                }`}
             >
               <h3 className="text-xl font-bold text-white mb-3">
                 {category.title}
@@ -197,19 +229,18 @@ const ToolsetComponent = () => {
               </p>
 
               {/* Icons Grid - 2 rows of 3 */}
-              <div className="grid grid-cols-3 gap-3">
-                {category.icons.map((tool, toolIndex) => {
-                  const IconComponent = tool.icon;
-                  return (
-                    <div
-                      key={toolIndex}
-                      className="bg-gray-700 rounded-full w-12 h-12 flex items-center justify-center hover:bg-gray-600 transition-colors duration-200"
-                    >
-                      <IconComponent className="w-6 h-6 text-white" />
-                    </div>
-                  );
-                })}
-              </div>
+              {category.icons.map((tool, toolIndex) => (
+                <div
+                  key={toolIndex}
+                  className={`${tool.color} rounded-full w-12 h-12 flex items-center justify-center hover:opacity-80 transition duration-200`}
+                >
+                  <img
+                    src={tool.image}
+                    alt={tool.name}
+                    className="w-6 h-6 object-contain"
+                  />
+                </div>
+              ))}
             </div>
           ))}
         </div>
