@@ -88,10 +88,10 @@ export default function ServiceDetail() {
   }
 
   return (
-    <motion.div initial="initial" animate="animate" className="min-h-screen bg-gray-50">
+    <motion.div initial="initial" animate="animate" className="min-h-screen bg-black">
       <ScrollToTop/>
       {/* Header Navigation */}
-      <motion.div {...fadeInUp} className="bg-indigo-950 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
+      <motion.div {...fadeInUp} className="bg-black backdrop-blur-lg border-b sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-4">
@@ -119,7 +119,7 @@ export default function ServiceDetail() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate("/contact")}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+              className="bg-white hover:bg-blue-700 text-black px-6 py-2 rounded-lg font-medium transition-colors"
             >
               Get Quote
             </motion.button>
@@ -159,7 +159,7 @@ export default function ServiceDetail() {
                     }}
                   />
                   {/* Dark overlay for better text readability */}
-                  <div className="absolute inset-0 bg-black/50"></div>
+                  <div className="absolute inset-0 bg-black/80"></div>
                 </div>
               </SwiperSlide>
             ))}
@@ -226,7 +226,7 @@ export default function ServiceDetail() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                     whileHover={{ scale: 1.05 }}
-                    className="flex items-center bg-white/20 backdrop-blur-md rounded-lg px-4 py-3 border border-white/30"
+                    className="flex items-center bg-white/20 backdrop-blur-lg rounded-lg px-4 py-3 border border-white/40"
                   >
                     <item.icon className="h-5 w-5 text-white mr-2" />
                     <span className="font-medium text-white">{item.text}</span>
@@ -296,10 +296,10 @@ export default function ServiceDetail() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg border border-gray-100"
+                className="bg-blak rounded-xl shadow-lg border border-gray-100"
               >
                 <div className="p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Service Overview</h2>
+                  <h2 className="text-3xl font-bold text-gray-200 mb-6">Service Overview</h2>
                   <div className="space-y-4">
                     {service.fullDetails.map((detail, index) => (
                       <motion.div
@@ -311,7 +311,7 @@ export default function ServiceDetail() {
                         className="flex items-start"
                       >
                         <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <p className="text-gray-700 leading-relaxed">{detail}</p>
+                        <p className="text-gray-300 leading-relaxed">{detail}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -324,10 +324,10 @@ export default function ServiceDetail() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg border border-gray-100"
+                className="bg-black rounded-xl shadow-lg border border-gray-100"
               >
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">What We Offer</h3>
+                  <h3 className="text-2xl font-bold text-gray-200 mb-6">What We Offer</h3>
                   <motion.div
                     variants={staggerContainer}
                     initial="initial"
@@ -343,10 +343,10 @@ export default function ServiceDetail() {
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                         whileHover={{ scale: 1.02, backgroundColor: "#f8fafc" }}
                         viewport={{ once: true }}
-                        className="flex items-center p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100 cursor-pointer"
+                        className="flex items-center p-4  text-gray-200 hover:text-black hover:bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100 cursor-pointer"
                       >
                         <Zap className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
-                        <span className="font-medium text-gray-800">{point}</span>
+                        <span className="font-medium">{point}</span>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -359,10 +359,10 @@ export default function ServiceDetail() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg border border-gray-100"
+                className="bg-[#000000] rounded-xl shadow-lg border border-gray-100"
               >
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Process</h3>
+                  <h3 className="text-2xl font-bold text-gray-200 mb-6">Our Process</h3>
                   <div className="space-y-6">
                     {[
                       { step: "01", title: "Initial Consultation", desc: "Understanding your requirements and goals" },
@@ -386,12 +386,12 @@ export default function ServiceDetail() {
                         viewport={{ once: true }}
                         className="flex items-start"
                       >
-                        <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-[#4c4545] text-white rounded-full flex items-center justify-center font-bold mr-4">
                           {item.step}
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h4>
-                          <p className="text-gray-600">{item.desc}</p>
+                          <h4 className="text-lg font-semibold text-gray-200 mb-1">{item.title}</h4>
+                          <p className="text-gray-300">{item.desc}</p>
                         </div>
                       </motion.div>
                     ))}
