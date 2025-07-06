@@ -121,7 +121,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-gray-950">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-gray-900 via-blue-900/80 to-indigo-900/80 text-white">
+      <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
