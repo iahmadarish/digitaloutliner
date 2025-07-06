@@ -11,7 +11,7 @@ const services = [
     gradient: 'from-blue-500 to-indigo-600',
     glowColor: 'blue-500',
     image:
-      'https://images.unsplash.com/photo-1502880195258-54f7a49f3db6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      'https://www.creative-tim.com/blog/content/images/size/w960/2022/01/which-development-job-is-right-for-you.jpg',
     stats: '200+ Projects Delivered',
   },
   {
@@ -20,8 +20,8 @@ const services = [
     description:
       'From concept to deployment, we develop user-friendly mobile applications that drive engagement and business growth. Our cross-platform solutions ensure your app reaches a wider audience with smooth performance and intuitive design.',
     icon: Smartphone,
-    gradient: 'from-green-400 to-teal-500',
-    glowColor: 'green-400',
+    gradient: 'from-teal-500 to-indigo-600',
+    glowColor: 'blue-200-',
     image:
       'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     stats: '150+ Apps Launched',
