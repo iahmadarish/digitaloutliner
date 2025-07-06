@@ -6,6 +6,7 @@ import ScrollToTop from "../../components/ScrollToTop"
 import STRAccordionWithImages from "../../components/home/STRAccordionWithImages"
 import SocialNavigation3D from "../../components/common/SocialNavigation3D"
 import ToolsetComponent from "@/components/home/toolsetData"
+import OurBenefit from "@/components/home/OurBenifit"
 
 const Home: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
 
         <STRAccordionWithImages/>
         <ServiceListingTab/>
+        <OurBenefit/>
         <ToolsetComponent/>
         <SocialNavigation3D/>
       

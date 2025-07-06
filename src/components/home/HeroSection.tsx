@@ -5,7 +5,7 @@ const MatchingHeroSection = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="min-h-screen bg-cover bg-no-repeat  bg-gradient-to-tr from-[#000] via-[#220404] to-[#000] relative overflow-hidden">
+    <div className="min-h-screen bg-cover bg-no-repeat  bg-gradient-to-br from-[#000] via-[#1d0303] to-[#000000] relative overflow-hidden">
       {/* Background geometric patterns with enhanced effects */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/30 rotate-45 animate-pulse"></div>

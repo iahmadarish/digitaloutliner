@@ -197,7 +197,7 @@ const ServiceListingTab = () => {
   )
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-18 py-16">
+    <div className="bg-gradient-to-br from-[#000] via-[#1d0303] to-[#000000] mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-18 py-16">
       {/* Header */}
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-200 mb-4">Our Services</h2>

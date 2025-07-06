@@ -44,8 +44,8 @@ const DarkAccordionComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-gray-900 via-black to-gray-900 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+    <div className="min-h-screen bg-gradient-to-tr from-[#000] via-[#1d0303] to-[#000000] py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+      <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
           <div className="relative">
