@@ -89,7 +89,7 @@ const mobileMenuVariants: Variants = {
     transition: { type: "spring", stiffness: 300, damping: 30 },
   },
 }
-
+    
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -101,7 +101,7 @@ const mobileMenuVariants: Variants = {
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
     >
-      <nav className=" mx-auto px-8 py-4">
+      <nav className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 py-6">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/">
