@@ -139,7 +139,7 @@ const ServiceListingTab = () => {
       className="bg-black rounded-xl shadow-md overflow-hidden group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative h-80 cursor-pointer flex-shrink-0"
     >
       {/* Service Card Content */}
-      <div className="absolute inset-0 p-6 flex flex-col justify-center items-start bg-gradient-to-tr from-zinc-900 to-stone-900 transition-all duration-500 group-hover:opacity-0 group-hover:scale-110">
+      <div className="absolute inset-0 p-6 flex flex-col justify-center items-start bg-gradient-to-tr from-blue-500/20 to-blue-950 transition-all duration-500 group-hover:opacity-0 group-hover:scale-110">
         <div className="mb-4 text-white border rounded-full px-3 py-3 border-gray-500">
           {getServiceIcon(service.serviceType)}
         </div>
@@ -197,7 +197,7 @@ const ServiceListingTab = () => {
   )
 
   return (
-    <div className="bg-gradient-to-br from-[#000] via-[#1d0303] to-[#000000] mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-18 py-16">
+    <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-18 py-16">
       {/* Header */}
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-200 mb-4">Our Services</h2>

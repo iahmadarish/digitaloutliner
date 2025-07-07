@@ -152,7 +152,7 @@ const ToolsetComponent = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#000] via-[#1d0303] to-[#000000] text-white py-16 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white py-16 px-4">
       <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header */}
         <div className="text-center mb-16">

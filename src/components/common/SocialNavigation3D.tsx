@@ -59,7 +59,7 @@ const IsometricSocialCards: React.FC = () => {
   };
 
   return (
-    <div className="py-2 bg-linear-to-r from-black to-gray-900  relative overflow-hidden">
+    <div className="py-2 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]  relative overflow-hidden">
 
       {/* Cards Container */}
       <div className="relative z-10 px-4">

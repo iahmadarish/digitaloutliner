@@ -23,7 +23,7 @@ const Home: React.FC = () => {
         <SocialNavigation3D/>
       
       {/* CTA Section */}
-      <section className="bg-gradient-to-tr from-gray-900 via-black to-gray-900 text-white section-padding">
+      <section className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white section-padding">
         <div className="container text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to Start Your Next Project?</h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">

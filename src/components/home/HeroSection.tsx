@@ -13,7 +13,7 @@ const MatchingHeroSection = () => {
   });
 
   const fullHeading = "Build, Scale, and Succeed — with URSOFTS";
-  
+
   const allCodeLines = [
     // First code snippet - Business Growth Formula
     [
@@ -36,7 +36,7 @@ const MatchingHeroSection = () => {
       { text: " ", color: "text-gray-400" },
       { text: "📈", color: "text-red-400" },
     ],
-    
+
     // Second code snippet - Development Approach
     [
       { text: "//", color: "text-gray-500" },
@@ -64,7 +64,7 @@ const MatchingHeroSection = () => {
       { text: ";", color: "text-gray-400" },
       { text: "\n}", color: "text-gray-400" },
     ],
-    
+
     // Third code snippet - Project Success Metrics
     [
       { text: "/*", color: "text-emerald-400" },
@@ -95,14 +95,14 @@ const MatchingHeroSection = () => {
   useEffect(() => {
     if (!inView) return;
 
-    let timeoutId: string | number | NodeJS.Timeout | undefined;
+    let timeoutId: NodeJS.Timeout;
     let currentIndex = 0;
     let currentLine = 0;
     let currentText = "";
 
     const typeCode = () => {
       const currentCode = allCodeLines[currentCodeIndex];
-      
+
       if (currentLine < currentCode.length) {
         const line = currentCode[currentLine];
         if (currentIndex < line.text.length) {
@@ -122,7 +122,7 @@ const MatchingHeroSection = () => {
           currentLine = 0;
           currentText = "";
           setCodeContent("");
-          setCurrentCodeIndex((prevIndex) => 
+          setCurrentCodeIndex((prevIndex) =>
             prevIndex === allCodeLines.length - 1 ? 0 : prevIndex + 1
           );
           typeCode();
@@ -143,14 +143,14 @@ const MatchingHeroSection = () => {
     let remainingContent = codeContent;
     const renderedLines = [];
     const currentCode = allCodeLines[currentCodeIndex];
-    
+
     for (const line of currentCode) {
       if (remainingContent.length === 0) break;
-      
+
       const lineLength = line.text.length;
       const currentLineContent = remainingContent.substring(0, lineLength);
       remainingContent = remainingContent.substring(lineLength);
-      
+
       renderedLines.push(
         <span key={renderedLines.length} className={line.color}>
           {currentLineContent}
@@ -159,9 +159,9 @@ const MatchingHeroSection = () => {
     }
 
     return (
-      <div className="font-mono text-sm md:text-base">
+      <div className="font-mono text-sm md:text-base md:lg:xl:2xl:min-h-[80px] min-h-[120px]">
         {renderedLines}
-        <motion.span 
+        <motion.span
           animate={{ opacity: [0, 1, 0] }}
           transition={{ repeat: Infinity, duration: 1 }}
           className="ml-1 inline-block w-2 h-6 bg-emerald-400 align-middle"
@@ -171,28 +171,31 @@ const MatchingHeroSection = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-cover bg-no-repeat bg-gradient-to-br from-[#000] via-[#1d0303] to-[#000000] relative overflow-hidden"
+      className="min-h-screen font-family-comfort py-18 bg-cover bg-no-repeat bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] relative overflow-hidden"
       ref={ref}
     >
+
+        <div className="absolute top-10 left-10 w-96 h-96 bg-white/5 rounded-[20px] blur-2xl opacity-10"></div>
+
       {/* Background geometric patterns with enhanced effects */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.1 }}
         transition={{ delay: 0.3, duration: 1 }}
         className="absolute inset-0"
       >
-        <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/30 rotate-45 animate-pulse"></div>
-        <div className="absolute top-60 right-40 w-48 h-48 border border-purple-400/20 rotate-12"></div>
-        <div className="absolute bottom-40 left-60 w-24 h-24 border border-emerald-400/25 -rotate-12 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 border border-cyan-400/20 rotate-45"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/90 rotate-45 animate-pulse"></div>
+        <div className="absolute top-60 right-40 w-48 h-48 border border-purple-400/70 rotate-12"></div>
+        <div className="absolute bottom-40 left-60 w-24 h-24 border border-emerald-400/50 -rotate-12 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 border border-cyan-400/50 rotate-45"></div>
       </motion.div>
 
       {/* Floating grid pattern */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.05 }}
         transition={{ delay: 0.5, duration: 1 }}
@@ -211,7 +214,7 @@ const MatchingHeroSection = () => {
       <div className="relative z-10 mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-40 py-16 pt-20 sm:pt-32">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-6 md:space-y-8">
+          <div className="space-y-6 md:space-y-4">
             <div className="space-y-4">
               {/* Badge */}
               <motion.div
@@ -226,14 +229,9 @@ const MatchingHeroSection = () => {
                 <span>Since 2025</span>
               </motion.div>
 
-              {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+              {/* Main Heading - Removed typing effect */}
+              <h1 className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
                 {fullHeading}
-                <motion.span 
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{ repeat: Infinity, duration: 1 }}
-                  className="ml-1 inline-block w-2 h-12 bg-cyan-400 align-middle"
-                ></motion.span>
               </h1>
             </div>
 
@@ -250,7 +248,7 @@ const MatchingHeroSection = () => {
             </div>
 
             {/* Stats */}
-            <motion.div 
+            <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
@@ -272,33 +270,33 @@ const MatchingHeroSection = () => {
           </div>
 
           {/* Right Content - Enhanced CTA Card */}
-          <motion.div 
+          <motion.div
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
             className="flex justify-center lg:justify-end"
           >
-            <div 
+            <div
               className="relative group max-w-md w-full"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
               {/* Glow effect */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0.2 }}
                 whileHover={{ opacity: 0.3 }}
                 className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl blur-xl"
               ></motion.div>
-              
+
               {/* Main card */}
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -5 }}
                 className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 p-6 md:p-8 rounded-2xl hover:border-cyan-400/50 transition-all duration-300 cursor-pointer"
               >
                 <div className="space-y-6">
                   {/* Header */}
                   <div className="flex items-center space-x-4">
-                    <motion.div 
+                    <motion.div
                       whileHover={{ rotate: 10 }}
                       className="p-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 text-white"
                     >
@@ -321,21 +319,21 @@ const MatchingHeroSection = () => {
 
                   {/* Features */}
                   <div className="space-y-3">
-                    <motion.div 
+                    <motion.div
                       whileHover={{ x: 5 }}
                       className="flex items-center space-x-3 text-sm"
                     >
                       <Zap className="h-4 w-4 text-yellow-400" />
                       <span className="text-gray-300">Lightning Fast Development</span>
                     </motion.div>
-                    <motion.div 
+                    <motion.div
                       whileHover={{ x: 5 }}
                       className="flex items-center space-x-3 text-sm"
                     >
                       <Shield className="h-4 w-4 text-emerald-400" />
                       <span className="text-gray-300">Enterprise-Grade Security</span>
                     </motion.div>
-                    <motion.div 
+                    <motion.div
                       whileHover={{ x: 5 }}
                       className="flex items-center space-x-3 text-sm"
                     >
@@ -345,7 +343,7 @@ const MatchingHeroSection = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <motion.button 
+                  <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg hover:shadow-cyan-400/25 transition-all duration-300 flex items-center justify-center space-x-2 group"

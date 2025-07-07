@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, Users, Zap, Shield, Star, Brush, Code, Smartphone } from 'lucide-react';
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -44,8 +45,23 @@ const DarkAccordionComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-[#000] via-[#1d0303] to-[#000000] py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+    <div className="min-h-screen bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
       <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+
+
+      {/* Background geometric patterns with enhanced effects */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ delay: 0.3, duration: 1 }}
+        className="absolute inset-0"
+      >
+        <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/90 rotate-45 animate-pulse"></div>
+        <div className="absolute top-60 right-40 w-48 h-48 border border-purple-400/70 rotate-12"></div>
+        <div className="absolute bottom-40 left-60 w-24 h-24 border border-emerald-400/50 -rotate-12 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 border border-cyan-400/50 rotate-45"></div>
+      </motion.div>
+
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
           <div className="relative">
