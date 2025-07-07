@@ -99,7 +99,6 @@ const MatchingHeroSection = () => {
     let currentIndex = 0;
     let currentLine = 0;
     let currentText = "";
-    let isTyping = true;
 
     const typeCode = () => {
       const currentCode = allCodeLines[currentCodeIndex];
@@ -118,7 +117,6 @@ const MatchingHeroSection = () => {
         }
       } else {
         // Typing completed, wait 3 seconds and move to next code
-        isTyping = false;
         timeoutId = setTimeout(() => {
           currentIndex = 0;
           currentLine = 0;
@@ -127,7 +125,6 @@ const MatchingHeroSection = () => {
           setCurrentCodeIndex((prevIndex) => 
             prevIndex === allCodeLines.length - 1 ? 0 : prevIndex + 1
           );
-          isTyping = true;
           typeCode();
         }, 3000);
       }
