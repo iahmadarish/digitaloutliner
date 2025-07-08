@@ -3,7 +3,7 @@
 import { useState, type JSXElementConstructor, type Key, type ReactElement, type ReactNode, type ReactPortal } from "react"
 import { services } from "../../data/service"
 import { useNavigate } from "react-router-dom"
-import { ArrowRight, CheckCircle, Star, Zap, Target, Users, Settings, Globe, Shield } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Zap, Target, Users, Globe, Shield } from "lucide-react"
 import ScrollToTop from "@/components/ScrollToTop"
 
 // Individual Service Card Component
@@ -121,13 +121,10 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-gray-950">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] py-40 text-white">
+        <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 ">
           <div className="text-center">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
-              <Settings className="w-4 h-4 mr-2 text-blue-400" />
-              <span className="text-sm font-medium">Professional IT Services</span>
-            </div>
+
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Transform Your Business with
               <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
@@ -164,7 +161,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Services Section */}
-      <div className="py-12 sm:py-16 lg:py-20 bg-gray-950">
+      <div className="py-12 sm:py-16 lg:py-20 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Our Services</h2>
@@ -181,7 +178,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="py-12 sm:py-16 lg:py-20 bg-gray-900">
+      <div className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div>
@@ -239,7 +236,7 @@ const ServicesPage = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-black to-indigo-950 text-white">
+      <div className="py-12 sm:py-16 lg:py-20 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Ready to Start Your Project?</h2>
           <p className="text-lg sm:text-xl text-blue-200 mb-6 sm:mb-8">

@@ -159,7 +159,7 @@ const MatchingHeroSection = () => {
     }
 
     return (
-      <div className="font-mono text-sm md:text-base md:lg:xl:2xl:min-h-[80px] min-h-[120px]">
+      <div className="font-mono text-sm md:text-base md:lg:xl:2xl:min-h-[80px] min-h-[140px]">
         {renderedLines}
         <motion.span
           animate={{ opacity: [0, 1, 0] }}

@@ -1,44 +1,129 @@
-
 export default function Footer() {
   return (
-    <div>
-      <footer className="text-white body-font">
-  <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-    <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-200">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span className="ml-3 text-xl">URSOFTS</span>
-    </a>
-    <p className="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Tailblocks —
-      <a href="https://twitter.com/knyttneve" className="text-white ml-1" rel="noopener noreferrer" target="_blank">@knyttneve</a>
-    </p>
-    <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-      <a className="text-white">
-        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
-          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-        </svg>
-      </a>
-      <a className="ml-3 text-white">
-        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
-          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-        </svg>
-      </a>
-      <a className="ml-3 text-white">
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-        </svg>
-      </a>
-      <a className="ml-3 text-white">
-        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" className="w-5 h-5" viewBox="0 0 24 24">
-          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-          <circle cx="4" cy="4" r="2" stroke="none"></circle>
-        </svg>
-      </a>
-    </span>
-  </div>
-</footer>
-    </div>
-  )
+    <footer className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]  text-white py-12">
+      <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Company Section */}
+          <div>
+            <h3 className="text-orange-400 text-lg font-semibold mb-4">Company</h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="#" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <span className="mr-2">⊕</span>
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <span className="mr-2">⊕</span>
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <span className="mr-2">⊕</span>
+                  Reservation
+                </a>
+              </li>
+              <li>
+                <a href="#" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <span className="mr-2">⊕</span>
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <span className="mr-2">⊕</span>
+                  Terms & Condition
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Section */}
+          <div>
+            <h3 className="text-orange-400 text-lg font-semibold mb-4">Contact</h3>
+            <div className="space-y-3 text-gray-300">
+              <p>123 Street, New York, USA</p>
+              <p>+012 345 67890</p>
+              <p>info@example.com</p>
+              
+              {/* Social Media Icons */}
+              <div className="flex space-x-3 mt-4">
+                <a href="#" className="w-8 h-8 border border-gray-500 rounded-full flex items-center justify-center hover:bg-orange-400 hover:border-orange-400 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                  </svg>
+                </a>
+                <a href="#" className="w-8 h-8 border border-gray-500 rounded-full flex items-center justify-center hover:bg-orange-400 hover:border-orange-400 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                  </svg>
+                </a>
+                <a href="#" className="w-8 h-8 border border-gray-500 rounded-full flex items-center justify-center hover:bg-orange-400 hover:border-orange-400 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </a>
+                <a href="#" className="w-8 h-8 border border-gray-500 rounded-full flex items-center justify-center hover:bg-orange-400 hover:border-orange-400 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Opening Hours Section */}
+          <div>
+            <h3 className="text-orange-400 text-lg font-semibold mb-4">Opening</h3>
+            <div className="space-y-2 text-gray-300">
+              <div>
+                <p className="font-medium">Monday - Saturday</p>
+                <p>09AM - 09PM</p>
+              </div>
+              <div className="mt-3">
+                <p className="font-medium">Sunday</p>
+                <p>10AM - 08PM</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Newsletter Section */}
+          <div>
+            <h3 className="text-orange-400 text-lg font-semibold mb-4">Newsletter</h3>
+            <p className="text-gray-300 mb-4">
+              Dolor amet sit justo amet elitr clita ipsum elitr est.
+            </p>
+            <div className="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="flex-1 px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-l-md focus:outline-none focus:border-orange-400"
+              />
+              <button className="bg-orange-400 hover:bg-orange-500 text-white px-6 py-2 rounded-r-md font-semibold transition-colors">
+                SIGNUP
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-700 mt-8 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © Your Site Name, All Right Reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Home</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookies</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Help</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
