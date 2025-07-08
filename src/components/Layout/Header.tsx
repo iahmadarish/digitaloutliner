@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Menu, X, Phone, Mail } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import type { Variants } from "framer-motion"
+import { Link } from "react-router-dom"
 
 const URSOFTSNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -91,9 +92,8 @@ const URSOFTSNavbar = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-black backdrop-blur-sm shadow-lg" : "bg-transparent backdrop-blur-sm"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 font-family-mont transition-all duration-300 ${scrolled ? "bg-black backdrop-blur-sm shadow-lg" : "bg-transparent backdrop-blur-sm"
+        }`}
       initial={{ y: 0 }}
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
@@ -110,9 +110,12 @@ const URSOFTSNavbar = () => {
             </div>
 
             {/* URSOFTS Logo - Center */}
-            <div className="absolute left-1/2 transform -translate-x-1/2">
-              <div className="text-white text-2xl lg:text-3xl font-bold tracking-wider">URSOFTS</div>
-            </div>
+            <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
+
+              <div className="">
+                <div className="text-white text-2xl lg:text-3xl font-bold tracking-wider font-family-comfort italic">URSOFTS</div>
+              </div>
+            </Link>
 
             {/* Contact Email - Right Side */}
             <div className="hidden md:flex items-center">

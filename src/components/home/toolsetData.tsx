@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
+
 interface Tool {
-  image: string; // image url
+  image: string;
   name: string;
   color: string;
 }
@@ -18,112 +19,181 @@ const toolsetData: ToolsetCategory[] = [
     icons: [
       {
         name: "React",
-        color: "bg-gray-800",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
+        color: "bg-blue-500",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
       },
       {
         name: "Next.js",
-        color: "bg-teal-500",
+        color: "bg-gray-800",
         image: "https://img.icons8.com/fluent-systems-filled/200/FFFFFF/nextjs.png"
       },
       {
         name: "Tailwind CSS",
-        color: "bg-black",
+        color: "bg-cyan-500",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png"
       },
       {
         name: "TypeScript",
-        color: "bg-blue-700",
-        image: "/images/typescript.png"
+        color: "bg-black",
+        image: "https://www.svgrepo.com/show/521320/typescript-16.svg"
       },
       {
-        name: "Node.js",
-        color: "bg-green-700",
-        image: "/images/nodejs.png"
+        name: "Shopify",
+        color: "bg-green-600",
+        image: "https://avatars.githubusercontent.com/u/8085?s=280&v=4"
       },
       {
         name: "Vite",
-        color: "bg-purple-700",
-        image: "/images/vite.png"
+        color: "bg-purple-600",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"
       }
     ]
   },
   {
-    title: "Back-End",
-    description: "Crafting visually compelling brand identities and UI/UX designs.",
+    title: "Back-End Development",
+    description: "Robust server-side solutions and database management systems.",
     icons: [
       {
-        name: "Node js",
-        color: "bg-pink-500",
-        image: "/images/figma.png"
+        name: "Python",
+        color: "bg-yellow-500",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
       },
       {
-        name: "Photoshop",
-        color: "bg-blue-600",
-        image: "/images/photoshop.png"
+        name: "Express.js",
+        color: "bg-gray-700",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
       },
       {
-        name: "Illustrator",
-        color: "bg-orange-500",
-        image: "/images/illustrator.png"
-      },
-      {
-        name: "Canva",
+        name: "MongoDB",
         color: "bg-green-500",
-        image: "/images/canva.png"
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
       },
       {
-        name: "Framer",
-        color: "bg-black",
-        image: "/images/framer.png"
+        name: "PostgreSQL",
+        color: "bg-blue-700",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
       },
       {
-        name: "Adobe XD",
-        color: "bg-purple-600",
-        image: "/images/xd.png"
+        name: "Docker",
+        color: "bg-blue-400",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+      },
+      {
+        name: "node js",
+        color: "bg-orange-500",
+        image: "https://avatars.githubusercontent.com/u/8085?s=280&v=4"
       }
     ]
-  }
-  ,
+  },
   {
-    title: "Version Control",
-    description: "Crafting visually compelling brand identities and UI/UX designs.",
+    title: "Version Control & DevOps",
+    description: "Streamlined development workflows and deployment automation.",
     icons: [
       {
-        name: "Node js",
-        color: "bg-pink-500",
-        image: "/images/figma.png"
+        name: "Git",
+        color: "bg-red-500",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+      },
+      {
+        name: "GitHub",
+        color: "bg-gray-800",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+      },
+      {
+        name: "GitLab",
+        color: "bg-orange-600",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"
+      },
+      {
+        name: "Jenkins",
+        color: "bg-blue-800",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
+      },
+      {
+        name: "Kubernetes",
+        color: "bg-blue-600",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+      },
+      {
+        name: "Linux",
+        color: "bg-yellow-600",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+      }
+    ]
+  },
+  {
+    title: "Design & UI/UX",
+    description: "Crafting visually compelling brand identities and user experiences.",
+    icons: [
+      {
+        name: "Figma",
+        color: "bg-purple-500",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
       },
       {
         name: "Photoshop",
         color: "bg-blue-600",
-        image: "/images/photoshop.png"
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
       },
       {
         name: "Illustrator",
         color: "bg-orange-500",
-        image: "/images/illustrator.png"
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
       },
       {
-        name: "Canva",
-        color: "bg-green-500",
-        image: "/images/canva.png"
-      },
-      {
-        name: "Framer",
-        color: "bg-black",
-        image: "/images/framer.png"
+        name: "Sketch",
+        color: "bg-yellow-500",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketch/sketch-original.svg"
       },
       {
         name: "Adobe XD",
+        color: "bg-pink-500",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg"
+      },
+      {
+        name: "Canva",
+        color: "bg-cyan-400",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg"
+      }
+    ]
+  },
+  {
+    title: "Mobile Development",
+    description: "Cross-platform mobile applications for iOS and Android.",
+    icons: [
+      {
+        name: "React Native",
+        color: "bg-blue-500",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+      },
+      {
+        name: "Flutter",
+        color: "bg-blue-400",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+      },
+      {
+        name: "Swift",
+        color: "bg-orange-500",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg"
+      },
+      {
+        name: "Kotlin",
         color: "bg-purple-600",
-        image: "/images/xd.png"
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+      },
+      {
+        name: "Java",
+        color: "bg-red-600",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+      },
+      {
+        name: "Dart",
+        color: "bg-blue-600",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
       }
     ]
   }
 ];
-
-
 
 const ToolsetComponent = () => {
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
@@ -152,22 +222,24 @@ const ToolsetComponent = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white py-16 px-4">
-      <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+    <div className="min-h-screen bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white py-8 sm:py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="text-gray-500 text-sm mb-4 font-mono">
-            &lt;!--
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="text-gray-500 text-xs sm:text-sm mb-2 sm:mb-4 font-mono">
+            &lt;!-- Our Technology Stack --&gt;
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Our <span className="text-yellow-500">Toolset</span>
           </h1>
+          <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
+            Cutting-edge technologies and tools we use to build exceptional digital experiences
+          </p>
         </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* First Row - 3 cards */}
-          {toolsetData.slice(0, 3).map((category, index) => (
+        {/* Responsive Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+          {toolsetData.map((category, index) => (
             <div
               key={index}
               ref={(el: HTMLDivElement | null) => {
@@ -176,73 +248,64 @@ const ToolsetComponent = () => {
                 }
               }}
               data-index={index}
-              className={`bg-gray-900 rounded-lg p-6 border border-gray-700 transition-all duration-500 ${visibleCards.has(index)
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-8'
+              className={`bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-gray-700/50 
+                hover:border-gray-600/50 transition-all duration-500 hover:bg-gray-900/70 
+                ${visibleCards.has(index)
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
                 }`}
             >
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
                 {category.title}
               </h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+              <p className="text-gray-400 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
                 {category.description}
               </p>
 
-              {/* Icons Grid - 2 rows of 3 */}
-              {category.icons.map((tool, toolIndex) => (
-                <div
-                  key={toolIndex}
-                  className={`${tool.color} rounded-full w-12 h-12 flex items-center flex-col justify-center hover:opacity-80 transition duration-200`}
-                >
-                  <img
-                    src={tool.image}
-                    alt={tool.name}
-                    className="w-6 h-6 object-contain"
-                  />
-                </div>
-              ))}
+              {/* Icons Grid - Responsive 2x3 or 3x2 layout */}
+              <div className="grid grid-cols-3 gap-3 sm:gap-4">
+                {category.icons.map((tool, toolIndex) => (
+                  <div
+                    key={toolIndex}
+                    className={`${tool.color} rounded-xl w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 
+                      flex items-center justify-center hover:scale-110 hover:shadow-lg 
+                      transition-all duration-300 cursor-pointer group relative`}
+                    title={tool.name}
+                  >
+                    <img
+                      src={tool.image}
+                      alt={tool.name}
+                      className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 object-contain filter brightness-0 invert"
+                      onError={(e) => {
+                        // Fallback for broken images
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    {/* Fallback text */}
+                    <span className="hidden text-xs sm:text-sm font-bold text-white text-center px-1">
+                      {tool.name.charAt(0)}
+                    </span>
+                    
+                    {/* Tooltip */}
+                    <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 
+                      bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 
+                      group-hover:opacity-100 transition-opacity duration-300 pointer-events-none 
+                      whitespace-nowrap z-10">
+                      {tool.name}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Second Row - 2 cards centered */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
-          {toolsetData.slice(3, 5).map((category, index) => (
-            <div
-              key={index + 3}
-              ref={(el: HTMLDivElement | null) => {
-                if (el) {
-                  cardRefs.current[index + 3] = el;
-                }
-              }}
-              data-index={index + 3}
-              className={`bg-gray-900 rounded-lg p-6 border border-gray-700 transition-all duration-500 ${visibleCards.has(index + 3)
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-8'
-                }`}
-            >
-              <h3 className="text-xl font-bold text-white mb-3">
-                {category.title}
-              </h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                {category.description}
-              </p>
-
-              {/* Icons Grid - 2 rows of 3 */}
-              {category.icons.map((tool, toolIndex) => (
-                <div
-                  key={toolIndex}
-                  className={`${tool.color} rounded-full w-12 h-12 flex items-center justify-center hover:opacity-80 transition duration-200`}
-                >
-                  <img
-                    src={tool.image}
-                    alt={tool.name}
-                    className="w-6 h-6 object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
+        {/* Bottom decoration */}
+        <div className="text-center mt-12 sm:mt-16">
+          <div className="text-gray-500 text-xs sm:text-sm font-mono">
+            &lt;/-- End of Toolset --&gt;
+          </div>
         </div>
       </div>
     </div>
