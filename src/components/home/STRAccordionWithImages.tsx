@@ -46,21 +46,45 @@ const DarkAccordionComponent = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
-      <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+      <div className="relative mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
 
 
-      {/* Background geometric patterns with enhanced effects */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.1 }}
-        transition={{ delay: 0.3, duration: 1 }}
-        className="absolute inset-0"
-      >
-        <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/90 rotate-45 animate-pulse"></div>
-        <div className="absolute top-60 right-40 w-48 h-48 border border-purple-400/70 rotate-12"></div>
-        <div className="absolute bottom-40 left-60 w-24 h-24 border border-emerald-400/50 -rotate-12 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 border border-cyan-400/50 rotate-45"></div>
-      </motion.div>
+
+        {/* Subtle Floating Grid Overlay */}
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0.05 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="absolute inset-0 pointer-events-none z-0"
+        >
+          <div
+            className="w-full h-full"
+            style={{
+              backgroundImage: `
+        linear-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.08) 1px, transparent 1px)
+      `,
+              backgroundSize: '40px 40px',
+            }}
+          ></div>
+        </motion.div>
+
+
+
+        {/* Background geometric patterns with enhanced effects */}
+        <motion.div
+          initial={{ opacity: 2 }}
+          animate={{ opacity: 0.1 }}
+          transition={{ delay: 0.3, duration: 1 }}
+          className="absolute inset-0"
+        >
+          <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/90 rotate-45 animate-pulse"></div>
+          <div className="absolute top-60 right-40 w-48 h-48 border border-red-900/90 rotate-12"></div>
+          <div className="absolute bottom-40 left-60 w-24 h-24 border border-emerald-400/0 -rotate-12 animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 border border-red-800/80 rotate-45"></div>
+        </motion.div>
+
+
 
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
@@ -81,28 +105,26 @@ const DarkAccordionComponent = () => {
             {services.map((item, index) => {
               const IconComponent = item.icon;
               const isActive = activeIndex === index;
-              
+
               return (
-                <div 
-                  key={index} 
-                  className={`relative group bg-gray-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700/50 transition-all duration-500 hover:border-gray-600 ${
-                    isActive ? 'ring-1 sm:ring-2 ring-cyan-400 shadow-xl sm:shadow-2xl shadow-cyan-400/20' : 'hover:shadow-lg sm:hover:shadow-xl hover:shadow-gray-900/50'
-                  }`}
+                <div
+                  key={index}
+                  className={`relative group bg-gray-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700/50 transition-all duration-500 hover:border-gray-600 ${isActive ? 'ring-1 sm:ring-2 ring-cyan-400 shadow-xl sm:shadow-2xl shadow-cyan-400/20' : 'hover:shadow-lg sm:hover:shadow-xl hover:shadow-gray-900/50'
+                    }`}
                 >
                   {/* Glow effect for active item */}
                   {isActive && (
                     <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-10 rounded-xl sm:rounded-2xl blur-sm`}></div>
                   )}
-                  
+
                   <button
                     className="relative w-full p-4 sm:p-5 md:p-6 lg:p-8 text-left transition-all duration-300"
                     onClick={() => setActiveIndex(index)}
                   >
                     <div className="flex items-center justify-between gap-2 sm:gap-4">
                       <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 flex-1 min-w-0">
-                        <div className={`p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-r ${item.gradient} text-white transform transition-all duration-300 flex-shrink-0 ${
-                          isActive ? 'scale-105 sm:scale-110 shadow-lg' : 'hover:scale-105'
-                        }`}>
+                        <div className={`p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-r ${item.gradient} text-white transform transition-all duration-300 flex-shrink-0 ${isActive ? 'scale-105 sm:scale-110 shadow-lg' : 'hover:scale-105'
+                          }`}>
                           <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
                         </div>
                         <div className="flex-1 min-w-0">
@@ -116,15 +138,13 @@ const DarkAccordionComponent = () => {
                         </div>
                       </div>
                       <ChevronDown
-                        className={`h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-gray-400 transition-all duration-300 flex-shrink-0 ${
-                          isActive ? 'rotate-180 text-cyan-400' : 'hover:text-gray-300'
-                        }`}
+                        className={`h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-gray-400 transition-all duration-300 flex-shrink-0 ${isActive ? 'rotate-180 text-cyan-400' : 'hover:text-gray-300'
+                          }`}
                       />
                     </div>
 
-                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      isActive ? 'max-h-96 opacity-100 mt-3 sm:mt-4 md:mt-6' : 'max-h-0 opacity-0'
-                    }`}>
+                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isActive ? 'max-h-96 opacity-100 mt-3 sm:mt-4 md:mt-6' : 'max-h-0 opacity-0'
+                      }`}>
                       <div className="space-y-3 sm:space-y-4">
                         <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed pl-8 sm:pl-10 md:pl-12 lg:pl-16 pr-2">
                           {item.description}
@@ -153,10 +173,10 @@ const DarkAccordionComponent = () => {
                   alt={services[activeIndex].title}
                   className="w-full h-full object-cover transition-all duration-700 ease-in-out transform hover:scale-105"
                 />
-                
+
                 {/* Overlay with gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-t ${services[activeIndex].gradient} opacity-30 transition-opacity duration-700`}></div>
-                
+
                 {/* Floating stats card */}
                 <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 md:bottom-4 md:left-4 md:right-4 lg:bottom-6 lg:left-6 lg:right-6">
                   <div className="bg-gray-900/90 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-xl border border-gray-700/50">

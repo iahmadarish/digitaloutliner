@@ -179,7 +179,7 @@ const MatchingHeroSection = () => {
       ref={ref}
     >
 
-        <div className="absolute top-10 left-10 w-96 h-96 bg-white/5 rounded-[20px] blur-2xl opacity-10"></div>
+        <div className="absolute top-10 left-10 w-96 h-96 bg-purple-800/40 rounded-[20px] blur-2xl opacity-10"></div>
 
       {/* Background geometric patterns with enhanced effects */}
       <motion.div
