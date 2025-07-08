@@ -53,24 +53,28 @@ const ServiceListingTab = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const sliderRef = useRef<HTMLDivElement>(null)
-  const startX = useRef(0)
-  const currentX = useRef(0)
-  const isDragging = useRef(false)
+  
+  // Touch/drag state
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [currentX, setCurrentX] = useState(0)
+  const [dragOffset, setDragOffset] = useState(0)
 
   // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
-    
+
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   // Handle service card click - navigate to service details using slug
   const handleServiceClick = (serviceType: string) => {
+    if (isDragging) return // Don't navigate if dragging
     const slug = createSlug(serviceType)
     navigate(`/services/${slug}`)
   }
@@ -78,59 +82,85 @@ const ServiceListingTab = () => {
   // Touch handlers for mobile swiper
   const handleTouchStart = (e: React.TouchEvent) => {
     if (!isMobile) return
-    startX.current = e.touches[0].clientX
-    isDragging.current = true
+    setStartX(e.touches[0].clientX)
+    setCurrentX(e.touches[0].clientX)
+    setIsDragging(true)
+    setDragOffset(0)
   }
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isMobile || !isDragging.current) return
-    currentX.current = e.touches[0].clientX
+    if (!isMobile || !isDragging) return
+    const newCurrentX = e.touches[0].clientX
+    const diff = newCurrentX - startX
+    setCurrentX(newCurrentX)
+    setDragOffset(diff)
   }
 
   const handleTouchEnd = () => {
-    if (!isMobile || !isDragging.current) return
-    
-    const diffX = startX.current - currentX.current
+    if (!isMobile || !isDragging) return
+
+    const diffX = startX - currentX
     const threshold = 50
 
     if (Math.abs(diffX) > threshold) {
       if (diffX > 0 && currentSlide < services.length - 1) {
-        setCurrentSlide(currentSlide + 1)
+        setCurrentSlide(prev => prev + 1)
       } else if (diffX < 0 && currentSlide > 0) {
-        setCurrentSlide(currentSlide - 1)
+        setCurrentSlide(prev => prev - 1)
       }
     }
 
-    isDragging.current = false
+    setIsDragging(false)
+    setDragOffset(0)
   }
 
-  // Mouse handlers for desktop drag support
+  // Mouse handlers for desktop drag support (optional)
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!isMobile) return
-    startX.current = e.clientX
-    isDragging.current = true
+    setStartX(e.clientX)
+    setCurrentX(e.clientX)
+    setIsDragging(true)
+    setDragOffset(0)
+    e.preventDefault()
   }
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isMobile || !isDragging.current) return
-    currentX.current = e.clientX
+    if (!isMobile || !isDragging) return
+    const newCurrentX = e.clientX
+    const diff = newCurrentX - startX
+    setCurrentX(newCurrentX)
+    setDragOffset(diff)
   }
 
   const handleMouseUp = () => {
-    if (!isMobile || !isDragging.current) return
-    
-    const diffX = startX.current - currentX.current
+    if (!isMobile || !isDragging) return
+
+    const diffX = startX - currentX
     const threshold = 50
 
     if (Math.abs(diffX) > threshold) {
       if (diffX > 0 && currentSlide < services.length - 1) {
-        setCurrentSlide(currentSlide + 1)
+        setCurrentSlide(prev => prev + 1)
       } else if (diffX < 0 && currentSlide > 0) {
-        setCurrentSlide(currentSlide - 1)
+        setCurrentSlide(prev => prev - 1)
       }
     }
 
-    isDragging.current = false
+    setIsDragging(false)
+    setDragOffset(0)
+  }
+
+  // Navigation functions
+  const nextSlide = () => {
+    if (currentSlide < services.length - 1) {
+      setCurrentSlide(prev => prev + 1)
+    }
+  }
+
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(prev => prev - 1)
+    }
   }
 
   const ServiceCard = ({ service }: { service: any }) => (
@@ -199,31 +229,33 @@ const ServiceListingTab = () => {
   return (
     <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-18 py-16">
       {/* Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-200 mb-4">Our Services</h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          We offers complete business solutions across design, marketing, and Digital Solutions.
+      <div className="text-start font-family-comfort mb-16 md:lg:xl:2xl:flex justify-between items-center md:lg:xl:2x:py-11  px-2">
+        <h2 className="md:lg:xl:2xl:text-4xl text-2xl font-bold text-teal-300 "> Services we are Provide <br /> <span className="text-lg text-white mt-2">Comprehensive Web & App Development Solutions for Your Business</span> </h2>
+        <p className="text-gray-100 text-lg max-w-2xl font-family-mont">
+          <br /> <br />
+
+          We provide end-to-end digital solutions tailored to your business goals — from intuitive design and robust web/app development to strategic digital marketing and scalable tech integrations. Explore globall top-rated web and app development agencies, carefully curated by our experts based on their proven project success, verified client testimonials, competitive pricing, innovation, and team capabilities.
         </p>
-        <div className="w-24 h-1 bg-blue-600 mt-6 mx-auto rounded-full"></div>
       </div>
 
       {/* Mobile Swiper */}
       {isMobile ? (
         <div className="relative">
-          <div 
+          <div
             ref={sliderRef}
-            className="overflow-hidden touch-pan-x"
+            className="overflow-hidden touch-pan-x select-none"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
           >
-            <div 
+            <div
               className="flex transition-transform duration-300 ease-out"
-              style={{ 
-                transform: `translateX(-${currentSlide * 100}%)`,
+              style={{
+                transform: `translateX(${-currentSlide * 100 + (dragOffset / window.innerWidth) * 100}%)`,
                 width: `${services.length * 100}%`
               }}
             >
@@ -235,17 +267,43 @@ const ServiceListingTab = () => {
             </div>
           </div>
 
-          {/* Pagination Dots */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {services.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                  currentSlide === index ? 'bg-blue-600' : 'bg-gray-600'
-                }`}
-              />
-            ))}
+          {/* Navigation Arrows */}
+          <div className="flex justify-between items-center mt-6">
+            <button
+              onClick={prevSlide}
+              disabled={currentSlide === 0}
+              className={`p-3 rounded-full transition-all duration-200 ${
+                currentSlide === 0 
+                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed' 
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
+              }`}
+            >
+              <ArrowRight className="w-5 h-5 rotate-180" />
+            </button>
+
+            <div className="flex space-x-2">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                    currentSlide === index ? 'bg-blue-600 scale-125' : 'bg-gray-600 hover:bg-gray-500'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextSlide}
+              disabled={currentSlide === services.length - 1}
+              className={`p-3 rounded-full transition-all duration-200 ${
+                currentSlide === services.length - 1 
+                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed' 
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
+              }`}
+            >
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </div>
 
           {/* Slide Counter */}

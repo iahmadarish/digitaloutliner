@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, Users, Zap, Shield, Star, Brush, Code, Smartphone } from 'lucide-react';
+import { ChevronDown, Star, Brush, Code, Smartphone } from 'lucide-react';
 import { motion } from "framer-motion";
 
 const services = [
@@ -188,30 +188,6 @@ const DarkAccordionComponent = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-10 sm:mt-12 md:mt-16 lg:mt-20">
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto border border-gray-700/50">
-            <div className="flex flex-col sm:flex-row items-center justify-center mb-3 sm:mb-4 gap-1 sm:gap-2">
-              <Zap className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-cyan-400" />
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white text-center leading-tight">
-                Ready to Transform Your Business?
-              </h2>
-            </div>
-            <p className="text-gray-300 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0">
-              Join hundreds of satisfied clients who trust URSOFTS for their business success. Let's discuss how we can help you achieve your goals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <button className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-400/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center text-sm sm:text-base">
-                <Shield className="h-4 w-4 sm:h-5 sm:w-5 mr-2 flex-shrink-0" />
-                <span>Get Started Today</span>
-              </button>
-              <button className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 border-2 border-gray-600 text-gray-200 font-semibold rounded-lg sm:rounded-xl hover:border-cyan-400 hover:bg-gradient-to-r hover:from-cyan-400/10 hover:to-blue-500/10 hover:text-cyan-400 transition-all duration-300 flex items-center justify-center text-sm sm:text-base">
-                <Users className="h-4 w-4 sm:h-5 sm:w-5 mr-2 flex-shrink-0" />
-                <span>Schedule Consultation</span>
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
