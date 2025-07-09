@@ -19,6 +19,8 @@ import ServiceForm from "./pages/admin/ServiceForm"
 import ProjectForm from "./pages/admin/ProjectForm"
 import Projects from "./pages/client/Projects"
 import BlogDetails from "./pages/client/BlogDetails"
+import Privacy from "./pages/client/Privacy"
+import TermsAndCondition from "./pages/client/TermsAndCondition"
 
 function App() {
   return (
@@ -30,11 +32,13 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="projects" element={<Projects />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:id" element={<BlogDetails />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="privacy-policy" element={<Privacy />} />
+            <Route path="terms-condition" element={<TermsAndCondition />} />
           </Route>
 
           {/* Admin Login */}

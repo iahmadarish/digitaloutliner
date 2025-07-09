@@ -235,7 +235,7 @@ const MatchingHeroSection = () => {
               </motion.div>
 
               {/* Main Heading */}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight sm:leading-snug md:leading-relaxed">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold text-white leading-tight sm:leading-snug md:leading-relaxed">
                 <span className="text-[#79e0a4]">URSOFTS-</span>
                 <span>Where Ideas Meet Innovation and Technology</span>
               </h1>
@@ -263,10 +263,10 @@ const MatchingHeroSection = () => {
           >
             <div className="relative w-full max-w-xs sm:max-w-lg 2xl:lg:md:xl:max-w-6xl">
               {/* Glow effect */}
-              <div className="absolute inset-0 rounded-lg sm:rounded-xl blur-md"></div>
+              <div className="absolute inset-0 rounded-lg  sm:rounded-xl blur-xs"></div>
 
               {/* Image Slider */}
-              <div className="relative overflow-hidden rounded-lg sm:rounded-xl">
+              <div className="relative overflow-hidden  rounded-lg sm:rounded-xl">
                 <Swiper
                   modules={[Autoplay]}
                   autoplay={{
@@ -274,15 +274,15 @@ const MatchingHeroSection = () => {
                     disableOnInteraction: false,
                   }}
                   loop={true}
-                  className=" w-full h-58 sm:h-64 md:h-80 xl:2xl:lg:h-130 rounded-lg sm:rounded-xl"
+                  className=" w-full h-58 sm:h-64 md:h-80 xl:2xl:lg:h-140 rounded-lg sm:rounded-xl"
                 >
                   {sliderImages.map((image, index) => (
                     <SwiperSlide key={index}>
-                      <div className="w-full h-full rounded-lg sm:rounded-xl">
+                      <div className="w-full h-full  rounded-lg sm:rounded-xl">
                         <img
                           src={image || "/placeholder.svg"}
                           alt={`Slide ${index + 1}`}
-                          className="w-full h-full object-contain"
+                          className="w-full  h-full object-contain"
                           loading="eager"
                         />
                       </div>

@@ -45,7 +45,7 @@ const truncateText = (text: string, maxLength: number) => {
       const patterns = [
         { bg: "bg-white", text: "text-gray-800", button: "bg-gray-800 text-white" },
         { bg: "bg-[#d4ff14]", text: "text-black", button: "bg-gray-800 text-white" },
-        { bg: "bg-black", text: "text-white", button: "bg-teal-400 text-gray-800" },
+        { bg: "bg-black/50", text: "text-white", button: "bg-teal-400 text-gray-800" },
       ]
       return patterns[index % 3]
     }
