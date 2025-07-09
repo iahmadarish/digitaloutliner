@@ -1,18 +1,28 @@
-import { useState, useEffect } from "react";
-import { ArrowRight, Code, Zap, Shield, Star, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+"use client"
+
+import { useState, useEffect } from "react"
+import { Sparkles } from "lucide-react"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay } from "swiper/modules"
+import "swiper/css"
+import image from "@/assets/slider/slider.png"
+import image2 from "@/assets/slider/Group 42.png"
+import image3 from "@/assets/slider/Group 43.png"
+import image4 from "@/assets/slider/Group 44.png"
+import image5 from "@/assets/slider/slider.png"
 
 const MatchingHeroSection = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [codeContent, setCodeContent] = useState("");
-  const [currentCodeIndex, setCurrentCodeIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false)
+  const [codeContent, setCodeContent] = useState("")
+  const [currentCodeIndex, setCurrentCodeIndex] = useState(0)
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  });
+  })
 
-
+  console.log(isHovered, setIsHovered)
   const allCodeLines = [
     // First code snippet - Business Growth Formula
     [
@@ -35,7 +45,6 @@ const MatchingHeroSection = () => {
       { text: " ", color: "text-gray-400" },
       { text: "📈", color: "text-red-400" },
     ],
-
     // Second code snippet - Development Approach
     [
       { text: "//", color: "text-gray-500" },
@@ -63,7 +72,6 @@ const MatchingHeroSection = () => {
       { text: ";", color: "text-gray-400" },
       { text: "\n}", color: "text-gray-400" },
     ],
-
     // Third code snippet - Project Success Metrics
     [
       { text: "/*", color: "text-emerald-400" },
@@ -88,109 +96,104 @@ const MatchingHeroSection = () => {
       { text: ": ", color: "text-gray-400" },
       { text: "'24/7'", color: "text-yellow-400" },
       { text: "\n};", color: "text-gray-400" },
-    ]
-  ];
+    ],
+  ]
+
+  const sliderImages = [image, image2, image3, image4, image5]
 
   useEffect(() => {
-    if (!inView) return;
-
-    let timeoutId: NodeJS.Timeout;
-    let currentIndex = 0;
-    let currentLine = 0;
-    let currentText = "";
+    if (!inView) return
+    let timeoutId: NodeJS.Timeout
+    let currentIndex = 0
+    let currentLine = 0
+    let currentText = ""
 
     const typeCode = () => {
-      const currentCode = allCodeLines[currentCodeIndex];
-
+      const currentCode = allCodeLines[currentCodeIndex]
       if (currentLine < currentCode.length) {
-        const line = currentCode[currentLine];
+        const line = currentCode[currentLine]
         if (currentIndex < line.text.length) {
-          currentText += line.text[currentIndex];
-          currentIndex++;
-          setCodeContent(currentText);
-          timeoutId = setTimeout(typeCode, 30);
+          currentText += line.text[currentIndex]
+          currentIndex++
+          setCodeContent(currentText)
+          timeoutId = setTimeout(typeCode, 30)
         } else {
-          currentLine++;
-          currentIndex = 0;
-          timeoutId = setTimeout(typeCode, 30);
+          currentLine++
+          currentIndex = 0
+          timeoutId = setTimeout(typeCode, 30)
         }
       } else {
         // Typing completed, wait 3 seconds and move to next code
         timeoutId = setTimeout(() => {
-          currentIndex = 0;
-          currentLine = 0;
-          currentText = "";
-          setCodeContent("");
-          setCurrentCodeIndex((prevIndex) =>
-            prevIndex === allCodeLines.length - 1 ? 0 : prevIndex + 1
-          );
-          typeCode();
-        }, 3000);
+          currentIndex = 0
+          currentLine = 0
+          currentText = ""
+          setCodeContent("")
+          setCurrentCodeIndex((prevIndex) => (prevIndex === allCodeLines.length - 1 ? 0 : prevIndex + 1))
+          typeCode()
+        }, 3000)
       }
-    };
+    }
 
-    typeCode();
+    typeCode()
 
     return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [inView, currentCodeIndex]);
+      clearTimeout(timeoutId)
+    }
+  }, [inView, currentCodeIndex])
 
-  // Function to render colored code
   const renderColoredCode = () => {
-    // Split the typed content into lines to match the original structure
-    let remainingContent = codeContent;
-    const renderedLines = [];
-    const currentCode = allCodeLines[currentCodeIndex];
+    let remainingContent = codeContent
+    const renderedLines = []
+    const currentCode = allCodeLines[currentCodeIndex]
 
     for (const line of currentCode) {
-      if (remainingContent.length === 0) break;
-
-      const lineLength = line.text.length;
-      const currentLineContent = remainingContent.substring(0, lineLength);
-      remainingContent = remainingContent.substring(lineLength);
+      if (remainingContent.length === 0) break
+      const lineLength = line.text.length
+      const currentLineContent = remainingContent.substring(0, lineLength)
+      remainingContent = remainingContent.substring(lineLength)
 
       renderedLines.push(
         <span key={renderedLines.length} className={line.color}>
           {currentLineContent}
-        </span>
-      );
+        </span>,
+      )
     }
 
     return (
-      <div className="font-mono text-sm md:text-base md:lg:xl:2xl:min-h-[80px] min-h-[140px]">
+      <div className="font-mono text-xs sm:text-sm md:text-base min-h-[100px] sm:min-h-[120px] md:min-h-[140px]">
         {renderedLines}
         <motion.span
           animate={{ opacity: [0, 1, 0] }}
-          transition={{ repeat: Infinity, duration: 1 }}
-          className="ml-1 inline-block w-2 h-6 bg-emerald-400 align-middle"
+          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1 }}
+          className="ml-1 inline-block w-2 h-4 sm:h-6 bg-emerald-400 align-middle"
         ></motion.span>
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen font-family-comfort py-18 bg-cover bg-no-repeat bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] relative overflow-hidden"
+      className="min-h-screen py-12 sm:py-16 md:py-20 bg-cover bg-no-repeat bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] relative overflow-hidden"
       ref={ref}
     >
+      {/* Background elements */}
+      <div className="absolute top-10 left-10 w-48 sm:w-64 h-48 sm:h-64 bg-purple-800/40 rounded-[20px] blur-2xl opacity-10"></div>
 
-        <div className="absolute top-10 left-10 w-96 h-96 bg-purple-800/40 rounded-[20px] blur-2xl opacity-10"></div>
-
-      {/* Background geometric patterns with enhanced effects */}
+      {/* Background geometric patterns */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.1 }}
         transition={{ delay: 0.3, duration: 1 }}
         className="absolute inset-0"
       >
-        <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/90 rotate-45 animate-pulse"></div>
-        <div className="absolute top-60 right-40 w-48 h-48 border border-purple-400/70 rotate-12"></div>
-        <div className="absolute bottom-40 left-60 w-24 h-24 border border-emerald-400/50 -rotate-12 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 border border-cyan-400/50 rotate-45"></div>
+        <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-20 sm:w-32 h-20 sm:h-32 border border-cyan-400/90 rotate-45 animate-pulse"></div>
+        <div className="absolute top-40 sm:top-60 right-20 sm:right-40 w-32 sm:w-48 h-32 sm:h-48 border border-purple-400/70 rotate-12"></div>
+        <div className="absolute bottom-20 sm:bottom-40 left-20 sm:left-60 w-16 sm:w-24 h-16 sm:h-24 border border-emerald-400/50 -rotate-12 animate-pulse"></div>
+        <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-24 sm:w-40 h-24 sm:h-40 border border-cyan-400/50 rotate-45"></div>
       </motion.div>
 
       {/* Floating grid pattern */}
@@ -200,171 +203,99 @@ const MatchingHeroSection = () => {
         transition={{ delay: 0.5, duration: 1 }}
         className="absolute inset-0"
       >
-        <div className="w-full h-full" style={{
-          backgroundImage: `
-            linear-gradient(rgba(34, 211, 238, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(34, 211, 238, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
-        }}></div>
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(34, 211, 238, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(34, 211, 238, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
       </motion.div>
 
       {/* Hero Section */}
-      <div className="relative z-10 mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-40 py-16 pt-20 sm:pt-32">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 mx-auto px-8 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-6 md:space-y-4">
-            <div className="space-y-4">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">
+            <div className="space-y-3 sm:space-y-4">
               {/* Badge */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-sm font-medium text-gray-300"
+                className="inline-flex items-center px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-xs sm:text-sm font-medium text-gray-300"
               >
-                <Sparkles className="h-4 w-4 mr-2 text-cyan-400" />
+                <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 text-cyan-400" />
                 <span className="text-cyan-400">URSOFTS </span>
-                <span className="mx-2 text-gray-600">•</span>
+                <span className="mx-1 sm:mx-2 text-gray-600">•</span>
                 <span>Since 2025</span>
               </motion.div>
 
-              {/* Main Heading - Removed typing effect */}
-              <h1 className="text-4xl sm:text-4xl lg:text-4xl xl:text-6xl font-bold py-8 text-white leading-relaxed">
-              
-                <span className="text-[#79e0a4]">URSOFTS-</span><span>Where Ideas Meet Innovation and Technology 
-                  </span>
+              {/* Main Heading */}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight sm:leading-snug md:leading-relaxed">
+                <span className="text-[#79e0a4]">URSOFTS-</span>
+                <span>Where Ideas Meet Innovation and Technology</span>
               </h1>
             </div>
 
             {/* Code-style description */}
-            <div className="space-y-8">
+            <div className="space-y-4 sm:space-y-6">
               <motion.div
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="bg-[#060336] shadow-cyan-600 shadow-md  backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-700/50 overflow-x-auto"
+                className="bg-[#060336] shadow-cyan-600 shadow-md backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-gray-700/50 overflow-x-auto"
               >
                 {renderColoredCode()}
               </motion.div>
             </div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="grid grid-cols-3 gap-4"
-            >
-              <div className="text-center p-4 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50">
-                <div className="text-2xl font-bold text-cyan-400">5</div>
-                <div className="text-sm text-gray-400">Projects</div>
-              </div>
-              <div className="text-center p-4 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50">
-                <div className="text-2xl font-bold text-purple-400">5</div>
-                <div className="text-sm text-gray-400">Clients</div>
-              </div>
-              <div className="text-center p-4 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50">
-                <div className="text-2xl font-bold text-emerald-400">24/7</div>
-                <div className="text-sm text-gray-400">life time Support</div>
-              </div>
-            </motion.div>
           </div>
 
-          {/* Right Content - Enhanced CTA Card */}
+          {/* Right Content - Image Slider */}
           <motion.div
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0 md:lg:xl:2xl:mt-0 mt-8"
           >
-            <div
-              className="relative group max-w-md w-full"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
+            <div className="relative w-full max-w-xs sm:max-w-lg 2xl:lg:md:xl:max-w-6xl">
               {/* Glow effect */}
-              <motion.div
-                initial={{ opacity: 0.2 }}
-                whileHover={{ opacity: 0.3 }}
-                className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl blur-xl"
-              ></motion.div>
+              <div className="absolute inset-0 rounded-lg sm:rounded-xl blur-md"></div>
 
-              {/* Main card */}
-              <motion.div
-                whileHover={{ y: -5 }}
-                className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 p-6 md:p-8 rounded-2xl hover:border-cyan-400/50 transition-all duration-300 cursor-pointer"
-              >
-                <div className="space-y-6">
-                  {/* Header */}
-                  <div className="flex items-center space-x-4">
-                    <motion.div
-                      whileHover={{ rotate: 10 }}
-                      className="p-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 text-white"
-                    >
-                      <Code className="h-6 w-6" />
-                    </motion.div>
-                    <div>
-                      <h3 className="text-white text-xl font-semibold">
-                        Ready to Start?
-                      </h3>
-                      <p className="text-gray-400 text-sm">
-                        Get your custom quote today
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-300 text-base leading-relaxed">
-                    Tell us about your project and get a tailored solution that drives real business results.
-                  </p>
-
-                  {/* Features */}
-                  <div className="space-y-3">
-                    <motion.div
-                      whileHover={{ x: 5 }}
-                      className="flex items-center space-x-3 text-sm"
-                    >
-                      <Zap className="h-4 w-4 text-yellow-400" />
-                      <span className="text-gray-300">Lightning Fast Development</span>
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ x: 5 }}
-                      className="flex items-center space-x-3 text-sm"
-                    >
-                      <Shield className="h-4 w-4 text-emerald-400" />
-                      <span className="text-gray-300">Enterprise-Grade Security</span>
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ x: 5 }}
-                      className="flex items-center space-x-3 text-sm"
-                    >
-                      <Star className="h-4 w-4 text-purple-400" />
-                      <span className="text-gray-300">Premium Support Included</span>
-                    </motion.div>
-                  </div>
-
-                  {/* CTA Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg hover:shadow-cyan-400/25 transition-all duration-300 flex items-center justify-center space-x-2 group"
-                  >
-                    <span>Get Custom Quote</span>
-                    <motion.span
-                      animate={{ x: isHovered ? 5 : 0 }}
-                      transition={{ type: "spring", stiffness: 500 }}
-                    >
-                      <ArrowRight className="h-5 w-5" />
-                    </motion.span>
-                  </motion.button>
-                </div>
-              </motion.div>
+              {/* Image Slider */}
+              <div className="relative overflow-hidden rounded-lg sm:rounded-xl">
+                <Swiper
+                  modules={[Autoplay]}
+                  autoplay={{
+                    delay: 10000,
+                    disableOnInteraction: false,
+                  }}
+                  loop={true}
+                  className=" w-full h-58 sm:h-64 md:h-80 xl:2xl:lg:h-130 rounded-lg sm:rounded-xl"
+                >
+                  {sliderImages.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="w-full h-full rounded-lg sm:rounded-xl">
+                        <img
+                          src={image || "/placeholder.svg"}
+                          alt={`Slide ${index + 1}`}
+                          className="w-full h-full object-contain"
+                          loading="eager"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default MatchingHeroSection;
+export default MatchingHeroSection

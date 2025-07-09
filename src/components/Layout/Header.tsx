@@ -133,7 +133,7 @@ const URSOFTSNavbar = () => {
         </nav>
       </div>
 
-      {/* Navigation Row - Desktop Only */}Left Contact Button
+      {/* Navigation Row - Desktop Only */}
       <div className="hidden md:block border-b border-cyan-400/30">
         <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-3">
           <div className="flex justify-center items-center">
