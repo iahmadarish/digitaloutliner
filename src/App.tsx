@@ -18,6 +18,7 @@ import AdminProjects from "./pages/admin/AdminProjects"
 import ServiceForm from "./pages/admin/ServiceForm"
 import ProjectForm from "./pages/admin/ProjectForm"
 import Projects from "./pages/client/Projects"
+import BlogDetails from "./pages/client/BlogDetails"
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="projects" element={<Projects />} />
             <Route path="blog" element={<Blog />} />
+            <Route path="blog/:id" element={<BlogDetails />} />
             <Route path="contact" element={<Contact />} />
           </Route>
 

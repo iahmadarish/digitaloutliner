@@ -6,7 +6,7 @@ import { Autoplay, EffectFade, Pagination } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/effect-fade"
 import "swiper/css/pagination"
-import logo from "@/assets/logo.png"
+// import logo from "@/assets/logo.png"
 import {
   ArrowLeft,
   CheckCircle,
@@ -92,10 +92,11 @@ export default function ServiceDetail() {
       <ScrollToTop/>
       {/* Header Navigation */}
       <motion.div {...fadeInUp} className="bg-black backdrop-blur-lg border-b sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-4">
-              <img src={logo} className="h-fit w-25" alt="" />
+              <p className="font-family-comfort font-bold text-xl text-[#05e6f1]">URSOFTS</p>
+              {/* <img src={logo} className="h-fit w-25" alt="" /> */}
               <button
                 onClick={() => navigate("/services")}
                 className="flex items-center text-white hover:text-gray-200 transition-colors px-3 py-2 rounded-md "

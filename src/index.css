@@ -10,7 +10,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
-
+/* mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 */
 /* Custom theme configuration */
 @theme {
   --font-family-sans: "Inter", system-ui, sans-serif;
@@ -224,6 +224,9 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
+
+
+
 
 @layer base {
   * {

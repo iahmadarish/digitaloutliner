@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]  text-white py-12">
+    <footer className="bg-gradient-to-br font-family-comfort from-[#0b0f19] via-[#111827] to-[#0b0f19]  text-white py-12">
       <div className="mx-auto px-9 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Section */}
