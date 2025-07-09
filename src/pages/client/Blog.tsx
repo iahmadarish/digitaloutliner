@@ -2,21 +2,26 @@ import { Link } from "react-router-dom";
 import { blogs } from "../../data/blogData";
 import { Calendar, Clock, User, ArrowRight } from "lucide-react";
 import BlogIcon from "../../components/blog/BlogIcon";
-
+import logo from "../../assets/logour.png"
 const Blog = () => {
   // Get featured post (first blog) and regular posts
   const featuredPost = blogs[0];
   const regularPosts = blogs.slice(1);
 
   return (
-    <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]  pt-40 min-h-screen">
+    <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]  pt-40 min-h-screen">
       {/* Hero Section */}
-      <div className="bg-[#] py-20 px-4 sm:px-6 lg:px-8 text-white">
-        <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-family-comfort">Insights & Updates</h1>
-          <p className="text-xl sm:text-2xl max-w-3xl mx-auto opacity-90 font-family-mont">
-            The latest trends, strategies, and innovations in digital technology
-          </p>
+      <div className="bg-[#]  md:lg:xl:2xl:sm:py-20 py-10  px-4 sm:px-6 lg:px-8 text-white">
+        <div className="md:lg:xl:2xl:sm:flex space-y-8 items-center px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 text-center">
+          <div className="">
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-family-comfort"> Insights & Updates</h1>
+            <p className="text-xl sm:text-2xl max-w-3xl mx-auto opacity-90 font-family-mont">
+              The latest trends, strategies, and innovations in digital technology
+            </p>
+          </div>
+
+          <img src={logo} alt="" />
         </div>
       </div>
 
@@ -43,9 +48,9 @@ const Blog = () => {
                     {featuredPost.category}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{featuredPost.title}</h3>
-                <p className="text-gray-600 mb-6">{featuredPost.excerpt}</p>
-                <div className="flex items-center justify-between">
+                <h3 className="md:lg:xl:2xl:sm:text-2xl text-xl font-bold text-gray-900 mb-3">{featuredPost.title}</h3>
+                <p className="text-gray-700 mb-6 leading-relaxed">{featuredPost.excerpt}</p>
+                <div className="space-y-4 ">
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
                     <span className="flex items-center">
                       <User className="w-4 h-4 mr-1" />

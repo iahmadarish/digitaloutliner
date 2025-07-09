@@ -5,7 +5,7 @@ import { Menu, X, Phone, Mail } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import type { Variants } from "framer-motion"
 import { Link } from "react-router-dom"
-
+import logo from "@/assets/logour.png"
 const URSOFTSNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -111,10 +111,7 @@ const URSOFTSNavbar = () => {
 
             {/* URSOFTS Logo - Center */}
             <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
-
-              <div className="">
-                <div className="text-white text-2xl lg:text-3xl font-bold tracking-wider font-family-comfort italic">URSOFTS</div>
-              </div>
+              <img src={logo} className="h-14" alt="URSOFTS Logo" />
             </Link>
 
             {/* Contact Email - Right Side */}
@@ -126,17 +123,17 @@ const URSOFTSNavbar = () => {
             <motion.div className="md:hidden z-50" whileTap={{ scale: 0.9 }}>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-full transition-colors text-white hover:text-white/80"
+                className="p-2 rounded-full transition-colors  hover:text-blue-400"
                 aria-label="Toggle menu"
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMenuOpen ? <X className="h-8 w-8 rounded-full p-2 text-black bg-white" /> : <Menu className="h-8 w-8 text-white" />}
               </button>
             </motion.div>
           </div>
         </nav>
       </div>
 
-      {/* Navigation Row - Desktop Only */}
+      {/* Navigation Row - Desktop Only */}Left Contact Button
       <div className="hidden md:block border-b border-cyan-400/30">
         <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-3">
           <div className="flex justify-center items-center">
@@ -167,13 +164,13 @@ const URSOFTSNavbar = () => {
           >
             {/* Mobile Menu Header */}
             <div className="flex bg-black/90 justify-between items-center px-4 py-4 border-b border-cyan-400/30">
-              <div className="text-white text-xl font-bold tracking-">URSOFTS</div>
+              <img src={logo} className="h-14" alt="URSOFTS Logo" />
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white hover:text-white/80 p-2 rounded-full transition-colors"
+                className="text-white h-6 w-6 bg-  hover:text-white/80 p-2 rounded-full transition-colors"
                 aria-label="Close menu"
               >
-                <X className="h-6 w-6" />
+                {/* <X className="h-6 w-6" /> */}
               </button>
             </div>
 

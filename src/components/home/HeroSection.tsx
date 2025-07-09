@@ -230,18 +230,18 @@ const MatchingHeroSection = () => {
               </motion.div>
 
               {/* Main Heading - Removed typing effect */}
-              <h1 className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-bold py-8 text-white leading-relaxed">
                 {fullHeading}
               </h1>
             </div>
 
             {/* Code-style description */}
-            <div className="space-y-4">
+            <div className="space-y-8">
               <motion.div
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-700/50 overflow-x-auto"
+                className="bg-[#101547] backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-700/50 overflow-x-auto"
               >
                 {renderColoredCode()}
               </motion.div>

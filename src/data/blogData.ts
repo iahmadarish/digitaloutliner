@@ -17,30 +17,38 @@ export interface Blog {
 }
 
 export const blogs: Blog[] = [
-  {
-    id: 1,
-    title: "Top 5 Web Development Trends in 2024",
-    excerpt: "Discover the cutting-edge technologies shaping modern web development this year.",
-    description: [
-      "The web development landscape continues to evolve at a rapid pace...",
-      // rest of description
-    ],
-    bulletPoints: [
-      "WebAssembly (Wasm) adoption is growing...",
-      // rest of bullet points
-    ],
-    date: "June 10, 2024",
-    readTime: "6 min read",
-    author: "Alex Johnson",
-    authorRole: "Senior Web Developer",
-    category: "Web Development",
-    images: [
-      "https://metasoft.io/wp-content/uploads/2024/10/Top-Web-Development-Frameworks-1.jpg",
-      "https://www.cdmi.in/courses@2x/web-developments.webp",
-      "https://www.creative-tim.com/blog/content/images/2022/01/which-development-job-is-right-for-you.jpg"
-    ],
-    iconName: "code" // Changed to string reference
-  },
+{
+  id: 1,
+  title: "Top 5 Web Development Trends in 2024: What Every Developer Should Know",
+  excerpt: "Explore the top 5 web development trends that are revolutionizing the digital world in 2024, from WebAssembly to AI integration. Stay ahead in the fast-paced tech industry.The web development landscape continues to evolve at a rapid pace, and 2024 is no exception. With the rise of new technologies and the maturing of existing tools, developers and businesses alike need to stay ahead of the curve to remain competitive. Whether you are a full-stack developer, a startup founder, or a tech enthusiast, understanding the latest trends in web development is crucial.",
+  description: [
+    "The web development landscape continues to evolve at a rapid pace, and 2024 is no exception. With the rise of new technologies and the maturing of existing tools, developers and businesses alike need to stay ahead of the curve to remain competitive. Whether you are a full-stack developer, a startup founder, or a tech enthusiast, understanding the latest trends in web development is crucial.",
+    "In this article, we explore the **top five web development trends in 2024** that are shaping the way websites and web applications are being built. From the growing adoption of **WebAssembly** to the increasing use of **AI-powered development tools**, these trends are more than just buzzwords — they represent the future of how we interact with the web.",
+    "By implementing these innovative strategies, developers can create more powerful, efficient, and user-friendly digital experiences. Let’s dive into what’s making waves in web development this year."
+  ],
+  bulletPoints: [
+    "**WebAssembly (Wasm)** is seeing widespread adoption, enabling near-native performance for web apps and expanding the languages developers can use beyond JavaScript.",
+    "**AI and Machine Learning integration** in development workflows is streamlining debugging, code completion, and testing using tools like GitHub Copilot and ChatGPT.",
+    "**Serverless Architecture** is becoming a preferred choice for scalable applications, reducing infrastructure management and speeding up deployment cycles.",
+    "**Jamstack Frameworks** (e.g., Next.js, Astro, Nuxt) are dominating modern development with improved performance, security, and development flexibility.",
+    "**Progressive Web Apps (PWAs)** are delivering app-like experiences on mobile and desktop, with improved offline capabilities and faster load times."
+  ],
+  date: "June 10, 2024",
+  readTime: "6 min read",
+  author: "Alex Johnson",
+  authorRole: "Senior Web Developer",
+  category: "Web Development",
+  tags: ["Web Development", "2024 Trends", "AI in Web Dev", "WebAssembly", "PWAs", "Jamstack", "Serverless"],
+  metaTitle: "Top 5 Web Development Trends in 2024 | Stay Ahead with AI, Wasm, and PWAs",
+  metaDescription: "Discover the top web development trends in 2024 including WebAssembly, AI tools, PWAs, and serverless architecture. Learn how to stay ahead in the evolving web tech landscape.",
+  images: [
+    "https://metasoft.io/wp-content/uploads/2024/10/Top-Web-Development-Frameworks-1.jpg",
+    "https://www.cdmi.in/courses@2x/web-developments.webp",
+    "https://www.creative-tim.com/blog/content/images/2022/01/which-development-job-is-right-for-you.jpg"
+  ],
+  iconName: "code"
+}
+,
   {
   id: 2,
   title: "Why Cross-Platform Mobile App Development is the Future",
