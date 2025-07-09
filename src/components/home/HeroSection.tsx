@@ -12,7 +12,6 @@ const MatchingHeroSection = () => {
     threshold: 0.1,
   });
 
-  const fullHeading = "Build, Scale, and Succeed — with URSOFTS";
 
   const allCodeLines = [
     // First code snippet - Business Growth Formula
@@ -230,8 +229,10 @@ const MatchingHeroSection = () => {
               </motion.div>
 
               {/* Main Heading - Removed typing effect */}
-              <h1 className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-bold py-8 text-white leading-relaxed">
-                {fullHeading}
+              <h1 className="text-4xl sm:text-4xl lg:text-4xl xl:text-6xl font-bold py-8 text-white leading-relaxed">
+              
+                <span className="text-[#79e0a4]">URSOFTS-</span><span>Where Ideas Meet Innovation and Technology 
+                  </span>
               </h1>
             </div>
 
@@ -241,7 +242,7 @@ const MatchingHeroSection = () => {
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="bg-[#101547] backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-700/50 overflow-x-auto"
+                className="bg-[#060336] shadow-cyan-600 shadow-md  backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-700/50 overflow-x-auto"
               >
                 {renderColoredCode()}
               </motion.div>
