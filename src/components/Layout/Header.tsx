@@ -196,7 +196,7 @@ const URSOFTSNavbar = () => {
 
                 {/* Contact Us button in mobile menu */}
                 <motion.div variants={itemVariants} className="pt-4">
-                  <button className="w-full px-4 py-3 border border-white/30 rounded-md text-white text-lg font-medium hover:bg-white/10 transition-colors duration-200">
+                  <button className="w-full px-4 py-3 border border-[#ffffff] rounded-md text-[#ffffff] text-lg font-medium hover:bg-white/10 transition-colors duration-200">
                     Contact Us
                   </button>
                 </motion.div>
