@@ -66,13 +66,12 @@ const AboutHero = () => {
           <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <div className="relative">
               {/* Main Image Container */}
-              <div className="relative bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative  rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src={image}
                   alt="Team collaboration"
-                  className="w-full h-130 object-cover"
+                  className="w-full h-130 object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
               </div>
               
               {/* Floating accent elements */}

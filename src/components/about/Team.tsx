@@ -1,14 +1,16 @@
+import shifat from "@/assets/shifat.jpg"
+import mizan from "@/assets/taison.jpg"
 export default function Team() {
   const teamMembers = [
     {
-      name: "Taylor Morgan",
-      role: "UI/UX Designer",
-      image: "https://t4.ftcdn.net/jpg/10/22/44/55/360_F_1022445581_5o7m2OCMM8siBmIQITbIXijbpXhU3Oqm.jpg"
+      name: "Solaiman Islam ",
+      role: "Senior Full Stack Developer",
+      image: shifat
     },
     {
-      name: "Alec Bennet",
-      role: "Senior Back-End Developer",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+      name: "Mizanur Rahman",
+      role: "Leader & Senior Consultant",
+      image: mizan
     },
     {
       name: "Emily Rivera",

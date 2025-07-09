@@ -74,9 +74,9 @@ const truncateText = (text: string, maxLength: number) => {
             </div>
 
             {/* Service Description */}
-            <div className="flex-1 font-family-mont md:lg:xl:2xl:sm:block hidden mb-8">
+            <div className="flex-1 font-family-varta md:lg:xl:2xl:sm:block hidden mb-8">
               <p
-                className={`text-sm md:lg:xl:2xl:text-xl leading-relaxed ${cardStyle.text === "text-white" ? "text-gray-200" : "text-gray-800"}`}
+                className={`text-sm md:lg:xl:2xl:text-xl  leading-relaxed ${cardStyle.text === "text-white" ? "text-gray-200" : "text-gray-800"}`}
               >
 
                 {service.shortDetails}

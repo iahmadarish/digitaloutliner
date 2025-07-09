@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varta:wght@300..700&display=swap');
 
 @import "tw-animate-css";
 @import "tailwindcss";
@@ -15,7 +16,7 @@
 @theme {
   --font-family-sans: "Inter", system-ui, sans-serif;
   --font-family-small: "Pathway Extreme", sans-serif;
-  --font-family-medium: "Share", sans-serif;
+  --font-family-Varta: "Varta", sans-serif;
   --font-family-heading: "Libre Baskerville", serif;
   --font-family-comfort:  "Comfortaa", sans-serif;
   --font-family-mont:  "Montserrat", sans-serif;

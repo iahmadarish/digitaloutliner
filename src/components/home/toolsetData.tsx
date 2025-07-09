@@ -45,7 +45,7 @@ const toolsetData: ToolsetCategory[] = [
       {
         name: "Vite",
         color: "bg-purple-600",
-        image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"
+        image: "https://img.icons8.com/?size=512&id=jD-fJzVguBmw&format=png"
       }
     ]
   },
