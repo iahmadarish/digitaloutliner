@@ -121,11 +121,11 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-gray-950">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] py-40 text-white">
+      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] pt-40 text-white">
         <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 ">
           <div className="text-center">
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 font-family-comfort">
               Transform Your Business with
               <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 Cutting-Edge Technology
@@ -161,12 +161,14 @@ const ServicesPage = () => {
       </div>
 
       {/* Services Section */}
-      <div className="py-12 sm:py-16 lg:py-20 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Our Services</h2>
-            <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
-              Comprehensive IT solutions tailored to meet your specific business requirements
+      <div className="py-20  bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+        <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="md:lg:xl:2xl:text-start text-center flex justify-between mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4 bg-[#62ed17] font-family-comfort px-4 py-2 h-fit rounded">Our Services</h2>
+            <p className="text-lg sm:text-xl text-gray-400 max-w-2xl font-family-mont">
+              We provide end-to-end digital solutions tailored to your business goals — from intuitive design and
+                robust web/app development to strategic digital marketing and scalable tech integrations. Explore
+                globally our service and growth significantly. 
             </p>
           </div>
           <div className="space-y-6 sm:space-y-8">

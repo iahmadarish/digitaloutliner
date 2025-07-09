@@ -1,5 +1,10 @@
-import { Search, Lock, ArrowRight, User, FileText } from 'lucide-react';
+import { Search, ArrowRight, User } from 'lucide-react';
 import image from "@/assets/Group 38.png"
+import datasecurity from "@/assets/Types-of-Data-Security.png"
+import growth from "@/assets/growth.jpg"
+import communication from "@/assets/icloud.jpg"
+
+
 export default function OurBenefit() {
   return (
     <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white min-h-screen p-8">
@@ -76,14 +81,7 @@ export default function OurBenefit() {
             
             {/* Security Visual */}
             <div className="flex justify-center">
-              <div className="relative">
-                <div className="w-32 h-32 bg-blue-900 rounded-full flex items-center justify-center">
-                  <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center">
-                    <Lock className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-                <div className="absolute inset-0 border-2 border-blue-500 rounded-full animate-pulse"></div>
-              </div>
+            <img src={datasecurity} alt="" />
             </div>
           </div>
 
@@ -108,7 +106,7 @@ export default function OurBenefit() {
           </div>
 
           {/* Exponential Growth */}
-          <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl p-6 border hover:shadow-sm shadow-blue-600 border-gray-800">
+          <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl py-6 px-2 border hover:shadow-sm shadow-blue-600 border-gray-800">
             <h3 className="text-xl font-semibold mb-4">Exponential Growth</h3>
             <p className="text-gray-200 mb-6">
               Our solutions are built to scale with your business, 
@@ -116,7 +114,7 @@ export default function OurBenefit() {
             </p>
             
             {/* Growth Visual */}
-            <div className="flex justify-center">
+            <div className="md:lg:xl:2xl:flex gap-x-4 space-y-3">
               <div className="relative">
                 <div className="w-32 h-32 border-4 border-blue-500 rounded-full flex items-center justify-center">
                   <div className="text-center">
@@ -126,11 +124,14 @@ export default function OurBenefit() {
                 </div>
                 <div className="absolute top-0 left-0 w-32 h-32 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
               </div>
+              <div className="">
+                <img src={growth} className='rounded' alt="" />
+              </div>
             </div>
           </div>
 
           {/* Direct Communication */}
-          <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl p-6 border border-gray-800 lg:col-span-2 hover:shadow-sm shadow-blue-600 ">
+          <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl py-6 px-3 border border-gray-800 lg:col-span-2 hover:shadow-sm shadow-blue-600 ">
             <h3 className="text-xl font-semibold mb-4">Direct Communication</h3>
             <p className="text-gray-100 mb-6">
               From start to finish, you'll have direct access to our team of experts, 
@@ -138,42 +139,14 @@ export default function OurBenefit() {
             </p>
             
             {/* Communication Interface */}
-            <div className="bg-gray-800 rounded-lg p-4">
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                    <User className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium">Chris Jones</div>
-                    <div className="text-xs text-gray-100">Status update...</div>
-                  </div>
-                  <div className="ml-auto text-xs text-gray-100">10m</div>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                    <User className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium">Julia Peters</div>
-                    <div className="flex items-center space-x-2">
-                      <FileText className="w-3 h-3 text-gray-100" />
-                      <span className="text-xs text-gray-100">Invoice</span>
-                    </div>
-                  </div>
-                  <div className="ml-auto text-xs text-gray-100">15m</div>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                    <User className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-gray-100">Henry Hek</div>
-                  </div>
-                  <div className="ml-auto text-xs text-gray-100">25m</div>
-                </div>
+            <div className=" rounded-lg space-y-3 md:lg:xl:2xl:flex justify-between ">
+              <div className="">
+                <img className='' src={communication} alt="" />
+              </div>
+              <div className="md:lg:xl:2xl:px-4 py-2">
+                <p>
+                 Effective communication channels for manufacturing teams include daily shift briefings, face-to-face meetings, and digital tools like messaging apps and collaboration platforms. These channels ensure that information is consistently shared across all shifts and locations.
+                </p>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import {  Globe, Shield, Users, Zap, Leaf, Target, HeartHandshake, Rocket } from 'lucide-react';
+import { Code, Smartphone, Globe, Shield, Users, Zap, Monitor, Rocket } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -22,10 +22,56 @@ const itemVariants = {
   }
 };
 
+const FloatingElement = ({ children, className, delay = 0 }: { children: React.ReactNode; className: string; delay?: number }) => (
+  <motion.div
+    className={`absolute ${className}`}
+    animate={{
+      y: [0, -10, 0],
+      rotate: [0, 5, 0],
+    }}
+    transition={{
+      duration: 3,
+      repeat: Infinity,
+      delay,
+      ease: "easeInOut"
+    }}
+  >
+    {children}
+  </motion.div>
+);
+
 const MissionAbout = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen py-16 px-4">
-      <div className="mx-auto px-6 xl:2xl:lg:px-20">
+    <div className=" min-h-screen py-16 px-4 relative overflow-hidden">
+      {/* Floating Background Elements */}
+      <FloatingElement className="top-20 left-10 text-blue-200" delay={0}>
+        <Code className="w-16 h-16 opacity-30" />
+      </FloatingElement>
+      <FloatingElement className="top-32 right-20 text-purple-200" delay={1}>
+        <Smartphone className="w-12 h-12 opacity-40" />
+      </FloatingElement>
+      <FloatingElement className="bottom-40 left-20 text-green-200" delay={2}>
+        <Monitor className="w-14 h-14 opacity-15" />
+      </FloatingElement>
+      <FloatingElement className="bottom-20 right-16 text-red-200" delay={0.5}>
+        <Globe className="w-18 h-18 opacity-15" />
+      </FloatingElement>
+      
+      {/* Geometric Background Shapes */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <motion.div
+          className="absolute top-20 right-1/4 w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full opacity-20"
+          animate={{ scale: [1, 1.1, 1], rotate: [0, 180, 360] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute bottom-32 left-1/3 w-24 h-24 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg opacity-15"
+          animate={{ rotate: [0, 45, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
+
+      <div className="mx-auto px-6 xl:2xl:lg:px-20 relative z-10">
         {/* Animated Header */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -33,11 +79,11 @@ const MissionAbout = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold text-gray-800 mb-4 tracking-tight">
-            Our <span className="text-red-600">Purpose</span> & Promise
+          <h1 className="text-5xl font-bold text-gray-100 mb-4 tracking-tight">
+            Our <span className="text-blue-600">Vision</span> & Values
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Driving meaningful change through collaboration, expertise, and innovative solutions
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+            Transforming ideas into powerful digital solutions through cutting-edge technology and innovative development
           </p>
         </motion.div>
 
@@ -49,45 +95,45 @@ const MissionAbout = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="grid md:grid-cols-3 gap-8 mb-16"
         >
-          {/* Collaboration Card */}
+          {/* Custom Development Card */}
           <motion.div 
             variants={itemVariants}
-            className="bg-white rounded-2xl shadow-md p-8 border-t-4 border-red-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-          >
-            <div className="flex items-center mb-6">
-              <div className="bg-red-100 p-3 rounded-xl mr-4">
-                <HeartHandshake className="w-8 h-8 text-red-600" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-800">
-                Collective <span className="text-red-600">Impact</span>
-              </h2>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              We believe the most transformative solutions emerge from <span className="font-semibold text-gray-800">deep collaboration</span>. 
-              By working hand-in-hand with our clients, we unlock <span className="text-red-600 font-semibold">breakthrough ideas</span> that 
-              deliver exceptional results.
-            </p>
-          </motion.div>
-
-          {/* Global Perspective Card */}
-          <motion.div 
-            variants={itemVariants}
-            className="bg-white rounded-2xl shadow-md p-8 border-t-4 border-blue-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+            className="bg- rounded-2xl shadow-sm p-8 border bg-[#0fff23] border-blue-500 hover:shadow-lg shadow-blue-200 transition-all duration-300 hover:-translate-y-2"
           >
             <div className="flex items-center mb-6">
               <div className="bg-blue-100 p-3 rounded-xl mr-4">
-                <Globe className="w-8 h-8 text-blue-600" />
+                <Code className="w-8 h-8 text-blue-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">World-Class Expertise</h2>
+              <h2 className="text-2xl font-bold text-gray-800">
+                Custom <span className="text-blue-600">Development</span>
+              </h2>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              Our <span className="text-blue-600 font-semibold">diverse global team</span> brings unparalleled technical and strategic knowledge 
-              to every challenge. We combine <span className="font-semibold">local insights</span> with <span className="font-semibold">international best practices</span> 
-              to deliver exceptional outcomes.
+              We craft <span className="font-semibold text-gray-800">tailored web applications</span> and software solutions 
+              that perfectly align with your business needs. From concept to deployment, we deliver 
+              <span className="text-blue-600 font-semibold"> scalable, robust systems</span> that drive growth.
             </p>
           </motion.div>
 
-          {/* Innovation Card */}
+          {/* Mobile Solutions Card */}
+          <motion.div 
+            variants={itemVariants}
+            className="bg-white rounded-2xl shadow-md p-8 border-t-4 border-purple-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+          >
+            <div className="flex items-center mb-6">
+              <div className="bg-purple-100 p-3 rounded-xl mr-4">
+                <Smartphone className="w-8 h-8 text-purple-600" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-800">Mobile Excellence</h2>
+            </div>
+            <p className="text-gray-600 leading-relaxed">
+              Our <span className="text-purple-600 font-semibold">mobile-first approach</span> ensures your applications 
+              perform flawlessly across all devices. We build <span className="font-semibold">native and cross-platform apps</span> 
+              that deliver exceptional user experiences and drive engagement.
+            </p>
+          </motion.div>
+
+          {/* Technology Stack Card */}
           <motion.div 
             variants={itemVariants}
             className="bg-white rounded-2xl shadow-md p-8 border-t-4 border-green-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
@@ -96,23 +142,24 @@ const MissionAbout = () => {
               <div className="bg-green-100 p-3 rounded-xl mr-4">
                 <Rocket className="w-8 h-8 text-green-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">Future-Ready Solutions</h2>
+              <h2 className="text-2xl font-bold text-gray-800">Modern Tech Stack</h2>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              We design solutions that are <span className="font-semibold text-gray-800">practical today</span> and <span className="font-semibold">scalable for tomorrow</span>. 
-              Every recommendation balances:
+              We leverage <span className="font-semibold text-gray-800">cutting-edge technologies</span> and frameworks to build 
+              solutions that are <span className="font-semibold">future-ready and maintainable</span>. 
+              Our expertise spans:
             </p>
             <div className="flex flex-wrap gap-3 mt-4">
-              <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold flex items-center">
+              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold flex items-center">
                 <Shield className="w-4 h-4 mr-1" />
-                Safety
+                Security
               </span>
-              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
-                Innovation
+              <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
+                Performance
               </span>
               <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold flex items-center">
-                <Leaf className="w-4 h-4 mr-1" />
-                Sustainability
+                <Zap className="w-4 h-4 mr-1" />
+                Scalability
               </span>
             </div>
           </motion.div>
@@ -128,20 +175,20 @@ const MissionAbout = () => {
         >
           <div className="flex items-center mb-6">
             <div className="bg-gray-800 p-3 rounded-xl mr-4">
-              <Target className="w-8 h-8 text-white" />
+              <Monitor className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-3xl font-bold text-gray-800">Our Core Beliefs</h2>
+            <h2 className="text-3xl font-bold text-gray-800">Our Development Philosophy</h2>
           </div>
           <p className="text-gray-700 leading-relaxed text-lg mb-6">
-            At our core, we're driven by the belief that <span className="text-red-600 font-semibold">positive change creates a better world</span>. 
-            This conviction shapes our culture and guides every decision we make.
+            We believe that <span className="text-blue-600 font-semibold">great software transforms businesses</span>. 
+            Every line of code we write is guided by our commitment to quality, innovation, and client success.
           </p>
           <motion.div 
             whileHover={{ scale: 1.02 }}
             className="inline-block"
           >
-            <button className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-300 flex items-center">
-              <span>Explore Our Manifesto</span>
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-300 flex items-center">
+              <span>View Our Portfolio</span>
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -161,12 +208,12 @@ const MissionAbout = () => {
             variants={itemVariants}
             className="text-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
           >
-            <div className="bg-gradient-to-br from-red-100 to-red-200 p-4 rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <Users className="w-10 h-10 text-red-600" />
+            <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-4 rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+              <Users className="w-10 h-10 text-blue-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Authentic Partnerships</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Client-Centered Approach</h3>
             <p className="text-gray-600">
-              We build relationships based on trust, transparency, and mutual success. Your challenges become our shared mission.
+              We prioritize understanding your unique challenges and goals, delivering solutions that exceed expectations and drive measurable results.
             </p>
           </motion.div>
           
@@ -174,12 +221,12 @@ const MissionAbout = () => {
             variants={itemVariants}
             className="text-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
           >
-            <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-4 rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <Zap className="w-10 h-10 text-blue-600" />
+            <div className="bg-gradient-to-br from-purple-100 to-purple-200 p-4 rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+              <Zap className="w-10 h-10 text-purple-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Bold Innovation</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Agile Innovation</h3>
             <p className="text-gray-600">
-              We challenge conventional thinking to develop cutting-edge solutions that redefine what's possible.
+              We embrace modern development methodologies to deliver solutions faster while maintaining the highest quality standards.
             </p>
           </motion.div>
           
@@ -188,11 +235,11 @@ const MissionAbout = () => {
             className="text-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
           >
             <div className="bg-gradient-to-br from-green-100 to-green-200 p-4 rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <Leaf className="w-10 h-10 text-green-600" />
+              <Shield className="w-10 h-10 text-green-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Responsible Progress</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Reliable & Secure</h3>
             <p className="text-gray-600">
-              We measure success not just by results, but by the positive impact we create for people and the planet.
+              Security and reliability are built into every solution we create, ensuring your data and users are always protected.
             </p>
           </motion.div>
         </motion.div>
@@ -205,15 +252,15 @@ const MissionAbout = () => {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
-            Ready to create <span className="text-red-600">impact</span> together?
+          <h2 className="text-3xl font-bold text-gray-200 mb-6">
+            Ready to build something <span className="text-blue-600">amazing</span> together?
           </h2>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            className="border-1 border-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            Connect With Our Team
+            Start Your Project
           </motion.button>
         </motion.div>
       </div>

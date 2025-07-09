@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]  text-white py-12">
-      <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+      <div className="mx-auto px-9 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Section */}
           <div>
@@ -44,9 +44,9 @@ export default function Footer() {
           <div>
             <h3 className="text-orange-400 text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-3 text-gray-300">
-              <p>123 Street, New York, USA</p>
-              <p>+012 345 67890</p>
-              <p>info@example.com</p>
+              <p>458 , New York, USA</p>
+              <p>+023 465 67890</p>
+              <p>info@ursofts.com</p>
               
               {/* Social Media Icons */}
               <div className="flex space-x-3 mt-4">
@@ -80,12 +80,12 @@ export default function Footer() {
             <h3 className="text-orange-400 text-lg font-semibold mb-4">Opening</h3>
             <div className="space-y-2 text-gray-300">
               <div>
-                <p className="font-medium">Monday - Saturday</p>
-                <p>09AM - 09PM</p>
+                <p className="font-medium"> Saturday-Thursday</p>
+                <p>24/7</p>
               </div>
               <div className="mt-3">
-                <p className="font-medium">Sunday</p>
-                <p>10AM - 08PM</p>
+                <p className="font-medium">Friday</p>
+                <p>8PM - 11PM</p>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function Footer() {
           <div>
             <h3 className="text-orange-400 text-lg font-semibold mb-4">Newsletter</h3>
             <p className="text-gray-300 mb-4">
-              Dolor amet sit justo amet elitr clita ipsum elitr est.
+              Submit email to get updated our all exelence news and offer!
             </p>
             <div className="flex">
               <input
@@ -113,7 +113,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © Your Site Name, All Right Reserved.
+              © URSOFTS, All Right Reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Home</a>

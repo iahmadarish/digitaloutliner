@@ -6,7 +6,7 @@ import {
 import { useNavigate } from "react-router-dom"
 import { services } from "../../data/service" // Import your services data
 import { useState } from "react"
-
+ 
 // Function to create URL-friendly slug from serviceType
 const createSlug = (serviceType: string) => {
   return serviceType
@@ -46,7 +46,7 @@ const ServiceListingTab = () => {
     return (
       <div
         onClick={() => handleServiceClick(service.serviceType)}
-        className={`${cardStyle.bg} ${cardStyle.text} rounded-2xl p-8 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl relative overflow-hidden group`}
+        className={`${cardStyle.bg} ${cardStyle.text} rounded-2xl p-8 cursor-pointer transition-all duration-300 shadow-blue-500 hover:shadow-md relative overflow-hidden group`}
       >
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-32 h-32 opacity-10 transform translate-x-8 -translate-y-8">
@@ -129,7 +129,7 @@ const ServiceListingTab = () => {
                 <span className="bg-green-400 text-black px-4 py-2 rounded-lg font-bold text-lg">SERVICES</span>
               </div>
               <p className="text-white text-lg mt-4 leading-relaxed">
-                At our digital marketing agency, we offer a range of services to help businesses grow and succeed
+                At URSOFTS, we offer a range of services to help businesses grow and succeed
                 online. These services include:
               </p>
             </div>
@@ -148,7 +148,7 @@ const ServiceListingTab = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 ">
           {displayedServices.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
