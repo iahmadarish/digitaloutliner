@@ -21,7 +21,7 @@ export default function OurBenefit() {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Clear Project Backlog */}
           <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl p-6 border  shadow-sky-400 hover:shadow-sm border-gray-800">
             <h3 className="text-xl font-semibold mb-4">Clear Project Backlog</h3>

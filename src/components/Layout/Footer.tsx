@@ -2,47 +2,43 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br font-family-comfort from-[#0b0f19] via-[#111827] to-[#0b0f19]  text-white py-12">
-      <div className="mx-auto px-9 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-br font-family-comfort from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white py-8 sm:py-12">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Section */}
-          <div>
+          <div className="mb-6 sm:mb-0">
             <h3 className="text-orange-400 text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
-
               <li>
-                <Link to="/about" className=" mr-2 flex items-center text-gray-300 hover:text-white transition-colors">
+                <Link to="/about" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   Company
                 </Link>
               </li>
-
               <li>
-                <Link to="/contact" className=" mr-2 flex items-center text-gray-300 hover:text-white transition-colors">
+                <Link to="/contact" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   Contact Us
                 </Link>
               </li>
-
               <li>
-                <Link to="/privacy-policy" className=" mr-2 flex items-center text-gray-300 hover:text-white transition-colors">
+                <Link to="/privacy-policy" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms-condition" className=" mr-2 flex items-center text-gray-300 hover:text-white transition-colors">
+                <Link to="/terms-condition" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   Terms & Condition
                 </Link>
               </li>
-
             </ul>
           </div>
 
           {/* Contact Section */}
-          <div>
+          <div className="mb-6 sm:mb-0">
             <h3 className="text-orange-400 text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-3 text-gray-300">
-              <p>458 , New York, USA</p>
-              <p>+023 465 67890</p>
-              <p>info@ursofts.com</p>
+              <p className="text-sm sm:text-base">458 , New York, USA</p>
+              <p className="text-sm sm:text-base">+023 465 67890</p>
+              <p className="text-sm sm:text-base break-all">info@ursofts.com</p>
 
               {/* Social Media Icons */}
               <div className="flex space-x-3 mt-4">
@@ -72,33 +68,47 @@ export default function Footer() {
           </div>
 
           {/* Opening Hours Section */}
-          <div>
+          <div className="mb-6 sm:mb-0">
             <h3 className="text-orange-400 text-lg font-semibold mb-4">Opening</h3>
             <div className="space-y-2 text-gray-300">
               <div>
-                <p className="font-medium"> Saturday-Thursday</p>
-                <p>24/7</p>
+                <p className="font-medium text-sm sm:text-base">Saturday-Thursday</p>
+                <p className="text-sm sm:text-base">24/7</p>
               </div>
               <div className="mt-3">
-                <p className="font-medium">Friday</p>
-                <p>8PM - 11PM</p>
+                <p className="font-medium text-sm sm:text-base">Friday</p>
+                <p className="text-sm sm:text-base">8PM - 11PM</p>
               </div>
             </div>
           </div>
 
           {/* Newsletter Section */}
-          <div className="">
-            <h3 className="text-orange-400  text-lg font-semibold mb-4">Newsletter</h3>
-            <p className="text-gray-300 mb-4">
-              Submit email to get updated our all exelence news and offer!
+          <div className="mb-6 sm:mb-0">
+            <h3 className="text-orange-400 text-lg font-semibold mb-4">Newsletter</h3>
+            <p className="text-gray-300 mb-4 text-sm sm:text-base">
+              Submit email to get updated our all excellence news and offer!
             </p>
-            <div className="flex overflow-hidden">
+            
+            {/* Desktop Newsletter Form */}
+            <div className="hidden sm:flex">
               <input
                 type="email"
                 placeholder="Your email"
-                className="flex-1 px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-l-md focus:outline-none focus:border-orange-400"
+                className="flex-1 px-3 py-2 bg-gray-800 text-white border border-gray-600 rounded-l-md focus:outline-none focus:border-orange-400 text-sm min-w-0"
               />
-              <button className="bg-orange-400 hover:bg-orange-500 text-white px-6 py-2 rounded-r-md font-semibold transition-colors">
+              <button className="bg-orange-400 hover:bg-orange-500 text-white px-4 py-2 rounded-r-md font-semibold transition-colors text-sm whitespace-nowrap">
+                SIGNUP
+              </button>
+            </div>
+            
+            {/* Mobile Newsletter Form */}
+            <div className="sm:hidden space-y-2">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="w-full px-3 py-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:outline-none focus:border-orange-400 text-sm"
+              />
+              <button className="w-full bg-orange-400 hover:bg-orange-500 text-white px-4 py-2 rounded-md font-semibold transition-colors text-sm">
                 SIGNUP
               </button>
             </div>
@@ -107,14 +117,14 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-700 mt-8 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
               © URSOFTS, All Right Reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="/" className="text-gray-400 hover:text-white text-sm transition-colors">Home</a>
-              <a href="contact" className="text-gray-400 hover:text-white text-sm transition-colors">Help</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">FAQs</a>
+            <div className="flex flex-wrap justify-center sm:justify-end space-x-4 sm:space-x-6">
+              <a href="/" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors">Home</a>
+              <a href="contact" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors">Help</a>
+              <a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors">FAQs</a>
             </div>
           </div>
         </div>
