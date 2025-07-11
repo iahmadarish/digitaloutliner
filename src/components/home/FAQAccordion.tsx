@@ -36,7 +36,9 @@ const [openItem, setOpenItem] = useState<number | null>(null);
   ];
 
   return (
-    <div className="max-w-4xl  mx-auto p-6 min-h-screen">
+<div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+
+    <div className="max-w-5xl   mx-auto p-6 min-h-screen">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-200 mb-2">Frequently Asked Questions</h1>
         <p className="text-gray-300">Everything you need to know about our services and process</p>
@@ -48,7 +50,7 @@ const [openItem, setOpenItem] = useState<number | null>(null);
             key={index}
             className={`rounded-2xl border-2 border-gray-200 overflow-hidden transition-all duration-300 ${
               openItem === index 
-                ? 'bg-lime-200 border-lime-300 shadow-lg' 
+                ? 'bg-lime-500 border-lime-300 shadow-lg' 
                 : 'bg-white text-white hover:bg-gray-50 hover:border-gray-300'
             }`}
           >
@@ -76,9 +78,9 @@ const [openItem, setOpenItem] = useState<number | null>(null);
                     : 'bg-gray-200 border-gray-300 hover:bg-gray-300'
                 }`}>
                   {openItem === index ? (
-                    <Minus className="w-4 h-4 text-gray-100" />
+                    <Minus className="w-4 h-4 text-gray-900" />
                   ) : (
-                    <Plus className="w-4 h-4 text-gray-600" />
+                    <Plus className="w-4 h-4 text-gray-900" />
                   )}
                 </div>
               </div>
@@ -108,6 +110,8 @@ const [openItem, setOpenItem] = useState<number | null>(null);
         </button>
       </div>
     </div>
+</div>
+
   );
 };
 
