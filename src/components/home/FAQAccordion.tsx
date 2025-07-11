@@ -49,7 +49,7 @@ const [openItem, setOpenItem] = useState<number | null>(null);
             className={`rounded-2xl border-2 border-gray-200 overflow-hidden transition-all duration-300 ${
               openItem === index 
                 ? 'bg-lime-200 border-lime-300 shadow-lg' 
-                : 'bg-transparent text-white hover:bg-gray-50 hover:border-gray-300'
+                : 'bg-white text-white hover:bg-gray-50 hover:border-gray-300'
             }`}
           >
             <button
