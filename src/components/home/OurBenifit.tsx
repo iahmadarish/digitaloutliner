@@ -3,7 +3,7 @@ import image from "@/assets/Group 38.png"
 import datasecurity from "@/assets/Types-of-Data-Security.png"
 import growth from "@/assets/growth.jpg"
 import communication from "@/assets/icloud.jpg"
-
+import direct from "@/assets/directcommunication.png"
 
 export default function OurBenefit() {
   return (
@@ -139,14 +139,17 @@ export default function OurBenefit() {
             </p>
             
             {/* Communication Interface */}
-            <div className=" rounded-lg space-y-3 md:lg:xl:2xl:flex justify-between ">
+            <div className=" rounded-lg space-y-3 md:lg:xl:2xl:flex items-center justify-between ">
               <div className="">
-                <img className='' src={communication} alt="" />
+                <img className='rounded' src={communication} alt="" />
               </div>
               <div className="md:lg:xl:2xl:px-4 py-2">
                 <p>
                  Effective communication channels for manufacturing teams include daily shift briefings, face-to-face meetings, and digital tools like messaging apps and collaboration platforms. These channels ensure that information is consistently shared across all shifts and locations.
                 </p>
+              </div>
+              <div className="">
+                <img className='rounded' src={direct} alt="" />
               </div>
             </div>
           </div>
