@@ -4,48 +4,49 @@ import { motion } from "framer-motion";
 
 const services = [
   {
-    title: 'Robust & Scalable Web Development',
-    subtitle: 'Website & Web App Solutions',
+    title: 'Robust & Scalable Web Development Services',
+    subtitle: 'Custom Website & Web Application Solutions',
     description:
-      'We build fast, secure, and responsive websites tailored to your business needs. Our web development team uses the latest technologies to ensure your online presence is strong and scalable, providing an engaging user experience on every device.',
+      'Boost your online presence with our professional web development services. We specialize in creating fast, secure, and fully responsive websites and web apps tailored to meet your business goals. Using the latest technologies like React, Node.js, and MongoDB, our expert developers ensure your digital platform is scalable, SEO-optimized, and delivers an exceptional user experience across all devices.',
     icon: Code,
     gradient: 'from-blue-500 to-indigo-600',
     glowColor: 'blue-500',
     image:
       'https://www.creative-tim.com/blog/content/images/size/w960/2022/01/which-development-job-is-right-for-you.jpg',
-    stats: '200+ Projects Delivered',
+    stats: '200+ Web Projects Successfully Delivered',
   },
   {
-    title: 'Innovative Mobile App Development',
-    subtitle: 'iOS & Android Applications',
+    title: 'Custom Mobile App Development for iOS & Android',
+    subtitle: 'Cross-Platform Mobile Application Solutions',
     description:
-      'From concept to deployment, we develop user-friendly mobile applications that drive engagement and business growth. Our cross-platform solutions ensure your app reaches a wider audience with smooth performance and intuitive design.',
+      'Expand your reach with our custom mobile app development services. We design and build high-performance, user-friendly mobile apps for both iOS and Android. Our cross-platform approach ensures a seamless experience for your users while maximizing business impact. From UI/UX design to backend development and deployment, we handle every step to launch your app successfully and securely.',
     icon: Smartphone,
     gradient: 'from-teal-500 to-indigo-600',
-    glowColor: 'blue-200-',
+    glowColor: 'blue-200',
     image:
       'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    stats: '150+ Apps Launched',
+    stats: '150+ Mobile Applications Developed',
   },
   {
-    title: 'Creative Graphics & Visual Design',
-    subtitle: 'Branding & Marketing Materials',
+    title: 'Creative Graphic Design & Branding Services',
+    subtitle: 'Logo Design, Brand Identity & Marketing Visuals',
     description:
-      'Our graphic designers create visually stunning logos, marketing collateral, and digital assets that elevate your brand identity. Combining creativity with market insights, we deliver designs that captivate and communicate your unique story.',
+      'Enhance your brand’s visual identity with our professional graphic design services. We create eye-catching logos, marketing materials, and digital assets that align with your brand values. Our experienced designers blend creativity with market insights to deliver impactful visuals that attract and retain your audience, helping you stand out in a competitive market.',
     icon: Brush,
     gradient: 'from-pink-400 to-rose-500',
     glowColor: 'pink-400',
     image:
       'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    stats: '300+ Designs Crafted',
+    stats: '300+ Creative Design Projects Completed',
   },
 ];
+
 
 const DarkAccordionComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="min-h-screen font-family-comfort bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+    <div className="min-h-screen font-family-comfort bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
       <div className="relative mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
 
 
@@ -87,17 +88,18 @@ const DarkAccordionComponent = () => {
 
 
         {/* Header Section */}
-        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+        <div className="md:lg:xl:sm:2xl:text-start text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
           <div className="relative">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-3 sm:mb-4 md:mb-6 leading-tight">
-              Experience You Can Count On
+              Solutions Built for the Future
             </h1>
-            <div className="absolute -top-1 sm:-top-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full opacity-60"></div>
+            <div className="absolute -top-1 sm:-top-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full opacity-60"></div>
           </div>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-            Since February 2025, URSOFTS has been delivering comprehensive business solutions with innovation, quality, and unwavering commitment to client success.
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl md:lg:xl:sm:2xl:mx-0 mx-auto leading-relaxed px-2 sm:px-0">
+            At URSOFTS, we empower businesses with scalable digital solutions designed to meet tomorrow’s challenges. Our team delivers with precision, creativity, and a forward-thinking mindset.
           </p>
         </div>
+
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-start">
           {/* Accordion Panel */}

@@ -134,7 +134,7 @@ const truncateText = (text: string, maxLength: number) => {
   }
 
   return (
-    <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] py-20 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] py-20 px-4 sm:px-6 lg:px-8">
       <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header Section */}
         <div className="mb-16">

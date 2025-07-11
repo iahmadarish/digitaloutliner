@@ -247,7 +247,7 @@ const MatchingHeroSection = () => {
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="bg-[#060336] shadow-cyan-600 shadow-md backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-gray-700/50 overflow-x-auto"
+                className="bg-[#060336] text-2xl shadow-cyan-600 shadow-md backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-gray-700/50 overflow-x-auto"
               >
                 {renderColoredCode()}
               </motion.div>

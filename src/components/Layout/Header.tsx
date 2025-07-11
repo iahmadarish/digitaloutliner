@@ -1,36 +1,41 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Phone, Mail } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import type { Variants } from "framer-motion"
-import { Link } from "react-router-dom"
+import { Menu, X, Phone, Mail, Clock } from "lucide-react"
+import { Link, useLocation } from "react-router-dom"
 import logo from "@/assets/logour.png"
+
 const URSOFTSNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [visible, setVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const location = useLocation()
 
   const navigation = [
-    { name: "Service", href: "/services" },
+    { name: "Our Service", href: "/services" },
     { name: "Projects", href: "/projects" },
     { name: "Blogs", href: "/blog" },
     { name: "Company", href: "/about" },
   ]
 
+  // Get active item based on current route
+  const getActiveItem = () => {
+    const currentPath = location.pathname
+    const activeNav = navigation.find(item => item.href === currentPath)
+    return activeNav ? activeNav.name : ""
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
-      // Check if scrolled past threshold
       if (currentScrollY > 50) {
         setScrolled(true)
       } else {
         setScrolled(false)
       }
 
-      // Hide/show navbar based on scroll direction
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setVisible(false)
       } else {
@@ -42,191 +47,228 @@ const URSOFTSNavbar = () => {
 
     window.addEventListener("scroll", handleScroll)
 
-    // Prevent body scroll when mobile menu is open
     if (isMenuOpen) {
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "unset"
     }
 
-    // Cleanup
     return () => {
       window.removeEventListener("scroll", handleScroll)
       document.body.style.overflow = "unset"
     }
   }, [lastScrollY, isMenuOpen])
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
+  const handleNavClick = () => {
+    setIsMenuOpen(false)
   }
 
-  const itemVariants: Variants = {
-    hidden: { y: -20, opacity: 0 },
-    show: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  }
-
-  const mobileMenuVariants: Variants = {
-    open: {
-      opacity: 1,
-      transition: { duration: 0.3 },
-    },
-    closed: {
-      opacity: 0,
-      transition: { duration: 0.3 },
-    },
-  }
+  const activeItem = getActiveItem()
 
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 font-family-mont transition-all duration-300 ${scrolled ? "bg-black backdrop-blur-sm shadow-lg" : "bg-transparent backdrop-blur-sm"
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-gray-900 backdrop-blur-md shadow-lg" : "bg-transparent backdrop-blur-sm"
         }`}
-      initial={{ y: 0 }}
-      animate={{ y: visible ? 0 : -100 }}
-      transition={{ duration: 0.3 }}
-    >
-      {/* Main Header Row */}
-      <div className="border-b border-cyan-400/30">
-        <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-4">
-          <div className="flex justify-between items-center">
-            {/* Contact Us Button - Left Side */}
-            <div className="flex items-center">
-              <button className="px-4 py-2 border border-white/30 rounded-md text-white text-sm font-medium hover:bg-white/10 transition-colors md:lg:xl:2xl:block hidden duration-200">
-                Contact Us
-              </button>
-            </div>
+        style={{
+          transform: `translateY(${visible ? 0 : -100}px)`,
+          transition: "transform 0.3s ease-in-out"
+        }}
+      >
+        {/* Main Header Row */}
+        <div className="border-b border-cyan-400/30">
+          <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-4 lg:py-4">
+            <div className="flex justify-between items-center">
+              {/* Contact Us Button - Left Side (Desktop) */}
+              <div className="hidden lg:flex items-center">
+                <button className="px-4 py-2 border border-blue-500 rounded-md text-white text-sm lg:text-base font-medium hover:bg-white/10 transition-colors duration-200">
+                  Contact Us
+                </button>
+              </div>
 
-            {/* URSOFTS Logo - Center */}
-            <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
-              <img src={logo} className="h-14" alt="URSOFTS Logo" />
-            </Link>
+              {/* URSOFTS Logo - Center */}
+              <div className="absolute  left-1/5 transform -translate-x-1/5 lg:static lg:left-auto lg:transform-none">
+                <Link to="/" className="block">
+                  <img 
+                    src={logo} 
+                    className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto" 
+                    alt="URSOFTS Logo" 
+                  />
+                </Link>
+              </div>
 
-            {/* Contact Email - Right Side */}
-            <div className="hidden md:flex items-center">
-              <span className="text-white/80 text-sm font-medium">info@ursoft.com</span>
-            </div>
+              {/* Contact Info - Right Side (Desktop) */}
+              <div className="hidden lg:flex flex-col items-end">
+                <span className="text-white/90 text-sm lg:text-base font-medium">
+                  info@ursofts.com
+                </span>
+                <span className="text-white/70 text-xs lg:text-sm">
+                  +880 1855-318275
+                </span>
+              </div>
 
-            {/* Mobile menu button */}
-            <motion.div className="md:hidden z-50" whileTap={{ scale: 0.9 }}>
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-full transition-colors  hover:text-blue-400"
-                aria-label="Toggle menu"
-              >
-                {isMenuOpen ? <X className="h-8 w-8 rounded-full p-2 text-black bg-white" /> : <Menu className="h-8 w-8 text-white" />}
-              </button>
-            </motion.div>
-          </div>
-        </nav>
-      </div>
-
-      {/* Navigation Row - Desktop Only */}
-      <div className="hidden md:block border-b border-cyan-400/30">
-        <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-3">
-          <div className="flex justify-center items-center">
-            <div className="flex items-center space-x-8 lg:space-x-12">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-white/90 hover:text-white transition-colors duration-200 text-sm lg:text-base font-medium"
+              {/* Mobile menu button */}
+              <div className="lg:hidden z-50 ml-auto">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="p-2 rounded-full transition-colors hover:bg-white/10"
+                  aria-label="Toggle menu"
                 >
-                  {item.name}
-                </a>
-              ))}
+                  {isMenuOpen ? (
+                    <X className="h-6 w-6 text-white" />
+                  ) : (
+                    <Menu className="h-6 w-6 text-white" />
+                  )}
+                </button>
+              </div>
             </div>
-          </div>
-        </nav>
-      </div>
+          </nav>
+        </div>
 
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            className="md:hidden fixed inset-0 bg-black z-40"
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={mobileMenuVariants}
+        {/* Navigation Row - Desktop Only */}
+        <div className="hidden lg:block border-b border-cyan-400/30">
+          <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-4">
+            <div className="flex justify-center items-center">
+              <div className="flex items-center space-x-8 lg:space-x-12">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`transition-colors duration-200 text-base lg:text-lg font-medium ${
+                      activeItem === item.name
+                        ? "text-cyan-400 border-b-2 border-cyan-400 pb-1"
+                        : "text-white/90 hover:text-white"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      {/* Mobile Sidebar */}
+      {isMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-40">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          />
+
+          {/* Sidebar */}
+          <div
+            className={`absolute top-0 right-0 h-full w-full max-w-[100%] bg-gradient-to-br from-gray-900 via-black to-gray-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+              isMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
           >
-            {/* Mobile Menu Header */}
-            <div className="flex bg-black/90 justify-between items-center px-4 py-4 border-b border-cyan-400/30">
-              <img src={logo} className="h-14" alt="URSOFTS Logo" />
+            {/* Sidebar Header */}
+            <div className="flex justify-between items-center px-6 py-4 border-b border-cyan-400/30">
+              <img 
+                src={logo} 
+                className="h-10" 
+                alt="URSOFTS Logo" 
+              />
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white h-6 w-6 bg-  hover:text-white/80 p-2 rounded-full transition-colors"
+                className="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
                 aria-label="Close menu"
               >
-                {/* <X className="h-6 w-6" /> */}
+                <X className="h-5 w-5" />
               </button>
             </div>
 
-            {/* Mobile Menu Content */}
-            <div className="px-4 py-">
-              <motion.div
-                className="flex flex-col bg-black h-screen space-y-6"
-                variants={containerVariants}
-                initial="hidden"
-                animate="show"
-              >
-                {navigation.map((item) => (
-                  <motion.div key={item.name} variants={itemVariants}>
-                    <a
-                      href={item.href}
-                      className="block  font-medium hover:bg-blue-400 rounded-lg hover:text-black text-white/90 text-center text-2xl py-4 white transition-colors duration-200 my-2"
-                      onClick={() => setIsMenuOpen(false)}
+            {/* Sidebar Content */}
+            <div className="px-6 py-8 h-full overflow-y-auto">
+              {/* Navigation Links */}
+              <div className="space-y-2">
+                {navigation.map((item, index) => (
+                  <div
+                    key={item.name}
+                    className="opacity-0  translate-x-4 animate-slideIn"
+                    style={{
+                      animationDelay: `${index * 100}ms`,
+                      animationFillMode: "forwards"
+                    }}
+                  >
+                    <Link
+                      to={item.href}
+                      onClick={handleNavClick}
+                      className={`block px-4 py-3 rounded-lg  text-lg font-medium transition-all duration-200 ${
+                        activeItem === item.name
+                          ? "bg-cyan-400/20  text-cyan-400 border-l-4 border-cyan-400 shadow-lg"
+                          : "text-white/90 hover:text-white hover:bg-white/10"
+                      }`}
                     >
+                      <div className="flex items-center gap-x-2">
+
                       {item.name}
-                    </a>
-                  </motion.div>
+                      </div>
+                    </Link>
+                  </div>
                 ))}
+              </div>
 
-                {/* Contact Us button in mobile menu */}
-                <motion.div variants={itemVariants} className="pt-4">
-                  <button className="w-full px-4 py-3 border border-[#ffffff] rounded-md text-[#ffffff] text-lg font-medium hover:bg-white/10 transition-colors duration-200">
-                    Contact Us
-                  </button>
-                </motion.div>
-              </motion.div>
-
-              {/* Contact info in mobile menu */}
-              <motion.div
-                className=" pt-6 border-t border-cyan-400/30 text-white/80"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
+              {/* Contact Us Button */}
+              <div 
+                className="mt-8 opacity-0 translate-x-4 animate-slideIn"
+                style={{
+                  animationDelay: "400ms",
+                  animationFillMode: "forwards"
+                }}
               >
-                <div className="flex items-center space-x-3 mb-4">
-                  <Phone className="h-5 w-5" />
-                  <span>+88 01819454892</span>
+                <button className="w-full px-4 py-3 border border-cyan-400 rounded-lg text-cyan-400 text-lg font-medium hover:bg-cyan-400/10 transition-colors duration-200">
+                  Contact Us
+                </button>
+              </div>
+
+              {/* Contact Info */}
+              <div 
+                className="mt-8 pt-6 border-t border-cyan-400/30 space-y-4 opacity-0 translate-x-4 animate-slideIn"
+                style={{
+                  animationDelay: "500ms",
+                  animationFillMode: "forwards"
+                }}
+              >
+                <div className="flex items-center space-x-3 text-white/80">
+                  <Phone className="h-5 w-5 text-cyan-400" />
+                  <span className="text-sm">+880 1855-318275</span>
                 </div>
-                <div className="flex items-center space-x-3 mb-4">
-                  <Mail className="h-5 w-5" />
-                  <span>info@ursoft.com</span>
+                <div className="flex items-center space-x-3 text-white/80">
+                  <Mail className="h-5 w-5 text-cyan-400" />
+                  <span className="text-sm">info@ursofts.com</span>
                 </div>
-                <div>
-                  <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                <div className="flex items-center space-x-3 text-white/80">
+                  <Clock className="h-5 w-5 text-cyan-400" />
+                  <span className="text-sm">We are available 24/7</span>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+          </div>
+        </div>
+      )}
+
+      <style >{`
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        .animate-slideIn {
+          animation: slideIn 0.3s ease-out;
+        }
+      `}</style>
+    </>
   )
 }
 
-export default URSOFTSNavbar
+export default URSOFTSNavbar 

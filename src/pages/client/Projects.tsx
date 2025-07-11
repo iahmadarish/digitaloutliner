@@ -3,7 +3,7 @@ import ScrollToTop from "../../components/ScrollToTop"
 
 const Projects: React.FC = () => {
   return (
-    <div className="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div className="section-padding py-50 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
       <ScrollToTop/>
       <div className="container">
         <div className="text-center mb-16">
@@ -13,7 +13,7 @@ const Projects: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg- rounded-lg shadow-lg p-8">
+        <div className="bg- rounded-lg  p-8">
           <h2 className="text-2xl font-bold text-blue-200 mb-4">Project Portfolio</h2>
           <p className="text-blue-200 leading-relaxed">
             This is the Projects page. Here will be add our project showcase with images, descriptions, categories, and

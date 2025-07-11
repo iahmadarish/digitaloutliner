@@ -60,7 +60,7 @@ const TeamSection: React.FC = () => {
   ]
 
   return (
-    <section className="bg-gray-900 py-16 px-4 min-h-screen">
+    <section className="bg- py-16 px-4 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">

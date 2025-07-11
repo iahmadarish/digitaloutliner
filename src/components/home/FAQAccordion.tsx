@@ -8,32 +8,59 @@ const [openItem, setOpenItem] = useState<number | null>(null);
     setOpenItem(prev => prev === index ? null : index);
   };
 
-  const faqData = [
-    {
-      question: "What services do you offer?",
-      answer: "We provide comprehensive digital marketing services including SEO, social media management, content creation, PPC advertising, email marketing, and web development. Our team works closely with clients to develop customized strategies that align with their business goals and target audience."
-    },
-    {
-      question: "How long does it take to see results?",
-      answer: "Results vary depending on the service and your specific goals. For SEO, you can expect to see initial improvements within 3-6 months, while social media and PPC campaigns often show results within the first month. We provide regular reports to track progress and adjust strategies as needed."
-    },
-    {
-      question: "What is your pricing structure?",
-      answer: "Our pricing is tailored to each client's needs and project scope. We offer both project-based and retainer options. After our initial consultation, we'll provide a detailed proposal with transparent pricing that fits your budget and objectives."
-    },
-    {
-      question: "Do you work with small businesses?",
-      answer: "Absolutely! We work with businesses of all sizes, from startups to enterprise companies. We understand that small businesses have unique needs and budget constraints, so we offer flexible packages and scalable solutions that grow with your business."
-    },
-    {
-      question: "How do you measure success?",
-      answer: "We use a combination of KPIs tailored to your specific goals, including website traffic, conversion rates, engagement metrics, ROI, and revenue growth. We provide detailed monthly reports and regular strategy sessions to ensure we're meeting your objectives and continuously optimizing for better results."
-    },
-    {
-      question: "What makes you different from other agencies?",
-      answer: "Our data-driven approach combined with creative excellence sets us apart. We don't believe in one-size-fits-all solutions. Instead, we take time to understand your business, industry, and competition to create strategies that deliver real, measurable results while maintaining transparent communication throughout the process."
-    }
-  ];
+const faqData = [
+  {
+    question: "What services does your agency provide?",
+    answer:
+      "We offer end-to-end digital solutions including website development, mobile app development (iOS and Android), UI/UX and graphic design, 3D modeling and animation, as well as digital marketing services such as SEO, social media marketing, Google Ads (PPC), email marketing, and branding. Our goal is to provide a one-stop solution for businesses looking to grow their online presence in the USA, Canada, Australia, and beyond."
+  },
+  {
+    question: "Do you specialize in any specific industries?",
+    answer:
+      "While we work with a wide range of industries, we have strong experience with startups, eCommerce brands, real estate, healthcare, education, and tech companies. We tailor our solutions to each industry’s unique audience and goals, ensuring maximum ROI and growth."
+  },
+  {
+    question: "How long does it take to develop a website or app?",
+    answer:
+      "The timeline depends on the project complexity. A standard business website may take 2–4 weeks, while a custom web application or mobile app can take 6–12 weeks or more. We always provide a detailed project timeline after our initial consultation."
+  },
+  {
+    question: "Can you redesign my existing website or app?",
+    answer:
+      "Absolutely! Whether you want a complete redesign or just a performance and UI/UX upgrade, our team can refresh your digital assets with modern, responsive, and SEO-optimized design standards to improve engagement and conversions."
+  },
+  {
+    question: "What sets your agency apart from others?",
+    answer:
+      "We combine technical expertise with creative innovation and a client-first approach. Unlike many agencies, we focus on delivering custom solutions rather than cookie-cutter packages. We prioritize clear communication, on-time delivery, and measurable results for every client."
+  },
+  {
+    question: "Do you offer ongoing support and maintenance?",
+    answer:
+      "Yes, we provide ongoing support, maintenance, and updates for websites, apps, and digital campaigns. Whether you need bug fixes, feature updates, or continuous optimization, we offer affordable monthly packages tailored to your needs."
+  },
+  {
+    question: "What is your pricing model?",
+    answer:
+      "Our pricing is flexible and project-based. After understanding your goals and requirements, we provide a customized quote. We offer one-time pricing, monthly retainers, or hourly models depending on the service and project scope. Transparent pricing is always part of our process."
+  },
+  {
+    question: "Do you work with clients outside your country?",
+    answer:
+      "Yes! We have a global client base, Including UK, USA, Canada, Australia all over the world. We collaborate seamlessly across time zones using project management tools and video meetings, ensuring smooth communication and project success."
+  },
+  {
+    question: "How do you measure success in digital marketing?",
+    answer:
+      "We track key performance indicators (KPIs) such as website traffic, bounce rate, conversion rate, keyword rankings, cost-per-click, return on ad spend (ROAS), and lead generation. Monthly reports and strategy calls help you stay informed and in control of your ROI."
+  },
+  {
+    question: "Can you help launch a new product or startup brand?",
+    answer:
+      "Definitely! We specialize in startup branding and launch strategies. From logo design and website/app development to full digital marketing campaigns, we help startups go from idea to launch and scale rapidly with data-driven strategies and engaging designs."
+  }
+];
+
 
   return (
 <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">

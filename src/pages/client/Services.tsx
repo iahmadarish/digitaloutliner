@@ -160,7 +160,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-gray-950">
       {/* Dark Theme Hero Section */}
-      <div className="relative  min-h-screen pb-24 pt-40 bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] flex items-center justify-center overflow-hidden">
+      <div className="relative  min-h-screen pb-24 pt-54 bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] flex items-center justify-center overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
