@@ -7,11 +7,11 @@ import { useInView } from "react-intersection-observer"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay } from "swiper/modules"
 import "swiper/css"
-import image from "@/assets/slider/slider.png"
+import image from "@/assets/slider/mobile-application-development (2).png"
 import image2 from "@/assets/slider/Group 42.png"
 import image3 from "@/assets/slider/Group 43.png"
 import image4 from "@/assets/slider/Group 44.png"
-import image5 from "@/assets/slider/slider.png"
+import image5 from "@/assets/slider/8293830 (1).png"
 
 const MatchingHeroSection = () => {
   const [isHovered, setIsHovered] = useState(false)
@@ -270,7 +270,7 @@ const MatchingHeroSection = () => {
                 <Swiper
                   modules={[Autoplay]}
                   autoplay={{
-                    delay: 10000,
+                    delay: 5000,
                     disableOnInteraction: false,
                   }}
                   loop={true}
