@@ -21,6 +21,7 @@ import Projects from "./pages/client/Projects"
 import BlogDetails from "./pages/client/BlogDetails"
 import Privacy from "./pages/client/Privacy"
 import TermsAndCondition from "./pages/client/TermsAndCondition"
+import ProjectDetails from "./pages/client/ProjectDetails"
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectDetails />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:id" element={<BlogDetails />} />
             <Route path="contact" element={<Contact />} />

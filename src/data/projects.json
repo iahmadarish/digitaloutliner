@@ -1,0 +1,236 @@
+[
+  {
+    "id": 1,
+    "title": "E-commerce Platform for FreshGro - Farm to Consumer Marketplace",
+    "slug": "ecommerce-platform-freshgro",
+    "category": "Web Development",
+    "metaDescription": "Developed a full-stack e-commerce platform connecting farmers directly with consumers, built with React, Node.js, and MongoDB for optimal performance.",
+    "descriptions": [
+      "A scalable e-commerce solution designed specifically for agricultural producers",
+      "Enables farmers to sell fresh produce directly to consumers with zero intermediaries",
+      "Includes advanced features like inventory management, seasonal product listings, and delivery scheduling"
+    ],
+    "technologies": ["React", "Node.js", "MongoDB", "Tailwind CSS", "Stripe API", "Google Maps API"],
+    "projectBudget": "$45,000",
+    "solution": {
+      "overview": "We developed a direct farm-to-consumer e-commerce platform that eliminates middlemen, ensuring fair prices for both farmers and buyers. The solution includes real-time inventory tracking, geolocation-based delivery optimization, and seasonal product showcasing to connect local farmers directly with their customers.",
+      "features": [
+        {
+          "title": "Direct Farmer-Consumer Marketplace",
+          "description": "Created a transparent marketplace that allows farmers to set their own prices while giving consumers access to fresh, locally-sourced produce with full traceability."
+        },
+        {
+          "title": "Smart Delivery Routing",
+          "description": "Implemented geolocation technology to optimize delivery routes, reducing transportation costs and ensuring fresher produce reaches consumers faster."
+        },
+        {
+          "title": "Seasonal Availability Calendar",
+          "description": "Developed an intelligent system that automatically updates product availability based on harvest seasons and regional growing conditions."
+        }
+      ]
+    },
+    "summary": {
+      "title": "Revolutionizing Agricultural Commerce",
+      "details": "The FreshGro platform has transformed how small-scale farmers reach consumers, increasing farmer incomes by an average of 35% while providing urban customers with fresher produce at competitive prices. The system handles over 5,000 transactions monthly with 99.8% uptime."
+    },
+    "clientFeedback": {
+      "name": "Sarah Johnson",
+      "position": "CEO, FreshGro Inc.",
+      "feedback": "The platform has completely transformed our business model. We've onboarded over 200 local farmers in just 6 months and our customer retention rate is 78% higher than industry average. The technical team delivered beyond our expectations, especially with the real-time inventory system that our farmers love.",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "alt": "FreshGro e-commerce platform homepage",
+        "caption": "Main marketplace interface showing fresh produce listings"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "alt": "Farmer dashboard interface",
+        "caption": "Vendor dashboard for managing products and orders"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "alt": "Mobile responsive view",
+        "caption": "Fully responsive design for mobile shoppers"
+      }
+    ],
+    "features": [
+      {
+        "title": "Real-time Inventory Management",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "description": "Farmers can update product availability in real-time with expiration date tracking"
+      },
+      {
+        "title": "Geolocation-based Delivery System",
+        "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "description": "Integrated mapping shows delivery zones and calculates optimal routes"
+      },
+      {
+        "title": "Seasonal Product Showcase",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "description": "Automated seasonal collections highlight currently available produce"
+      }
+    ],
+    "seoKeywords": ["e-commerce development", "farm to table platform", "React e-commerce", "agricultural tech", "online farmers market"],
+    "launchDate": "2023-05-15",
+    "client": "FreshGro Inc."
+  },
+  {
+    "id": 2,
+    "title": "EduTrack Mobile App - Student Academic Progress Tracker",
+    "slug": "edutrack-mobile-app",
+    "category": "Mobile App Development",
+    "metaDescription": "Cross-platform educational app built with Flutter to help students track assignments, grades, and academic performance in real-time.",
+    "descriptions": [
+      "Comprehensive academic tracking solution for K-12 and college students",
+      "Syncs with school systems to automatically import assignments and grades",
+      "Provides predictive analytics for grade improvement and time management"
+    ],
+    "technologies": ["Flutter", "Firebase", "Dart", "Google Classroom API"],
+    "projectBudget": "$32,500",
+    "solution": {
+      "overview": "We created a comprehensive academic management app that consolidates all student activities, assignments, and performance metrics in one place. The solution integrates with school systems to automatically sync data while providing AI-driven insights to help students improve their academic performance.",
+      "features": [
+        {
+          "title": "Unified Academic Dashboard",
+          "description": "Developed a centralized interface that displays grades, assignments, attendance, and performance trends across all courses in real-time."
+        },
+        {
+          "title": "Predictive Performance Analytics",
+          "description": "Implemented machine learning algorithms that analyze study patterns and predict grades, suggesting improvement areas before assignments are due."
+        },
+        {
+          "title": "School System Integration",
+          "description": "Built seamless integration with popular school management systems to automatically pull assignment deadlines, grades, and course materials."
+        }
+      ]
+    },
+    "summary": {
+      "title": "Empowering Students Through Data",
+      "details": "EduTrack has helped over 15,000 students improve their academic performance by an average of 1.5 GPA points. The app's predictive analytics and time management tools have reduced late submissions by 62% among active users."
+    },
+    "clientFeedback": {
+      "name": "Michael Chen",
+      "position": "Director, EduTrack Solutions",
+      "feedback": "The EduTrack app has exceeded our expectations in every way. Our users report significantly reduced stress levels and better grades. The automatic syncing with school systems was particularly impressive - it just works seamlessly. We've seen 85% weekly active usage among our student users, which is unheard of in educational apps.",
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "alt": "EduTrack app dashboard",
+        "caption": "Main dashboard showing upcoming assignments and grade summary"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "alt": "Assignment calendar view",
+        "caption": "Integrated calendar with deadline visualization"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "alt": "Performance analytics screen",
+        "caption": "Detailed analytics on academic progress"
+      }
+    ],
+    "features": [
+      {
+        "title": "Automated Grade Tracking",
+        "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "description": "Connects to school systems to import and calculate GPA automatically"
+      },
+      {
+        "title": "Assignment Reminders",
+        "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "description": "Customizable notifications for upcoming deadlines and exams"
+      },
+      {
+        "title": "Performance Insights",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "description": "AI-powered recommendations to improve study habits and grades"
+      }
+    ],
+    "seoKeywords": ["educational app", "student tracker", "Flutter app", "grade calculator", "academic planner"],
+    "launchDate": "2023-09-01",
+    "client": "EduTrack Solutions"
+  },
+  {
+    "id": 3,
+    "title": "FastTech Inventory Management System - Warehouse Optimization Solution",
+    "slug": "inventory-management-system",
+    "category": "Custom Software",
+    "metaDescription": "Enterprise inventory management system for FastTech with multi-location tracking, automated reordering, and barcode scanning capabilities.",
+    "descriptions": [
+      "Comprehensive inventory solution for FastTech's 12 warehouse locations",
+      "Reduced stock discrepancies by 78% in the first 6 months of implementation",
+      "Hybrid desktop/web application with offline functionality for warehouse environments"
+    ],
+    "technologies": ["Electron", "Express.js", "MySQL", "Barcode Scanner API", "WebSockets"],
+    "projectBudget": "$68,000",
+    "solution": {
+      "overview": "We engineered a robust inventory management system that synchronizes FastTech's entire warehouse network in real-time. The solution features intelligent stock prediction, automated reordering, and mobile barcode scanning to eliminate manual data entry and reduce errors across their supply chain.",
+      "features": [
+        {
+          "title": "Networked Inventory Visibility",
+          "description": "Created a unified view of inventory across all 12 warehouses, enabling seamless stock transfers and preventing overselling of products."
+        },
+        {
+          "title": "AI-Powered Stock Forecasting",
+          "description": "Implemented machine learning models that analyze sales patterns, seasonality, and lead times to maintain optimal stock levels automatically."
+        },
+        {
+          "title": "Offline-Capable Warehouse Operations",
+          "description": "Developed a hybrid solution that continues functioning during internet outages, syncing data automatically when connectivity is restored."
+        }
+      ]
+    },
+    "summary": {
+      "title": "Transforming Supply Chain Operations",
+      "details": "The inventory system reduced FastTech's stock discrepancies by 78% and improved order fulfillment speed by 42%. The automated reordering feature alone saved an estimated $220,000 annually in emergency shipping costs and lost sales."
+    },
+    "clientFeedback": {
+      "name": "David Rodriguez",
+      "position": "COO, FastTech Logistics",
+      "feedback": "This system revolutionized our operations. Where we previously had daily stock discrepancies, we now have perfect inventory alignment across all locations. The automated reordering has been a game-changer - we've eliminated stockouts while reducing excess inventory by 35%. The team delivered exactly what we needed, on time and on budget.",
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "alt": "Inventory dashboard",
+        "caption": "Centralized dashboard showing inventory across all locations"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "alt": "Mobile barcode scanning",
+        "caption": "Mobile companion app for inventory scanning"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "alt": "Inventory analytics reports",
+        "caption": "Customizable reporting and analytics"
+      }
+    ],
+    "features": [
+      {
+        "title": "Multi-Warehouse Sync",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "description": "Real-time synchronization between all warehouse locations"
+      },
+      {
+        "title": "Automated Reordering",
+        "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "description": "AI predicts stock needs and generates purchase orders automatically"
+      },
+      {
+        "title": "Barcode Scanning",
+        "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "description": "Mobile and desktop scanning with instant inventory updates"
+      }
+    ],
+    "seoKeywords": ["inventory system", "warehouse management", "Electron application", "stock control", "supply chain software"],
+    "launchDate": "2023-03-10",
+    "client": "FastTech Logistics"
+  }
+]
