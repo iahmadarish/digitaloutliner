@@ -1,98 +1,204 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FiArrowRight, FiExternalLink } from 'react-icons/fi';
-import ScrollToTop from '../../components/ScrollToTop';
-import projects from '../../data/projects.json';
+"use client"
+
+import type React from "react"
+import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
+import { ArrowUpRight } from 'lucide-react'
+import ScrollToTop from "../../components/ScrollToTop"
+import projects from "../../data/projects.json"
+import type { Variants } from "framer-motion"
+
 
 const Projects: React.FC = () => {
+  const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+}
+
+const headerVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+}
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+}
+
+const ctaVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      delay: 0.4,
+    },
+  },
+}
+
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#070a12] py-50 px-4">
+    <div className="min-h-screen py-50 px-4" style={{ background: "transparent" }}>
       <ScrollToTop />
       
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm mb-4">
+        <motion.div className="text-center mb-16" variants={headerVariants} initial="hidden" animate="visible">
+          <motion.span
+            className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm mb-4 border border-white/20"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             Our Portfolio
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-100 mb-4">
+          </motion.span>
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Innovative Digital Solutions
-          </h1>
-          <p className="text-xl text-blue-300 max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-xl text-white/80 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             Explore our successful projects delivering measurable results
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {projects.map((project) => (
-            <Link
-              to={`/projects/${project.slug}`}
+            <motion.div
               key={project.id}
-              className="group relative block rounded-xl overflow-hidden border border-blue-900/30 hover:border-blue-700/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20"
+              variants={cardVariants}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.2 },
+              }}
+              className="group cursor-pointer"
             >
-              {/* Image Container */}
-              <div className="h-60 overflow-hidden relative">
-                <img
-                  src={project.images[0].url}
-                  alt={project.images[0].alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90" />
-              </div>
+              <Link to={`/projects/${project.slug}`}>
+                {/* Card Container */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5">
+                  {/* Image Container */}
+                  <div className="relative h-80 overflow-hidden">
+                    <motion.img
+                      src={project.images[0].url}
+                      alt={project.images[0].alt}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.4 }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  </div>
 
-              {/* Content Container */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                <div className="mb-2">
-                  <span className="inline-block px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-xs">
-                    {project.category}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-blue-100 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-blue-300 text-sm mb-4 line-clamp-2">
-                  {project.descriptions[0]}
-                </p>
-                
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.slice(0, 3).map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 bg-blue-900/40 text-blue-200 rounded-full text-xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                  {/* Content Container */}
+                  <div className="p-8">
+                    {/* Title with Arrow */}
+                    <div className="flex items-start justify-between mb-4">
+                      <h3 className="text-2xl font-bold text-white leading-tight flex-1 pr-4 group-hover:text-white/90 transition-colors">
+                        {project.title}
+                      </h3>
+                      <motion.div
+                        className="flex-shrink-0 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ArrowUpRight className="w-4 h-4 text-white" />
+                      </motion.div>
+                    </div>
 
-                {/* View Button */}
-                <div className="inline-flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
-                  View Details
-                  <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    {/* Description */}
+                    <p className="text-white/70 text-base mb-6 leading-relaxed">
+                      {project.descriptions[0]}
+                    </p>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.slice(0, 3).map((tech, i) => (
+                        <motion.span
+                          key={i}
+                          className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm border border-white/20 hover:bg-white/15 transition-colors"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <span className="px-4 py-2 bg-white/5 text-white/60 rounded-full text-sm border border-white/10">
+                          +{project.technologies.length - 3} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA Section */}
-        <div className="text-center mt-20">
-          <h3 className="text-2xl font-semibold text-blue-200 mb-4">
-            Have a project in mind?
-          </h3>
-          <Link
-            to="/contact"
-            className="inline-flex items-center px-6 py-3 bg-blue-700 hover:bg-blue-600 text-blue-100 rounded-lg transition-colors"
+        <motion.div className="text-center mt-20" variants={ctaVariants} initial="hidden" animate="visible">
+          <motion.h3
+            className="text-2xl font-semibold text-white mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            Let's Discuss Your Project
-            <FiExternalLink className="ml-2" />
-          </Link>
-        </div>
+            Have a project in mind?
+          </motion.h3>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/15 text-white rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 group"
+            >
+              <span className="mr-2">Let's Discuss Your Project</span>
+              <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <ArrowUpRight className="w-4 h-4" />
+              </motion.div>
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
