@@ -41,17 +41,23 @@
     },
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-        "alt": "FreshGro e-commerce platform homepage",
-        "caption": "Main marketplace interface showing fresh produce listings"
+        "url": "https://whalecreative.com/assets/site/online-farmers-markets-fw.jpg",
+        "alt": "Roufs Riversside Ranch platform Cover Design",
+        "caption": "Roufs Riversside Ranch platform Cover Design. Main marketplace interface showing fresh produce listings"
       },
       {
-        "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "url": "https://cdn.prod.website-files.com/65ddf7b99a8b454b93dd2a82/65ecdb43eebc71994e235b2c_local-line-e-commerce-for-farms.webp",
         "alt": "Farmer dashboard interface",
         "caption": "Vendor dashboard for managing products and orders"
       },
       {
-        "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "url": "https://civileats.com/wp-content/uploads/2021/07/210712-local-food-grownby-farmers-market-retail-connect-network-farm-to-consumer-smartphone-app-young-farmers-4-top2.jpg",
+        "alt": "Mobile responsive view",
+        "caption": "Fully responsive design for mobile shoppers"
+      }
+      ,
+      {
+        "url": "https://cdn.trendhunterstatic.com/thumbs/431/farmers-market-apps.jpeg?auto=webp",
         "alt": "Mobile responsive view",
         "caption": "Fully responsive design for mobile shoppers"
       }

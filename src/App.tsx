@@ -22,6 +22,7 @@ import BlogDetails from "./pages/client/BlogDetails"
 import Privacy from "./pages/client/Privacy"
 import TermsAndCondition from "./pages/client/TermsAndCondition"
 import ProjectDetails from "./pages/client/ProjectDetails"
+import Solutions from "./pages/client/Solutions"
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="privacy-policy" element={<Privacy />} />
             <Route path="terms-condition" element={<TermsAndCondition />} />
+            <Route path="solutions" element={<Solutions />} />
           </Route>
 
           {/* Admin Login */}

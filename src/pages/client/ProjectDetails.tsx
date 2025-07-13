@@ -14,7 +14,7 @@ const ProjectDetails: React.FC = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0b0f19] text-red-400">
+      <div className="min-h-screen flex items-center justify-center text-red-400">
         <div className="text-center">
           <h2 className="text-2xl mb-4">Project Not Found</h2>
           <Link
@@ -35,7 +35,7 @@ const ProjectDetails: React.FC = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="min-h-screen font-family-comfort bg-[#0b0f19] text-blue-100 py-50 px-4"
+        className="min-h-screen font-family-comfort  text-blue-100 py-50 px-4"
       >
         <div className="max-w-6xl mx-auto">
           {/* Back Button */}
@@ -93,10 +93,10 @@ const ProjectDetails: React.FC = () => {
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-fit-contain object-cover"
                 />
                 {image.caption && (
-                  <p className="text-sm text-blue-400 p-3 bg-blue-900/10">
+                  <p className="text-sm text-white p-3 ">
                     {image.caption}
                   </p>
                 )}

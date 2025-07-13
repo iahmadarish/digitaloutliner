@@ -79,7 +79,7 @@ export default function Testimonial() {
     };
 
     return (
-        <section className="py-20 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]py-20 px-4 overflow-hidden">
+        <section className="py-20  px-4 overflow-hidden">
             <div className="max-w-5xl mx-auto">
                 {/* Header */}
                 <div className={`  md:lg:xl:2xl:sm:text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>

@@ -44,7 +44,7 @@ const truncateText = (text: string, maxLength: number) => {
     const getCardStyle = (index: number) => {
       const patterns = [
         { bg: "bg-white", text: "text-gray-800", button: "bg-gray-800 text-white" },
-        { bg: "bg-[#d4ff14]", text: "text-black", button: "bg-gray-800 text-white" },
+        { bg: "bg-[#98fc03]", text: "text-black", button: "bg-gray-800 text-white" },
         { bg: "bg-black/50", text: "text-white", button: "bg-teal-400 text-gray-800" },
       ]
       return patterns[index % 3]
@@ -134,7 +134,7 @@ const truncateText = (text: string, maxLength: number) => {
   }
 
   return (
-    <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] py-20 px-4 sm:px-6 lg:px-8">
+    <div className=" py-20 px-4 sm:px-6 lg:px-8">
       <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header Section */}
         <div className="mb-16">

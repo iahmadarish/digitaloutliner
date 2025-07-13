@@ -32,27 +32,12 @@ const faqData = [
   {
     question: "What sets your agency apart from others?",
     answer:
-      "We combine technical expertise with creative innovation and a client-first approach. Unlike many agencies, we focus on delivering custom solutions rather than cookie-cutter packages. We prioritize clear communication, on-time delivery, and measurable results for every client."
+      "We combine technical expertise with creative innovation and a client-first approach. We are not company, We are family member and our another mission is add you to our membership. Unlike many agencies, we focus on delivering custom solutions rather than cookie-cutter packages. We prioritize clear communication, on-time delivery, and measurable results for every client."
   },
   {
     question: "Do you offer ongoing support and maintenance?",
     answer:
       "Yes, we provide ongoing support, maintenance, and updates for websites, apps, and digital campaigns. Whether you need bug fixes, feature updates, or continuous optimization, we offer affordable monthly packages tailored to your needs."
-  },
-  {
-    question: "What is your pricing model?",
-    answer:
-      "Our pricing is flexible and project-based. After understanding your goals and requirements, we provide a customized quote. We offer one-time pricing, monthly retainers, or hourly models depending on the service and project scope. Transparent pricing is always part of our process."
-  },
-  {
-    question: "Do you work with clients outside your country?",
-    answer:
-      "Yes! We have a global client base, Including UK, USA, Canada, Australia all over the world. We collaborate seamlessly across time zones using project management tools and video meetings, ensuring smooth communication and project success."
-  },
-  {
-    question: "How do you measure success in digital marketing?",
-    answer:
-      "We track key performance indicators (KPIs) such as website traffic, bounce rate, conversion rate, keyword rankings, cost-per-click, return on ad spend (ROAS), and lead generation. Monthly reports and strategy calls help you stay informed and in control of your ROI."
   },
   {
     question: "Can you help launch a new product or startup brand?",
@@ -63,9 +48,9 @@ const faqData = [
 
 
   return (
-<div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+<div className="">
 
-    <div className="max-w-5xl   mx-auto p-6 min-h-screen">
+    <div className="mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-18 py-16 min-h-screen">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-200 mb-2">Frequently Asked Questions</h1>
         <p className="text-gray-300">Everything you need to know about our services and process</p>

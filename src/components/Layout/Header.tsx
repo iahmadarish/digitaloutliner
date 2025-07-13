@@ -14,6 +14,7 @@ const URSOFTSNavbar = () => {
 
   const navigation = [
     { name: "Our Service", href: "/services" },
+    { name: "Solutions", href: "/solutions" },
     { name: "Projects", href: "/projects" },
     { name: "Blogs", href: "/blog" },
     { name: "Company", href: "/about" },
@@ -104,7 +105,7 @@ const URSOFTSNavbar = () => {
                   info@ursofts.com
                 </span>
                 <span className="text-white/70 text-xs lg:text-sm">
-                  +880 1855-318275
+                  +880 1568202839
                 </span>
               </div>
 
@@ -135,7 +136,7 @@ const URSOFTSNavbar = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`transition-colors duration-200 text-base lg:text-lg font-medium ${
+                    className={`transition-colors duration-200 text-base md:xl:2xl:lg:text-sm uppercase font-josefin font-medium ${
                       activeItem === item.name
                         ? "text-cyan-400 border-b-2 border-cyan-400 pb-1"
                         : "text-white/90 hover:text-white"
@@ -235,7 +236,7 @@ const URSOFTSNavbar = () => {
               >
                 <div className="flex items-center space-x-3 text-white/80">
                   <Phone className="h-5 w-5 text-cyan-400" />
-                  <span className="text-sm">+880 1855-318275</span>
+                  <span className="text-sm">+880 1568202839</span>
                 </div>
                 <div className="flex items-center space-x-3 text-white/80">
                   <Mail className="h-5 w-5 text-cyan-400" />
