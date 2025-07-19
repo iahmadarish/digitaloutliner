@@ -69,9 +69,8 @@ const URSOFTSNavbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-gray-900 backdrop-blur-md shadow-lg" : "bg-transparent backdrop-blur-sm"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900 backdrop-blur-md shadow-lg" : "bg-transparent backdrop-blur-sm"
+          }`}
         style={{
           transform: `translateY(${visible ? 0 : -100}px)`,
           transition: "transform 0.3s ease-in-out"
@@ -91,10 +90,10 @@ const URSOFTSNavbar = () => {
               {/* URSOFTS Logo - Center */}
               <div className="absolute  left-1/5 transform -translate-x-1/5 lg:static lg:left-auto lg:transform-none">
                 <Link to="/" className="block">
-                  <img 
-                    src={logo} 
-                    className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto" 
-                    alt="URSOFTS Logo" 
+                  <img
+                    src={logo}
+                    className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto"
+                    alt="URSOFTS Logo"
                   />
                 </Link>
               </div>
@@ -105,7 +104,7 @@ const URSOFTSNavbar = () => {
                   info@ursofts.com
                 </span>
                 <span className="text-white/70 text-xs lg:text-sm">
-                  +880 1568202839
+                  +880 1533-504728
                 </span>
               </div>
 
@@ -136,11 +135,10 @@ const URSOFTSNavbar = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`transition-colors duration-200 text-base md:xl:2xl:lg:text-sm uppercase font-josefin font-medium ${
-                      activeItem === item.name
+                    className={`transition-colors duration-200 text-base md:xl:2xl:lg:text-sm uppercase font-josefin font-medium ${activeItem === item.name
                         ? "text-cyan-400 border-b-2 border-cyan-400 pb-1"
                         : "text-white/90 hover:text-white"
-                    }`}
+                      }`}
                   >
                     {item.name}
                   </Link>
@@ -162,16 +160,15 @@ const URSOFTSNavbar = () => {
 
           {/* Sidebar */}
           <div
-            className={`absolute top-0 right-0 h-full w-full max-w-[100%] bg-gradient-to-br from-gray-900 via-black to-gray-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${
-              isMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+            className={`absolute top-0 right-0 h-full w-full max-w-[100%] bg-gradient-to-br from-gray-900 via-black to-gray-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+              }`}
           >
             {/* Sidebar Header */}
             <div className="flex justify-between items-center px-6 py-4 border-b border-cyan-400/30">
-              <img 
-                src={logo} 
-                className="h-10" 
-                alt="URSOFTS Logo" 
+              <img
+                src={logo}
+                className="h-10"
+                alt="URSOFTS Logo"
               />
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -198,15 +195,14 @@ const URSOFTSNavbar = () => {
                     <Link
                       to={item.href}
                       onClick={handleNavClick}
-                      className={`block px-4 py-3 rounded-lg  text-lg font-medium transition-all duration-200 ${
-                        activeItem === item.name
+                      className={`block px-4 py-3 rounded-lg  text-lg font-medium transition-all duration-200 ${activeItem === item.name
                           ? "bg-cyan-400/20  text-cyan-400 border-l-4 border-cyan-400 shadow-lg"
                           : "text-white/90 hover:text-white hover:bg-white/10"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-x-2">
 
-                      {item.name}
+                        {item.name}
                       </div>
                     </Link>
                   </div>
@@ -214,7 +210,7 @@ const URSOFTSNavbar = () => {
               </div>
 
               {/* Contact Us Button */}
-              <div 
+              <div
                 className="mt-8 opacity-0 translate-x-4 animate-slideIn"
                 style={{
                   animationDelay: "400ms",
@@ -227,7 +223,7 @@ const URSOFTSNavbar = () => {
               </div>
 
               {/* Contact Info */}
-              <div 
+              <div
                 className="mt-8 pt-6 border-t border-cyan-400/30 space-y-4 opacity-0 translate-x-4 animate-slideIn"
                 style={{
                   animationDelay: "500ms",
