@@ -103,12 +103,12 @@ const ServiceDetail = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen py-30 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Floating Navigation */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/10 backdrop-blur-xl rounded-full px-6 py-3 border border-white/20"
+        className="fixed  top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/10 backdrop-blur-xl rounded-full px-6 py-3 border border-white/20"
       >
         <div className="flex items-center space-x-6">
           <button className="flex items-center text-white hover:text-cyan-400 transition-colors">
@@ -272,7 +272,7 @@ const ServiceDetail = () => {
       </section>
 
       {/* Service Overview */}
-      <section className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 py-20 px-6">
+      <section id="overview" className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

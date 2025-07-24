@@ -235,7 +235,7 @@ const MatchingHeroSection = () => {
               </motion.div>
 
               {/* Main Heading */}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold text-white leading-tight sm:leading-snug md:leading-relaxed">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-white leading-tight sm:leading-snug md:leading-relaxed">
                 <span className="text-[#79e0a4]">URSOFTS-</span>
                 <span>Where Ideas Meet Innovation and Technology</span>
               </h1>

@@ -46,7 +46,7 @@ const DarkAccordionComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="min-h-screen font-family-comfort py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+    <div className="min-h-screen font-family- py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
       <div className="relative mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
 
 
@@ -88,14 +88,14 @@ const DarkAccordionComponent = () => {
 
 
         {/* Header Section */}
-        <div className="md:lg:xl:sm:2xl:text-start text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+        <div className="md:lg:xl:sm:2xl:text-start  mb-8 sm:mb-10 md:mb-12 lg:mb-16">
           <div className="relative">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-3 sm:mb-4 md:mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl  bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-3 sm:mb-4 md:mb-6 font-family-small font-light leading-tight">
               Solutions Built for the Future
             </h1>
             <div className="absolute -top-1 sm:-top-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full opacity-60"></div>
           </div>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl md:lg:xl:sm:2xl:mx-0 mx-auto leading-relaxed px-2 sm:px-0">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl md:lg:xl:sm:2xl:mx-0 mx-auto leading-relaxed  sm:px-0 font-light text-start">
             At URSOFTS, we empower businesses with scalable digital solutions designed to meet tomorrow’s challenges. Our team delivers with precision, creativity, and a forward-thinking mindset.
           </p>
         </div>
@@ -130,7 +130,7 @@ const DarkAccordionComponent = () => {
                           <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-0.5 sm:mb-1 leading-tight">
+                          <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-white mb-0.5 sm:mb-1 leading-tight">
                             <span className="hidden sm:inline">{item.title}</span>
                             <span className="sm:hidden">{item.title.split(' ').slice(0, 3).join(' ')}</span>
                           </h3>
