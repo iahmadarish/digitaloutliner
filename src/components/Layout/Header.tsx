@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { Menu, X, Phone, Mail, Clock } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
@@ -14,7 +12,8 @@ const URSOFTSNavbar = () => {
 
   const navigation = [
     { name: "Our Service", href: "/services" },
-    { name: "Solutions", href: "/solutions" },
+    { name: "BPO", href: "/solutions" },
+    { name: "H.R", href: "/business-solutions" },
     { name: "Projects", href: "/projects" },
     { name: "Blogs", href: "/blog" },
     { name: "Company", href: "/about" },

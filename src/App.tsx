@@ -23,6 +23,7 @@ import Privacy from "./pages/client/Privacy"
 import TermsAndCondition from "./pages/client/TermsAndCondition"
 import ProjectDetails from "./pages/client/ProjectDetails"
 import Solutions from "./pages/client/Solutions"
+import HRSupportServices from "./components/service/HRSupportServices"
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="privacy-policy" element={<Privacy />} />
             <Route path="terms-condition" element={<TermsAndCondition />} />
             <Route path="solutions" element={<Solutions />} />
+            <Route path="business-solutions" element={<HRSupportServices />} />
           </Route>
 
           {/* Admin Login */}

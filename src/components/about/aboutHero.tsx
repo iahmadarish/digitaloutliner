@@ -12,7 +12,7 @@ const AboutHero = () => {
 
   return (
     <div className=" min-h-screen">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="container mx-auto 8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Column - Content */}
@@ -26,7 +26,7 @@ const AboutHero = () => {
 
             {/* Main Heading */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              <h1 className="text-4xl md:text-5xl font-light text-white leading-tight">
                 We Build Digital
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                   Solutions That Matter
@@ -37,7 +37,7 @@ const AboutHero = () => {
             </div>
 
             {/* Description */}
-            <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-sm lg:text-lg text-gray-300 leading-relaxed">
               <p>
                 URSOFTS is a passionate team of developers, designers, and strategists 
                 dedicated to transforming your ideas into powerful digital experiences. 

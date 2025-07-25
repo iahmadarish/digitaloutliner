@@ -58,7 +58,7 @@ const MissionAbout = () => {
 
   return (
     <div className=" min-h-screen py-20">
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto container">
         
         {/* Header */}
         <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>

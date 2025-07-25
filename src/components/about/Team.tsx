@@ -4,7 +4,6 @@ import type React from "react"
 import { Linkedin } from "lucide-react"
 import sifat from "@/assets/shifat.jpg"
 import mizan from "@/assets/taison.jpg"
-import ishaq from "@/assets/ishaq.png"
 
 interface TeamMember {
   name: string
@@ -30,27 +29,6 @@ const TeamSection: React.FC = () => {
         "8+ years of experience in project management and team leadership. Strong organizational and communication skills",
     },
     {
-      name: "Emily Rivera",
-      role: "Lead Front-End Developer",
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
-      experience:
-        "6+ years of experience in front-end development. Proficient in React, Vue.js, and modern CSS frameworks",
-    },
-    {
-      name: "Jordan Cross",
-      role: "CEO & Founder",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-      experience: "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
-    },
-    {
-      name: "Ahmad Ishaq",
-      role: "UI/UX Designer",
-      image: ishaq,
-      experience: "7+ years of experience in UI/UX design. Skilled in Figma, Adobe illustrator, and user research",
-    },
-    {
       name: "Sarah Wilson",
       role: "Digital Marketing Specialist",
       image: "https://5.imimg.com/data5/SELLER/Default/2021/12/IB/LR/QN/35897240/women-specs.jpg",
@@ -61,7 +39,7 @@ const TeamSection: React.FC = () => {
 
   return (
     <section className="bg- py-16 px-4 min-h-screen">
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="mb-12">
           <div className="inline-block bg-green-500 text-black px-4 py-2 rounded-lg font-bold text-lg mb-6">Team</div>
