@@ -13,6 +13,9 @@ import image3 from "@/assets/slider/Group 43.png"
 import image4 from "@/assets/slider/Group 44.png"
 import image5 from "@/assets/slider/8293830 (1).png"
 
+let images = "https://www.randstad.se/s3fs-media/se-rs/public/2024-09/transparent_png-randstad_professional_tech_illustration_04_rgb_usebackgroundnavy.png?VersionId=ag2Yfnp1wz5WQCQMcwLabIWLChMvvohn"
+let images2 = "https://www.talhive.com/wp-content/uploads/Technology-Hiring-1.svg"
+
 const MatchingHeroSection = () => {
   const [isHovered, setIsHovered] = useState(false)
   const [codeContent, setCodeContent] = useState("")
@@ -99,7 +102,7 @@ const MatchingHeroSection = () => {
     ],
   ]
 
-  const sliderImages = [image, image2, image3, image4, image5]
+  const sliderImages = [images,images2,image, image2, image3, image4, image5]
 
   useEffect(() => {
     if (!inView) return

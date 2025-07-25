@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import image from "@/assets/ishaq.png"
+import image from "@/assets/mizan1.jpg"
+
 const WhatsAppChat = () => {
-  const phoneNumber = "8801568202839"
+  const phoneNumber = "8801744130027"
 
   const messages = [
     "Hello, I would like to know more about your services.",

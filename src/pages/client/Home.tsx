@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         <OurBenefit/>
         <FAQAccordion/>
         <ToolsetComponent/>
-        {/* <SocialNavigation3D/> */}
+
       <Testimonial/>
       
 

@@ -11,8 +11,8 @@ export default function OurBenefit() {
       <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header */}
         <div className="mb-12">
-          <p className="text-gray-200 text-sm mb-4">The Advantages Of Working With Us</p>
-          <h1 className="md:lg:xl:2xl:sm:text-7xl text-2xl font-light mb-6 font-family-comfort">Our Benefits</h1>
+          <p className="text-blue-300 text-sm mb-4 ">The Advantages Of Working With Us</p>
+          <h1 className="md:lg:xl:2xl:sm:text-7xl text-2xl font-light mb-6 font-nunito">Our Benefits</h1>
           <p className="text-gray-300 md:lg:xl:2xl:sm:text-lg text-sm max-w-4xl font-family-small">
             From transparent workflows and robust security to cutting-edge technology and 
             direct communication with our team, we ensure that your digital solutions are not 

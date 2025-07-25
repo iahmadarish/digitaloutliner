@@ -62,7 +62,7 @@ const faqData = [
             key={index}
             className={`rounded-2xl border-2 border-gray-200 overflow-hidden transition-all duration-300 ${
               openItem === index 
-                ? 'bg-lime-500 border-lime-300 shadow-lg' 
+                ? 'bg-[#03142e] border-lime-300 shadow-lg' 
                 : 'bg-white text-white hover:bg-gray-50 hover:border-gray-300'
             }`}
           >
@@ -73,12 +73,12 @@ const faqData = [
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <span className={`text-2xl font-bold ${
-                    openItem === index ? 'text-gray-900' : 'text-gray-700'
+                    openItem === index ? 'text-white' : 'text-gray-700'
                   }`}>
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <h3 className={`text-lg font-semibold ${
-                    openItem === index ? 'text-gray-900' : 'text-gray-700'
+                    openItem === index ? 'text-white' : 'text-gray-700'
                   }`}>
                     {item.question}
                   </h3>
@@ -105,7 +105,7 @@ const faqData = [
             }`}>
               <div className="px-6 pb-6">
                 <div className="border-t border-gray-300 pt-4 ml-12">
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-white leading-relaxed">
                     {item.answer}
                   </p>
                 </div>

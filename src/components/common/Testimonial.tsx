@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -74,12 +74,10 @@ export default function Testimonial() {
         setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };
 
-    const goToSlide = (index: React.SetStateAction<number>) => {
-        setCurrentSlide(index);
-    };
+
 
     return (
-        <section className="py-20  px-4 overflow-hidden">
+        <section className="py-30 mt-4 overflow-hidden">
             <div className="max-w-5xl mx-auto">
                 {/* Header */}
                 <div className={`  md:lg:xl:2xl:sm:text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -178,22 +176,9 @@ export default function Testimonial() {
                     </button>
                 </div>
 
-                {/* Pagination Dots */}
-                <div className="flex justify-center mt-12 gap-3">
-                    {testimonials.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => goToSlide(index)}
-                            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                                ? 'bg-blue-500 w-8'
-                                : 'bg-gray-400 hover:bg-gray-300'
-                                }`}
-                        />
-                    ))}
-                </div>
             </div>
 
-            <section className=" text-white section-padding">
+            <section className="bg-black text-white section-padding">
                 <div className="container text-center">
                     <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to Start Your Next Project?</h2>
                     <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
