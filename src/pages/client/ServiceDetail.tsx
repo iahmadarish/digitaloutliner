@@ -1,20 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useState, useEffect, useRef } from "react"
+import { useParams, useNavigate } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   ArrowLeft,
-  Play,
-  Pause,
   ChevronDown,
   Star,
   Users,
   Clock,
-  Award,
   ArrowRight,
   Zap,
-  Sparkles,
   Phone,
   Mail,
   MapPin,
@@ -26,15 +22,30 @@ import {
   FileText,
   Calculator,
   Megaphone,
+  Smartphone,
+  PenTool,
+  Target,
+  Eye,
+  MessageSquare,
+  Plus,
+  Minus,
 } from "lucide-react"
 import { services } from "../../data/service"
+
+
+
 
 // Service icons mapping
 const getServiceIcon = (serviceType: string) => {
   const iconMap: { [key: string]: any } = {
     "web design & development": Code,
-    "graphic design & photo editing": Palette,
+    "mobile app development": Smartphone,
+    "graphics design": Palette,
+    "2d & 3d design": PenTool,
     "digital marketing": Megaphone,
+    "ui/ux design": Eye,
+    "branding & identity": Target,
+    "content creation": MessageSquare,
     "product photography": Camera,
     "it consultancy & accessories": Monitor,
     "government incentive assistance": FileText,
@@ -44,7 +55,6 @@ const getServiceIcon = (serviceType: string) => {
   return <IconComponent className="w-6 h-6" />
 }
 
-// Function to create URL-friendly slug
 const createSlug = (serviceType: string) => {
   return serviceType
     .toLowerCase()
@@ -52,26 +62,27 @@ const createSlug = (serviceType: string) => {
     .replace(/(^-|-$)/g, "")
 }
 
-// Function to find service by slug
 const findServiceBySlug = (slug: string) => {
   return services.find((service) => createSlug(service.serviceType) === slug)
 }
 
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>()
+  const navigate = useNavigate()
   const [activeFeature, setActiveFeature] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
-  const [scrollY, setScrollY] = useState(0)
   const [activeSection, setActiveSection] = useState("overview")
-
-  const service = findServiceBySlug(slug || "")
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [isSticky, setIsSticky] = useState(false)
+  const observerRef = useRef<IntersectionObserver | null>(null)
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
+  // Function to properly assign refs
+  const setSectionRef = (id: string) => (el: HTMLElement | null) => {
+    sectionRefs.current[id] = el
+  }
+  console.log(setIsPlaying)
+  const service = findServiceBySlug(slug!)!; // Note the !
   const relatedServices = services.filter((s) => s.id !== service?.id).slice(0, 3)
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   useEffect(() => {
     if (service?.features && isPlaying) {
@@ -82,13 +93,98 @@ const ServiceDetail = () => {
     }
   }, [isPlaying, service?.features])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      setIsSticky(scrollPosition > 100)
+
+      // Update active section based on scroll position
+      Object.entries(sectionRefs.current).forEach(([id, element]) => {
+        if (element) {
+          const { offsetTop, offsetHeight } = element
+          if (scrollPosition >= offsetTop - 200 && scrollPosition < offsetTop + offsetHeight - 200) {
+            setActiveSection(id)
+          }
+        }
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    // Initialize IntersectionObserver for section tracking
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { threshold: 0.5, rootMargin: '-100px 0px -100px 0px' }
+    )
+
+    // Observe all sections
+    Object.values(sectionRefs.current).forEach((section) => {
+      if (section && observerRef.current) {
+        observerRef.current.observe(section)
+      }
+    })
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+    }
+  }, [])
+
+  const scrollToSection = (id: string) => {
+    setActiveSection(id)
+    const element = sectionRefs.current[id]
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+  console.log(touchStartX, touchEndX)
+  // Auto-slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeature(prev => (prev + 1) % service.features.length);
+    }, 5000); // Change slide every 5 seconds
+    return () => clearInterval(interval);
+  }, [service.features.length]);
+
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+
+
   if (!service) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center p-4">
+        <div className="text-center max-w-md">
           <h1 className="text-3xl font-bold text-white mb-4">Service Not Found</h1>
-          <button className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-6 py-3 rounded-2xl">
-            Back to Services
+          <p className="text-gray-300 mb-6">The service you're looking for doesn't exist or may have been removed.</p>
+          <button
+            onClick={() => navigate("/services")}
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+          >
+            Browse All Services
           </button>
         </div>
       </div>
@@ -99,189 +195,161 @@ const ServiceDetail = () => {
     { id: "overview", label: "Overview" },
     { id: "features", label: "Features" },
     { id: "services", label: "Services" },
+    ...(service.process ? [{ id: "process", label: "Process" }] : []),
+    ...(service.faq ? [{ id: "faq", label: "FAQ" }] : []),
     { id: "contact", label: "Contact" },
   ]
 
   return (
-    <div className="min-h-screen py-30 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen  text-gray-100">
       {/* Floating Navigation */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed  top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/10 backdrop-blur-xl rounded-full px-6 py-3 border border-white/20"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isSticky ? 'bg-gray-800/95 backdrop-blur-md py-2 shadow-xl' : 'bg-transparent py-4'}`}
       >
-        <div className="flex items-center space-x-6">
-          <button className="flex items-center text-white hover:text-cyan-400 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back
-          </button>
-          <div className="flex space-x-4">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => setActiveSection(section.id)}
-                className={`px-3 py-1 rounded-full text-sm transition-all ${
-                  activeSection === section.id ? "bg-cyan-500 text-white" : "text-white/70 hover:text-white"
-                }`}
-              >
-                {section.label}
-              </button>
-            ))}
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center text-cyan-400 hover:text-cyan-300 transition-colors w-fit"
+            >
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              <span className="font-medium">Back to Services</span>
+            </button>
+
+            <div className="flex overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
+              <div className="flex space-x-2">
+                {sections.map((section) => (
+                  <button
+                    key={section.id}
+                    onClick={() => scrollToSection(section.id)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${activeSection === section.id
+                      ? 'bg-cyan-600 text-white shadow-md'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                      }`}
+                  >
+                    {section.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative  h-screen overflow-hidden">
-        <motion.div
-          style={{ y: scrollY * 0.5 }}
-          className="absolute  inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20"
-        />
+      {/* Hero Section - Pure Content Centered */}
+      <section
+        className="relative py-32 md:py-40 "
+        ref={setSectionRef('hero')}
+      >
+        {/* Subtle background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
+        </div>
 
-        <div className="relative  z-10 h-full flex items-center">
-          <div className="max-w-7xl  mx-auto px-6 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <motion.div
-                  className="flex items-center space-x-4 mb-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center">
-                    {service.iconType === "image" ? (
-                      <img src={service.icon || "/placeholder.svg"} alt="Service Icon" className="w-8 h-8" />
-                    ) : (
-                      getServiceIcon(service.serviceType)
-                    )}
-                  </div>
-                  <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-                    <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                    <span className="text-white text-sm">4.9 Rating</span>
-                  </div>
-                </motion.div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Service category */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 rounded-full px-4 py-2 mb-6"
+            >
+              <span className="text-blue-400 text-sm font-medium">{(service as any).category || "Premium Service"}</span>
+              <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
+              <div className="flex items-center gap-1">
+                <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                <span className="text-white text-sm">4.9/5</span>
+              </div>
+            </motion.div>
 
-                <motion.h1
-                  className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  {service.serviceType}
-                </motion.h1>
+            {/* Main heading */}
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {service.serviceType}
+            </motion.h1>
 
-                <motion.p
-                  className="text-xl text-white/80 mb-8 leading-relaxed"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  {service.shortDetails}
-                </motion.p>
+            {/* Description */}
+            <motion.p
+              className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              {service.shortDetails}
+            </motion.p>
 
-                <motion.div
-                  className="flex flex-wrap gap-4 mb-8"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  {[
-                    { icon: Users, text: "Expert Team", color: "from-blue-500 to-cyan-500" },
-                    { icon: Clock, text: "Fast Delivery", color: "from-purple-500 to-pink-500" },
-                    { icon: Award, text: "Quality Assured", color: "from-green-500 to-emerald-500" },
-                  ].map((item, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      className={`bg-gradient-to-r ${item.color} p-4 rounded-2xl text-white flex items-center space-x-3`}
-                    >
-                      <item.icon className="w-5 h-5" />
-                      <span className="font-medium">{item.text}</span>
-                    </motion.div>
-                  ))}
-                </motion.div>
+            {/* CTA buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <button className="px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                Start Your Project
+              </button>
+              <button className="px-8 py-3.5 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors border border-gray-700">
+                Learn How It Works
+              </button>
+            </motion.div>
 
-                <motion.div
-                  className="flex space-x-4"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1 }}
-                >
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-2xl font-semibold flex items-center space-x-2 shadow-2xl"
-                  >
-                    <Sparkles className="w-5 h-5" />
-                    <span>Start Project</span>
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-2xl font-semibold"
-                  >
-                    View Portfolio
-                  </motion.button>
-                </motion.div>
-              </motion.div>
-
-              {/* Right Content - Service Images Carousel */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="relative"
-              >
-                <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-2xl font-bold text-white">Service Gallery</h3>
-                  </div>
-
-                  <div className="space-y-4">
-                    {service.images.map((image, index) => (
-                      <motion.img
-                        key={index}
-                        src={image || "/placeholder.svg"}
-                        alt={`${service.serviceType} ${index + 1}`}
-                        className="w-full h-48 object-cover rounded-2xl"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: index * 0.2 }}
-                      />
-                    ))}
-                  </div>
+            {/* Key points */}
+            <motion.div
+              className="mt-12 flex flex-wrap justify-center gap-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              {[
+                { icon: Clock, text: "Fast Delivery" },
+                { icon: CheckCircle, text: "Quality Guaranteed" },
+                { icon: Users, text: "Expert Team" },
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-2 text-gray-400">
+                  <item.icon className="w-5 h-5 text-blue-400" />
+                  <span>{item.text}</span>
                 </div>
-              </motion.div>
-            </div>
+              ))}
+            </motion.div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+          transition={{ duration: 2, repeat: Infinity }}
         >
-          <ChevronDown className="w-8 h-8 text-white/50" />
+          <ChevronDown className="w-8 h-8 text-gray-500 hover:text-white cursor-pointer" />
         </motion.div>
       </section>
 
       {/* Service Overview */}
-      <section id="overview" className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section
+        id="overview"
+        className="py-16 md:py-24"
+        ref={(el) => {
+          if (el) sectionRefs.current['features'] = el
+        }}
+      >
+        <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Service Overview</h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Service Overview</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mb-6" />
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Comprehensive solutions tailored to your business needs
             </p>
           </motion.div>
@@ -294,11 +362,14 @@ const ServiceDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
+                whileHover={{ y: -5 }}
+                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 shadow-lg"
               >
-                <div className="flex items-start space-x-4">
-                  <CheckCircle className="w-6 h-6 text-cyan-400 mt-1 flex-shrink-0" />
-                  <p className="text-white/80 leading-relaxed">{detail}</p>
+                <div className="flex items-start gap-4">
+                  <div className="bg-cyan-600/20 p-2 rounded-lg border border-cyan-400/30 flex-shrink-0">
+                    <CheckCircle className="w-5 h-5 text-cyan-400" />
+                  </div>
+                  <p className="text-gray-300 leading-relaxed">{detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -306,102 +377,111 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-cyan-500/20 to-purple-500/20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Key Features</h2>
-            <div className="flex items-center justify-center space-x-4 mb-8">
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors"
-              >
-                {isPlaying ? <Pause className="w-6 h-6 text-white" /> : <Play className="w-6 h-6 text-white" />}
-              </button>
-              <span className="text-white/70">Auto-playing features</span>
-            </div>
-          </motion.div>
+      {/* Features Section - Auto-Sliding with Touch Support */}
+      {service.features && service.features.length > 0 && (
+        <section
+          id="features"
+          className="py-16 md:py-24  overflow-hidden"
+          ref={(el) => {
+            if (el) sectionRefs.current['features'] = el
+          }}
+        >
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Key Features</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6" />
+            </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Feature Content */}
-            <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            {/* Auto-sliding Features Container with Touch Support */}
+            <div
+              className="relative h-[500px] md:h-[600px] w-full overflow-hidden rounded-2xl bg-gray-800/50 border border-gray-700 shadow-xl"
+              onTouchStart={(e) => handleTouchStart(e)}
+              onTouchMove={(e) => handleTouchMove(e)}
+            >
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeFeature}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="space-y-6"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.6 }}
+                  className="absolute inset-0 flex flex-col md:flex-row"
                 >
-                  <h3 className="text-3xl lg:text-4xl font-bold text-white">{service.features[activeFeature].title}</h3>
-                  <p className="text-xl text-white/70 leading-relaxed">{service.features[activeFeature].content}</p>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-6 py-3 rounded-2xl font-semibold flex items-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
+                  {/* Feature Content */}
+                  <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                    <div className="mb-4 flex items-center gap-2">
+                      <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold">
+                        {activeFeature + 1}
+                      </div>
+                      <span className="text-sm text-blue-400">Feature {activeFeature + 1}/{service.features.length}</span>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                      {service.features[activeFeature].title}
+                    </h3>
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      {service.features[activeFeature].content}
+                    </p>
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors w-fit">
+                      Learn More
+                    </button>
+                  </div>
+
+                  {/* Feature Image */}
+                  <div className="w-full md:w-1/2 h-64 md:h-full relative bg-gray-700">
+                    <img
+                      src={
+                        service.features[activeFeature].image ||
+                        `/placeholder.svg?height=600&width=800&query=${service.features[activeFeature].title}`
+                      }
+                      alt={service.features[activeFeature].title}
+                      className="w-full h-full object-cover absolute inset-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-black/60 via-black/30 to-transparent" />
+                  </div>
                 </motion.div>
               </AnimatePresence>
+            </div>
 
-              {/* Feature Navigation */}
-              <div className="flex space-x-3 mt-8">
-                {service.features.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveFeature(index)}
-                    className={`w-4 h-4 rounded-full transition-all ${
-                      index === activeFeature ? "bg-cyan-500 scale-125" : "bg-white/30 hover:bg-white/50"
+            {/* Navigation Dots Only */}
+            <div className="flex justify-center gap-3 mt-8">
+              {service.features.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveFeature(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${index === activeFeature
+                      ? "bg-blue-500 scale-125"
+                      : "bg-gray-600 hover:bg-gray-500"
                     }`}
-                  />
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Feature Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={activeFeature}
-                  src={service.features[activeFeature].image || "/placeholder.svg"}
-                  alt={service.features[activeFeature].title}
-                  className="w-full h-96 object-cover rounded-3xl"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
                 />
-              </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl" />
-            </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Services Grid */}
-      <section className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section
+        id="services"
+        className="py-16 md:py-24 "
+        ref={(el) => {
+          if (el) sectionRefs.current['services'] = el
+        }}
+      >
+        <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">What We Offer</h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Offer</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 mx-auto mb-6" />
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Complete range of services to meet your requirements
             </p>
           </motion.div>
@@ -414,16 +494,16 @@ const ServiceDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="group bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
+                whileHover={{ y: -8 }}
+                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 shadow-lg"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl p-3 group-hover:scale-110 transition-transform">
-                    <Zap className="w-6 h-6 text-white" />
+                <div className="flex items-start gap-4">
+                  <div className="bg-emerald-600/20 p-3 rounded-lg border border-emerald-400/30 flex-shrink-0">
+                    <Zap className="w-5 h-5 text-emerald-400" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">{point}</h3>
-                    <p className="text-white/60 text-sm">Professional implementation with modern best practices</p>
+                    <p className="text-gray-400 text-sm">Professional implementation with modern best practices</p>
                   </div>
                 </div>
               </motion.div>
@@ -432,20 +512,142 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Related Services */}
-      {relatedServices.length > 0 && (
-        <section className="py-20 px-6 bg-gradient-to-r from-cyan-500/20 to-purple-500/20">
-          <div className="max-w-7xl mx-auto">
+      {/* Process Section */}
+      {service.process && service.process.length > 0 && (
+        <section
+          id="process"
+          className="py-16 md:py-24 "
+          ref={(el) => {
+            if (el) sectionRefs.current['process'] = el
+          }}
+        >
+          <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Related Services</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Process</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6" />
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                Step-by-step approach to deliver exceptional results
+              </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="relative">
+              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-600 transform -translate-x-1/2" />
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {service.process.map((step, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15 }}
+                    className={`relative ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8 lg:mt-16'}`}
+                  >
+                    <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 shadow-lg h-full">
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg mr-4">
+                          {index + 1}
+                        </div>
+                        <h3 className="text-xl font-bold text-white">{step.step}</h3>
+                      </div>
+                      <p className="text-gray-300 pl-16">{step.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ Section */}
+      {service.faq && service.faq.length > 0 && (
+        <section
+          id="faq"
+          className="py-16 md:py-24 "
+          ref={(el: HTMLElement | null) => {
+            if (el) {
+              sectionRefs.current['faq'] = el
+            }
+          }}
+        >
+          <div className="container mx-auto px-4 max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-orange-600 mx-auto mb-6" />
+              <p className="text-lg text-gray-300">
+                Get answers to common questions about our {service.serviceType.toLowerCase()} services
+              </p>
+            </motion.div>
+
+            <div className="space-y-4">
+              {service.faq.map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 overflow-hidden shadow-lg"
+                >
+                  <button
+                    onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-700/50 transition-colors"
+                  >
+                    <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
+                    {expandedFaq === index ? (
+                      <Minus className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                    ) : (
+                      <Plus className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                    )}
+                  </button>
+                  <AnimatePresence>
+                    {expandedFaq === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6 pt-2">
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Services */}
+      {relatedServices.length > 0 && (
+        <section className="py-16 md:py-24 ">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Explore More Services</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-violet-500 to-purple-600 mx-auto mb-6" />
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {relatedServices.map((relatedService, index) => (
                 <motion.div
                   key={relatedService.id}
@@ -453,20 +655,29 @@ const ServiceDetail = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 cursor-pointer"
+                  whileHover={{ y: -10 }}
+                  onClick={() => navigate(`/service/${createSlug(relatedService.serviceType)}`)}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-violet-500/50 transition-all duration-300 cursor-pointer shadow-lg"
                 >
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="bg-violet-600/20 p-3 rounded-lg border border-violet-400/30">
                       {relatedService.iconType === "image" ? (
-                        <img src={relatedService.icon || "/placeholder.svg"} alt="Service" className="w-6 h-6" />
+                        <img
+                          src={relatedService.icon || "/service-icon-placeholder.svg"}
+                          alt="Service"
+                          className="w-6 h-6"
+                        />
                       ) : (
                         getServiceIcon(relatedService.serviceType)
                       )}
                     </div>
                     <h3 className="text-xl font-bold text-white">{relatedService.serviceType}</h3>
                   </div>
-                  <p className="text-white/70 text-sm line-clamp-3">{relatedService.shortDetails}</p>
+                  <p className="text-gray-300 text-sm mb-6 line-clamp-3">{relatedService.shortDetails}</p>
+                  <button className="text-violet-400 text-sm font-medium flex items-center gap-2 hover:text-violet-300 transition-colors">
+                    <span>Learn more</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </motion.div>
               ))}
             </div>
@@ -475,39 +686,46 @@ const ServiceDetail = () => {
       )}
 
       {/* Contact CTA */}
-      <section className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 py-20 px-6">
-        <div className="max-w-4xl mx-auto">
+      <section
+        id="contact"
+        className="py-16 md:py-24 bg-gray-800/30"
+        ref={(el) => {
+          if (el) sectionRefs.current['contact'] = el
+        }}
+      >
+        <div className="container mx-auto px-4 max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-xl rounded-3xl p-12 border border-white/10 text-center"
+            viewport={{ once: true, margin: "-100px" }}
+            className="bg-gradient-to-br from-gray-800 to-gray-900/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-700 shadow-2xl text-center"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
-            <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mb-8" />
+            <p className="text-lg text-gray-300 mb-8">
               Let's discuss your vision and create something amazing together with our{" "}
-              {service.serviceType.toLowerCase()} expertise
+              <span className="text-cyan-400">{service.serviceType.toLowerCase()}</span> expertise
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-              <div className="flex items-center space-x-3 text-white">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8 flex-wrap">
+              <div className="flex items-center gap-3 text-white bg-gray-700/50 px-4 py-2 rounded-lg">
                 <Phone className="w-5 h-5 text-cyan-400" />
                 <span>+88 01819454892</span>
               </div>
-              <div className="flex items-center space-x-3 text-white">
+              <div className="flex items-center gap-3 text-white bg-gray-700/50 px-4 py-2 rounded-lg">
                 <Mail className="w-5 h-5 text-cyan-400" />
                 <span>admin@ursofts.com</span>
               </div>
-              <div className="flex items-center space-x-3 text-white">
+              <div className="flex items-center gap-3 text-white bg-gray-700/50 px-4 py-2 rounded-lg">
                 <MapPin className="w-5 h-5 text-cyan-400" />
                 <span>Dhaka, Bangladesh</span>
               </div>
             </div>
 
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-12 py-4 rounded-2xl font-semibold text-lg flex items-center space-x-3 mx-auto shadow-2xl"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-3 mx-auto shadow-lg hover:shadow-cyan-500/30 transition-all"
             >
               <span>Get Free Consultation</span>
               <ArrowRight className="w-5 h-5" />
