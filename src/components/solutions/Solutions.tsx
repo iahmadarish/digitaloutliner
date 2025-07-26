@@ -43,7 +43,7 @@ export default function Solutions() {
   const services = [
     {
       icon: <HeadphonesIcon className="w-8 h-8" />,
-      title: "Customer Support Services",
+      title: "Customer Support Service",
       description: "24/7 multilingual customer support through phone, email, chat, and social media channels."
     },
     {
