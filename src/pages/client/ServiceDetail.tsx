@@ -31,6 +31,7 @@ import {
   Minus,
 } from "lucide-react"
 import { services } from "../../data/service"
+import ScrollToTop from "@/components/ScrollToTop"
 
 
 
@@ -201,7 +202,8 @@ const ServiceDetail = () => {
   ]
 
   return (
-    <div className="min-h-screen  text-gray-100">
+    <div className="min-h-screen bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] text-gray-100">
+      <ScrollToTop/>
       {/* Floating Navigation */}
       <motion.nav
         initial={{ y: -100 }}
@@ -239,7 +241,7 @@ const ServiceDetail = () => {
       </motion.nav>
 
       {/* Hero Section */}
-      {/* Hero Section - Pure Content Centered */}
+
       <section
         className="relative py-32 md:py-40 "
         ref={setSectionRef('hero')}

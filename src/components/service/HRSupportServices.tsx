@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
+import ScrollToTop from '../ScrollToTop';
+import image from "@/assets/bg-elements/DotsWithLines_illustration_UseBackgroundTurquoise_RGB.svg"
 interface ServiceCardProps {
     title: string;
     description: string;
@@ -186,10 +187,11 @@ const HRSupportServices: React.FC = () => {
 
     return (
         <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] text-gray-100 lg:py-50 py-30">
+            <ScrollToTop/>
             {/* Hero Section */}
             <AnimatedSection variant={fadeIn}>
                 <section className="relative py-28">
-                    <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
+                    <div className="container mx-auto px-18 flex flex-col md:flex-row items-center">
                         <motion.div
                             className="md:w-1/2 mb-10 md:mb-0"
                             variants={slideInFromLeft}
@@ -214,10 +216,10 @@ const HRSupportServices: React.FC = () => {
                             variants={slideInFromRight}
                         >
                             <img
-                                src="https://www.randstad.com.my/s3fs-media/my/public/2024-08/transparent_png-randstad_professional_tech_illustration_21_rgb_usebackgroundwhite.png?VersionId=oje.qdoxLfgYTFnT8dYtv5CqfjccBYkK"
+                                src={image}
                                 // https://www.randstad.se/s3fs-media/se-rs/public/2024-09/transparent_png-randstad_professional_tech_illustration_04_rgb_usebackgroundnavy.png?VersionId=ag2Yfnp1wz5WQCQMcwLabIWLChMvvohn
                                 alt="Team collaborating"
-                                className="rounded-xl shadow-2xl  w-full max-w-lg mx-auto"
+                                className="rounded-xl  w-full max-w-xl mx-auto"
                             />
                         </motion.div>
                     </div>

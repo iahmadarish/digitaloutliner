@@ -17,7 +17,7 @@ import web5 from "@/components/service/service/web design and development/image 
 
 
 export const services = [
-  
+
   {
     id: 1,
     serviceType: "Web Design & Development",
@@ -45,38 +45,38 @@ export const services = [
       web1,
       web2,
     ],
-   features : [
-  {
-    title: "Lightning Fast Performance",
-    content:
-      "Experience blazing-fast website speed with optimized code, global CDN integration, image optimization, and modern frameworks like Next.js and React. Our frontend performance enhancements ensure lower bounce rates and higher user engagement—essential for both user satisfaction and SEO ranking.",
-    image: "https://seospacecastle.com/assets/img/landing/web-slider-dev.png"
-  },
-  {
-    title: "Scalable Architecture",
-    content:
-      "Our web solutions are built using scalable, modular architectures that grow effortlessly with your business. From microservices and RESTful APIs to efficient cloud-based infrastructure, we future-proof your website to handle increasing traffic and complex features—ideal for high-growth startups and enterprises.",
-    image: "https://res.cloudinary.com/jerrick/image/upload/v1636098022/6184dfe6e810a7001d9f9809.jpg"
-  },
-  {
-    title: "SEO-Friendly Design",
-    content:
-      "Boost your search engine visibility with our SEO-optimized web development approach. We implement semantic HTML5, structured data (schema markup), clean URLs, responsive design, optimized images, and fast load times—all of which improve your Google rankings and organic traffic.",
-    image: web3
-  },
-  {
-    title: "Cross-Platform Compatibility",
-    content:
-      "Deliver a seamless user experience on all devices and screen sizes. We ensure your website is fully responsive, mobile-first, and compatible with all major browsers including Chrome, Safari, Firefox, and Edge—leading to better user retention and higher SEO scores in mobile search results.",
-    image: web4
-  },
-  {
-    title: "Secure Web Applications",
-    content:
-      "Protect your users and data with advanced web security protocols. We enforce HTTPS, SSL/TLS encryption, secure login systems, input sanitization, role-based access control, and regular security audits—ensuring your application meets modern cybersecurity standards and builds user trust.",
-    image: web5
-  }
-],
+    features: [
+      {
+        title: "Lightning Fast Performance",
+        content:
+          "Experience blazing-fast website speed with optimized code, global CDN integration, image optimization, and modern frameworks like Next.js and React. Our frontend performance enhancements ensure lower bounce rates and higher user engagement—essential for both user satisfaction and SEO ranking.",
+        image: "https://seospacecastle.com/assets/img/landing/web-slider-dev.png"
+      },
+      {
+        title: "Scalable Architecture",
+        content:
+          "Our web solutions are built using scalable, modular architectures that grow effortlessly with your business. From microservices and RESTful APIs to efficient cloud-based infrastructure, we future-proof your website to handle increasing traffic and complex features—ideal for high-growth startups and enterprises.",
+        image: "https://res.cloudinary.com/jerrick/image/upload/v1636098022/6184dfe6e810a7001d9f9809.jpg"
+      },
+      {
+        title: "SEO-Friendly Design",
+        content:
+          "Boost your search engine visibility with our SEO-optimized web development approach. We implement semantic HTML5, structured data (schema markup), clean URLs, responsive design, optimized images, and fast load times—all of which improve your Google rankings and organic traffic.",
+        image: web3
+      },
+      {
+        title: "Cross-Platform Compatibility",
+        content:
+          "Deliver a seamless user experience on all devices and screen sizes. We ensure your website is fully responsive, mobile-first, and compatible with all major browsers including Chrome, Safari, Firefox, and Edge—leading to better user retention and higher SEO scores in mobile search results.",
+        image: web4
+      },
+      {
+        title: "Secure Web Applications",
+        content:
+          "Protect your users and data with advanced web security protocols. We enforce HTTPS, SSL/TLS encryption, secure login systems, input sanitization, role-based access control, and regular security audits—ensuring your application meets modern cybersecurity standards and builds user trust.",
+        image: web5
+      }
+    ],
     faq: [
       {
         question: "How long does it take to develop a custom website?",
@@ -99,28 +99,28 @@ export const services = [
         answer: "Yes, we implement SEO best practices during development including proper site structure, metadata, and performance optimization."
       }
     ],
-    process:[
-  {
-    step: "Discovery & Planning",
-    description:
-      "We begin with in-depth consultations to understand your business objectives, target audience, brand positioning, and technical requirements. This strategic planning phase ensures a clear roadmap for success, aligning your digital goals with scalable web solutions and measurable KPIs."
-  },
-  {
-    step: "Design & Prototyping",
-    description:
-      "Our UX/UI designers craft wireframes and high-fidelity mockups using tools like Figma and Adobe XD. We focus on responsive design, intuitive user experience, and visual storytelling to reflect your brand identity. Interactive prototypes are shared for feedback and approval before development begins."
-  },
-  {
-    step: "Development & Testing",
-    description:
-      "We develop the website using modern web technologies such as HTML5, CSS3, JavaScript, Next.js, and RESTful APIs. Our code is optimized for performance, SEO, and accessibility. Rigorous quality assurance testing ensures cross-browser compatibility, mobile responsiveness, and bug-free deployment."
-  },
-  {
-    step: "Launch & Optimization",
-    description:
-      "After deployment on a secure hosting environment, we monitor your site’s performance using tools like Google Analytics, Lighthouse, and Search Console. We continuously optimize page speed, fix SEO issues, and implement conversion rate enhancements to ensure long-term digital growth."
-  }
-]
+    process: [
+      {
+        step: "Discovery & Planning",
+        description:
+          "We begin with in-depth consultations to understand your business objectives, target audience, brand positioning, and technical requirements. This strategic planning phase ensures a clear roadmap for success, aligning your digital goals with scalable web solutions and measurable KPIs."
+      },
+      {
+        step: "Design & Prototyping",
+        description:
+          "Our UX/UI designers craft wireframes and high-fidelity mockups using tools like Figma and Adobe XD. We focus on responsive design, intuitive user experience, and visual storytelling to reflect your brand identity. Interactive prototypes are shared for feedback and approval before development begins."
+      },
+      {
+        step: "Development & Testing",
+        description:
+          "We develop the website using modern web technologies such as HTML5, CSS3, JavaScript, Next.js, and RESTful APIs. Our code is optimized for performance, SEO, and accessibility. Rigorous quality assurance testing ensures cross-browser compatibility, mobile responsiveness, and bug-free deployment."
+      },
+      {
+        step: "Launch & Optimization",
+        description:
+          "After deployment on a secure hosting environment, we monitor your site’s performance using tools like Google Analytics, Lighthouse, and Search Console. We continuously optimize page speed, fix SEO issues, and implement conversion rate enhancements to ensure long-term digital growth."
+      }
+    ]
   },
 
 
@@ -154,68 +154,68 @@ export const services = [
     features: [
       {
         title: "Cross-Platform Compatibility",
-        content: "Build once, run anywhere. Our apps are optimized for Android and iOS with Flutter and React Native for faster development and wider reach.",
+        content: "With cross-platform app development using Flutter and React Native, we help you launch your mobile app on both Android and iOS without building two separate codebases. This approach saves time and cost while ensuring a consistent user experience across platforms. Whether you're a startup or an enterprise, our developers build robust, scalable apps that run seamlessly on multiple devices and screen sizes.",
         image: "https://img.freepik.com/free-photo/phone-app-development_53876-96391.jpg",
       },
       {
         title: "Native Performance & UX",
-        content: "Experience smooth, responsive, and intuitive native app performance with platform-specific features and interfaces.",
+        content: "Our apps are designed to deliver true native performance using platform-optimized UI components and hardware acceleration. We tailor the user interface and experience to match platform-specific design guidelines, ensuring intuitive navigation and lightning-fast interactions. Whether you're developing for iOS with Swift or Android with Kotlin, our native app development experts prioritize responsiveness and user satisfaction.",
         image: "https://img.freepik.com/free-photo/app-interface-design_1098-16295.jpg",
       },
       {
         title: "Real-Time Functionality",
-        content: "Implement real-time features like messaging, geolocation, and live tracking using Firebase and socket-based systems.",
+        content: "We integrate real-time features like live chat, geolocation tracking, push notifications, and instant data synchronization using technologies such as Firebase, WebSockets, and MQTT. Real-time app development is crucial for logistics, ride-sharing, social media, and on-demand platforms, ensuring that your users receive immediate updates and interactions without delay.",
         image: "https://img.freepik.com/free-photo/real-time-technology_53876-126054.jpg",
       },
       {
         title: "Secure & Scalable Backend",
-        content: "Robust backend architecture integrated with REST APIs ensures data security and effortless scalability.",
+        content: "Our mobile apps are powered by secure, cloud-ready backend systems built with Node.js, Express, MongoDB, and Firebase. We follow industry best practices for backend development, including encrypted API communication, role-based authentication, and data validation. Whether you're handling 100 or 100,000 users, our architecture ensures your app remains fast, secure, and scalable.",
         image: "https://img.freepik.com/free-photo/data-cloud-storage-system_23-2149394164.jpg",
       },
     ],
     faq: [
       {
         question: "Should I build a native or cross-platform app?",
-        answer: "Native apps offer better performance for complex applications, while cross-platform is cost-effective for reaching both iOS and Android users quickly."
+        answer: "Choosing between native and cross-platform app development depends on your project goals. Native apps, developed specifically for iOS (Swift) or Android (Kotlin), offer superior performance, full access to device features, and better user experience. Cross-platform apps, built with Flutter or React Native, are more cost-effective and faster to develop, especially for startups looking to launch on both platforms simultaneously."
       },
       {
         question: "How much does mobile app development cost?",
-        answer: "Costs vary based on features and complexity, ranging from $10,000 for basic apps to $100,000+ for enterprise solutions."
+        answer: "Mobile app development costs vary based on complexity, features, platform, and development timeline. A basic app with essential features may cost between $10,000 and $20,000. Mid-level apps with integrations and user authentication may range from $25,000 to $50,000. High-end or enterprise mobile apps with advanced features like real-time chat, payments, and custom APIs can exceed $100,000."
       },
       {
         question: "Do you help with app store submissions?",
-        answer: "Yes, we handle the entire submission process to both Google Play Store and Apple App Store, including preparing all required assets."
+        answer: "Yes, we provide complete support for submitting your app to the Google Play Store and Apple App Store. Our services include preparing metadata, screenshots, app icons, privacy policies, and managing app certificates. We also assist with resolving any app review issues and follow best practices to ensure approval on the first attempt."
       },
       {
         question: "How do you ensure app security?",
-        answer: "We implement secure coding practices, data encryption, secure API calls, and regular security audits."
+        answer: "Security is a top priority in our mobile app development process. We implement secure coding standards, encrypt sensitive user data, use HTTPS for all API calls, and protect against common vulnerabilities such as XSS, SQL injection, and data leakage. Additionally, we integrate biometric authentication (Face ID, Touch ID) and perform regular penetration testing and code audits."
       },
       {
         question: "What ongoing costs should I expect after launch?",
-        answer: "Typical ongoing costs include hosting, maintenance (15-20% of initial cost annually), updates, and potential marketing expenses."
+        answer: "Post-launch mobile app costs typically include hosting services (cloud or dedicated), regular maintenance (15-20% of the initial development cost annually), performance monitoring, bug fixes, feature enhancements, and app store fees. You should also budget for marketing efforts, analytics tools, and third-party service subscriptions, depending on your app's functionality."
       }
     ],
     process: [
       {
         step: "Requirement Analysis",
-        description: "Detailed discussions to understand your app's purpose, target audience, and feature requirements.",
+        description: "We begin with an in-depth consultation to understand your business goals, target audience, key features, and technical constraints. Our team documents every requirement to ensure alignment between your vision and our development process. We also offer expert advice on tech stacks, platforms (Android, iOS, or both), and monetization strategies."
       },
       {
         step: "UI/UX Design",
-        description: "Creating user flows, wireframes, and high-fidelity designs for optimal user experience.",
+        description: "Our designers create interactive wireframes, user journeys, and high-fidelity prototypes based on your brand and user needs. With a focus on mobile-first design, we ensure your app is intuitive, accessible, and visually appealing. Our UI/UX design process also includes usability testing and feedback loops to validate the experience."
       },
       {
         step: "Development & Integration",
-        description: "Building the app with clean code and integrating necessary APIs and third-party services.",
+        description: "Our developers write clean, maintainable code using Flutter, React Native, or native languages like Kotlin and Swift. We integrate third-party APIs, databases, and cloud services as required, ensuring your app delivers the desired features and performance. Our agile methodology ensures transparency and continuous progress updates throughout the build."
       },
       {
         step: "Testing & Deployment",
-        description: "Rigorous testing across devices followed by app store submission and launch.",
+        description: "Every app we build undergoes rigorous quality assurance (QA) testing, including functional testing, UI testing, cross-device compatibility checks, and performance benchmarking. We also conduct beta testing to gather user feedback. Once approved, we handle end-to-end deployment to the App Store and Google Play, following platform guidelines and best practices."
       },
       {
         step: "Maintenance & Updates",
-        description: "Providing ongoing support, bug fixes, and feature updates post-launch.",
-      },
+        description: "Post-launch, we offer flexible maintenance plans to keep your app running smoothly. This includes performance monitoring, crash analytics, OS compatibility updates, and feature enhancements based on user feedback. Our support ensures your app evolves with your business and remains competitive in the app market."
+      }
     ]
   },
 
@@ -243,76 +243,84 @@ export const services = [
       "File delivery in multiple formats",
     ],
     images: [
-      "https://img.freepik.com/free-photo/creative-graphic-designer-working-computer_23-2149051890.jpg",
-      "https://img.freepik.com/free-photo/branding-identity-corporate-logo-design-graphic-concept_53876-133778.jpg",
+      "https://www.mechwizz.com/assets/images/graphic-design-company.png",
+      "https://www.writerzden.com/wp-content/uploads/2016/08/pencil-typography-black-design.jpg",
     ],
     features: [
       {
         title: "Brand-Driven Design",
-        content: "All designs are crafted to reflect your brand's tone, personality, and target audience for consistency across all platforms.",
+        content: "Every design we create is rooted in a deep understanding of your brand’s identity, voice, and visual language. We ensure that all graphics—from logos to social media creatives—align with your brand’s tone, personality, and target audience. Our goal is to build a cohesive brand experience that leaves a lasting impression across all customer touchpoints, both online and offline.",
         image: "https://img.freepik.com/free-photo/design-concept-brand-identity_53876-139860.jpg",
       },
       {
         title: "Pixel-Perfect Deliverables",
-        content: "From print to web, every asset is optimized for high-resolution, clarity, and format flexibility.",
+        content: "Our design assets are crafted with precision to ensure clarity, responsiveness, and high-quality output. Whether it’s for print, mobile, or web, we deliver pixel-perfect visuals that retain their quality across all resolutions and formats. You can confidently use our designs for websites, brochures, billboards, or mobile apps without compromising visual impact.",
         image: "https://img.freepik.com/free-photo/graphic-designer-working-digital-tablet_23-2148281422.jpg",
       },
       {
         title: "Marketing-Ready Visuals",
-        content: "We design scroll-stopping visuals tailored for campaigns, ads, and conversion-focused outcomes.",
+        content: "We specialize in performance-focused design that drives engagement and conversions. From social media ads and email headers to landing page visuals and banner designs, we craft compelling visuals that stop the scroll and support your marketing objectives. Each design is strategically tailored to capture attention, evoke emotion, and drive action.",
         image: "https://img.freepik.com/free-photo/marketing-campaign-design_53876-15082.jpg",
       },
       {
         title: "Editable Source Files",
-        content: "Get access to fully editable design files for future changes, reuse, and collaboration.",
+        content: "Along with final exports, you’ll receive fully editable source files (AI, PSD, or Figma) to ensure flexibility for future edits, repurposing, or team collaboration. This means you’re not locked into static visuals—our files are layered, organized, and built with scalability in mind, giving you full creative control after delivery.",
         image: "https://img.freepik.com/free-photo/designer-desk-illustration_23-2149389580.jpg",
       },
-    ],
+      {
+        title: "Motions Graphics",
+        content: "Motion graphics are essentially animated graphic designs. They involve using animation techniques to bring static design elements like text, shapes, and images to life, often with the goal of communicating information or telling a story. Think of it as a digital form of visual storytelling where movement plays a key role. ",
+        image: "https://outsourcingtrainingbd.com/wp-content/uploads/2023/09/motion-graphics.webp",
+      },
+    ]
+    ,
     faq: [
       {
         question: "How many logo concepts do you provide?",
-        answer: "We typically present 3-5 initial concepts based on your brief, with unlimited revisions on the selected concept."
+        answer: "We provide 3 to 5 unique logo design concepts based on your brand’s vision and creative brief. You can choose one to refine, and we offer unlimited revisions on the selected concept until you're fully satisfied."
       },
       {
         question: "What file formats will I receive?",
-        answer: "You'll receive all standard formats (JPG, PNG, PDF, AI, EPS) plus any specific formats you need for print or digital use."
+        answer: "You will receive all essential design file formats, including high-resolution JPG, transparent PNG, scalable PDF, AI (Adobe Illustrator), and EPS. Upon request, we also provide SVG, PSD, and print-ready CMYK files."
       },
       {
         question: "Do you follow brand guidelines if we have them?",
-        answer: "Absolutely. We strictly adhere to existing brand guidelines to maintain visual consistency across all materials."
+        answer: "Absolutely. If you already have an established brand guideline, we strictly adhere to it to ensure visual consistency in colors, typography, logo placement, and imagery across all creative assets."
       },
       {
         question: "Can you design for both print and digital?",
-        answer: "Yes, we create designs optimized for both print (CMYK, high-res) and digital (RGB, web-optimized) formats."
+        answer: "Yes, we provide designs optimized for both print (CMYK color profiles, high DPI) and digital platforms (RGB, web-safe colors, responsive formats). Whether it's a flyer, packaging, banner, or digital ad, we tailor the output for the intended medium."
       },
       {
         question: "What's your typical turnaround time?",
-        answer: "Most projects are completed within 1-2 weeks, depending on complexity and revision rounds."
+        answer: "Our standard delivery timeframe for most design projects is 5 to 10 business days. This depends on the project’s complexity, scope, and the number of revisions required. We also offer express delivery options for urgent needs."
       }
-    ],
+    ]
+    ,
     process: [
       {
         step: "Creative Brief",
-        description: "Gathering information about your brand, target audience, and design preferences.",
+        description: "We start by gathering essential information about your business, brand personality, industry, competitors, and design objectives. This includes preferences in color, tone, typography, and target audience insights, which help guide the entire design process."
       },
       {
         step: "Concept Development",
-        description: "Creating initial design concepts and mood boards for your review.",
+        description: "Based on the brief, our designers create initial design explorations, including mood boards, typography palettes, and layout sketches. We present multiple creative directions so you can choose a visual path that best represents your brand."
       },
       {
         step: "Revision & Refinement",
-        description: "Incorporating your feedback to refine the selected design direction.",
+        description: "Once a concept is selected, we refine the design through iterative feedback rounds. This step focuses on fine-tuning layout, color, proportions, and messaging until the final design meets your expectations perfectly."
       },
       {
         step: "Finalization",
-        description: "Preparing print-ready and digital files in all required formats.",
+        description: "We prepare the final approved design files in all necessary formats, optimized for various use cases such as digital display, print production, or scalable vector formats for merchandise. Files are organized and delivered with clear usage instructions."
       },
       {
         step: "Delivery & Support",
-        description: "Providing all final files and guidance on usage.",
-      },
+        description: "You’ll receive a full package of deliverables along with editable source files. We also offer post-delivery support for small adjustments or to assist your team in implementing the designs effectively across platforms."
+      }
     ]
   },
+
 
   {
     id: 4,
@@ -343,68 +351,70 @@ export const services = [
     features: [
       {
         title: "Realistic 3D Visualization",
-        content: "Photo-realistic 3D rendering for products, spaces, and environments that boost client understanding and conversions.",
+        content: "We create hyper-realistic 3D renders for products, interior spaces, and architectural environments using cutting-edge rendering engines. These visuals help clients visualize concepts before production, making them ideal for marketing, architecture, and client presentations. Our realistic 3D rendering services improve decision-making and increase conversion rates across industries.",
         image: "https://img.freepik.com/free-photo/3d-interior-visualization_23-2149385290.jpg",
       },
       {
         title: "2D/3D Animation Services",
-        content: "Engaging animations for explainer videos, social media, and presentations using After Effects, Blender & Cinema4D.",
+        content: "Our team produces captivating 2D and 3D animations for explainer videos, product demos, and social media content. Using After Effects, Blender, and Cinema 4D, we bring static visuals to life with motion graphics, storytelling, and smooth transitions. Perfect for presentations, advertisements, and training content that needs to grab and retain attention.",
         image: "https://img.freepik.com/free-photo/animation-workflow_53876-126079.jpg",
       },
       {
         title: "Architectural Modeling",
-        content: "Detailed and scalable architectural mockups for real estate and interior design professionals.",
+        content: "We provide high-detail architectural modeling for real estate developers, interior designers, and architects. From exterior building facades to interior layouts, our scalable and precise models support client approvals, permit applications, and marketing brochures. Ideal for virtual tours and real estate visualization projects.",
         image: "https://img.freepik.com/free-photo/modern-house-model_53876-104563.jpg",
       },
       {
         title: "Product Prototypes",
-        content: "Interactive product modeling and visualization ideal for pitches, e-commerce, and pre-manufacturing reviews.",
+        content: "We create interactive and visually accurate 3D prototypes of your product before it's manufactured. Our product visualization services support pitches, investor presentations, e-commerce previews, and engineering reviews. Showcase features, variants, and use cases with dynamic 360-degree views or animated demos.",
         image: "https://img.freepik.com/free-photo/3d-printer-object-creation_53876-126030.jpg",
       },
-    ],
+    ]
+    ,
     faq: [
       {
         question: "What software do you use for 3D modeling?",
-        answer: "We primarily use Blender, Maya, and Cinema 4D for 3D work, and After Effects for motion graphics."
+        answer: "We primarily use Blender, Autodesk Maya, and Cinema 4D for high-quality 3D modeling and animation. For motion graphics and compositing, we rely on Adobe After Effects. Depending on the project requirements, we also use ZBrush, Substance Painter, or Unity for real-time previews."
       },
       {
         question: "How long does a typical 3D rendering take?",
-        answer: "Depending on complexity, a single high-quality render can take 2-48 hours. We optimize scenes for efficiency."
+        answer: "The rendering time varies depending on scene complexity, resolution, and lighting effects. Simple renders may take 2–6 hours, while detailed, photorealistic renders with reflections, shadows, and ambient lighting can take 24–48 hours per frame. We optimize render times using render farms and efficient lighting setups."
       },
       {
         question: "Can you create animations from 3D models?",
-        answer: "Yes, we can create product animations, architectural walkthroughs, and explainer animations from 3D assets."
+        answer: "Yes, we can animate any 3D model to create engaging walkthroughs, explainer videos, product demonstrations, or architectural flythroughs. Whether you want simple camera pans or complex rigged animations, we offer full 3D animation production from modeling to final video editing."
       },
       {
         question: "Do you provide source files?",
-        answer: "Yes, we deliver all source files including .blend, .fbx, .obj, and other standard 3D file formats."
+        answer: "Absolutely. We deliver all relevant source files including .blend, .fbx, .obj, .c4d, and associated texture or material files. If animation is involved, we also provide project files and editable sequences for future revisions."
       },
       {
         question: "What information do you need to start a project?",
-        answer: "We need reference images, dimensions, material samples, and any specific requirements for lighting or angles."
+        answer: "To begin your 3D or animation project, we need clear reference images, product dimensions or architectural plans, material and texture preferences, and any specific requests for lighting, camera angles, animation duration, or output resolution."
       }
-    ],
+    ]
+    ,
     process: [
       {
         step: "Concept & References",
-        description: "Collecting references and establishing the visual direction for the project.",
+        description: "We begin by gathering all necessary references, blueprints, sketches, or product images. This phase helps us establish a clear creative and technical direction based on your vision and objectives."
       },
       {
         step: "Modeling",
-        description: "Creating the basic 3D geometry or 2D assets based on the approved concept.",
+        description: "Our artists develop 3D geometry based on your references. Whether it’s a building, interior room, or product, we ensure every element is accurately scaled and detailed to match real-world proportions."
       },
       {
         step: "Texturing & Lighting",
-        description: "Applying materials, textures, and proper lighting to achieve realism.",
+        description: "We apply realistic textures, materials, and PBR workflows to enhance the model. Lighting is carefully configured to match real-world behavior—sunlight, indoor ambiance, or studio setups—for photorealistic results."
       },
       {
         step: "Rendering/Animation",
-        description: "Producing final renders or animated sequences with multiple camera angles.",
+        description: "We generate high-resolution static renders or animated sequences using powerful rendering engines like Cycles (Blender), Redshift (Cinema4D), or Arnold (Maya). Multiple camera angles and environments are used to best showcase the model."
       },
       {
         step: "Post-Processing",
-        description: "Enhancing visuals through color correction, compositing, and effects.",
-      },
+        description: "Final renders are enhanced with color grading, visual effects, transitions, and sound design where applicable. We use tools like After Effects, Premiere Pro, and DaVinci Resolve to deliver polished output suitable for any platform."
+      }
     ]
   },
 
@@ -436,69 +446,72 @@ export const services = [
     features: [
       {
         title: "Data-Driven Campaigns",
-        content: "We use analytics, A/B testing, and insights to create high-performing marketing funnels.",
+        content: "Our marketing strategies are built on data, not guesswork. We use real-time analytics, A/B testing, heatmaps, and performance metrics to craft and refine campaigns that resonate with your audience. With data-driven decision-making, we continuously optimize ad creatives, landing pages, and funnels for maximum ROI and growth.",
         image: "https://img.freepik.com/free-photo/marketing-analytics-dashboard_53876-15080.jpg",
       },
       {
         title: "Multi-Channel Strategy",
-        content: "Target your audience through SEO, social media, email, PPC, and more for maximum reach.",
+        content: "We help you reach and engage your target audience through a full-funnel, multi-channel approach that includes SEO, PPC, email marketing, social media, and display ads. Our omni-channel marketing strategy ensures consistent messaging, brand visibility, and audience engagement across platforms like Google, Facebook, Instagram, LinkedIn, and more.",
         image: "https://img.freepik.com/free-photo/omnichannel-marketing-concept_53876-162563.jpg",
       },
       {
         title: "Conversion Optimization",
-        content: "Our strategies are designed to convert clicks into customers through refined messaging and UX flow.",
+        content: "Our CRO experts analyze user behavior and funnel performance to identify drop-off points and maximize conversions. We refine CTAs, page layouts, messaging, and site speed to ensure your visitors are guided smoothly through the journey—from first click to final purchase or signup.",
         image: "https://img.freepik.com/free-photo/sales-conversion-concept_53876-146451.jpg",
       },
       {
         title: "SEO & SEM Expertise",
-        content: "Get discovered faster with on-page SEO, backlink strategies, and optimized ad campaigns.",
+        content: "Our team combines organic search engine optimization (SEO) with paid search engine marketing (SEM) for a powerful growth engine. We handle everything from on-page SEO, keyword strategy, and technical audits to running high-converting Google Ads campaigns, helping you dominate both organic and paid search results.",
         image: "https://img.freepik.com/free-photo/seo-concept-laptop-desk_23-2149406489.jpg",
       },
-    ],
+    ]
+    ,
     faq: [
       {
         question: "How soon will I see results from SEO?",
-        answer: "SEO typically takes 3-6 months to show significant results, as search engines need time to index and rank your content."
+        answer: "SEO is a long-term investment. Most websites begin to see noticeable improvements within 3 to 6 months, depending on keyword competition, content quality, and domain authority. We provide regular updates and track keyword rankings, traffic growth, and site health throughout the process."
       },
       {
         question: "What's the difference between SEO and PPC?",
-        answer: "SEO is organic (free) traffic from search rankings, while PPC (Pay-Per-Click) is paid advertising for immediate visibility."
+        answer: "SEO focuses on earning organic traffic through high search rankings, while PPC (Pay-Per-Click) drives immediate traffic through paid ads like Google Ads or Facebook Ads. SEO is cost-effective over time, whereas PPC provides instant visibility and leads. We often use both for a balanced marketing approach."
       },
       {
         question: "How do you measure marketing success?",
-        answer: "We track KPIs like traffic, conversion rates, engagement metrics, and ROI using analytics tools."
+        answer: "We track key performance indicators (KPIs) such as website traffic, bounce rate, session duration, lead generation, conversion rate, click-through rate (CTR), and overall return on investment (ROI). All data is gathered using tools like Google Analytics, Google Tag Manager, Meta Ads Manager, and SEMrush."
       },
       {
         question: "Do you handle social media content creation?",
-        answer: "Yes, we create and schedule platform-optimized content including graphics, videos, and captions."
+        answer: "Yes, our team designs and publishes platform-specific social media content, including eye-catching graphics, promotional videos, carousels, stories, and ad creatives. We also manage content calendars and engagement strategies across platforms like Instagram, Facebook, LinkedIn, and Twitter."
       },
       {
         question: "What's included in your monthly reports?",
-        answer: "Reports include performance metrics, campaign analysis, competitor benchmarks, and improvement recommendations."
+        answer: "Each report includes channel-specific performance metrics, campaign KPIs, competitor analysis, keyword rankings, audience engagement stats, ad spend breakdown, and our expert recommendations for next steps and improvements. We ensure full transparency and clarity in all reporting."
       }
-    ],
+    ]
+    ,
     process: [
       {
         step: "Strategy Development",
-        description: "Analyzing your business, competitors, and audience to create a customized marketing plan.",
+        description: "We begin with a comprehensive audit of your current digital presence, competitors, and market trends. Our strategists then craft a customized digital marketing plan aligned with your goals—whether it's brand awareness, lead generation, or sales growth."
       },
       {
         step: "Implementation",
-        description: "Executing campaigns across selected channels with optimized content and targeting.",
+        description: "Our team sets up and executes campaigns across selected platforms. This includes writing compelling ad copy, optimizing landing pages, setting up tracking tools, and launching content and ad creatives designed to resonate with your audience."
       },
       {
         step: "Monitoring",
-        description: "Tracking performance metrics and making real-time adjustments to campaigns.",
+        description: "Once campaigns are live, we actively monitor their performance in real-time. Using tools like Google Analytics, Facebook Pixel, and Hotjar, we track user engagement, ad performance, and funnel drop-offs to quickly detect and correct issues."
       },
       {
         step: "Analysis & Reporting",
-        description: "Providing detailed reports with insights and recommendations for improvement.",
+        description: "We analyze campaign data to understand what's working and what needs improvement. Our monthly reports offer clear insights, ROI calculations, and competitor benchmarks to help you make informed decisions moving forward."
       },
       {
         step: "Optimization",
-        description: "Refining strategies based on data to continuously improve results.",
-      },
+        description: "Based on performance data, we continuously A/B test creatives, audiences, keywords, and placements. This agile approach ensures your marketing budget is always working efficiently to deliver better leads, lower cost-per-clicks, and higher returns."
+      }
     ]
+
   },
 
 
@@ -626,71 +639,73 @@ export const services = [
     features: [
       {
         title: "Strategic Brand Positioning",
-        content: "We help define your brand's mission, values, and market position for long-term success.",
+        content: "We define your brand’s mission, values, and unique market position to establish long-term relevance and recognition.",
         image: "https://img.freepik.com/free-photo/brand-strategy-identity_53876-152845.jpg",
       },
       {
         title: "Unified Visual Identity",
-        content: "Logos, fonts, and color palettes are crafted for visual consistency across platforms.",
+        content: "Consistent brand visuals including logos, fonts, and color palettes that reflect your brand’s essence across platforms.",
         image: "https://img.freepik.com/free-photo/branding-kit-design_53876-152681.jpg",
       },
       {
         title: "Comprehensive Brand Guides",
-        content: "Style guides ensure your brand stays visually consistent across digital and print media.",
+        content: "Detailed style guides to ensure brand consistency across digital, print, packaging, and beyond.",
         image: "https://img.freepik.com/free-photo/brand-manual-guidelines_53876-152734.jpg",
       },
       {
         title: "Storytelling Through Design",
-        content: "We help you emotionally connect with your audience through compelling brand narratives.",
+        content: "Crafting compelling narratives that emotionally connect your brand with your target audience.",
         image: "https://img.freepik.com/free-photo/storytelling-digital-marketing_53876-146478.jpg",
       },
-    ],
+    ]
+    ,
     faq: [
       {
         question: "What's included in a brand identity package?",
-        answer: "Typically includes logo variations, color palette, typography system, brand guidelines, and basic application examples."
+        answer: "Logo variations, color palette, typography system, brand guidelines, and sample mockups for real-world usage."
       },
       {
         question: "How do you approach logo design?",
-        answer: "We start with research, create multiple concepts, refine based on feedback, and deliver final logo files in all formats."
+        answer: "Through research, brainstorming, and iteration — we present multiple concepts, refine with your feedback, and deliver final assets in all formats."
       },
       {
         question: "What makes a strong brand identity?",
-        answer: "Distinctiveness, memorability, flexibility across applications, and alignment with your company values and audience."
+        answer: "It’s memorable, scalable, aligned with your values, and resonates clearly with your target market."
       },
       {
         question: "Can you help with rebranding?",
-        answer: "Yes, we help evolve existing brands while maintaining recognition or completely refresh outdated identities."
+        answer: "Yes, we specialize in refreshing outdated brands or repositioning existing ones while maintaining brand equity."
       },
       {
         question: "How long does the branding process take?",
-        answer: "Most branding projects take 4-8 weeks depending on complexity and revision rounds."
+        answer: "Typically 4–8 weeks, depending on complexity and feedback cycles."
       }
-    ],
+    ]
+    ,
     process: [
       {
         step: "Discovery",
-        description: "Researching your industry, competitors, and target audience to inform the brand strategy.",
+        description: "Conducting research on your market, audience, and competitors to understand the brand landscape.",
       },
       {
         step: "Strategy",
-        description: "Defining your brand positioning, personality, and messaging framework.",
+        description: "Defining your brand’s voice, mission, values, and positioning for consistent messaging.",
       },
       {
         step: "Design Exploration",
-        description: "Creating multiple visual directions for logos and brand elements.",
+        description: "Exploring multiple creative directions for your brand visuals including logo and style components.",
       },
       {
         step: "Refinement",
-        description: "Developing the chosen direction into a complete visual identity system.",
+        description: "Finalizing and expanding the chosen visual identity into a cohesive and scalable system.",
       },
       {
         step: "Guidelines",
-        description: "Documenting brand standards for consistent application across all touchpoints.",
+        description: "Creating a brand manual with clear usage rules for consistent deployment across channels.",
       },
       {
         step: "Implementation",
-        description: "Applying the new identity to key assets and marketing materials.",
+        description: "Rolling out the identity across key brand assets like business cards, social media, packaging, and web.",
       },
     ]
   },
@@ -720,75 +735,78 @@ export const services = [
       "https://thesocialmediamonthly.com/wp-content/uploads/2020/11/g7m.jpeg",
       "https://img.freepik.com/free-photo/blogger-working-laptop-writing_53876-103044.jpg",
     ],
-    features: [
-      {
-        title: "SEO-Optimized Writing",
-        content: "Our content is built around keyword research and ranking strategies to boost organic visibility.",
-        image: "https://img.freepik.com/free-photo/content-seo-analysis_53876-15092.jpg",
-      },
-      {
-        title: "Engaging Visual Content",
-        content: "From infographics to video scripts, we make your content visually appealing and share-worthy.",
-        image: "https://img.freepik.com/free-photo/visual-content-creation_53876-152777.jpg",
-      },
-      {
-        title: "Multi-Platform Copywriting",
-        content: "Tailored copy for websites, ads, emails, and social channels that speak your audience's language.",
-        image: "https://img.freepik.com/free-photo/social-media-copy-concept_53876-148716.jpg",
-      },
-      {
-        title: "Content Strategy & Planning",
-        content: "We plan your content calendar with a goal-oriented strategy that aligns with your brand voice.",
-        image: "https://img.freepik.com/free-photo/marketing-planning-calendar_53876-149253.jpg",
-      },
-    ],
-    faq: [
-      {
-        question: "How do you ensure content aligns with our brand voice?",
-        answer: "We start with a brand voice guide and samples of your existing content to maintain consistency."
-      },
-      {
-        question: "Do you perform keyword research for SEO content?",
-        answer: "Yes, we conduct thorough keyword research and competitor analysis to optimize all content."
-      },
-      {
-        question: "What's your typical turnaround time for content?",
-        answer: "Most articles take 3-5 business days depending on length and research required."
-      },
-      {
-        question: "Can you create content in multiple languages?",
-        answer: "Yes, we have native speakers and professional translators for multilingual content creation."
-      },
-      {
-        question: "How do you measure content performance?",
-        answer: "We track engagement metrics, rankings, conversions, and other KPIs to assess content effectiveness."
-      }
-    ],
-    process: [
-      {
-        step: "Content Strategy",
-        description: "Developing an editorial calendar and content plan aligned with your marketing goals.",
-      },
-      {
-        step: "Research",
-        description: "Gathering information, conducting keyword research, and analyzing competitors.",
-      },
-      {
-        step: "Creation",
-        description: "Writing, designing, or producing the content according to specifications.",
-      },
-      {
-        step: "Review & Revision",
-        description: "Refining content based on feedback to ensure quality and accuracy.",
-      },
-      {
-        step: "Optimization",
-        description: "Enhancing content for SEO, readability, and engagement before publishing.",
-      },
-      {
-        step: "Publication & Promotion",
-        description: "Publishing content and implementing distribution strategies.",
-      },
-    ]
+features: [
+  {
+    title: "SEO-Optimized Writing",
+    content: "We craft content backed by keyword research and SEO best practices to improve search visibility and drive organic traffic.",
+    image: "https://img.freepik.com/free-photo/content-seo-analysis_53876-15092.jpg",
+  },
+  {
+    title: "Engaging Visual Content",
+    content: "Infographics, carousels, and video scripts designed to capture attention and encourage sharing across platforms.",
+    image: "https://img.freepik.com/free-photo/visual-content-creation_53876-152777.jpg",
+  },
+  {
+    title: "Multi-Platform Copywriting",
+    content: "Custom copy tailored for websites, ads, email campaigns, and social media — all aligned with your brand voice.",
+    image: "https://img.freepik.com/free-photo/social-media-copy-concept_53876-148716.jpg",
+  },
+  {
+    title: "Content Strategy & Planning",
+    content: "We create strategic content calendars and themes that align with your business goals and audience interests.",
+    image: "https://img.freepik.com/free-photo/marketing-planning-calendar_53876-149253.jpg",
+  },
+],
+
+faq: [
+  {
+    question: "How do you ensure content aligns with our brand voice?",
+    answer: "We review your brand guidelines, past content, and tone of voice to ensure consistency in all deliverables."
+  },
+  {
+    question: "Do you perform keyword research for SEO content?",
+    answer: "Absolutely. We conduct in-depth keyword research and competitor analysis for every SEO project."
+  },
+  {
+    question: "What's your typical turnaround time for content?",
+    answer: "Content is usually delivered within 3–5 business days, depending on complexity and word count."
+  },
+  {
+    question: "Can you create content in multiple languages?",
+    answer: "Yes, we collaborate with native speakers and certified translators to offer multilingual content solutions."
+  },
+  {
+    question: "How do you measure content performance?",
+    answer: "We monitor key metrics like traffic, engagement, ranking, and conversions to assess effectiveness and ROI."
+  }
+],
+
+process: [
+  {
+    step: "Content Strategy",
+    description: "Building a content roadmap and editorial calendar aligned with business objectives and audience needs.",
+  },
+  {
+    step: "Research",
+    description: "Conducting keyword research, analyzing competitors, and gathering reliable data and insights.",
+  },
+  {
+    step: "Creation",
+    description: "Writing and designing content tailored to your voice, goals, and platform requirements.",
+  },
+  {
+    step: "Review & Revision",
+    description: "Incorporating client feedback and performing quality checks for grammar, clarity, and accuracy.",
+  },
+  {
+    step: "Optimization",
+    description: "Enhancing for SEO, readability, and mobile responsiveness before publishing.",
+  },
+  {
+    step: "Publication & Promotion",
+    description: "Publishing content on relevant platforms and executing a distribution strategy to reach your audience.",
+  },
+]
+
   }
 ]

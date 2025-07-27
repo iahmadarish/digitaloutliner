@@ -170,7 +170,7 @@ const ServicesPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center  ">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl md:lg:xl:2xl:text-6xl font-family-comfort font-bold text-white mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-5xl md:lg:xl:2xl:text-5xl font-family-comfort md:lg:xl:sm:2xl:font-bold font-light text-white mb-6 leading-tight">
                 Design, Build, and 
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                   - Modernize Mobile App
@@ -229,7 +229,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#252527] via-[#111827] to-[#0b0f19]">
         <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div>
@@ -302,6 +302,7 @@ const ServicesPage = () => {
           </div>
         </div>
       </div>
+
     </div>
   )
 }

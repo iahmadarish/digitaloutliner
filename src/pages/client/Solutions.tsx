@@ -32,6 +32,7 @@ import { type Service } from '../../types/service'; // Adjust path as needed
 import images from "@/assets/bpo/1.jpg"
 import images2 from "@/assets/bpo/2.jpg"
 import images3 from "@/assets/bpo/3.jpg"
+import ScrollToTop from '@/components/ScrollToTop';
 
 
 export default function Solutions() {
@@ -335,6 +336,7 @@ const services = [
 
   return (
     <div className="text-white min-h-screen mt-30" ref={containerRef}>
+      <ScrollToTop/>
       {/* Hero Section with Image */}
       <section className="min-h-screen flex items-center justify-center  px-4 md:px-8">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
