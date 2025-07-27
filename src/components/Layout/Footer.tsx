@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="space-y-3 text-gray-300">
               <p className="text-sm sm:text-base">458 , New York, USA</p>
               <p className="text-sm sm:text-base">+023 465 67890</p>
-              <p className="text-sm sm:text-base break-all">info@ursofts.com</p>
+              <p className="text-sm sm:text-base break-all">info@conqueric.com</p>
 
               {/* Social Media Icons */}
               <div className="flex space-x-3 mt-4">
@@ -119,7 +119,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-6">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
-              © URSOFTS, All Right Reserved.
+              © CONQUERIC, All Right Reserved.
             </p>
             <div className="flex flex-wrap justify-center sm:justify-end space-x-4 sm:space-x-6">
               <a href="/" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors">Home</a>

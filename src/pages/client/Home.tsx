@@ -11,7 +11,7 @@ import Testimonial from "@/components/common/Testimonial"
 
 const Home: React.FC = () => {
   return (
-    <div className="font-family-small bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+    <div className="font-family-small ">
       <ScrollToTop/>
       
       <HeroSection/>

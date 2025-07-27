@@ -46,8 +46,8 @@ const DarkAccordionComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="min-h-screen font-family- py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
-      <div className="relative mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+    <div className="min-h-screen font-family- py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20  ">
+      <div className="relative mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 ">
 
 
 
@@ -96,12 +96,12 @@ const DarkAccordionComponent = () => {
             <div className="absolute -top-1 sm:-top-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full opacity-60"></div>
           </div>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl md:lg:xl:sm:2xl:mx-0 mx-auto leading-relaxed  sm:px-0 font-light text-start">
-            At URSOFTS, we empower businesses with scalable digital solutions designed to meet tomorrow’s challenges. Our team delivers with precision, creativity, and a forward-thinking mindset.
+            At CONQUERIC, we empower businesses with scalable digital solutions designed to meet tomorrow’s challenges. Our team delivers with precision, creativity, and a forward-thinking mindset.
           </p>
         </div>
 
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-start ">
           {/* Accordion Panel */}
           <div className="space-y-3 sm:space-y-4 md:space-y-6">
             {services.map((item, index) => {

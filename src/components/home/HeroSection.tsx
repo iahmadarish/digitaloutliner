@@ -232,14 +232,14 @@ const MatchingHeroSection = () => {
                 className="inline-flex items-center px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-xs sm:text-sm font-medium text-gray-300"
               >
                 <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 text-cyan-400" />
-                <span className="text-cyan-400">URSOFTS </span>
+                <span className="text-cyan-400">CONQUERIC </span>
                 <span className="mx-1 sm:mx-2 text-gray-600">•</span>
                 <span>Since 2025</span>
               </motion.div>
 
               {/* Main Heading */}
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-white leading-tight sm:leading-snug md:leading-relaxed">
-                <span className="text-[#79e0a4]">URSOFTS-</span>
+                <span className="text-[#79e0a4]">CONQUERIC-</span>
                 <span>Where Ideas Meet Innovation and Technology</span>
               </h1>
             </div>

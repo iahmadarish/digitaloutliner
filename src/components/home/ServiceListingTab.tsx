@@ -154,7 +154,7 @@ const ServiceListingTab = () => {
                 <span className="bg-green-400 text-black px-4 py-2 rounded-lg font-bold text-lg">SERVICES</span>
               </div>
               <p className="text-white text-base md:text-lg mt-3 md:mt-4 leading-relaxed">
-                At URSOFTS, we offer a range of services to help businesses grow and succeed
+                At CONQUERIC, we offer a range of services to help businesses grow and succeed
                 online. These services include:
               </p>
             </div>

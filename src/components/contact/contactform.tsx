@@ -40,7 +40,7 @@ export default function ModernContactForm() {
 
   return (
     <div className="min-h-screen font-family-comfort relative overflow-hidden">
-
+      
       <div className="relative z-10 container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
@@ -208,8 +208,8 @@ export default function ModernContactForm() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-300">Email Us</p>
-                    <a href="mailto:admin@ursofts.com" className="text-white font-semibold hover:text-purple-300 transition-colors">
-                      admin@ursofts.com
+                    <a href="mailto:admin@conqueric.com" className="text-white font-semibold hover:text-purple-300 transition-colors">
+                      admin@conqueric.com
                     </a>
                   </div>
                 </div>

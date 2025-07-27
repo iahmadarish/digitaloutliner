@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import { Menu, X, Phone, Mail, Clock } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
-import logo from "@/assets/logour.png"
+import logo from "@/assets/logo/Group 61 (1).png"
 
-const URSOFTSNavbar = () => {
+const CONQUERICNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [visible, setVisible] = useState(true)
@@ -86,13 +86,13 @@ const URSOFTSNavbar = () => {
                 </button>
               </div>
 
-              {/* URSOFTS Logo - Center */}
+              {/* CONQUERIC Logo - Center */}
               <div className="absolute  left-1/5 transform -translate-x-1/5 lg:static lg:left-auto lg:transform-none">
                 <Link to="/" className="block">
                   <img
                     src={logo}
-                    className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto"
-                    alt="URSOFTS Logo"
+                    className="h-8 sm:h-10 lg:h-8 xl:h-12 w-auto"
+                    alt="conqueric Logo"
                   />
                 </Link>
               </div>
@@ -100,7 +100,7 @@ const URSOFTSNavbar = () => {
               {/* Contact Info - Right Side (Desktop) */}
               <div className="hidden lg:flex flex-col items-end">
                 <span className="text-white/90 text-sm lg:text-base font-medium">
-                  info@ursofts.com
+                  info@conqueric.com
                 </span>
                 <span className="text-white/70 text-xs lg:text-sm">
                   +880 1533-504728
@@ -127,9 +127,9 @@ const URSOFTSNavbar = () => {
 
         {/* Navigation Row - Desktop Only */}
         <div className="hidden lg:block border-b border-cyan-400/30">
-          <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-4">
+          <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-2">
             <div className="flex justify-center items-center">
-              <div className="flex items-center space-x-8 lg:space-x-12">
+              <div className="flex items-center space-x-8 lg:space-x-12 py-6">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -167,7 +167,7 @@ const URSOFTSNavbar = () => {
               <img
                 src={logo}
                 className="h-10"
-                alt="URSOFTS Logo"
+                alt="CONQUERIC Logo"
               />
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -235,7 +235,7 @@ const URSOFTSNavbar = () => {
                 </div>
                 <div className="flex items-center space-x-3 text-white/80">
                   <Mail className="h-5 w-5 text-cyan-400" />
-                  <span className="text-sm">info@ursofts.com</span>
+                  <span className="text-sm">info@conqueric.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-white/80">
                   <Clock className="h-5 w-5 text-cyan-400" />
@@ -267,4 +267,4 @@ const URSOFTSNavbar = () => {
   )
 }
 
-export default URSOFTSNavbar 
+export default CONQUERICNavbar 

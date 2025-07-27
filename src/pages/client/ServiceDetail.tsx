@@ -716,7 +716,7 @@ const ServiceDetail = () => {
               </div>
               <div className="flex items-center gap-3 text-white bg-gray-700/50 px-4 py-2 rounded-lg">
                 <Mail className="w-5 h-5 text-cyan-400" />
-                <span>admin@ursofts.com</span>
+                <span>admin@conqueric.com</span>
               </div>
               <div className="flex items-center gap-3 text-white bg-gray-700/50 px-4 py-2 rounded-lg">
                 <MapPin className="w-5 h-5 text-cyan-400" />

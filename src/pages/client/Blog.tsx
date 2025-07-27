@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { blogs } from "../../data/blogData";
 import { Calendar, Clock, User, ArrowRight } from "lucide-react";
 import BlogIcon from "../../components/blog/BlogIcon";
-import logo from "../../assets/logour.png"
+import logo from "../../assets/logo/Group 61 (1).png"
 const Blog = () => {
   // Get featured post (first blog) and regular posts
   const featuredPost = blogs[0];

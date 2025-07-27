@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
-import image from "@/assets/content.jpg"
+import image from "@/assets/logo/about.png"
 const AboutHero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -39,7 +39,7 @@ const AboutHero = () => {
             {/* Description */}
             <div className="space-y-4 text-sm lg:text-lg text-gray-300 leading-relaxed">
               <p>
-                URSOFTS is a passionate team of developers, designers, and strategists 
+                CONQUERIC is a passionate team of developers, designers, and strategists 
                 dedicated to transforming your ideas into powerful digital experiences. 
                 We specialize in web development, mobile apps, and custom software solutions.
               </p>
