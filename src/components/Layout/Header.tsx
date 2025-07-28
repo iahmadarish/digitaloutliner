@@ -12,8 +12,8 @@ const CONQUERICNavbar = () => {
 
   const navigation = [
     { name: "Our Service", href: "/services" },
-    { name: "BPO", href: "/solutions" },
-    { name: "H.R", href: "/business-solutions" },
+    { name: " Solutions", href: "/solutions" },
+    { name: "Human Resources", href: "/business-solutions" },
     { name: "Projects", href: "/projects" },
     { name: "Blogs", href: "/blog" },
     { name: "Company", href: "/about" },

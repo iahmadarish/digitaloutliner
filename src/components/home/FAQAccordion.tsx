@@ -48,9 +48,9 @@ const faqData = [
 
 
   return (
-<div className="">
+<div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
 
-    <div className="mx-auto px-4 sm:px-6 md:xl:2xl:lg:px-18 py-16 min-h-screen">
+    <div className="mx-auto max-w-7xl py-16 min-h-screen">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-200 mb-2">Frequently Asked Questions</h1>
         <p className="text-gray-300">Everything you need to know about our services and process</p>

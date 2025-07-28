@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ScrollToTop from '../ScrollToTop';
 import image from "@/assets/bg-elements/DotsWithLines_illustration_UseBackgroundTurquoise_RGB.svg"
+import { Link } from 'react-router-dom';
 interface ServiceCardProps {
     title: string;
     description: string;
@@ -203,9 +204,12 @@ const HRSupportServices: React.FC = () => {
                                 We connect companies with top-tier web developers, app specialists, and creative professionals through flexible staffing solutions.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
+                                <Link to="/contact">
                                 <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 transform hover:scale-105">
                                     Request Talent
                                 </button>
+                                                                </Link>
+
                                 <button className="border-2 border-blue-400 text-blue-400 hover:bg-blue-900/30 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 transform hover:scale-105">
                                     Learn More
                                 </button>
@@ -622,7 +626,7 @@ const HRSupportServices: React.FC = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Enter your email"
-                                    className="flex-grow px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="flex-grow border border-gray-400 px-4 py-3 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     required
                                 />
                                 <button

@@ -13,9 +13,6 @@ import web5 from "@/components/service/service/web design and development/image 
 
 
 
-
-
-
 export const services = [
 
   {
@@ -221,105 +218,105 @@ export const services = [
 
 
   {
-    id: 3,
-    serviceType: "Graphics Design",
-    icon: grapicsicon,
-    iconType: "image",
-    shortDetails:
-      "We deliver stunning graphic design services that boost your brand identity. From logos to social media visuals, we blend creativity and strategy to create eye-catching designs that drive engagement and make your business stand out.",
-    fullDetails: [
-      "We craft stunning visuals that communicate your brand's identity and value.",
-      "From logos to brochures and marketing assets, we design for both print and digital media.",
-      "Our team follows trends, color psychology, and brand strategy to ensure your visuals stand out.",
-    ],
-    bulletPoints: [
-      "Logo and brand identity design",
-      "Marketing materials (brochures, flyers, posters)",
-      "Banner and social media post design",
-      "Pitch deck and presentation design",
-      "Product packaging and label design",
-      "Business card and stationery design",
-      "Editable templates and design systems",
-      "File delivery in multiple formats",
-    ],
-    images: [
-      "https://www.mechwizz.com/assets/images/graphic-design-company.png",
-      "https://www.writerzden.com/wp-content/uploads/2016/08/pencil-typography-black-design.jpg",
-    ],
-    features: [
-      {
-        title: "Brand-Driven Design",
-        content: "Every design we create is rooted in a deep understanding of your brand’s identity, voice, and visual language. We ensure that all graphics—from logos to social media creatives—align with your brand’s tone, personality, and target audience. Our goal is to build a cohesive brand experience that leaves a lasting impression across all customer touchpoints, both online and offline.",
-        image: "https://img.freepik.com/free-photo/design-concept-brand-identity_53876-139860.jpg",
-      },
-      {
-        title: "Pixel-Perfect Deliverables",
-        content: "Our design assets are crafted with precision to ensure clarity, responsiveness, and high-quality output. Whether it’s for print, mobile, or web, we deliver pixel-perfect visuals that retain their quality across all resolutions and formats. You can confidently use our designs for websites, brochures, billboards, or mobile apps without compromising visual impact.",
-        image: "https://img.freepik.com/free-photo/graphic-designer-working-digital-tablet_23-2148281422.jpg",
-      },
-      {
-        title: "Marketing-Ready Visuals",
-        content: "We specialize in performance-focused design that drives engagement and conversions. From social media ads and email headers to landing page visuals and banner designs, we craft compelling visuals that stop the scroll and support your marketing objectives. Each design is strategically tailored to capture attention, evoke emotion, and drive action.",
-        image: "https://img.freepik.com/free-photo/marketing-campaign-design_53876-15082.jpg",
-      },
-      {
-        title: "Editable Source Files",
-        content: "Along with final exports, you’ll receive fully editable source files (AI, PSD, or Figma) to ensure flexibility for future edits, repurposing, or team collaboration. This means you’re not locked into static visuals—our files are layered, organized, and built with scalability in mind, giving you full creative control after delivery.",
-        image: "https://img.freepik.com/free-photo/designer-desk-illustration_23-2149389580.jpg",
-      },
-      {
-        title: "Motions Graphics",
-        content: "Motion graphics are essentially animated graphic designs. They involve using animation techniques to bring static design elements like text, shapes, and images to life, often with the goal of communicating information or telling a story. Think of it as a digital form of visual storytelling where movement plays a key role. ",
-        image: "https://outsourcingtrainingbd.com/wp-content/uploads/2023/09/motion-graphics.webp",
-      },
-    ]
-    ,
-    faq: [
-      {
-        question: "How many logo concepts do you provide?",
-        answer: "We provide 3 to 5 unique logo design concepts based on your brand’s vision and creative brief. You can choose one to refine, and we offer unlimited revisions on the selected concept until you're fully satisfied."
-      },
-      {
-        question: "What file formats will I receive?",
-        answer: "You will receive all essential design file formats, including high-resolution JPG, transparent PNG, scalable PDF, AI (Adobe Illustrator), and EPS. Upon request, we also provide SVG, PSD, and print-ready CMYK files."
-      },
-      {
-        question: "Do you follow brand guidelines if we have them?",
-        answer: "Absolutely. If you already have an established brand guideline, we strictly adhere to it to ensure visual consistency in colors, typography, logo placement, and imagery across all creative assets."
-      },
-      {
-        question: "Can you design for both print and digital?",
-        answer: "Yes, we provide designs optimized for both print (CMYK color profiles, high DPI) and digital platforms (RGB, web-safe colors, responsive formats). Whether it's a flyer, packaging, banner, or digital ad, we tailor the output for the intended medium."
-      },
-      {
-        question: "What's your typical turnaround time?",
-        answer: "Our standard delivery timeframe for most design projects is 5 to 10 business days. This depends on the project’s complexity, scope, and the number of revisions required. We also offer express delivery options for urgent needs."
-      }
-    ]
-    ,
-    process: [
-      {
-        step: "Creative Brief",
-        description: "We start by gathering essential information about your business, brand personality, industry, competitors, and design objectives. This includes preferences in color, tone, typography, and target audience insights, which help guide the entire design process."
-      },
-      {
-        step: "Concept Development",
-        description: "Based on the brief, our designers create initial design explorations, including mood boards, typography palettes, and layout sketches. We present multiple creative directions so you can choose a visual path that best represents your brand."
-      },
-      {
-        step: "Revision & Refinement",
-        description: "Once a concept is selected, we refine the design through iterative feedback rounds. This step focuses on fine-tuning layout, color, proportions, and messaging until the final design meets your expectations perfectly."
-      },
-      {
-        step: "Finalization",
-        description: "We prepare the final approved design files in all necessary formats, optimized for various use cases such as digital display, print production, or scalable vector formats for merchandise. Files are organized and delivered with clear usage instructions."
-      },
-      {
-        step: "Delivery & Support",
-        description: "You’ll receive a full package of deliverables along with editable source files. We also offer post-delivery support for small adjustments or to assist your team in implementing the designs effectively across platforms."
-      }
-    ]
-  },
+  id: 3,
+  serviceType: "Graphics Design",
+  icon: grapicsicon,
+  iconType: "image",
+  shortDetails:
+    "We deliver stunning, conversion-focused graphic design services that boost your brand’s visibility and impact. From custom logos to social media visuals, our creative solutions drive engagement, enhance branding, and set your business apart.",
+  fullDetails: [
+    "Our graphic design services are crafted to bring your brand to life through visually captivating and strategically aligned assets.",
+    "We specialize in creative visual storytelling that leaves a lasting impression across both digital and print channels.",
+    "Whether you're building a new brand or refreshing an existing one, we tailor every design element—from typography to color schemes—to reflect your unique identity and business objectives.",
+    "Our team stays ahead of design trends, leverages data-backed visual strategies, and creates consistent branding experiences that connect emotionally with your audience and drive measurable results."
+  ],
+  bulletPoints: [
+    "Professional logo and brand identity design",
+    "High-quality marketing collateral (brochures, flyers, posters)",
+    "Engaging banner and social media graphic design",
+    "Corporate pitch decks and presentations",
+    "Creative product packaging and label design",
+    "Premium business card and stationery design",
+    "Reusable templates and scalable brand systems",
+    "Delivery in print-ready and digital-friendly formats"
+  ],
+  images: [
+    "https://www.mechwizz.com/assets/images/graphic-design-company.png",
+    "https://www.writerzden.com/wp-content/uploads/2016/08/pencil-typography-black-design.jpg"
+  ],
+  features: [
+    {
+      title: "Brand-Driven Design",
+      content: "We go beyond aesthetics by aligning every visual element with your brand’s core values, voice, and mission. From color psychology to typography choices, our designs communicate your message clearly and cohesively across all platforms, reinforcing brand trust and recall.",
+      image: "https://img.freepik.com/free-photo/design-concept-brand-identity_53876-139860.jpg"
+    },
+    {
+      title: "Pixel-Perfect Deliverables",
+      content: "Our design assets are crafted for clarity and consistency across all screen sizes and resolutions. We prioritize resolution independence and responsive design so your assets look flawless—whether viewed on mobile, desktop, or in print. Quality is never compromised.",
+      image: "https://img.freepik.com/free-photo/graphic-designer-working-digital-tablet_23-2148281422.jpg"
+    },
+    {
+      title: "Marketing-Ready Visuals",
+      content: "We focus on performance-driven design to elevate your digital marketing and advertising efforts. Our creatives are optimized to capture attention, build trust, and encourage action—be it in paid ads, social media, or landing pages. Every pixel serves a purpose.",
+      image: "https://img.freepik.com/free-photo/marketing-campaign-design_53876-15082.jpg"
+    },
+    {
+      title: "Editable Source Files",
+      content: "Receive layered, well-organized source files in industry-standard formats (AI, PSD, or Figma). These files allow for seamless future edits, scalability, and smooth collaboration with in-house or third-party teams. You own your brand’s design assets—fully.",
+      image: "https://img.freepik.com/free-photo/designer-desk-illustration_23-2149389580.jpg"
+    },
+    {
+      title: "Motion Graphics Integration",
+      content: "Enhance storytelling with dynamic motion graphics. We animate your static visuals—logos, infographics, typography—to create engaging content for social media, presentations, and explainer videos. Motion adds life, emotion, and impact to your message.",
+      image: "https://outsourcingtrainingbd.com/wp-content/uploads/2023/09/motion-graphics.webp"
+    }
+  ],
+  faq: [
+    {
+      question: "How many logo concepts do you provide?",
+      answer: "We offer 3 to 5 unique, professionally designed logo concepts. Based on your preferences and brand strategy, we revise the selected option until you’re completely satisfied. Our process ensures that you walk away with a logo that perfectly represents your brand."
+    },
+    {
+      question: "What file formats will I receive?",
+      answer: "You’ll get high-resolution and print-ready files in JPG, PNG (transparent), PDF, AI, and EPS formats. We also offer PSD, SVG, and CMYK print files on request. All assets are delivered in organized folders with usage guidelines for each format."
+    },
+    {
+      question: "Do you follow brand guidelines if we have them?",
+      answer: "Absolutely. We work closely with your existing brand guidelines to maintain visual consistency across your identity, marketing materials, and online presence. If you don't have one, we can help create or refine your visual style guide."
+    },
+    {
+      question: "Can you design for both print and digital?",
+      answer: "Yes, we specialize in designs that are optimized for both mediums. Our print designs adhere to CMYK standards and high DPI resolutions, while digital designs are tailored for screen clarity, speed, and responsiveness using RGB color space."
+    },
+    {
+      question: "What's your typical turnaround time?",
+      answer: "Our standard turnaround time is 5 to 10 business days, depending on the complexity and volume of deliverables. Need it faster? We offer expedited delivery options for urgent projects while still maintaining quality and attention to detail."
+    }
+  ],
+  process: [
+    {
+      step: "Creative Brief",
+      description: "We begin by collecting in-depth information about your brand's mission, tone, design goals, competitors, and audience demographics. This ensures that all creative decisions are purposeful and aligned with your brand’s direction."
+    },
+    {
+      step: "Concept Development",
+      description: "Our designers research and brainstorm concepts that match your brief. Mood boards, draft sketches, and layout mockups are created to explore different visual styles and directions. We present multiple creative paths for your feedback and selection."
+    },
+    {
+      step: "Revision & Refinement",
+      description: "Once a direction is chosen, we iterate based on your feedback. We fine-tune the typography, color palette, iconography, and layout to ensure every detail aligns with your brand message and aesthetics. Revisions are unlimited until satisfaction."
+    },
+    {
+      step: "Finalization",
+      description: "Upon approval, we prepare all final files with proper export settings for print and digital use. Each asset is neatly organized and labeled. We also provide instructions and previews to ensure smooth usage across platforms."
+    },
+    {
+      step: "Delivery & Support",
+      description: "Your full design package—source files, exports, and usage guides—is delivered securely. Post-delivery, we remain available to support you with minor updates or implementation assistance to ensure your designs are used effectively."
+    }
+  ]
+}
+,
 
 
   {

@@ -180,7 +180,7 @@ const MatchingHeroSection = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen py-12 sm:py-16 md:py-20 bg-cover bg-no-repeat  relative overflow-hidden"
+      className="min-h-screen py-12 sm:py-16 md:py-20 bg-cover bg-no-repeat  relative overflow-hidden bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]"
       ref={ref}
     >
       {/* Background elements */}

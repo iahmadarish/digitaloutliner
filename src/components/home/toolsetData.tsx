@@ -250,7 +250,7 @@ const ToolsetComponent = () => {
   }, [activeCategory]);
 
   return (
-    <div className="min-h-screen  text-white py-12 sm:py-16 lg:py-20">
+    <div className="min-h-screen bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white py-12 sm:py-16 lg:py-20">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
         <motion.div 

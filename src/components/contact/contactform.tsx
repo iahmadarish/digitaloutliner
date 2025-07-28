@@ -39,9 +39,9 @@ export default function ModernContactForm() {
   };
 
   return (
-    <div className="min-h-screen font-family-comfort relative overflow-hidden">
-      
-      <div className="relative z-10 container mx-auto px-4 py-16">
+    <div className="min-h-screen font-nunito relative overflow-hidden">
+
+      <div className="relative z-10 container mx-auto px-4 lg:py-26 xl:py-40">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mb-6 shadow-lg">
@@ -221,60 +221,66 @@ export default function ModernContactForm() {
                   <div>
                     <p className="text-sm text-gray-300">Visit Us</p>
                     <p className="text-white font-semibold">
-                      Mirpur 6, Road-1, Plot-2<br />
-                      Dhaka, Bangladesh 1216
+                      Mirpur-Dhaka, Bangladesh 1216
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Business Hours */}
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <Clock className="h-6 w-6 mr-3 text-yellow-400" />
-                Business Hours
-              </h3>
 
-              <div className="space-y-3">
-                <div className="flex justify-between items-center py-2 border-b border-white/10">
-                  <span className="text-gray-300">Monday - Friday</span>
-                  <span className="text-white font-semibold">9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-white/10">
-                  <span className="text-gray-300">Saturday</span>
-                  <span className="text-white font-semibold">10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-gray-300">Sunday</span>
-                  <span className="text-red-400 font-semibold">Closed</span>
-                </div>
-              </div>
-            </div>
 
-            {/* Map */}
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-white/20">
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-white flex items-center">
-                  <MapPin className="h-6 w-6 mr-3 text-cyan-400" />
-                  Find Us
-                </h3>
+
+
+
+          </div>
+          {/* Business Hours */}
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <Clock className="h-6 w-6 mr-3 text-yellow-400" />
+              Business Hours
+            </h3>
+
+            <div className="space-y-3">
+              <div className="flex justify-between items-center py-2 border-b border-white/10">
+                <span className="text-gray-300">Monday - Friday</span>
+                <span className="text-white font-semibold">9:00 AM - 6:00 PM</span>
               </div>
-              <div className="h-64 relative">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8971614463447!2d90.3541779!3d23.7956094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c174e6b4a4c5%3A0x2b5e0e2f0b5b2b5b!2sMirpur%206%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1234567890123"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full rounded-b-3xl"
-                ></iframe>
+              <div className="flex justify-between items-center py-2 border-b border-white/10">
+                <span className="text-gray-300">Saturday</span>
+                <span className="text-white font-semibold">10:00 AM - 4:00 PM</span>
+              </div>
+              <div className="flex justify-between items-center py-2">
+                <span className="text-gray-300">Sunday</span>
+                <span className="text-red-400 font-semibold">Closed</span>
               </div>
             </div>
           </div>
+          {/* Map */}
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-white/20">
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-white flex items-center">
+                <MapPin className="h-6 w-6 mr-3 text-cyan-400" />
+                Find Us
+              </h3>
+            </div>
+            <div className="h-64 relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7299.143424907037!2d90.3624168307125!3d23.833824221749225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1753666243657!5m2!1sen!2sbd"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full rounded-b-3xl"
+              ></iframe>
+            </div>
+          </div>
+
         </div>
+
+
 
         {/* Footer */}
         <div className="text-center mt-16">
