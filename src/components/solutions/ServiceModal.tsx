@@ -47,7 +47,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column - Text Content */}
             <div className="lg:col-span-2">
-              <p className="text-gray-300 mb-6 text-lg">{service.fullDescription}</p>
+              <p className="text-gray-300 mb-6 text-sm sm:text-lg">{service.fullDescription}</p>
               
               {service.benefits && (
                 <div className="mb-6">
@@ -55,10 +55,10 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
                   <ul className="space-y-2">
                     {service.benefits.map((benefit: string, i: number) => (
                       <li key={i} className="flex items-start">
-                        <svg className="w-5 h-5 text-blue-400 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 bg-white rounded-full text-blue-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-gray-300">{benefit}</span>
+                        <span className="text-white sm:text-md text-sm">{benefit}</span>
                       </li>
                     ))}
                   </ul>
@@ -72,7 +72,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
                     {service.useCases.map((useCase: string, i: number) => (
                       <span 
                         key={i} 
-                        className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700"
+                        className="px-3 py-1 bg-gray-800 rounded-lg text-sm text-gray-100 border border-gray-700"
                       >
                         {useCase}
                       </span>
@@ -84,7 +84,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
             
             {/* Right Column - Images with Captions */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-medium text-white mb-4">Visual Examples</h4>
+              <h4 className="text-xl font-medium text-white mb-4">Insights</h4>
               <div className="space-y-6">
                 {service.images?.map((img: Image, i: number) => (
                   <div key={i} className="group">

@@ -400,8 +400,8 @@ export default function Solutions() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-semibold mb-4 text-[#ffffff]">Our Solutions </h2>
-            <p className="text-xl text-[#ffffff] max-w-3xl mx-auto">
+            <h2 className="text-5xl font-semibold mb-4 text-[#ffffff] text-start sm:text-center">Our Solutions </h2>
+            <p className="sm:text-xl text-start text-sm text-[#ffffff] max-w-3xl sm:mx-auto">
               Discover our tailored services designed to meet your operational goals. We are new lunch in this sector, but We have extreme experience work with reputed company.
             </p>
           </motion.div>
@@ -457,8 +457,8 @@ export default function Solutions() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Our BPO Services?</h2>
-            <p className="text-xl text-[#ffffff] max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 sm:text-center text-start">Why Choose Us?</h2>
+            <p className="sm::text-xl text-sm text-[#ffffff] text-start max-w-3xl sm:mx-auto">
               Discover the advantages of partnering with us for your business process outsourcing needs
             </p>
           </motion.div>
@@ -565,8 +565,8 @@ export default function Solutions() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Features</h2>
-            <p className="text-xl text-[#ffffff] max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-4xl text-start sm:text-center font-bold mb-4">Key Features</h2>
+            <p className="sm:text-xl text-sm text-[#ffffff] max-w-3xl text-start sm:mx-auto">
               Advanced capabilities and guarantees that set us apart from the competition
             </p>
           </motion.div>
@@ -738,7 +738,7 @@ export default function Solutions() {
         </section>
       </div>
       {/* CTA Section */}
-      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="font-nunito bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto text-center ">
           <motion.div
             className="bg-gradient-to-br from-gray-900 to-blue-900/30 rounded-2xl p-12 border border-gray-700 hover:border-blue-500 transition-all duration-300 relative overflow-hidden"
@@ -748,8 +748,8 @@ export default function Solutions() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">Ready to Transform Your Business?</h2>
-            <p className="text-xl text-[#ffffff] mb-8 max-w-2xl mx-auto relative z-10">
+            <h2 className="text-2xl md:text-4xl font-bold mb-6 relative z-10">Ready to Transform Your Business?</h2>
+            <p className="sm:text-xl text-[#ffffff] mb-8 max-w-2xl mx-auto relative z-10">
               Partner with us for reliable, cost-effective BPO solutions that drive growth and efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
