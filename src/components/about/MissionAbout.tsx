@@ -57,16 +57,16 @@ const MissionAbout = () => {
   ];
 
   return (
-    <div className=" min-h-screen py-20">
+    <div className=" min-h-screen sm:py-20">
       <div className=" mx-auto container">
         
         {/* Header */}
-        <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`sm:text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <h1 className="text-2xl md:text-5xl font-bold text-white mb-4">
             Our Mission &
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Vision</span>
           </h1>
-          <p className="text-xl text-white max-w-3xl mx-auto">
+          <p className="sm:text-xl  text-white max-w-3xl mx-auto">
             Transforming ideas into powerful digital solutions through innovative technology and exceptional service
           </p>
         </div>
@@ -79,7 +79,7 @@ const MissionAbout = () => {
             </div>
           </div>
           <h2 className="text-3xl font-bold text-white text-center mb-6">Our Mission</h2>
-          <p className="text-lg text-white text-center leading-relaxed max-w-4xl mx-auto">
+          <p className="sm:text-lg text-sm  text-white sm:text-center leading-relaxed max-w-4xl mx-auto">
             To empower businesses with cutting-edge digital solutions that drive growth, enhance user experiences, 
             and create lasting value. We believe that great software transforms businesses, and every line of code 
             we write is guided by our commitment to quality, innovation, and client success.
@@ -98,7 +98,7 @@ const MissionAbout = () => {
                   </div>
                   <h3 className="text-xl font-bold text-white">{service.title}</h3>
                 </div>
-                <p className="text-white leading-relaxed">{service.description}</p>
+                <p className="text-white  leading-relaxed">{service.description}</p>
               </div>
             );
           })}
@@ -106,16 +106,16 @@ const MissionAbout = () => {
 
         {/* Values Section */}
         <div className={`transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          <div className="text-center mb-12">
+          <div className="sm:text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">Our Core Values</h2>
-            <p className="text-lg text-white">The principles that guide everything we do</p>
+            <p className="sm:text-lg text-sm text-white">The principles that guide everything we do</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <div key={index} className="text-center bg-blue-950 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div key={index} className="sm:text-center bg-blue-950 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                   <div className={`bg-gradient-to-r ${value.color} p-4 rounded-full w-16 h-16 mx-aut mb-6 flex items-center justify-center`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
@@ -128,7 +128,7 @@ const MissionAbout = () => {
         </div>
 
         {/* Stats Section */}
-        <div className={`bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 text-white text-center mb-16 transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+        <div className={`bg-gradient-to-r from-stone-200 to-stone-300 rounded-2xl shadow-xl p-8 md:p-12 text-black text-center mb-16 transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           <h2 className="text-3xl font-bold mb-8">Our Impact</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -148,10 +148,10 @@ const MissionAbout = () => {
 
         {/* CTA Section */}
         <div className={`text-center transform transition-all duration-1000 delay-1200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          <h2 className="text-3xl font-bold text-white mb-6">
+          <h2 className="sm:text-3xl text-2xl font-bold text-white mb-6">
             Ready to Build Something Amazing?
           </h2>
-          <p className="text-xl text-white mb-8">
+          <p className="sm:text-xl text-lg text-white mb-8">
             Let's discuss how we can help transform your ideas into powerful digital solutions.
           </p>
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
