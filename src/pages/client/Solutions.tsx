@@ -346,7 +346,7 @@ export default function Solutions() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className=" text-4xl md:text-3xl sm:text-5xl lg:text:3xl xl:text-6xl 2xl:text-5xl font-light leading-tight mb-6">
+            <h1 className=" text-3xl md:text-3xl sm:text-5xl lg:text:3xl xl:text-6xl 2xl:text-5xl font-light font-nunito leading-tight mb-6">
               <span className="block">Empower Your Growth with Scalable Business Support</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">
 
@@ -357,15 +357,15 @@ export default function Solutions() {
               Streamline operations, optimize performance, and drive innovation with our all-in-one managed business services.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex  sm:flex-row gap-2">
               <Link to="/contact">
-                <button className="bg-[#021688] hover:bg-blue-700 text-[#ffffff] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2">
-                  Get Started <ArrowRight className="w-5 h-5" />
+                <button className="bg-[#021688] hover:bg-blue-700 text-[#ffffff] px-8 py-4 rounded-lg font-semibold text-xs sm:text-lg transition-all duration-300 flex items-center gap-2">
+                  Get Started <ArrowRight className="w-5 h-5" /> 
                 </button>
               </Link>
 
               <Link to="/contact">
-                <button className="border border-[#fffff] hover:bg-white/10 text-[#ffffff] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                <button className="border border-[#fffff] hover:bg-white/10 text-[#ffffff] px-8 py-4 rounded-lg font-semibold text-xs sm:text-lg transition-all duration-300">
                   Book a Free Call
                 </button>
               </Link>
@@ -420,7 +420,7 @@ export default function Solutions() {
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-[#ffffff] mb-2">{service.title}</h3>
-                <p className="text-[#ffffff] mb-4 flex-grow">{service.shortDescription}</p>
+                <p className="text-[#ffffff] text mb-4 flex-grow">{service.shortDescription}</p>
                 <div className="mt-auto">
                   <button
                     onClick={() => openModal(service)}
@@ -449,7 +449,7 @@ export default function Solutions() {
       {/* Benefits Section */}
       <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] py-12">
 
-        <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto  rounded-3xl ">
+        <section className=" px-4 md:px-8 max-w-7xl mx-auto  rounded-3xl ">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -478,7 +478,7 @@ export default function Solutions() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                  <p className="text-[#ffffff]">{benefit.description}</p>
+                  <p className="text-[#ffffff] sm:text-lg">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -555,6 +555,7 @@ export default function Solutions() {
         </section>
       </div>
 
+      {/* key features section */}
       <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] ">
         {/* Features Section */}
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
@@ -591,7 +592,7 @@ export default function Solutions() {
 
 
       {/* Process Section - Redesign */}
-      <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] overflow-x-hidden">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -669,7 +670,7 @@ export default function Solutions() {
 
       {/* Testimonials Section */}
 
-      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="hidden bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto  rounded-3xl ">
           <motion.div
             className="text-center mb-16"
@@ -707,7 +708,7 @@ export default function Solutions() {
       </div>
 
       {/* Stats Section */}
-      <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
           <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
@@ -738,7 +739,7 @@ export default function Solutions() {
         </section>
       </div>
       {/* CTA Section */}
-      <div className="font-nunito bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="font-nunito bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto text-center ">
           <motion.div
             className="bg-gradient-to-br from-gray-900 to-blue-900/30 rounded-2xl p-12 border border-gray-700 hover:border-blue-500 transition-all duration-300 relative overflow-hidden"

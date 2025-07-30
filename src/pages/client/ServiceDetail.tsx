@@ -202,7 +202,7 @@ const ServiceDetail = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] text-gray-100">
+    <div className="min-h-screen sm:bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] bg-[#141313] text-gray-100">
       <ScrollToTop/>
       {/* Floating Navigation */}
       <motion.nav
@@ -243,7 +243,7 @@ const ServiceDetail = () => {
       {/* Hero Section */}
 
       <section
-        className="relative py-32 md:py-40 "
+        className="relative py-32 md:py-40 bg-[url(/https://static.vecteezy.com/system/resources/previews/022/732/901/non_2x/minimalistic-panoramic-black-abstract-background-with-dark-gradient-geometric-elements-modern-premium-graphic-design-element-luxury-futuristic-backdrop-vector.jpg)] bg-cover bg-bg-no-repeat"
         ref={setSectionRef('hero')}
       >
         {/* Subtle background elements */}
@@ -258,7 +258,7 @@ const ServiceDetail = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 rounded-full px-4 py-2 mb-6"
+              className="inline-flex items-center gap-2  border border-gray-800 rounded-full px-4 py-2 mb-6"
             >
               <span className="text-blue-400 text-sm font-medium">{(service as any).category || "Premium Service"}</span>
               <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
@@ -270,7 +270,7 @@ const ServiceDetail = () => {
 
             {/* Main heading */}
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -280,7 +280,7 @@ const ServiceDetail = () => {
 
             {/* Description */}
             <motion.p
-              className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
+              className="text-sm md:text-xl text-gray-300 mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -479,11 +479,11 @@ const ServiceDetail = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
+            className="sm:text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Offer</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 mx-auto mb-6" />
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 sm:mx-auto mb-6" />
+            <p className="sm:text-lg text-sm text-gray-300 max-w-3xl mx-auto">
               Complete range of services to meet your requirements
             </p>
           </motion.div>
@@ -518,7 +518,7 @@ const ServiceDetail = () => {
       {service.process && service.process.length > 0 && (
         <section
           id="process"
-          className="py-16 md:py-24 "
+          className="py-10 md:py-24 "
           ref={(el) => {
             if (el) sectionRefs.current['process'] = el
           }}
@@ -528,11 +528,11 @@ const ServiceDetail = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="text-center mb-16"
+              className="sm:text-center sm:mb-16 mb-8"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Process</h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6" />
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 sm:mx-auto mb-6" />
+              <p className="sm:text-lg text-sm text-gray-300 max-w-3xl mx-auto">
                 Step-by-step approach to deliver exceptional results
               </p>
             </motion.div>
@@ -557,7 +557,7 @@ const ServiceDetail = () => {
                         </div>
                         <h3 className="text-xl font-bold text-white">{step.step}</h3>
                       </div>
-                      <p className="text-gray-300 pl-16">{step.description}</p>
+                      <p className="text-gray-300 pl-16 sm:text-lg text-sm font-nunito">{step.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -583,11 +583,11 @@ const ServiceDetail = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="text-center mb-16"
+              className="sm:text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-orange-600 mx-auto mb-6" />
-              <p className="text-lg text-gray-300">
+              <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-orange-600 sm:mx-auto mb-6" />
+              <p className="sm:text-lg text-sm text-gray-300">
                 Get answers to common questions about our {service.serviceType.toLowerCase()} services
               </p>
             </motion.div>
@@ -695,7 +695,7 @@ const ServiceDetail = () => {
           if (el) sectionRefs.current['contact'] = el
         }}
       >
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto  max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -704,7 +704,7 @@ const ServiceDetail = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mb-8" />
-            <p className="text-lg text-gray-300 mb-8">
+            <p className="sm:text-lg text-sm text-gray-300 mb-8">
               Let's discuss your vision and create something amazing together with our{" "}
               <span className="text-cyan-400">{service.serviceType.toLowerCase()}</span> expertise
             </p>

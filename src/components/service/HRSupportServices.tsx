@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ScrollToTop from '../ScrollToTop';
 import image from "@/assets/bg-elements/DotsWithLines_illustration_UseBackgroundTurquoise_RGB.svg"
+import bpo from "@/assets/bpo/process.png"
 import { Link } from 'react-router-dom';
 interface ServiceCardProps {
     title: string;
@@ -18,10 +19,7 @@ interface FAQItem {
 
 
 
-interface ClientLogo {
-    src: string;
-    alt: string;
-}
+// let imagesb= "https://wallpapers.com/images/hd/dark-gradient-background-v9vj0cpgzd3grcbr.jpg"
 
 // Animation variants
 const container = {
@@ -101,44 +99,44 @@ const HRSupportServices: React.FC = () => {
         {
             title: 'Permanent Staffing',
             description: 'We provide highly skilled permanent employees tailored to your company culture and long-term technical needs.',
-            icon: '👔',
+            icon: 'https://cdn-icons-png.flaticon.com/512/6818/6818210.png',
             highlight: true
         },
         {
             title: 'Temporary Staffing',
             description: 'Flexible temporary technical staff to meet your project deadlines and seasonal demands.',
-            icon: '⏱️'
+            icon: 'https://www.costflex.com/wp-content/uploads/temporary-permanent-dss-staffing-icon.png'
         },
         {
             title: 'Contract-to-Hire',
             description: 'Try before you commit with our contract-to-hire solutions that reduce hiring risks.',
-            icon: '📝'
+            icon: 'https://cdn-icons-png.flaticon.com/512/426/426351.png'
         },
         {
             title: 'Web Developers',
             description: 'Expert frontend and backend developers proficient in modern frameworks and technologies.',
-            icon: '💻',
+            icon: 'https://cdn-icons-png.freepik.com/256/7270/7270111.png?semt=ais_hybrid',
             highlight: true
         },
         {
             title: 'App Developers',
             description: 'iOS and Android specialists who can build performant, user-friendly mobile applications.',
-            icon: '📱'
+            icon: 'https://cdn-icons-png.flaticon.com/512/1436/1436353.png'
         },
         {
             title: 'Graphics Designers',
             description: 'Creative professionals for branding, UI/UX, marketing materials, and visual content.',
-            icon: '🎨'
+            icon: 'https://icon-library.com/images/graphic-designer-icon/graphic-designer-icon-8.jpg'
         },
         {
             title: '3D Designers',
             description: 'Talented 3D artists for product visualization, architectural rendering, and animation.',
-            icon: '🖌️'
+            icon: 'https://icon-library.com/images/3d-model-icon/3d-model-icon-5.jpg'
         },
         {
             title: 'QA Specialists',
             description: 'Quality assurance professionals to ensure your products meet the highest standards.',
-            icon: '🔍'
+            icon: 'https://www.nfocus.co.uk/wp-content/uploads/2022/01/nfocus_specialist_testing_icon.png'
         }
     ];
 
@@ -170,14 +168,7 @@ const HRSupportServices: React.FC = () => {
     ];
 
 
-    const clientLogos: ClientLogo[] = [
-        { src: 'https://www.randstad.se/s3fs-media/se-rs/public/2024-09/transparent_png-randstad_professional_tech_illustration_25_rgb_usebackgroundblue_0.png?VersionId=ytbhOw702jiq8rHLndMfYKPtKC7I0Y51', alt: 'TechCorp' },
-        { src: 'https://www.randstad.se/s3fs-media/se-rs/public/2024-09/transparent_png-randstad_professional_tech_illustration_25_rgb_usebackgroundblue_0.png?VersionId=ytbhOw702jiq8rHLndMfYKPtKC7I0Y51', alt: 'TechCorp' },
-        { src: 'https://www.randstad.se/s3fs-media/se-rs/public/2024-09/transparent_png-randstad_professional_tech_illustration_25_rgb_usebackgroundblue_0.png?VersionId=ytbhOw702jiq8rHLndMfYKPtKC7I0Y51', alt: 'TechCorp' },
-        { src: 'https://www.randstad.se/s3fs-media/se-rs/public/2024-09/transparent_png-randstad_professional_tech_illustration_25_rgb_usebackgroundblue_0.png?VersionId=ytbhOw702jiq8rHLndMfYKPtKC7I0Y51', alt: 'TechCorp' },
-        { src: 'https://www.randstad.se/s3fs-media/se-rs/public/2024-09/transparent_png-randstad_professional_tech_illustration_25_rgb_usebackgroundblue_0.png?VersionId=ytbhOw702jiq8rHLndMfYKPtKC7I0Y51', alt: 'TechCorp' },
 
-    ];
 
     const stats = [
         { value: '95%', label: 'Placement Success Rate' },
@@ -188,29 +179,29 @@ const HRSupportServices: React.FC = () => {
 
     return (
         <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] text-gray-100 lg:py-50 py-30">
-            <ScrollToTop/>
+            <ScrollToTop />
             {/* Hero Section */}
             <AnimatedSection variant={fadeIn}>
-                <section className="relative py-28">
-                    <div className="container mx-auto px-18 flex flex-col md:flex-row items-center">
+                <section className="relative sm:py-28">
+                    <div className="container mx-auto  flex flex-col md:flex-row items-center">
                         <motion.div
                             className="md:w-1/2 mb-10 md:mb-0"
                             variants={slideInFromLeft}
                         >
-                            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
                                 Technical Talent Solutions for Growing Businesses
                             </h1>
-                            <p className="text-xl mb-8 text-blue-200">
+                            <p className="sm:text-xl mb-8 text-blue-200">
                                 We connect companies with top-tier web developers, app specialists, and creative professionals through flexible staffing solutions.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4">
+                            <div className="flex  sm:flex-row gap-4">
                                 <Link to="/contact">
-                                <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 transform hover:scale-105">
-                                    Request Talent
-                                </button>
-                                                                </Link>
+                                    <button className="bg-blue-500 hover:bg-blue-600 text-white sm:px-8 px-4 py-3 rounded-lg font-semibold sm:text-lg transition duration-300 transform hover:scale-105">
+                                        Request Talent
+                                    </button>
+                                </Link>
 
-                                <button className="border-2 border-blue-400 text-blue-400 hover:bg-blue-900/30 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 transform hover:scale-105">
+                                <button className="border-2 border-blue-400 text-blue-400 hover:bg-blue-900/30 sm:px-8 px-4 py-3 rounded-lg font-semibold sm:text-lg transition duration-300 transform hover:scale-105">
                                     Learn More
                                 </button>
                             </div>
@@ -232,10 +223,10 @@ const HRSupportServices: React.FC = () => {
 
             {/* Client Logos */}
             <AnimatedSection>
-                <section className="py-12 bg-gray-900/50">
+                <section className="py-12 bg-[url(https://wallpapers.com/images/hd/dark-gradient-background-v9vj0cpgzd3grcbr.jpg)] bg-cover bg-no-repeat">
                     <div className="container mx-auto px-6">
                         <h2 className="text-center text-blue-300 text-sm font-semibold mb-8 uppercase tracking-wider">
-                            Trusted by leading companies
+
                         </h2>
                         <motion.div
                             className="flex flex-wrap justify-center items-center gap-8 md:gap-16"
@@ -244,15 +235,7 @@ const HRSupportServices: React.FC = () => {
                             whileInView="show"
                             viewport={{ once: true }}
                         >
-                            {clientLogos.map((logo, index) => (
-                                <motion.div key={index} variants={item}>
-                                    <img
-                                        src={logo.src}
-                                        alt={logo.alt}
-                                        className="h-10 opacity-70 hover:opacity-100 transition duration-300"
-                                    />
-                                </motion.div>
-                            ))}
+
                         </motion.div>
                     </div>
                 </section>
@@ -260,16 +243,16 @@ const HRSupportServices: React.FC = () => {
 
             {/* Services Section */}
             <AnimatedSection>
-                <section className="py-20">
+                <section className="py-20 overflow-x-hidden">
                     <div className="container mx-auto px-6">
                         <motion.div
-                            className="text-center mb-16"
+                            className="sm:text-center mb-16"
                             variants={fadeIn}
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
                                 Our Comprehensive Staffing Services
                             </h2>
-                            <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+                            <p className="sm:text-xl text-blue-200 max-w-3xl mx-auto">
                                 Flexible solutions designed to meet your technical workforce needs at every stage
                             </p>
                         </motion.div>
@@ -288,7 +271,9 @@ const HRSupportServices: React.FC = () => {
                                     whileHover={{ y: -5 }}
                                     className={`bg-gray-800 rounded-xl shadow-lg overflow-hidden p-6 transition-all duration-300 hover:shadow-xl ${service.highlight ? 'border-t-4 border-blue-500' : ''}`}
                                 >
-                                    <div className="text-4xl mb-4">{service.icon}</div>
+                                    <div className="text-4xl h mb-4">
+                                        <img className='h-15 w-15' src={service.icon} alt="" />
+                                    </div>
                                     <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                                     <p className="text-gray-300">{service.description}</p>
                                 </motion.div>
@@ -329,7 +314,7 @@ const HRSupportServices: React.FC = () => {
                 <section className="py-20 bg-gray-900/50">
                     <div className="container mx-auto px-6">
                         <motion.div
-                            className="text-center mb-16"
+                            className="sm:text-center mb-16"
                             variants={fadeIn}
                         >
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -352,9 +337,9 @@ const HRSupportServices: React.FC = () => {
                                 variants={slideInFromLeft}
                             >
                                 <img
-                                    src="https://www.thetridenttech.com/assets/img/rpo/rpo-4.png"
+                                    src={bpo}
                                     alt="Hiring process illustration"
-                                    className="rounded-lg shadow-md w-full "
+                                    className="rounded-full shadow-md w-full "
                                 />
                             </motion.div>
                             <motion.div
@@ -364,48 +349,49 @@ const HRSupportServices: React.FC = () => {
                                 <div className="space-y-8">
                                     {[
                                         {
-                                            step: '1',
-                                            title: 'Needs Assessment',
-                                            description: 'We conduct a deep dive into your technical requirements, team dynamics, and company culture.'
+                                            "step": "1",
+                                            "title": "Needs Assessment",
+                                            "description": "We begin with an in-depth needs assessment to understand your technical hiring goals, project requirements, team structure, and company culture. This step allows us to tailor our recruitment strategy to align with your specific business objectives, ensuring a perfect fit for both technical skills and cultural compatibility."
                                         },
                                         {
-                                            step: '2',
-                                            title: 'Talent Sourcing',
-                                            description: 'Our network and recruitment strategies identify qualified candidates from our pre-vetted pool.'
+                                            "step": "2",
+                                            "title": "Talent Sourcing",
+                                            "description": "Using our global talent network and advanced recruitment tools, we proactively source top-tier software engineers, developers, and IT professionals. We focus on identifying candidates with proven experience, aligned skill sets, and availability to meet your project timelines."
                                         },
                                         {
-                                            step: '3',
-                                            title: 'Rigorous Screening',
-                                            description: 'Technical assessments, portfolio reviews, and behavioral interviews ensure candidate quality.'
+                                            "step": "3",
+                                            "title": "Rigorous Screening",
+                                            "description": "Every candidate undergoes a multi-layered vetting process, including technical skills assessments, code reviews, and behavioral interviews. We evaluate their problem-solving abilities, communication skills, and real-world experience to ensure they meet the highest quality standards in tech recruitment."
                                         },
                                         {
-                                            step: '4',
-                                            title: 'Client Interviews',
-                                            description: 'You meet with our pre-screened, qualified candidates for final selection.'
+                                            "step": "4",
+                                            "title": "Client Interviews",
+                                            "description": "Once vetted, we present you with a shortlist of highly qualified candidates ready for your review. You conduct final interviews to assess technical alignment and team compatibility, giving you full control in selecting the best fit for your engineering team."
                                         },
                                         {
-                                            step: '5',
-                                            title: 'Onboarding Support',
-                                            description: 'We handle all paperwork and ensure smooth integration with your team.'
+                                            "step": "5",
+                                            "title": "Onboarding Support",
+                                            "description": "After selection, we streamline the onboarding process by handling contracts, documentation, and communication. Our onboarding experts ensure a seamless transition, helping new hires integrate quickly into your workflow and company environment, minimizing downtime and maximizing productivity."
                                         }
-                                    ].map((item, index) => (
-                                        <motion.div
-                                            key={index}
-                                            className="flex gap-4"
-                                            initial="hidden"
-                                            animate="show"
-                                            variants={itemVariants}  // This should be your animation variants
-                                            whileHover={{ x: 5 }}
-                                        >
-                                            <div className="flex-shrink-0 h-12 w-12 rounded-full bg-blue-900/50 text-blue-400 flex items-center justify-center text-xl font-bold border border-blue-400/30">
-                                                {item.step}
-                                            </div>
-                                            <div>
-                                                <h3 className="text-xl font-semibold text-white mb-1">{item.title}</h3>
-                                                <p className="text-gray-300">{item.description}</p>
-                                            </div>
-                                        </motion.div>
-                                    ))}
+                                    ]
+                                        .map((item, index) => (
+                                            <motion.div
+                                                key={index}
+                                                className="flex gap-4"
+                                                initial="hidden"
+                                                animate="show"
+                                                variants={itemVariants}  // This should be your animation variants
+                                                whileHover={{ x: 5 }}
+                                            >
+                                                <div className="flex-shrink-0 h-12 w-12 rounded-full bg-blue-900/50 text-blue-400 flex items-center justify-center text-xl font-bold border border-blue-400/30">
+                                                    {item.step}
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-xl font-semibold text-white mb-1">{item.title}</h3>
+                                                    <p className="text-gray-300 sm:text-lg text-sm">{item.description}</p>
+                                                </div>
+                                            </motion.div>
+                                        ))}
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -446,7 +432,7 @@ const HRSupportServices: React.FC = () => {
                                 </blockquote>
                                 <div className="flex items-center">
                                     <img
-                                        src="/client1.jpg"
+                                        src="https://img.freepik.com/premium-photo/happy-sexy-american-girl-beauty-glamour-model-woman-smiling_221213-2120.jpg"
                                         alt="Sarah Johnson"
                                         className="w-12 h-12 rounded-full mr-4"
                                     />
@@ -466,12 +452,12 @@ const HRSupportServices: React.FC = () => {
                                 </blockquote>
                                 <div className="flex items-center">
                                     <img
-                                        src="/client2.jpg"
+                                        src="https://www.blogtivvu.com/wp-content/uploads/2011/11/vanessa-hessler-350x262.jpg"
                                         alt="Michael Chen"
                                         className="w-12 h-12 rounded-full mr-4"
                                     />
                                     <div>
-                                        <div className="font-bold text-white">Michael Chen</div>
+                                        <div className="font-bold text-white">Saima Sen</div>
                                         <div className="text-gray-400">CTO, StartupHub</div>
                                     </div>
                                 </div>

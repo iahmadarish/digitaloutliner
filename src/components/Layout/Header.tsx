@@ -171,10 +171,10 @@ const CONQUERICNavbar = () => {
               />
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+                className="text-white/80 hover:text-white bg-blue-600 transition-colors p-1 rounded-full hover:bg-white/10"
                 aria-label="Close menu"
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 " />
               </button>
             </div>
 

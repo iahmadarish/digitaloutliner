@@ -6,7 +6,7 @@ const services = [
     title: 'Robust & Scalable Web Development Services',
     subtitle: 'Custom Website & Web Application Solutions',
     description:
-      "Boost your online presence with our professional web development services. We specialize in creating fast, secure, and fully responsive websites and web apps tailored to meet your business goals. Using the latest technologies like React, Node.js, and MongoDB, our expert developers ensure your digital platform is scalable, SEO-optimized, and delivers an exceptional user experience across all devices.",
+      "Boost your online presence with our professional web development services. We specialize in creating fast, secure, and fully responsive websites and web apps tailored to meet your business goals. Using the latest technologies like Next js, React, React Remix, Node.js, and MongoDB etc. Our expert developers ensure your digital platform is scalable, SEO-optimized, and delivers an exceptional user experience across all devices.",
     icon: Code,
     gradient: 'from-blue-500 to-indigo-600',
     gradientHex: 'linear-gradient(135deg, #3b82f6 0%, #4f46e5 100%)',
@@ -79,13 +79,13 @@ const DarkAccordionComponent = () => {
         <div className="text-start mb-12 sm:mb-16 lg:mb-20 relative z-10">
           <div className="relative inline-block">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight">
-              <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent px-4">
-                Solutions Built for the Future
+              <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent ">
+              Solutions Built for the Future
               </span>
             </h1>
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-32 md:w-40 lg:w-48 h-1 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full opacity-60" />
           </div>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl  mt-6 sm:mt-8 leading-relaxed font-light px-4">
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl  mt-6 sm:mt-8 leading-relaxed font-light ">
             At CONQUERIC, we empower businesses with scalable digital solutions designed to meet tomorrow's challenges. Our team delivers with precision, creativity, and a forward-thinking mindset.
           </p>
         </div>

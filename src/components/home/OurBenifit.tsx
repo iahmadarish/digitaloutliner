@@ -7,8 +7,8 @@ import direct from "@/assets/directcommunication.png"
 
 export default function OurBenefit() {
   return (
-    <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white min-h-screen p-8">
-      <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+    <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white min-h-screen py-8">
+      <div className=" mx-auto container">
         {/* Header */}
         <div className="mb-12">
           <p className="text-blue-300 text-sm mb-4 ">The Advantages Of Working With Us</p>
@@ -25,7 +25,7 @@ export default function OurBenefit() {
           {/* Clear Project Backlog */}
           <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl p-6 border  shadow-sky-400 hover:shadow-sm border-gray-800">
             <h3 className="text-xl font-semibold mb-4">Clear Project Backlog</h3>
-            <p className="text-gray-100 mb-6">
+            <p className="text-gray-100 mb-6 sm:text-lg text-sm">
               Stay organized and informed with a transparent backlog of tasks, 
               ensuring that every milestone is tracked and completed on time.
             </p>
@@ -74,7 +74,7 @@ export default function OurBenefit() {
           {/* Top-Tier Security */}
           <div className="bg-gray-900 rounded-xl shadow-sky-400 hover:shadow-sm p-6 border border-gray-800 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950">
             <h3 className="text-xl font-semibold mb-4">Top-Tier Security</h3>
-            <p className="text-gray-100 mb-6">
+            <p className="text-gray-100 mb-6 sm:text-lg text-sm">
               Your data is safe with us. We implement the latest security 
               protocols to protect your business and customer information at all times.
             </p>
@@ -88,7 +88,7 @@ export default function OurBenefit() {
           {/* Tech Stack */}
           <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl  shadow-sky-400 hover:shadow-sm p-6 border border-gray-800">
             <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
-            <p className="text-gray-200 mb-6">
+            <p className="text-gray-200 mb-6 sm:text-lg text-sm">
               Leveraging the latest tech for scalable, high-performance solutions.
             </p>
             
@@ -108,7 +108,7 @@ export default function OurBenefit() {
           {/* Exponential Growth */}
           <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl py-6 px-2 border hover:shadow-sm shadow-blue-600 border-gray-800">
             <h3 className="text-xl font-semibold mb-4">Exponential Growth</h3>
-            <p className="text-gray-200 mb-6">
+            <p className="text-gray-200 mb-6 sm:text-lg text-sm">
               Our solutions are built to scale with your business, 
               helping you expand rapidly and sustainably.
             </p>
@@ -133,7 +133,7 @@ export default function OurBenefit() {
           {/* Direct Communication */}
           <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl py-6 px-3 border border-gray-800 lg:col-span-2 hover:shadow-sm shadow-blue-600 ">
             <h3 className="text-xl font-semibold mb-4">Direct Communication</h3>
-            <p className="text-gray-100 mb-6">
+            <p className="text-gray-100 mb-6 sm:text-lg text-sm">
               From start to finish, you'll have direct access to our team of experts, 
               ensuring clear communication and quick resolution of any issues.
             </p>
@@ -144,7 +144,7 @@ export default function OurBenefit() {
                 <img className='rounded' src={communication} alt="" />
               </div>
               <div className="md:lg:xl:2xl:px-4 py-2">
-                <p>
+                <p className='sm:text-lg text-sm'>
                  Effective communication channels for manufacturing teams include daily shift briefings, face-to-face meetings, and digital tools like messaging apps and collaboration platforms. These channels ensure that information is consistently shared across all shifts and locations.
                 </p>
               </div>

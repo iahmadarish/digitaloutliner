@@ -50,7 +50,7 @@ const faqData = [
   return (
 <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
 
-    <div className="mx-auto max-w-7xl py-16 min-h-screen">
+    <div className="mx-auto max-w-7xl px-2 py-16 min-h-screen">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-200 mb-2">Frequently Asked Questions</h1>
         <p className="text-gray-300">Everything you need to know about our services and process</p>
@@ -103,8 +103,8 @@ const faqData = [
                 ? 'max-h-96 opacity-100' 
                 : 'max-h-0 opacity-0'
             }`}>
-              <div className="px-6 pb-6">
-                <div className="border-t border-gray-300 pt-4 ml-12">
+              <div className="sm:px-6 px-2 pb-6">
+                <div className="border-t sm:text-lg text-sm border-gray-300 pt-4 ml-12">
                   <p className="text-white leading-relaxed">
                     {item.answer}
                   </p>

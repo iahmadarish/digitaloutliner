@@ -267,7 +267,7 @@ const ToolsetComponent = () => {
               Expert Tools
             </span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-400 sm:text-lg text-sm max-w-3xl mx-auto leading-relaxed">
             We leverage cutting-edge technologies to build exceptional digital experiences that drive results.
           </p>
         </motion.div>
