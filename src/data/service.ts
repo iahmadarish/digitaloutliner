@@ -29,14 +29,18 @@ export const services = [
       "From landing pages to full e-commerce portals, we deliver complete web solutions.",
     ],
     bulletPoints: [
-      "Custom web application development",
-      "E-commerce websites (Shopify, WooCommerce, custom builds)",
-      "Frontend development (React, Next.js, HTML/CSS/JS)",
-      "Backend APIs and integrations (Node.js, Express)",
-      "Responsive and mobile-first design",
-      "Website performance and SEO optimization",
-      "CMS and admin panel integration",
-      "Hosting, domain, and maintenance support",
+      "Custom web application developmentAt CONQUERIC:, we specialize in building scalable, secure, and high-performing custom web applications tailored to your unique business goals. Whether you need a powerful enterprise dashboard or a lightweight SaaS solution, our expert developers ensure seamless user experience, clean architecture, and robust performance to help your business grow digitally.",
+
+      "E-commerce websites (Shopify, WooCommerce, custom builds):Boost your online sales with a professionally crafted e-commerce website from CONQUERIC. We offer tailored e-commerce development services using Shopify, WooCommerce, or fully custom solutions. Our goal is to enhance user engagement, optimize checkout flows, and ensure mobile responsiveness while integrating secure payment gateways and essential analytics tools.",
+
+      "Frontend development (React, Next.js, HTML/CSS/JS): CONQUERIC delivers high-quality frontend development services using modern technologies like React, Next.js, HTML, CSS, and JavaScript. We focus on building lightning-fast, interactive, and accessible user interfaces that offer flawless experiences across all devices and browsers. Our code is SEO-optimized, scalable, and follows the best UI/UX design standards.",
+
+      "Backend APIs and integrations (Node.js, Express):Our backend development expertise ensures your application functions smoothly, securely, and efficiently. At CONQUERIC, we build powerful APIs and third-party integrations using Node.js and Express. We handle everything from authentication and database communication to custom logic and RESTful services, providing a solid foundation for your digital platform.",
+
+      "Responsive and mobile-first design: In today’s mobile-driven world, CONQUERIC adopts a mobile-first design approach to guarantee flawless experiences on smartphones, tablets, and desktops. Our responsive design techniques ensure your website adapts seamlessly to any screen size, enhancing usability, retention, and overall search engine rankings across all platforms and devices.",
+      "Website performance and SEO optimization: We prioritize speed, performance, and SEO from day one. CONQUERIC optimizes website loading times, image compression, structured data implementation, and Core Web Vitals to ensure top-tier rankings on Google. Our SEO-friendly codebase and on-page optimization practices help increase visibility, drive traffic, and convert visitors into customers.",
+      "CMS and admin panel integration: Manage your website effortlessly with CONQUERIC’s custom CMS and admin panel solutions. We integrate user-friendly content management systems that allow you to update text, images, blog posts, and products without any technical skills. Our CMS platforms are secure, scalable, and built to match your business workflow and goals.",
+      "Hosting, domain, and maintenance support: CONQUERIC offers complete hosting, domain registration, and ongoing website maintenance services to keep your business online and running smoothly. From setting up secure SSL certificates and automated backups to performance monitoring and malware protection, we handle the technical details so you can focus on growth.",
     ],
     images: [
       web1,

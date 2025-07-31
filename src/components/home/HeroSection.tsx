@@ -219,7 +219,7 @@ const MatchingHeroSection = () => {
       </motion.div>
 
       {/* Hero Section */}
-      <div className="relative z-10 mx-auto px-8 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
+      <div className="relative z-10 container py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">

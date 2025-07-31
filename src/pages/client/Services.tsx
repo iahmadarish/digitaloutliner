@@ -1,24 +1,14 @@
 "use client"
-import {
-  useState,
-  type JSXElementConstructor,
-  type Key,
-  type ReactElement,
-  type ReactNode,
-  type ReactPortal,
-} from "react"
+import { useState, type Key } from "react"
 import { services } from "../../data/service"
 import { useNavigate } from "react-router-dom"
-import { ArrowRight, CheckCircle, Zap, Users, Globe, Shield } from "lucide-react"
+import { ArrowRight, CheckCircle, Zap, Users, Shield, ChevronRight } from "lucide-react"
 import ScrollToTop from "@/components/ScrollToTop"
-
-// Individual Service Card Component
-// Individual Service Card Component
+import v from "@/assets/logo/clogo.png"
 const ServiceCard = ({ service, index }: { service: any; index: number }) => {
   const [isHovered, setIsHovered] = useState(false)
   const navigate = useNavigate()
-
-  // Function to create URL-friendly slug from serviceType
+  console.log(isHovered)
   const createSlug = (serviceType: string) => {
     return serviceType
       .toLowerCase()
@@ -26,127 +16,70 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
       .replace(/(^-|-$)/g, "")
   }
 
-  // Function to handle service click
   const handleServiceClick = (serviceType: string) => {
     const slug = createSlug(serviceType)
     navigate(`/services/${slug}`)
   }
 
-  // Truncate text for mobile
-  const truncateText = (text: string, maxLength: number) => {
-    if (text.length > maxLength) {
-      return text.substring(0, maxLength) + '...'
-    }
-    return text
-  }
-
   return (
     <div
-      className="group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 ease-in-out cursor-pointer bg-gray-900 hover:shadow-xl hover:shadow-blue-900/20"
+      className={`relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer group ${index % 2 === 0 ? 'bg-gradient-to-br' : 'bg-gradient-to-bl'} from-gray-900 to-gray-800 border border-gray-800 hover:border-blue-500/30`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => handleServiceClick(service.serviceType)}
     >
       <ScrollToTop />
-      <div
-        className={`grid grid-cols-1 lg:grid-cols-2 min-h-[300px] sm:min-h-[400px] ${
-          index % 2 === 0 ? "" : "lg:grid-flow-col-dense"
-        }`}
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
         {/* Image Section */}
-        <div className={`relative overflow-hidden ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
+        <div className={`relative h-34  sm:h-full ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
           <img
-            src={isHovered && service.images[1] ? service.images[1] : service.images[0]}
+            src={service.images[1]}
             alt={service.serviceType}
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
             onError={(e) => {
               e.currentTarget.src = "/placeholder.svg?height=400&width=600"
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent lg:bg-gradient-to-r lg:from-black/70 lg:via-black/40 lg:to-transparent"></div>
         </div>
 
         {/* Content Section */}
-        <div
-          className={`p-6 sm:p-8 lg:p-12 flex flex-col justify-center relative transition-all duration-500 ${
-            index % 2 === 0 ? "lg:order-2" : "lg:order-1"
-          } ${isHovered ? "bg-blue-900/30 text-white" : "bg-gray-900 text-gray-100"}`}
-        >
-          {/* Arrow Icon */}
-          <div className="absolute top-6 sm:top-8 right-6 sm:right-8">
-            <div
-              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
-                isHovered ? "bg-white text-blue-900" : "bg-blue-600 text-white"
-              }`}
-            >
-              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-            </div>
+        <div className={`sm:p-8 p-3 flex flex-col justify-center relative ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
+          {/* Service Title */}
+          <div className="flex items-center mb-4">
+            <div className={`w-3 h-3 rounded-full mr-3 ${index % 3 === 0 ? 'bg-blue-500' : index % 3 === 1 ? 'bg-emerald-500' : 'bg-purple-500'}`}></div>
+            <h3 className="text-xl font-semibold text-white">
+              {service.serviceType}
+            </h3>
           </div>
 
-          {/* Service Title */}
-          <h3
-            className={`text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 transition-colors duration-500 pr-16 ${
-              isHovered ? "text-white" : "text-gray-100"
-            }`}
-          >
-            {service.serviceType.toUpperCase()}
-          </h3>
-
-          {/* Short Description - Truncated on mobile */}
-          <p
-            className={`text-sm sm:text-lg mb-4 sm:mb-6 leading-relaxed transition-colors duration-500 ${
-              isHovered ? "text-gray-300" : "text-gray-400"
-            }`}
-          >
-            <span className="hidden sm:inline">{service.shortDetails}</span>
-            <span className="sm:hidden">{truncateText(service.shortDetails, 100)}</span>
+          {/* Short Description */}
+          <p className="text-gray-400 mb-4 leading-relaxed">
+            {service.shortDetails}
           </p>
 
-          {/* Bullet Points - Limited to 3 on mobile */}
-          <ul className="space-y-2 sm:space-y-3">
-            {service.bulletPoints
-              .slice(0, window.innerWidth < 640 ? 2 : 5) // Show 3 on mobile, 5 on desktop
-              .map(
-                (
-                  point:
-                    | string
-                    | number
-                    | bigint
-                    | boolean
-                    | ReactElement<unknown, string | JSXElementConstructor<any>>
-                    | Iterable<ReactNode>
-                    | ReactPortal
-                    | Promise<
-                        | string
-                        | number
-                        | bigint
-                        | boolean
-                        | ReactPortal
-                        | ReactElement<unknown, string | JSXElementConstructor<any>>
-                        | Iterable<ReactNode>
-                        | null
-                        | undefined
-                      >
-                    | null
-                    | undefined,
-                  pointIndex: Key | null | undefined,
-                ) => (
-                  <li
-                    key={pointIndex}
-                    className={`flex items-start text-sm sm:text-base transition-colors duration-500 ${
-                      isHovered ? "text-gray-300" : "text-gray-400"
-                    }`}
-                  >
-                    <span
-                      className={`inline-block w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 transition-colors duration-500 ${
-                        isHovered ? "bg-white" : "bg-blue-500"
-                      }`}
-                    ></span>
-                    {point}
-                  </li>
-                ),
-              )}
+          {/* Bullet Points */}
+          <ul className="sm:space-y-3 space-y-1 mb-8">
+            {service.bulletPoints.slice(0, 3).map((point: any, pointIndex: Key | null | undefined) => {
+              const pointText = typeof point === "string" ? point : String(point)
+              const title = pointText.includes(":") ? pointText.split(":")[0].trim() : pointText
+
+              return (
+                <li key={pointIndex} className="flex items-start text-gray-300">
+                  <ChevronRight className="w-4 h-4 mt-1 mr-2 text-blue-400 flex-shrink-0" />
+                  <span className="text-sm">{title}</span>
+                </li>
+              )
+            })}
           </ul>
+
+          {/* CTA Button */}
+          <button
+            className={`flex items-center text-sm font-medium w-fit px-6 py-3 rounded-lg transition-all duration-300 ${index % 3 === 0 ? 'bg-blue-600 hover:bg-blue-700' : index % 3 === 1 ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-purple-600 hover:bg-purple-700'}`}
+          >
+            Learn more
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </button>
         </div>
       </div>
     </div>
@@ -157,70 +90,64 @@ const ServicesPage = () => {
   const [projectInput, setProjectInput] = useState("")
 
   return (
-    <div className="min-h-screen bg-gray-950 ">
-      {/* Dark Theme Hero Section */}
-      <div className="relative  min-h-screen pb-24 sm:pt-54 pt-30 bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] flex items-center justify-center overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"> 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center  ">
-            {/* Left Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-2xl sm:text-5xl md:lg:xl:2xl:text-5xl font-family-comfort md:lg:xl:sm:2xl:font-bold font-light text-white mb-6 leading-tight">
-                Design, Build, and 
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  - Modernize Mobile App
-                </span> & eCommerce Solutions
+    <div className="bg-gray-950 text-white">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+        <div className="container mx-auto px-6 py-24 md:py-32 lg:py-40 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-block bg-blue-900/20 text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                Digital Excellence
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Transform Your <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Digital Presence</span>
               </h1>
-
-              <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Modernize, build, and scale with flexible, expert teams delivering tailored digital solutions to
-                maximize ROI and customer experience.
+              <p className="text-lg text-gray-400 mb-8 max-w-lg">
+                We craft exceptional digital experiences that drive growth, engagement, and measurable results for your business.
               </p>
 
-              {/* CTA Section */}
-              <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto lg:mx-0">
-                <div className="flex-1">
-                  <input
-                    type="text"
-                    placeholder="Tell us more about your project*"
-                    value={projectInput}
-                    onChange={(e) => setProjectInput(e.target.value)}
-                    className="w-full px-6 py-4 bg-gray-800 border border-gray-700 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  />
-                </div>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center justify-center whitespace-nowrap">
-                  Start Building Today
+              <div className="flex flex-col sm:flex-row gap-4 max-w-xl">
+                <input
+                  type="text"
+                  placeholder="Describe your project..."
+                  value={projectInput}
+                  onChange={(e) => setProjectInput(e.target.value)}
+                  className="flex-1 px-6 py-4 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                />
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-all flex items-center justify-center whitespace-nowrap">
+                  Get Started
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </button>
               </div>
             </div>
 
-            {/* Right Dashboard Mockup */}
-          <div className="">
-            <img className="rounded" src="https://atc.xyz/wp-content/uploads/2023/10/banner-image.png" alt="" />
-          </div>
+            <div className="relative">
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+              <div className="relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Digital solutions"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Services Section */}
-      <div className="md:lg:xl:2xl:py-20 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
-        <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <div className="md:lg:xl:2xl:text-start  md:lg:xl:2xl:flex justify-between space-y-4 mb-12 sm:mb-16">
-            <h2 className="text-3xl  sm:text-4xl font-bold text-black mb-4 bg-[#62ed17] font-family-comfort px-4 py-2 w-fit h-fit rounded">
-              Our Services
-            </h2>
-            <p className="text-start sm:text-lg text-sm text-gray-400 sm:max-w-2xl font-family-mont">
-              We provide end-to-end digital solutions tailored to your business goals — from intuitive design and robust
-              web/app development to strategic digital marketing and scalable tech integrations. Explore globally our
-              service and growth significantly.
+      <div className="py-20 bg-gray-900/50 relative">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our <span className="text-blue-400">Services</span></h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Comprehensive digital solutions tailored to your business needs. We combine innovation with execution to deliver exceptional results.
             </p>
           </div>
-          <div className="space-y-6 sm:space-y-8">
+
+          <div className="grid gap-10">
             {services.map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index} />
             ))}
@@ -228,81 +155,158 @@ const ServicesPage = () => {
         </div>
       </div>
 
-      {/* Why Choose Us Section */}
-      <div className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
-        <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">Why Choose Us?</h2>
-              <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8">
-                We combine technical expertise with business acumen to deliver solutions that not only work but drive
-                real results for your organization.
-              </p>
-              <div className="space-y-4 sm:space-y-6">
-                {[
-                  "Expert team with 5+ years of experience",
-                  "Agile development methodology",
-                  "24/7 technical support and maintenance",
-                  "Competitive pricing with transparent costs",
-                  "On-time delivery guarantee",
-                ].map((point, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="bg-green-900/30 rounded-full p-2 mr-3 sm:mr-4 flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-                    </div>
-                    <span className="text-sm sm:text-base text-gray-300">{point}</span>
-                  </div>
-                ))}
+      {/* Stats Section */}
+      <div className="py-20 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "100+", label: "Projects Completed", icon: <CheckCircle className="w-8 h-8 mx-auto mb-4 text-blue-400" /> },
+              { value: "5+", label: "Years Experience", icon: <Zap className="w-8 h-8 mx-auto mb-4 text-emerald-400" /> },
+              { value: "50+", label: "Happy Clients", icon: <Users className="w-8 h-8 mx-auto mb-4 text-purple-400" /> },
+              { value: "24/7", label: "Support", icon: <Shield className="w-8 h-8 mx-auto mb-4 text-amber-400" /> }
+            ].map((item, index) => (
+              <div key={index} className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-blue-500/30 transition-all">
+                {item.icon}
+                <div className="text-3xl font-bold mb-2">{item.value}</div>
+                <div className="text-gray-400 text-sm">{item.label}</div>
               </div>
-            </div>
-            <div className="relative mt-8 lg:mt-0">
-              <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
-                <div className="grid grid-cols-2 gap-4 sm:gap-6">
-                  <div className="bg-gray-800 rounded-xl p-4 sm:p-6 text-center shadow-lg hover:bg-gray-700 transition-colors duration-300">
-                    <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 mx-auto mb-2 sm:mb-3" />
-                    <div className="text-lg sm:text-2xl font-bold text-white">Clean Code</div>
-                    <div className="text-xs sm:text-sm text-gray-400">Maintainable & Scalable</div>
-                  </div>
-                  <div className="bg-gray-800 rounded-xl p-4 sm:p-6 text-center shadow-lg hover:bg-gray-700 transition-colors duration-300">
-                    <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 mx-auto mb-2 sm:mb-3" />
-                    <div className="text-lg sm:text-2xl font-bold text-white">Fast Delivery</div>
-                    <div className="text-xs sm:text-sm text-gray-400">On-time Every Time</div>
-                  </div>
-                  <div className="bg-gray-800 rounded-xl p-4 sm:p-6 text-center shadow-lg hover:bg-gray-700 transition-colors duration-300">
-                    <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mx-auto mb-2 sm:mb-3" />
-                    <div className="text-lg sm:text-2xl font-bold text-white">Secure</div>
-                    <div className="text-xs sm:text-sm text-gray-400">Industry Standards</div>
-                  </div>
-                  <div className="bg-gray-800 rounded-xl p-4 sm:p-6 text-center shadow-lg hover:bg-gray-700 transition-colors duration-300">
-                    <Users className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400 mx-auto mb-2 sm:mb-3" />
-                    <div className="text-lg sm:text-2xl font-bold text-white">Support</div>
-                    <div className="text-xs sm:text-sm text-gray-400">24/7 Available</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* CTA Section */}
-      <div className="py-12 sm:py-16 lg:py-20 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Ready to Start Your Project?</h2>
-          <p className="text-sm sm:text-xl text-blue-200 mb-6 sm:mb-8">
-            Let's discuss your requirements and bring your ideas to life with our expert team
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-800 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-colors duration-300">
-              Get Free Quote
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-colors duration-300">
-              Schedule Consultation
-            </button>
+      {/* CTA Section */}
+      <div className="py-20 bg-gray-950">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Text Content */}
+            <div>
+              <div className="bg-gradient-to-r from-transparent rounded-full via-blue-950 to-blue-800 ">
+
+              <img src={v} className="" alt="" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Ready to <span className="text-blue-400">Transform</span> Your Business?
+              </h2>
+              <p className="text-gray-400 mb-8 text-lg">
+                Let's discuss how we can help you achieve your digital goals with our expert solutions.
+                Fill out the form and we'll get back to you within 24 hours.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-1">
+                    <CheckCircle className="h-5 w-5 text-emerald-400" />
+                  </div>
+                  <p className="ml-3 text-gray-300">
+                    <span className="font-medium">No obligation</span> - Get a free consultation with our experts
+                  </p>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-1">
+                    <CheckCircle className="h-5 w-5 text-emerald-400" />
+                  </div>
+                  <p className="ml-3 text-gray-300">
+                    <span className="font-medium">Custom solutions</span> - Tailored to your specific business needs
+                  </p>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-1">
+                    <CheckCircle className="h-5 w-5 text-emerald-400" />
+                  </div>
+                  <p className="ml-3 text-gray-300">
+                    <span className="font-medium">Quick response</span> - We'll get back to you within 24 hours
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Contact Form */}
+            <div className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 shadow-xl">
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      placeholder="you@company.com"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
+                    Service Interest
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  >
+                    <option value="">Select a service</option>
+                    {services.map((service) => (
+                      <option key={service.id} value={service.id}>
+                        {service.serviceType}
+                      </option>
+                    ))}
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                    Project Details
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    placeholder="Tell us about your project, goals, and timeline..."
+                  ></textarea>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center"
+                  >
+                    Get Free Consultation
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </button>
+                </div>
+
+                <p className="text-xs text-gray-500 text-center">
+                  We respect your privacy. Your information will never be shared.
+                </p>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   )
 }

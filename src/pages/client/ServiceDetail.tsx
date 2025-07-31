@@ -243,7 +243,7 @@ const ServiceDetail = () => {
       {/* Hero Section */}
 
       <section
-        className="relative py-32 md:py-40 bg-[url(/https://static.vecteezy.com/system/resources/previews/022/732/901/non_2x/minimalistic-panoramic-black-abstract-background-with-dark-gradient-geometric-elements-modern-premium-graphic-design-element-luxury-futuristic-backdrop-vector.jpg)] bg-cover bg-bg-no-repeat"
+        className="relative py-32 md:py-40 bg-[url(/sbg.png)]  bg-  bg-repeat"
         ref={setSectionRef('hero')}
       >
         {/* Subtle background elements */}
@@ -467,52 +467,61 @@ const ServiceDetail = () => {
       )}
 
       {/* Services Grid */}
-      <section
-        id="services"
-        className="py-16 md:py-24 "
-        ref={(el) => {
-          if (el) sectionRefs.current['services'] = el
-        }}
-      >
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="sm:text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Offer</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 sm:mx-auto mb-6" />
-            <p className="sm:text-lg text-sm text-gray-300 max-w-3xl mx-auto">
-              Complete range of services to meet your requirements
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {service.bulletPoints.map((point, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 shadow-lg"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="bg-emerald-600/20 p-3 rounded-lg border border-emerald-400/30 flex-shrink-0">
-                    <Zap className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{point}</h3>
-                    <p className="text-gray-400 text-sm">Professional implementation with modern best practices</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+<section
+  id="services"
+  className="py-16 md:py-24"
+  ref={(el) => {
+    if (el) sectionRefs.current['services'] = el;
+  }}
+>
+  <div className="container mx-auto px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      className="sm:text-center mb-16"
+    >
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Offer</h2>
+      <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 sm:mx-auto mb-6" />
+      <p className="sm:text-lg text-sm text-gray-300 max-w-3xl mx-auto">
+        Complete range of services to meet your requirements
+      </p>
+    </motion.div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {service.bulletPoints.map((point, index) => {
+        const [title, ...rest] = point.split(":");
+        const description = rest.join(":").trim();
+
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            whileHover={{ y: -8 }}
+            className="bg-[url(/action.png)] bg-cover bg-no-repeat backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 shadow-lg"
+          >
+            <div className="flex items-start gap-4">
+              <div className="bg-emerald-600/20 p-3 rounded-lg border border-emerald-400/30 flex-shrink-0">
+                <Zap className="w-5 h-5 text-emerald-400" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  {title.trim()}
+                </h3>
+                <p className="text-gray-400 text-sm">{description}</p>
+              </div>
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
 
       {/* Process Section */}
       {service.process && service.process.length > 0 && (
@@ -537,10 +546,10 @@ const ServiceDetail = () => {
               </p>
             </motion.div>
 
-            <div className="relative">
+            <div className="relative ">
               <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-600 transform -translate-x-1/2" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
                 {service.process.map((step, index) => (
                   <motion.div
                     key={index}
@@ -548,16 +557,16 @@ const ServiceDetail = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.15 }}
-                    className={`relative ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8 lg:mt-16'}`}
+                    className={`relative  ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8 lg:mt-16'}`}
                   >
-                    <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 shadow-lg h-full">
+                    <div className=" backdrop-blur-xl rounded-xl p-6 border bg-[url(/sbg3.jpg)] bg-cover  border-gray-700 hover:border-blue-500/50 transition-all duration-300 shadow-lg h-full">
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg mr-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-black font-bold text-lg shadow-lg mr-4">
                           {index + 1}
                         </div>
-                        <h3 className="text-xl font-bold text-white">{step.step}</h3>
+                        <h3 className="text-xl font-bold text-black">{step.step}</h3>
                       </div>
-                      <p className="text-gray-300 pl-16 sm:text-lg text-sm font-nunito">{step.description}</p>
+                      <p className="text-gray-900 sm:pl-16 sm:text-lg text-sm font-nunito">{step.description}</p>
                     </div>
                   </motion.div>
                 ))}
