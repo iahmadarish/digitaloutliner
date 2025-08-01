@@ -33,9 +33,6 @@ import {
 import { services } from "../../data/service"
 import ScrollToTop from "@/components/ScrollToTop"
 
-
-
-
 // Service icons mapping
 const getServiceIcon = (serviceType: string) => {
   const iconMap: { [key: string]: any } = {
@@ -75,24 +72,125 @@ const ServiceDetail = () => {
   const [activeSection, setActiveSection] = useState("overview")
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
   const [isSticky, setIsSticky] = useState(false)
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0)
   const observerRef = useRef<IntersectionObserver | null>(null)
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
+  const featureIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  
   // Function to properly assign refs
   const setSectionRef = (id: string) => (el: HTMLElement | null) => {
     sectionRefs.current[id] = el
   }
-  console.log(setIsPlaying)
-  const service = findServiceBySlug(slug!)!; // Note the !
+
+  const service = findServiceBySlug(slug!)!
   const relatedServices = services.filter((s) => s.id !== service?.id).slice(0, 3)
 
+  // Fixed Features Auto-sliding
   useEffect(() => {
-    if (service?.features && isPlaying) {
-      const interval = setInterval(() => {
+    if (service?.features && service.features.length > 0 && isPlaying) {
+      featureIntervalRef.current = setInterval(() => {
         setActiveFeature((prev) => (prev + 1) % service.features.length)
       }, 4000)
-      return () => clearInterval(interval)
+    }
+    
+    return () => {
+      if (featureIntervalRef.current) {
+        clearInterval(featureIntervalRef.current)
+      }
     }
   }, [isPlaying, service?.features])
+
+  // Stop auto-slide when user interacts
+  const handleFeatureChange = (index: number) => {
+    setActiveFeature(index)
+    setIsPlaying(false)
+    
+    // Resume auto-slide after 10 seconds of inactivity
+    setTimeout(() => {
+      setIsPlaying(true)
+    }, 10000)
+  }
+
+  // Services Grid Navigation
+
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
+
+  const maxIndex = isMobile 
+    ? Math.max(0, (service?.bulletPoints?.length || 1) - 1)
+    : Math.max(0, (service?.bulletPoints?.length || 4) - 4)
+
+  const nextServices = () => {
+    setCurrentServiceIndex(prev => 
+      prev >= maxIndex ? 0 : prev + (isMobile ? 1 : 1)
+    )
+  }
+
+  const prevServices = () => {
+    setCurrentServiceIndex(prev => 
+      prev <= 0 ? maxIndex : prev - (isMobile ? 1 : 1)
+    )
+  }
+
+  const getVisibleServices = () => {
+    if (!service?.bulletPoints || !Array.isArray(service.bulletPoints)) return []
+    
+    const itemsToShow = isMobile ? 1 : 4
+    const services = []
+    
+    for (let i = 0; i < itemsToShow; i++) {
+      const index = (currentServiceIndex + i) % service.bulletPoints.length
+      const bulletPoint = service.bulletPoints[index]
+      
+      // Ensure bulletPoint is a string
+      if (typeof bulletPoint === 'string') {
+        services.push({
+          content: bulletPoint,
+          originalIndex: index
+        })
+      }
+    }
+    
+    return services
+  }
+
+  // Touch handlers for services
+  const [touchStartX, setTouchStartX] = useState(0)
+  const [touchEndX, setTouchEndX] = useState(0)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.touches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX && touchEndX) {
+      const swipeDistance = touchStartX - touchEndX
+      const minSwipeDistance = 50
+
+      if (Math.abs(swipeDistance) > minSwipeDistance) {
+        if (swipeDistance > 0) {
+          nextServices() // Swipe left - next
+        } else {
+          prevServices() // Swipe right - previous
+        }
+      }
+    }
+    setTouchStartX(0)
+    setTouchEndX(0)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -152,29 +250,6 @@ const ServiceDetail = () => {
     }
   }
 
-
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
-  console.log(touchStartX, touchEndX)
-  // Auto-slide effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveFeature(prev => (prev + 1) % service.features.length);
-    }, 5000); // Change slide every 5 seconds
-    return () => clearInterval(interval);
-  }, [service.features.length]);
-
-  // Touch handlers for mobile swipe
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEndX(e.touches[0].clientX);
-  };
-
-
-
   if (!service) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center p-4">
@@ -203,7 +278,7 @@ const ServiceDetail = () => {
 
   return (
     <div className="min-h-screen sm:bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] bg-[#141313] text-gray-100">
-      <ScrollToTop/>
+      <ScrollToTop />
       {/* Floating Navigation */}
       <motion.nav
         initial={{ y: -100 }}
@@ -241,9 +316,8 @@ const ServiceDetail = () => {
       </motion.nav>
 
       {/* Hero Section */}
-
       <section
-        className="relative py-32 md:py-40 bg-[url(/sbg.png)]  bg-  bg-repeat"
+        className="relative py-32 md:py-40 bg-repeat"
         ref={setSectionRef('hero')}
       >
         {/* Subtle background elements */}
@@ -258,7 +332,7 @@ const ServiceDetail = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2  border border-gray-800 rounded-full px-4 py-2 mb-6"
+              className="inline-flex items-center gap-2 border border-gray-800 rounded-full px-4 py-2 mb-6"
             >
               <span className="text-blue-400 text-sm font-medium">{(service as any).category || "Premium Service"}</span>
               <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
@@ -338,20 +412,18 @@ const ServiceDetail = () => {
       <section
         id="overview"
         className="py-16 md:py-24"
-        ref={(el) => {
-          if (el) sectionRefs.current['features'] = el
-        }}
+        ref={setSectionRef('overview')}
       >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
+            className="sm:text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Service Overview</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mb-6" />
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 sm:mx-auto mb-6" />
+            <p className="sm:text-lg text-base text-gray-300 max-w-3xl mx-auto">
               Comprehensive solutions tailored to your business needs
             </p>
           </motion.div>
@@ -368,10 +440,10 @@ const ServiceDetail = () => {
                 className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 shadow-lg"
               >
                 <div className="flex items-start gap-4">
-                  <div className="bg-cyan-600/20 p-2 rounded-lg border border-cyan-400/30 flex-shrink-0">
-                    <CheckCircle className="w-5 h-5 text-cyan-400" />
+                  <div className="bg-cyan-600/20 p-1.5 rounded-full border border-cyan-400/30 flex-shrink-0">
+                    <img className="w-8 h-8" src="/index.png" alt="" />
                   </div>
-                  <p className="text-gray-300 leading-relaxed">{detail}</p>
+                  <p className="text-gray-200 sm:leading-relaxed">{detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -379,16 +451,14 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Features Section - Auto-Sliding with Touch Support */}
+      {/* Features Section - Fixed Auto-Sliding */}
       {service.features && service.features.length > 0 && (
         <section
           id="features"
-          className="py-16 md:py-24  overflow-hidden"
-          ref={(el) => {
-            if (el) sectionRefs.current['features'] = el
-          }}
+          className="py-16 md:py-24 overflow-hidden"
+          ref={setSectionRef('features')}
         >
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto sm:px-4">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -399,23 +469,19 @@ const ServiceDetail = () => {
               <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6" />
             </motion.div>
 
-            {/* Auto-sliding Features Container with Touch Support */}
-            <div
-              className="relative h-[500px] md:h-[600px] w-full overflow-hidden rounded-2xl bg-gray-800/50 border border-gray-700 shadow-xl"
-              onTouchStart={(e) => handleTouchStart(e)}
-              onTouchMove={(e) => handleTouchMove(e)}
-            >
+            {/* Auto-sliding Features Container */}
+            <div className="relative font-nunito h-[500px] md:h-[600px] w-full overflow-hidden rounded-2xl sm:rounded-bl-[120px] sm:bg-gray-800/50 border sm:border-gray-700 border-[#00f1dd] shadow-xl">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeFeature}
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.5 }}
                   className="absolute inset-0 flex flex-col md:flex-row"
                 >
                   {/* Feature Content */}
-                  <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                  <div className="w-full md:w-1/2 sm:p-8 p-3 md:p-12 flex flex-col justify-center">
                     <div className="mb-4 flex items-center gap-2">
                       <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold">
                         {activeFeature + 1}
@@ -425,11 +491,16 @@ const ServiceDetail = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                       {service.features[activeFeature].title}
                     </h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed">
+                    <p className="text-gray-300 sm:mb-6 sm:text-lg text-sm sm:leading-relaxed mb-4">
                       {service.features[activeFeature].content}
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors w-fit">
-                      Learn More
+                    
+                    {/* Play/Pause button */}
+                    <button
+                      onClick={() => setIsPlaying(!isPlaying)}
+                      className="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-2 mt-4"
+                    >
+                      {isPlaying ? "Pause Auto-slide" : "Resume Auto-slide"}
                     </button>
                   </div>
 
@@ -449,15 +520,15 @@ const ServiceDetail = () => {
               </AnimatePresence>
             </div>
 
-            {/* Navigation Dots Only */}
+            {/* Navigation Dots */}
             <div className="flex justify-center gap-3 mt-8">
               {service.features.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setActiveFeature(index)}
+                  onClick={() => handleFeatureChange(index)}
                   className={`w-3 h-3 rounded-full transition-all ${index === activeFeature
-                      ? "bg-blue-500 scale-125"
-                      : "bg-gray-600 hover:bg-gray-500"
+                    ? "bg-blue-500 scale-125"
+                    : "bg-gray-600 hover:bg-gray-500"
                     }`}
                 />
               ))}
@@ -466,71 +537,133 @@ const ServiceDetail = () => {
         </section>
       )}
 
-      {/* Services Grid */}
-
-<section
-  id="services"
-  className="py-16 md:py-24"
-  ref={(el) => {
-    if (el) sectionRefs.current['services'] = el;
-  }}
->
-  <div className="container mx-auto px-4">
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      className="sm:text-center mb-16"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Offer</h2>
-      <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 sm:mx-auto mb-6" />
-      <p className="sm:text-lg text-sm text-gray-300 max-w-3xl mx-auto">
-        Complete range of services to meet your requirements
-      </p>
-    </motion.div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {service.bulletPoints.map((point, index) => {
-        const [title, ...rest] = point.split(":");
-        const description = rest.join(":").trim();
-
-        return (
+      {/* Enhanced Services Grid with Navigation */}
+      <section
+        id="services"
+        className="py-16 md:py-24 bg-[#ecfbfc] sm:rounded-br-[120px] sm:rounded-tl-[120px] sm:px-4 sm:m-2"
+        ref={setSectionRef('services')}
+      >
+        <div className="container mx-auto px-4">
           <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ y: -8 }}
-            className="bg-[url(/action.png)] bg-cover bg-no-repeat backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 shadow-lg"
+            viewport={{ once: true, margin: "-100px" }}
+            className="sm:text-center mb-16"
           >
-            <div className="flex items-start gap-4">
-              <div className="bg-emerald-600/20 p-3 rounded-lg border border-emerald-400/30 flex-shrink-0">
-                <Zap className="w-5 h-5 text-emerald-400" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {title.trim()}
-                </h3>
-                <p className="text-gray-400 text-sm">{description}</p>
-              </div>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">What We Offer</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 sm:mx-auto mb-6" />
+            <p className="sm:text-lg text-sm text-gray-900 max-w-3xl mx-auto">
+              Complete range of services to meet your requirements
+            </p>
           </motion.div>
-        );
-      })}
-    </div>
-  </div>
-</section>
 
+          {/* Services Container with Navigation */}
+          <div className="relative">
+            {/* Navigation Arrows for Desktop */}
+            {!isMobile && service?.bulletPoints && service.bulletPoints.length > 4 && (
+              <>
+                <button
+                  onClick={prevServices}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-gray-900 hover:bg-gray-800 text-white p-1 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                >
+                  {/* <ChevronLeft className="w-6 h-6" /> */}
+                  <img className="w-8 h-8" src="/index.png" alt="" />
+                </button>
+                <button
+                  onClick={nextServices}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-gray-900 hover:bg-gray-800 text-white p-1 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                >
+                  <img className="w-8 h-8" src="/index.png" alt="" />
+                  {/* <ChevronRight className="w-6 h-6" /> */}
+                </button>
+              </>
+            )}
+
+            {/* Services Grid */}
+            <div 
+              className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'} sm:gap-6 gap-3 overflow-hidden`}
+              onTouchStart={isMobile ? handleTouchStart : undefined}
+              onTouchMove={isMobile ? handleTouchMove : undefined}
+              onTouchEnd={isMobile ? handleTouchEnd : undefined}
+            >
+              <AnimatePresence mode="wait">
+                {getVisibleServices().map((serviceItem, index) => {
+                  // Safety check for string content
+                  if (!serviceItem.content || typeof serviceItem.content !== 'string') {
+                    return null
+                  }
+
+                  const [title, ...rest] = serviceItem.content.split(":");
+                  const description = rest.join(":").trim();
+
+                  return (
+                    <motion.div
+                      key={`${currentServiceIndex}-${index}`}
+                      initial={{ opacity: 0, x: isMobile ? 100 : 0, y: isMobile ? 0 : 30 }}
+                      animate={{ opacity: 1, x: 0, y: 0 }}
+                      exit={{ opacity: 0, x: isMobile ? -100 : 0, y: isMobile ? 0 : -30 }}
+                      transition={{ duration: 0.5, delay: isMobile ? 0 : index * 0.1 }}
+                      whileHover={{ y: -8 }}
+                      className="bg-white bg-cover bg-no-repeat backdrop-blur-sm rounded-xl sm:p-6 p-3 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 shadow-lg"
+                    >
+                      <div className="sm:flex items-start sm:gap-4">
+                        <div className="bg-gradient-to-r from-[#000] to-[#0e0247] p-3 rounded-lg border border-emerald-400/30 flex-shrink-0">
+                          <Zap className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="sm:text-2xl italic font-nunito font-semibold text-[#19012c] mb-2 sm:mt-0 mt-3 sm:mb-2">
+                            {title.trim()}
+                          </h3>
+                          <p className="text-gray-900 text-sm bg-amber-50 italic p-1">{description}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
+            </div>
+
+            {/* Mobile Navigation Dots */}
+            {isMobile && service?.bulletPoints && service.bulletPoints.length > 1 && (
+              <div className="flex justify-center gap-2 mt-6">
+                {service.bulletPoints.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentServiceIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all ${index === currentServiceIndex
+                      ? "bg-emerald-500 scale-125"
+                      : "bg-gray-400 hover:bg-gray-500"
+                      }`}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Desktop Navigation Indicators */}
+            {!isMobile && service?.bulletPoints && service.bulletPoints.length > 4 && (
+              <div className="flex justify-center gap-2 mt-8">
+                {Array.from({ length: Math.ceil(service.bulletPoints.length / 4) }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentServiceIndex(index * 4)}
+                    className={`w-3 h-3 rounded-full transition-all ${Math.floor(currentServiceIndex / 4) === index
+                      ? "bg-emerald-500 scale-125"
+                      : "bg-gray-400 hover:bg-gray-500"
+                      }`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
 
       {/* Process Section */}
       {service.process && service.process.length > 0 && (
         <section
           id="process"
-          className="py-10 md:py-24 "
-          ref={(el) => {
-            if (el) sectionRefs.current['process'] = el
-          }}
+          className="py-10 md:py-24"
+          ref={setSectionRef('process')}
         >
           <div className="container mx-auto px-4">
             <motion.div
@@ -546,10 +679,10 @@ const ServiceDetail = () => {
               </p>
             </motion.div>
 
-            <div className="relative ">
+            <div className="relative">
               <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-600 transform -translate-x-1/2" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {service.process.map((step, index) => (
                   <motion.div
                     key={index}
@@ -557,11 +690,11 @@ const ServiceDetail = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.15 }}
-                    className={`relative  ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8 lg:mt-16'}`}
+                    className={`relative ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8 lg:mt-16'}`}
                   >
-                    <div className=" backdrop-blur-xl rounded-xl p-6 border bg-[url(/sbg3.jpg)] bg-cover  border-gray-700 hover:border-blue-500/50 transition-all duration-300 shadow-lg h-full">
+                    <div className="backdrop-blur-xl rounded-xl p-6 border bg-[url(/sbg3.jpg)] bg-cover border-gray-700 hover:border-blue-500/50 transition-all duration-300 shadow-lg h-full">
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-black font-bold text-lg shadow-lg mr-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-orange-100 font-bold text-lg shadow-lg mr-4">
                           {index + 1}
                         </div>
                         <h3 className="text-xl font-bold text-black">{step.step}</h3>
@@ -580,14 +713,10 @@ const ServiceDetail = () => {
       {service.faq && service.faq.length > 0 && (
         <section
           id="faq"
-          className="py-16 md:py-24 "
-          ref={(el: HTMLElement | null) => {
-            if (el) {
-              sectionRefs.current['faq'] = el
-            }
-          }}
+          className="py-16 md:py-24"
+          ref={setSectionRef('faq')}
         >
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className="font-nunito max-w-7xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -613,9 +742,9 @@ const ServiceDetail = () => {
                 >
                   <button
                     onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-700/50 transition-colors"
+                    className="w-full px-6 sm:py-9 py-6 text-left flex items-center justify-between hover:bg-gray-700/50 transition-colors"
                   >
-                    <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
+                    <h3 className="sm:text-3xl text-xl font-semibold text-white pr-4">{faq.question}</h3>
                     {expandedFaq === index ? (
                       <Minus className="w-5 h-5 text-amber-400 flex-shrink-0" />
                     ) : (
@@ -629,10 +758,10 @@ const ServiceDetail = () => {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
+                        className="overflow-hidden bg-[#1cffbb]"
                       >
-                        <div className="px-6 pb-6 pt-2">
-                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        <div className="px-6 sm:text-2xl pb-6 pt-4 sm:pt-6">
+                          <p className="text-black sm:leading-relaxed">{faq.answer}</p>
                         </div>
                       </motion.div>
                     )}
@@ -646,7 +775,7 @@ const ServiceDetail = () => {
 
       {/* Related Services */}
       {relatedServices.length > 0 && (
-        <section className="py-16 md:py-24 ">
+        <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -667,7 +796,7 @@ const ServiceDetail = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -10 }}
-                  onClick={() => navigate(`/service/${createSlug(relatedService.serviceType)}`)}
+                  onClick={() => navigate(`/services/${createSlug(relatedService.serviceType)}`)}
                   className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-violet-500/50 transition-all duration-300 cursor-pointer shadow-lg"
                 >
                   <div className="flex items-center gap-4 mb-4">
@@ -682,7 +811,7 @@ const ServiceDetail = () => {
                         getServiceIcon(relatedService.serviceType)
                       )}
                     </div>
-                    <h3 className="text-xl font-bold text-white">{relatedService.serviceType}</h3>
+                    <h3 className="text-xl font-bold text-[#5be6ff]">{relatedService.serviceType}</h3>
                   </div>
                   <p className="text-gray-300 text-sm mb-6 line-clamp-3">{relatedService.shortDetails}</p>
                   <button className="text-violet-400 text-sm font-medium flex items-center gap-2 hover:text-violet-300 transition-colors">
@@ -700,11 +829,9 @@ const ServiceDetail = () => {
       <section
         id="contact"
         className="py-16 md:py-24 bg-gray-800/30"
-        ref={(el) => {
-          if (el) sectionRefs.current['contact'] = el
-        }}
+        ref={setSectionRef('contact')}
       >
-        <div className="container mx-auto  max-w-4xl">
+        <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

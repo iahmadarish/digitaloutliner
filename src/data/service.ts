@@ -12,6 +12,10 @@ import web4 from "@/components/service/service/web design and development/image 
 import web5 from "@/components/service/service/web design and development/image (5).jpg"
 
 
+// graphics design
+
+
+
 
 export const services = [
 
@@ -139,15 +143,23 @@ export const services = [
       "Features like real-time chat, push notifications, location tracking, and payment gateways are seamlessly integrated.",
     ],
     bulletPoints: [
-      "Android and iOS native apps",
-      "Flutter & React Native cross-platform apps",
-      "App UI/UX design and prototyping",
-      "Backend integration and REST APIs",
-      "Real-time features and Firebase integration",
-      "Play Store and App Store deployment",
-      "Post-launch support and updates",
-      "Bug fixing and performance optimization",
-    ],
+      "Android and iOS native apps: CONQUERIC builds high-performance native mobile applications for Android and iOS platforms. Leveraging platform-specific capabilities, our expert developers ensure fluid user experiences, hardware optimization, and scalable architecture tailored to your unique business needs.",
+
+      "Flutter & React Native cross-platform apps: Save time and resources with CONQUERIC’s cross-platform app development services using Flutter and React Native. We create seamless, responsive applications that work flawlessly across Android and iOS devices—delivering a consistent user experience and faster time-to-market.",
+
+      "App UI/UX design and prototyping: At CONQUERIC, we craft intuitive and visually engaging mobile interfaces through advanced UI/UX design strategies. From wireframes to high-fidelity prototypes, we prioritize user flow, accessibility, and branding to create experiences that convert and retain users.",
+
+      "Backend integration and REST APIs: Our backend team ensures your app runs smoothly by integrating robust APIs and backend services. Using technologies like Node.js and Express, we enable secure data exchanges, user authentication, cloud storage, and dynamic content delivery.",
+
+      "Real-time features and Firebase integration: Enhance your app’s capabilities with real-time updates, notifications, and user syncing through Firebase. CONQUERIC integrates real-time databases, cloud functions, and push notifications to create engaging, interactive experiences for your users.",
+
+      "Play Store and App Store deployment: We handle the entire app deployment process—from app store guidelines and metadata optimization to publishing and versioning. CONQUERIC ensures your app gets approved smoothly and reaches your audience on both Google Play and the App Store.",
+
+      "Post-launch support and updates: After launch, CONQUERIC remains your trusted tech partner. We offer continuous app monitoring, feature enhancements, security patches, and version updates to keep your app relevant and high-performing in a fast-changing digital landscape.",
+
+      "Bug fixing and performance optimization: Our QA and development teams rigorously test and refine your app to eliminate bugs and boost performance. CONQUERIC ensures optimal speed, low crash rates, and a seamless user experience through code optimization and device-specific fine-tuning.",
+    ]
+    ,
     images: [
       "https://www.mindinventory.com/blog/wp-content/uploads/2018/12/benefits-of-mobile-app-for-business.webp",
       "https://d37hsi2hgurnr6.cloudfront.net/wp-content/uploads/2025/02/11142837/mobile-app-development-for-small-business.png",
@@ -222,105 +234,113 @@ export const services = [
 
 
   {
-  id: 3,
-  serviceType: "Graphics Design",
-  icon: grapicsicon,
-  iconType: "image",
-  shortDetails:
-    "We deliver stunning, conversion-focused graphic design services that boost your brand’s visibility and impact. From custom logos to social media visuals, our creative solutions drive engagement, enhance branding, and set your business apart.",
-  fullDetails: [
-    "Our graphic design services are crafted to bring your brand to life through visually captivating and strategically aligned assets.",
-    "We specialize in creative visual storytelling that leaves a lasting impression across both digital and print channels.",
-    "Whether you're building a new brand or refreshing an existing one, we tailor every design element—from typography to color schemes—to reflect your unique identity and business objectives.",
-    "Our team stays ahead of design trends, leverages data-backed visual strategies, and creates consistent branding experiences that connect emotionally with your audience and drive measurable results."
-  ],
-  bulletPoints: [
-    "Professional logo and brand identity design",
-    "High-quality marketing collateral (brochures, flyers, posters)",
-    "Engaging banner and social media graphic design",
-    "Corporate pitch decks and presentations",
-    "Creative product packaging and label design",
-    "Premium business card and stationery design",
-    "Reusable templates and scalable brand systems",
-    "Delivery in print-ready and digital-friendly formats"
-  ],
-  images: [
-    "https://www.mechwizz.com/assets/images/graphic-design-company.png",
-    "https://www.writerzden.com/wp-content/uploads/2016/08/pencil-typography-black-design.jpg"
-  ],
-  features: [
-    {
-      title: "Brand-Driven Design",
-      content: "We go beyond aesthetics by aligning every visual element with your brand’s core values, voice, and mission. From color psychology to typography choices, our designs communicate your message clearly and cohesively across all platforms, reinforcing brand trust and recall.",
-      image: "https://img.freepik.com/free-photo/design-concept-brand-identity_53876-139860.jpg"
-    },
-    {
-      title: "Pixel-Perfect Deliverables",
-      content: "Our design assets are crafted for clarity and consistency across all screen sizes and resolutions. We prioritize resolution independence and responsive design so your assets look flawless—whether viewed on mobile, desktop, or in print. Quality is never compromised.",
-      image: "https://img.freepik.com/free-photo/graphic-designer-working-digital-tablet_23-2148281422.jpg"
-    },
-    {
-      title: "Marketing-Ready Visuals",
-      content: "We focus on performance-driven design to elevate your digital marketing and advertising efforts. Our creatives are optimized to capture attention, build trust, and encourage action—be it in paid ads, social media, or landing pages. Every pixel serves a purpose.",
-      image: "https://img.freepik.com/free-photo/marketing-campaign-design_53876-15082.jpg"
-    },
-    {
-      title: "Editable Source Files",
-      content: "Receive layered, well-organized source files in industry-standard formats (AI, PSD, or Figma). These files allow for seamless future edits, scalability, and smooth collaboration with in-house or third-party teams. You own your brand’s design assets—fully.",
-      image: "https://img.freepik.com/free-photo/designer-desk-illustration_23-2149389580.jpg"
-    },
-    {
-      title: "Motion Graphics Integration",
-      content: "Enhance storytelling with dynamic motion graphics. We animate your static visuals—logos, infographics, typography—to create engaging content for social media, presentations, and explainer videos. Motion adds life, emotion, and impact to your message.",
-      image: "https://outsourcingtrainingbd.com/wp-content/uploads/2023/09/motion-graphics.webp"
-    }
-  ],
-  faq: [
-    {
-      question: "How many logo concepts do you provide?",
-      answer: "We offer 3 to 5 unique, professionally designed logo concepts. Based on your preferences and brand strategy, we revise the selected option until you’re completely satisfied. Our process ensures that you walk away with a logo that perfectly represents your brand."
-    },
-    {
-      question: "What file formats will I receive?",
-      answer: "You’ll get high-resolution and print-ready files in JPG, PNG (transparent), PDF, AI, and EPS formats. We also offer PSD, SVG, and CMYK print files on request. All assets are delivered in organized folders with usage guidelines for each format."
-    },
-    {
-      question: "Do you follow brand guidelines if we have them?",
-      answer: "Absolutely. We work closely with your existing brand guidelines to maintain visual consistency across your identity, marketing materials, and online presence. If you don't have one, we can help create or refine your visual style guide."
-    },
-    {
-      question: "Can you design for both print and digital?",
-      answer: "Yes, we specialize in designs that are optimized for both mediums. Our print designs adhere to CMYK standards and high DPI resolutions, while digital designs are tailored for screen clarity, speed, and responsiveness using RGB color space."
-    },
-    {
-      question: "What's your typical turnaround time?",
-      answer: "Our standard turnaround time is 5 to 10 business days, depending on the complexity and volume of deliverables. Need it faster? We offer expedited delivery options for urgent projects while still maintaining quality and attention to detail."
-    }
-  ],
-  process: [
-    {
-      step: "Creative Brief",
-      description: "We begin by collecting in-depth information about your brand's mission, tone, design goals, competitors, and audience demographics. This ensures that all creative decisions are purposeful and aligned with your brand’s direction."
-    },
-    {
-      step: "Concept Development",
-      description: "Our designers research and brainstorm concepts that match your brief. Mood boards, draft sketches, and layout mockups are created to explore different visual styles and directions. We present multiple creative paths for your feedback and selection."
-    },
-    {
-      step: "Revision & Refinement",
-      description: "Once a direction is chosen, we iterate based on your feedback. We fine-tune the typography, color palette, iconography, and layout to ensure every detail aligns with your brand message and aesthetics. Revisions are unlimited until satisfaction."
-    },
-    {
-      step: "Finalization",
-      description: "Upon approval, we prepare all final files with proper export settings for print and digital use. Each asset is neatly organized and labeled. We also provide instructions and previews to ensure smooth usage across platforms."
-    },
-    {
-      step: "Delivery & Support",
-      description: "Your full design package—source files, exports, and usage guides—is delivered securely. Post-delivery, we remain available to support you with minor updates or implementation assistance to ensure your designs are used effectively."
-    }
-  ]
-}
+    id: 3,
+    serviceType: "Graphics Design",
+    icon: grapicsicon,
+    iconType: "image",
+    shortDetails:
+      "We deliver stunning, conversion-focused graphic design services that boost your brand’s visibility and impact. From custom logos to social media visuals, our creative solutions drive engagement, enhance branding, and set your business apart.",
+    fullDetails: [
+      "Our graphic design services are crafted to bring your brand to life through visually captivating and strategically aligned assets.",
+      "We specialize in creative visual storytelling that leaves a lasting impression across both digital and print channels.",
+      "Whether you're building a new brand or refreshing an existing one, we tailor every design element—from typography to color schemes—to reflect your unique identity and business objectives.",
+      "Our team stays ahead of design trends, leverages data-backed visual strategies, and creates consistent branding experiences that connect emotionally with your audience and drive measurable results."
+    ],
+    bulletPoints: [
+  "Professional logo and brand identity design: At CONQUERIC, we create distinctive logos and comprehensive brand identity systems that capture your business’s vision and values. From color palettes to typography and brand guidelines, we ensure a memorable and cohesive visual presence across all platforms.",
+
+  "High-quality marketing collateral (brochures, flyers, posters): Elevate your promotional efforts with CONQUERIC’s expertly designed brochures, flyers, posters, and more. We deliver visually compelling materials that clearly communicate your message, align with your branding, and drive customer engagement.",
+
+  "Engaging banner and social media graphic design: Stand out online with custom-designed banners and social media creatives by CONQUERIC. We craft attention-grabbing visuals optimized for each platform—perfect for ads, promotions, and consistent branding across your digital channels.",
+
+  "Corporate pitch decks and presentations: Impress stakeholders with sleek, professional pitch decks and presentations designed by CONQUERIC. We blend data visualization, storytelling, and brand-consistent aesthetics to deliver presentations that are both persuasive and visually impactful.",
+
+  "Creative product packaging and label design: CONQUERIC helps your product shine on the shelf with unique and strategic packaging and label designs. We focus on visual appeal, brand consistency, and user-centric design that meets both market trends and regulatory standards.",
+
+  "Premium business card and stationery design: Make a lasting impression with premium business cards and branded stationery from CONQUERIC. We design elegant, print-ready assets that reflect your brand’s professionalism and personality in every detail.",
+
+  "Reusable templates and scalable brand systems: We develop flexible, reusable templates and scalable design systems tailored to your workflow. Whether it’s for presentations, social media, or internal use, CONQUERIC ensures consistency and efficiency in your brand communication.",
+
+  "Delivery in print-ready and digital-friendly formats: All CONQUERIC design deliverables are provided in high-resolution, print-ready, and digital-optimized formats. We ensure compatibility across platforms, devices, and media—so you're always ready to publish or print with confidence.",
+]
 ,
+    images: [
+      "https://www.mechwizz.com/assets/images/graphic-design-company.png",
+      "https://www.writerzden.com/wp-content/uploads/2016/08/pencil-typography-black-design.jpg"
+    ],
+    features: [
+      {
+        title: "Brand-Driven Design",
+        content: "We go beyond aesthetics by aligning every visual element with your brand’s core values, voice, and mission. From color psychology to typography choices, our designs communicate your message clearly and cohesively across all platforms, reinforcing brand trust and recall.",
+        image: "https://img.freepik.com/free-photo/design-concept-brand-identity_53876-139860.jpg"
+      },
+      {
+        title: "Pixel-Perfect Deliverables",
+        content: "Our design assets are crafted for clarity and consistency across all screen sizes and resolutions. We prioritize resolution independence and responsive design so your assets look flawless—whether viewed on mobile, desktop, or in print. Quality is never compromised.",
+        image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhcGhpYyUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        title: "Marketing-Ready Visuals",
+        content: "We focus on performance-driven design to elevate your digital marketing and advertising efforts. Our creatives are optimized to capture attention, build trust, and encourage action—be it in paid ads, social media, or landing pages. Every pixel serves a purpose.",
+        image: "https://img.freepik.com/free-photo/marketing-campaign-design_53876-15082.jpg"
+      },
+      {
+        title: "Editable Source Files",
+        content: "Receive layered, well-organized source files in industry-standard formats (AI, PSD, or Figma). These files allow for seamless future edits, scalability, and smooth collaboration with in-house or third-party teams. You own your brand’s design assets—fully.",
+        image: "https://img.freepik.com/free-photo/designer-desk-illustration_23-2149389580.jpg"
+      },
+      {
+        title: "Motion Graphics Integration",
+        content: "Enhance storytelling with dynamic motion graphics. We animate your static visuals—logos, infographics, typography—to create engaging content for social media, presentations, and explainer videos. Motion adds life, emotion, and impact to your message.",
+        image: "https://outsourcingtrainingbd.com/wp-content/uploads/2023/09/motion-graphics.webp"
+      }
+    ],
+    faq: [
+      {
+        question: "How many logo concepts do you provide?",
+        answer: "We offer 3 to 5 unique, professionally designed logo concepts. Based on your preferences and brand strategy, we revise the selected option until you’re completely satisfied. Our process ensures that you walk away with a logo that perfectly represents your brand."
+      },
+      {
+        question: "What file formats will I receive?",
+        answer: "You’ll get high-resolution and print-ready files in JPG, PNG (transparent), PDF, AI, and EPS formats. We also offer PSD, SVG, and CMYK print files on request. All assets are delivered in organized folders with usage guidelines for each format."
+      },
+      {
+        question: "Do you follow brand guidelines if we have them?",
+        answer: "Absolutely. We work closely with your existing brand guidelines to maintain visual consistency across your identity, marketing materials, and online presence. If you don't have one, we can help create or refine your visual style guide."
+      },
+      {
+        question: "Can you design for both print and digital?",
+        answer: "Yes, we specialize in designs that are optimized for both mediums. Our print designs adhere to CMYK standards and high DPI resolutions, while digital designs are tailored for screen clarity, speed, and responsiveness using RGB color space."
+      },
+      {
+        question: "What's your typical turnaround time?",
+        answer: "Our standard turnaround time is 5 to 10 business days, depending on the complexity and volume of deliverables. Need it faster? We offer expedited delivery options for urgent projects while still maintaining quality and attention to detail."
+      }
+    ],
+    process: [
+      {
+        step: "Creative Brief",
+        description: "We begin by collecting in-depth information about your brand's mission, tone, design goals, competitors, and audience demographics. This ensures that all creative decisions are purposeful and aligned with your brand’s direction."
+      },
+      {
+        step: "Concept Development",
+        description: "Our designers research and brainstorm concepts that match your brief. Mood boards, draft sketches, and layout mockups are created to explore different visual styles and directions. We present multiple creative paths for your feedback and selection."
+      },
+      {
+        step: "Revision & Refinement",
+        description: "Once a direction is chosen, we iterate based on your feedback. We fine-tune the typography, color palette, iconography, and layout to ensure every detail aligns with your brand message and aesthetics. Revisions are unlimited until satisfaction."
+      },
+      {
+        step: "Finalization",
+        description: "Upon approval, we prepare all final files with proper export settings for print and digital use. Each asset is neatly organized and labeled. We also provide instructions and previews to ensure smooth usage across platforms."
+      },
+      {
+        step: "Delivery & Support",
+        description: "Your full design package—source files, exports, and usage guides—is delivered securely. Post-delivery, we remain available to support you with minor updates or implementation assistance to ensure your designs are used effectively."
+      }
+    ]
+  }
+  ,
 
 
   {
@@ -336,15 +356,23 @@ export const services = [
       "Our skilled artists use Blender, Maya, Cinema 4D, and Adobe After Effects.",
     ],
     bulletPoints: [
-      "3D product modeling and mockups",
-      "2D animation for explainer videos",
-      "Architectural rendering and walkthroughs",
-      "Motion graphics and VFX",
-      "Game asset design",
-      "3D logo animation",
-      "Product visualization for e-commerce",
-      "Interior and exterior visualization",
-    ],
+  "3D product modeling and mockups: CONQUERIC creates realistic 3D product models and high-fidelity mockups to showcase your ideas with precision. From concept to final render, we help you visualize products before manufacturing or marketing, enhancing both presentations and decision-making.",
+
+  "2D animation for explainer videos: Simplify complex ideas and boost audience engagement with CONQUERIC’s 2D animation services. We craft custom explainer videos with smooth motion, clear storytelling, and vibrant visuals—perfect for marketing, onboarding, or social media content.",
+
+  "Architectural rendering and walkthroughs: Bring architectural concepts to life with our detailed 3D renderings and virtual walkthroughs. CONQUERIC delivers immersive visualizations for real estate, interiors, and commercial spaces—ideal for presentations, investor pitches, and client approvals.",
+
+  "Motion graphics and VFX: Enhance your videos with dynamic motion graphics and compelling visual effects. Whether it's for brand intros, social media ads, or cinematic enhancements, CONQUERIC adds creativity and polish to every frame.",
+
+  "Game asset design: From characters and environments to UI elements and props, CONQUERIC designs high-quality 2D and 3D game assets optimized for performance and aesthetics. We work across styles and engines to bring your game’s vision to life.",
+
+  "3D logo animation: Add depth and motion to your brand with CONQUERIC’s custom 3D logo animations. Perfect for video intros, social media, and presentations, our animations elevate your brand presence with cinematic style and smooth transitions.",
+
+  "Product visualization for e-commerce: Increase customer confidence and drive sales with photorealistic 3D product visualizations. CONQUERIC delivers e-commerce-ready assets that showcase every angle and feature—perfect for marketplaces, product pages, and digital catalogs.",
+
+  "Interior and exterior visualization: Visualize residential and commercial spaces before they’re built. CONQUERIC provides detailed interior and exterior 3D visualizations, helping architects, developers, and designers communicate concepts with clarity and realism.",
+]
+,
     images: [
       "https://storage.googleapis.com/sales.appinst.io/2023/06/word-image-1.png",
       "https://img-new.cgtrader.com/items/4245395/1804a970e1/large/small-house-tiny-house-plan-3d-model-1804a970e1.jpg",
@@ -353,7 +381,7 @@ export const services = [
       {
         title: "Realistic 3D Visualization",
         content: "We create hyper-realistic 3D renders for products, interior spaces, and architectural environments using cutting-edge rendering engines. These visuals help clients visualize concepts before production, making them ideal for marketing, architecture, and client presentations. Our realistic 3D rendering services improve decision-making and increase conversion rates across industries.",
-        image: "https://img.freepik.com/free-photo/3d-interior-visualization_23-2149385290.jpg",
+        image: "https://img.freepik.com/free-photo/3d-rendering-abstract-building_23-2150896732.jpg?semt=ais_hybrid&w=740&q=80",
       },
       {
         title: "2D/3D Animation Services",
@@ -361,9 +389,9 @@ export const services = [
         image: "https://img.freepik.com/free-photo/animation-workflow_53876-126079.jpg",
       },
       {
-        title: "Architectural Modeling",
-        content: "We provide high-detail architectural modeling for real estate developers, interior designers, and architects. From exterior building facades to interior layouts, our scalable and precise models support client approvals, permit applications, and marketing brochures. Ideal for virtual tours and real estate visualization projects.",
-        image: "https://img.freepik.com/free-photo/modern-house-model_53876-104563.jpg",
+        title: "2D Floor Design",
+        content: "Our 2D floor plan software is the perfect tool for home builders, remodelers, and interior designers seeking to present clear and professional layouts. Create high-quality, easy-to-understand floor plans that help clients visualize the space and make faster decisions—boosting your ability to close more design projects. A flat, perspective-free 2D view allows you to accurately showcase room layouts, wall placements, door and window positioning, furniture arrangements, and precise surface measurements. It’s the ideal way to communicate space planning and design intent with clarity and precision.",
+        image: "https://cedreo.com/wp-content/uploads/cloudinary/mi_3d-floor-plan-dark_600t.png",
       },
       {
         title: "Product Prototypes",
@@ -430,16 +458,24 @@ export const services = [
       "Our goal is to drive traffic, boost engagement, and convert leads into customers.",
       "Data-driven strategies, A/B testing, and monthly reports ensure ROI-focused marketing.",
     ],
-    bulletPoints: [
-      "SEO optimization and keyword ranking",
-      "Social media management and campaigns",
-      "Google Ads and Facebook Ads",
-      "Email marketing and automation",
-      "Content strategy and blog writing",
-      "Lead generation and funnel building",
-      "Video marketing and reels/shorts",
-      "Monthly performance reports and analysis",
-    ],
+   bulletPoints: [
+  "SEO optimization and keyword ranking: At CONQUERIC, we boost your online visibility through advanced SEO techniques, keyword research, on-page optimization, and backlink strategies. Our goal is to help your website rank higher on search engines, attract quality traffic, and convert visitors into customers.",
+
+  "Social media management and campaigns: Grow your brand presence with CONQUERIC’s end-to-end social media management. From content planning to campaign execution, we create engaging posts, run targeted ad campaigns, and build strong communities across platforms like Facebook, Instagram, LinkedIn, and more.",
+
+  "Google Ads and Facebook Ads: Maximize ROI with our data-driven advertising strategies on Google Ads and Facebook Ads. CONQUERIC crafts compelling ad creatives, targets the right audience segments, and continuously optimizes for clicks, conversions, and cost-efficiency.",
+
+  "Email marketing and automation: Nurture leads and retain customers through strategic email marketing. We design responsive campaigns, set up automation flows, and segment your audience to deliver personalized, high-converting messages at scale.",
+
+  "Content strategy and blog writing: Establish authority in your niche with CONQUERIC’s content marketing services. We plan and create SEO-friendly blog posts, articles, and website content that drive traffic, build trust, and support your overall digital marketing goals.",
+
+  "Lead generation and funnel building: Turn clicks into clients with custom sales funnels built by CONQUERIC. We integrate landing pages, CTAs, forms, and automation tools to capture leads, nurture them, and guide them smoothly through the customer journey.",
+
+  "Video marketing and reels/shorts: Capture attention with creative video content tailored for modern platforms. From brand reels to explainer shorts and promotional videos, CONQUERIC helps you engage audiences and grow faster on YouTube, TikTok, Instagram, and beyond.",
+
+  "Monthly performance reports and analysis: Stay informed with detailed monthly performance reports from CONQUERIC. We track key metrics, analyze trends, and provide actionable insights—empowering you to make smart, data-backed marketing decisions.",
+]
+,
     images: [
       "https://www.udacity.com/blog/wp-content/uploads/2020/11/Digital-Marketing-Explained_Blog-scaled.jpeg",
       "https://cdn-wordpress-info.futurelearn.com/wp-content/uploads/FL307_blog_digital_marketing_banner.jpg.optimal.jpg",
@@ -527,15 +563,23 @@ export const services = [
       "We focus on clean, modern, and accessible designs that align with your brand identity.",
     ],
     bulletPoints: [
-      "User research and persona development",
-      "Wireframes and interactive prototypes",
-      "High-fidelity UI design",
-      "UX audits and usability testing",
-      "Design systems and style guides",
-      "Mobile app UI/UX design",
-      "Web app UI/UX design",
-      "Collaboration with development teams",
-    ],
+  "User research and persona development: At CONQUERIC, we begin every UI/UX project with in-depth user research to understand your audience’s behaviors, needs, and goals. We create detailed personas that guide design decisions and ensure user-centric experiences across all platforms.",
+
+  "Wireframes and interactive prototypes: We craft low and high-fidelity wireframes and interactive prototypes to visualize structure, flow, and functionality. CONQUERIC helps you validate ideas early, refine user journeys, and reduce development risks through clear, testable designs.",
+
+  "High-fidelity UI design: Our design team delivers pixel-perfect, high-fidelity UI designs that align with your brand and product goals. Using modern tools and design trends, CONQUERIC creates visually stunning interfaces that are both functional and aesthetically compelling.",
+
+  "UX audits and usability testing: Improve product usability and user satisfaction with CONQUERIC’s UX audits and testing. We identify friction points, run user testing sessions, and provide actionable insights to enhance performance, navigation, and overall user experience.",
+
+  "Design systems and style guides: We build scalable design systems and detailed style guides to ensure visual consistency across your product. CONQUERIC’s systems streamline collaboration between design and development teams and accelerate future iterations.",
+
+  "Mobile app UI/UX design: From onboarding to in-app flows, CONQUERIC designs intuitive, mobile-first user experiences tailored for iOS and Android apps. We focus on responsiveness, usability, and aesthetics to create engaging interfaces for all device types.",
+
+  "Web app UI/UX design: CONQUERIC designs seamless web applications with thoughtful UI/UX that prioritize user goals and clarity. Whether it’s a dashboard, SaaS platform, or e-commerce site, our designs improve usability, retention, and task completion rates.",
+
+  "Collaboration with development teams: We work closely with your developers to ensure smooth handoffs and pixel-perfect implementation. CONQUERIC provides annotated design files, specs, and design tokens to maintain design integrity throughout the build process.",
+]
+,
     images: [
       "https://img.freepik.com/free-photo/ui-ux-designer-working-designing-application_23-2149345155.jpg",
       "https://img.freepik.com/free-photo/user-experience-design-desk_23-2149408955.jpg",
@@ -624,15 +668,23 @@ export const services = [
       "We craft stories and visuals that build trust and recognition for your brand.",
     ],
     bulletPoints: [
-      "Brand strategy and positioning",
-      "Logo and tagline creation",
-      "Brand color palette and typography",
-      "Brand style guide development",
-      "Visual assets for print and digital",
-      "Rebranding and brand refresh",
-      "Marketing collateral design",
-      "Social media branding kits",
-    ],
+  "Brand strategy and positioning: At CONQUERIC, we develop powerful brand strategies that define your purpose, values, voice, and market positioning. We help you connect with your ideal audience by crafting a compelling brand story that sets you apart from competitors.",
+
+  "Logo and tagline creation: We create memorable logos and impactful taglines that reflect your brand identity and resonate with your target market. CONQUERIC combines creativity and strategy to ensure every visual and verbal element reinforces your brand message.",
+
+  "Brand color palette and typography: Establish a cohesive visual identity with CONQUERIC’s carefully curated color palettes and typography systems. We select combinations that reflect your brand’s tone, improve readability, and ensure consistency across platforms.",
+
+  "Brand style guide development: Maintain visual and messaging consistency with a detailed brand style guide. CONQUERIC documents logo usage, color rules, typography, image styles, tone of voice, and more—ensuring your brand stays unified as it grows.",
+
+  "Visual assets for print and digital: From business cards to web banners, CONQUERIC designs a full suite of visual assets optimized for both print and digital channels. Every asset is aligned with your brand identity and tailored to your marketing needs.",
+
+  "Rebranding and brand refresh: Whether you need a full rebrand or a modern refresh, CONQUERIC helps you evolve your identity without losing brand equity. We guide you through strategic and creative updates that reflect your current vision and market.",
+
+  "Marketing collateral design: We design brochures, flyers, pitch decks, signage, and more—each piece reinforcing your brand identity. CONQUERIC ensures that every touchpoint looks professional, polished, and aligned with your brand narrative.",
+
+  "Social media branding kits: Elevate your online presence with custom social media branding kits from CONQUERIC. We provide profile images, cover banners, post templates, and highlight icons designed for consistency and audience engagement across platforms.",
+]
+,
     images: [
       "https://www.ied.edu/news/25464/image-thumb__25464__scaleByWidth1000/come-creare-una-brand-identity-header.jpg",
       "https://res.cloudinary.com/vistaprint/images/f_auto,q_auto/v1705400952/ideas-and-advice-prod/blogadmin/brand-identity-design/brand-identity-design.jpg?_i=AA",

@@ -40,7 +40,6 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
               e.currentTarget.src = "/placeholder.svg?height=400&width=600"
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent lg:bg-gradient-to-r lg:from-black/70 lg:via-black/40 lg:to-transparent"></div>
         </div>
 
         {/* Content Section */}
@@ -54,7 +53,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
           </div>
 
           {/* Short Description */}
-          <p className="text-gray-400 mb-4 leading-relaxed">
+          <p className="text-gray-400 mb-4 sm:text-lg text-sm sm:leading-relaxed">
             {service.shortDetails}
           </p>
 
@@ -92,8 +91,8 @@ const ServicesPage = () => {
   return (
     <div className="bg-gray-950 text-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+      <div className="relative overflow-hidden py-20">
+        <div className="absolute inset-0 bg-[url('/src/assets/bg-elements/Untitled-design-1.svg')] bg-cover opacity-15"></div>
         <div className="container mx-auto px-6 py-24 md:py-32 lg:py-40 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
