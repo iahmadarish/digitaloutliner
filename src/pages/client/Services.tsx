@@ -91,7 +91,7 @@ const ServicesPage = () => {
   return (
     <div className="bg-gray-950 text-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden py-20">
+      <div className="relative overflow-hidden sm:py-20">
         <div className="absolute inset-0 bg-[url('/src/assets/bg-elements/Untitled-design-1.svg')] bg-cover opacity-15"></div>
         <div className="container mx-auto px-6 py-24 md:py-32 lg:py-40 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -122,10 +122,10 @@ const ServicesPage = () => {
             </div>
 
             <div className="relative">
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-              <div className="relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
+              <div className="absolute -top-10 -right-10 w-64 h-64  rounded-full blur-3xl"></div>
+              <div className="relative rounded-2xl overflow-hidden  shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  src="/src/assets/bg-elements/DotsWithLines_illustration_UseBackgroundTurquoise_RGB.svg"
                   alt="Digital solutions"
                   className="w-full h-auto object-cover"
                 />
