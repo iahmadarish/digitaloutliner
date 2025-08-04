@@ -32,6 +32,7 @@ import {
 } from "lucide-react"
 import { services } from "../../data/service"
 import ScrollToTop from "@/components/ScrollToTop"
+import ServiceRequest from "@/components/common/ServiceRequest"
 
 // Service icons mapping
 const getServiceIcon = (serviceType: string) => {
@@ -824,7 +825,7 @@ const ServiceDetail = () => {
           </div>
         </section>
       )}
-
+      <ServiceRequest/>
       {/* Contact CTA */}
       <section
         id="contact"
