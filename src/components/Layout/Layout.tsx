@@ -10,7 +10,7 @@ const Layout: React.FC = () => {
   const hideWhatsApp = location.pathname.startsWith("/admin")
 
   // যেসব পেইজে header/footer লুকাতে হবে
-  const hideLayout = ["/login", "/register"].some(path =>
+  const hideLayout = ["/login", "/register", ].some(path =>
     location.pathname.startsWith(path)
   ) || location.pathname.startsWith("/services/")
 

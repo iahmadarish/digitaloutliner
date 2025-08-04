@@ -24,6 +24,7 @@ import TermsAndCondition from "./pages/client/TermsAndCondition"
 import ProjectDetails from "./pages/client/ProjectDetails"
 import Solutions from "./pages/client/Solutions"
 import HRSupportServices from "./components/service/HRSupportServices"
+import EcommerceWebSolutions from "./pages/client/EcommerceWebSolutions"
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path="terms-condition" element={<TermsAndCondition />} />
             <Route path="solutions" element={<Solutions />} />
             <Route path="business-solutions" element={<HRSupportServices />} />
+            <Route path="ecommere-web-solutions-with-conqueric" element={<EcommerceWebSolutions />} />
           </Route>
 
           {/* Admin Login */}

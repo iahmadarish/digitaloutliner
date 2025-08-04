@@ -129,7 +129,7 @@ const CONQUERICNavbar = () => {
         <div className="hidden lg:block border-b border-cyan-400/30">
           <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-2">
             <div className="flex justify-center items-center">
-              <div className="flex items-center space-x-8 lg:space-x-12 py-6">
+              <div className="flex items-center space-x-8 lg:space-x-12 pt-6">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}

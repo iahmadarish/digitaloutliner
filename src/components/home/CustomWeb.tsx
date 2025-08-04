@@ -3,6 +3,7 @@
 import { motion, type Easing } from "framer-motion"
 import ecommerceVideo from "@/assets/video/ec.mp4"
 import productSalesVideo from "@/assets/video/ecc.mp4"
+import { Link } from "react-router-dom"
 
 export default function CustomWeb() {
   const containerVariants = {
@@ -50,7 +51,7 @@ const videoVariants = {
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 md:gap-16 items-center">
           {/* Left Content */}
           <motion.div
-            className="xl:col-span-5 space-y-6 md:space-y-8 text-center xl:text-left"
+            className="xl:col-span-5 space-y-6 md:space-y-8 sm:text-center xl:text-left"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -95,13 +96,17 @@ const videoVariants = {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.button>
 
+              <Link to="/ecommere-web-solutions-with-conqueric">
+              
               <motion.button
                 className="px-6 md:px-8 py-3 md:py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-2xl hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Free Trial
-              </motion.button>
+                Discover More
+              </motion.button>  
+              </Link>
+
             </motion.div>
 
             <motion.div

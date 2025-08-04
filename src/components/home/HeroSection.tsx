@@ -1,304 +1,153 @@
-"use client"
+import { motion } from 'framer-motion';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 
-import { useState, useEffect } from "react"
-import { Sparkles } from "lucide-react"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay } from "swiper/modules"
-import "swiper/css"
-import image from "@/assets/slider/mobile-application-development (2).png"
-import image2 from "@/assets/slider/Group 42.png"
-import image3 from "@/assets/slider/Group 43.png"
-import image4 from "@/assets/slider/Group 44.png"
-import image5 from "@/assets/slider/8293830 (1).png"
-
-let images = "https://www.randstad.se/s3fs-media/se-rs/public/2024-09/transparent_png-randstad_professional_tech_illustration_04_rgb_usebackgroundnavy.png?VersionId=ag2Yfnp1wz5WQCQMcwLabIWLChMvvohn"
-let images2 = "https://www.talhive.com/wp-content/uploads/Technology-Hiring-1.svg"
-
-const MatchingHeroSection = () => {
-  const [isHovered, setIsHovered] = useState(false)
-  const [codeContent, setCodeContent] = useState("")
-  const [currentCodeIndex, setCurrentCodeIndex] = useState(0)
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
-  console.log(isHovered, setIsHovered)
-  const allCodeLines = [
-    // First code snippet - Business Growth Formula
-    [
-      { text: "/*", color: "text-emerald-400" },
-      { text: " Business Growth Formula ", color: "text-gray-400" },
-      { text: "*/", color: "text-emerald-400" },
-      { text: "\nconst", color: "text-purple-400" },
-      { text: " success", color: "text-cyan-400" },
-      { text: " = ", color: "text-gray-400" },
-      { text: "TailoredSolution", color: "text-yellow-400" },
-      { text: " + ", color: "text-gray-400" },
-      { text: "\n(", color: "text-gray-400" },
-      { text: "Marketing", color: "text-pink-400" },
-      { text: " × ", color: "text-gray-400" },
-      { text: "UltimateSpeed", color: "text-emerald-400" },
-      { text: ") +", color: "text-gray-400" },
-      { text: "\nSecurity", color: "text-blue-400" },
-      { text: " = ", color: "text-gray-400" },
-      { text: "ConstantGrowth", color: "text-yellow-400" },
-      { text: " ", color: "text-gray-400" },
-      { text: "📈", color: "text-red-400" },
-    ],
-    // Second code snippet - Development Approach
-    [
-      { text: "//", color: "text-gray-500" },
-      { text: " Our Development Process ", color: "text-gray-400" },
-      { text: "\nfunction", color: "text-purple-400" },
-      { text: " buildSolution", color: "text-cyan-400" },
-      { text: "() {", color: "text-gray-400" },
-      { text: "\n  const", color: "text-purple-400" },
-      { text: " techStack", color: "text-cyan-400" },
-      { text: " = ", color: "text-gray-400" },
-      { text: "[", color: "text-gray-400" },
-      { text: "\n    'React'", color: "text-yellow-400" },
-      { text: ", ", color: "text-gray-400" },
-      { text: "'Node.js'", color: "text-yellow-400" },
-      { text: ", ", color: "text-gray-400" },
-      { text: "\n    'TypeScript'", color: "text-yellow-400" },
-      { text: ", ", color: "text-gray-400" },
-      { text: "'MongoDB'", color: "text-yellow-400" },
-      { text: "\n  ];", color: "text-gray-400" },
-      { text: "\n  return", color: "text-purple-400" },
-      { text: " ", color: "text-gray-400" },
-      { text: "techStack", color: "text-cyan-400" },
-      { text: " + ", color: "text-gray-400" },
-      { text: "' + Innovation'", color: "text-yellow-400" },
-      { text: ";", color: "text-gray-400" },
-      { text: "\n}", color: "text-gray-400" },
-    ],
-    // Third code snippet - Project Success Metrics
-    [
-      { text: "/*", color: "text-emerald-400" },
-      { text: " Project Success Metrics ", color: "text-gray-400" },
-      { text: "*/", color: "text-emerald-400" },
-      { text: "\nconst", color: "text-purple-400" },
-      { text: " metrics", color: "text-cyan-400" },
-      { text: " = {", color: "text-gray-400" },
-      { text: "\n  performance", color: "text-blue-400" },
-      { text: ": ", color: "text-gray-400" },
-      { text: "'98%'", color: "text-yellow-400" },
-      { text: ",", color: "text-gray-400" },
-      { text: "\n  security", color: "text-blue-400" },
-      { text: ": ", color: "text-gray-400" },
-      { text: "'A+'", color: "text-yellow-400" },
-      { text: ",", color: "text-gray-400" },
-      { text: "\n  scalability", color: "text-blue-400" },
-      { text: ": ", color: "text-gray-400" },
-      { text: "'Unlimited'", color: "text-yellow-400" },
-      { text: ",", color: "text-gray-400" },
-      { text: "\n  support", color: "text-blue-400" },
-      { text: ": ", color: "text-gray-400" },
-      { text: "'24/7'", color: "text-yellow-400" },
-      { text: "\n};", color: "text-gray-400" },
-    ],
-  ]
-
-  const sliderImages = [images,images2,image, image2, image3, image4, image5]
-
-  useEffect(() => {
-    if (!inView) return
-    let timeoutId: NodeJS.Timeout
-    let currentIndex = 0
-    let currentLine = 0
-    let currentText = ""
-
-    const typeCode = () => {
-      const currentCode = allCodeLines[currentCodeIndex]
-      if (currentLine < currentCode.length) {
-        const line = currentCode[currentLine]
-        if (currentIndex < line.text.length) {
-          currentText += line.text[currentIndex]
-          currentIndex++
-          setCodeContent(currentText)
-          timeoutId = setTimeout(typeCode, 30)
-        } else {
-          currentLine++
-          currentIndex = 0
-          timeoutId = setTimeout(typeCode, 30)
-        }
-      } else {
-        // Typing completed, wait 3 seconds and move to next code
-        timeoutId = setTimeout(() => {
-          currentIndex = 0
-          currentLine = 0
-          currentText = ""
-          setCodeContent("")
-          setCurrentCodeIndex((prevIndex) => (prevIndex === allCodeLines.length - 1 ? 0 : prevIndex + 1))
-          typeCode()
-        }, 3000)
-      }
-    }
-
-    typeCode()
-
-    return () => {
-      clearTimeout(timeoutId)
-    }
-  }, [inView, currentCodeIndex])
-
-  const renderColoredCode = () => {
-    let remainingContent = codeContent
-    const renderedLines = []
-    const currentCode = allCodeLines[currentCodeIndex]
-
-    for (const line of currentCode) {
-      if (remainingContent.length === 0) break
-      const lineLength = line.text.length
-      const currentLineContent = remainingContent.substring(0, lineLength)
-      remainingContent = remainingContent.substring(lineLength)
-
-      renderedLines.push(
-        <span key={renderedLines.length} className={line.color}>
-          {currentLineContent}
-        </span>,
-      )
-    }
-
-    return (
-      <div className="font-mono text-xs sm:text-sm md:text-base min-h-[100px] sm:min-h-[120px] md:min-h-[140px]">
-        {renderedLines}
-        <motion.span
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1 }}
-          className="ml-1 inline-block w-2 h-4 sm:h-6 bg-emerald-400 align-middle"
-        ></motion.span>
-      </div>
-    )
-  }
-
+const HeroSection = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen py-12 sm:py-16 md:py-20 bg-cover bg-no-repeat  relative overflow-hidden bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]"
-      ref={ref}
-    >
-      {/* Background elements */}
-      <div className="absolute top-10 left-10 w-48 sm:w-64 h-48 sm:h-64 bg-purple-800/40 rounded-[20px] blur-2xl opacity-10"></div>
-
-      {/* Background geometric patterns */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.1 }}
-        transition={{ delay: 0.3, duration: 1 }}
-        className="absolute inset-0"
-      >
-        <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-20 sm:w-32 h-20 sm:h-32 border border-cyan-400/90 rotate-45 animate-pulse"></div>
-        <div className="absolute top-40 sm:top-60 right-20 sm:right-40 w-32 sm:w-48 h-32 sm:h-48 border border-purple-400/70 rotate-12"></div>
-        <div className="absolute bottom-20 sm:bottom-40 left-20 sm:left-60 w-16 sm:w-24 h-16 sm:h-24 border border-emerald-400/50 -rotate-12 animate-pulse"></div>
-        <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-24 sm:w-40 h-24 sm:h-40 border border-cyan-400/50 rotate-45"></div>
-      </motion.div>
-
-      {/* Floating grid pattern */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.05 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="absolute inset-0"
-      >
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(34, 211, 238, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(34, 211, 238, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "40px 40px",
-          }}
-        ></div>
-      </motion.div>
-
-      {/* Hero Section */}
-      <div className="relative z-10 container py-8 sm:py-12 md:py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-center">
+    <div className="min-h-screen bg-[#06140b] overflow-hidden relative">
+      
+      {/* Main Content */}
+      <div className="container mx-auto px-6 py-26 lg:py-44">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          
           {/* Left Content */}
-          <div className="space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">
-            <div className="space-y-3 sm:space-y-4">
-              {/* Badge */}
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-xs sm:text-sm font-medium text-gray-300"
-              >
-                <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 text-cyan-400" />
-                <span className="text-cyan-400">CONQUERIC </span>
-                <span className="mx-1 sm:mx-2 text-gray-600">•</span>
-                <span>Since 2025</span>
-              </motion.div>
-
-              {/* Main Heading */}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-white leading-tight sm:leading-snug md:leading-relaxed">
-                <span className="text-[#79e0a4]">CONQUERIC-</span>
-                <span>Where Ideas Meet Innovation and Technology</span>
-              </h1>
-            </div>
-
-            {/* Code-style description */}
-            <div className="space-y-4 sm:space-y-6">
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="bg-[#060336] text-2xl shadow-cyan-600 shadow-md backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-gray-700/50 overflow-x-auto"
-              >
-                {renderColoredCode()}
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Right Content - Image Slider */}
-          <motion.div
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0 md:lg:xl:2xl:mt-0 mt-8"
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="relative w-full max-w-xs sm:max-w-lg 2xl:lg:md:xl:max-w-6xl">
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-lg  sm:rounded-xl blur-xs"></div>
-
-              {/* Image Slider */}
-              <div className="relative overflow-hidden  rounded-lg sm:rounded-xl">
-                <Swiper
-                  modules={[Autoplay]}
-                  autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
-                  }}
-                  loop={true}
-                  className=" w-full h-58 sm:h-64 md:h-80 xl:2xl:lg:h-140 rounded-lg sm:rounded-xl"
-                >
-                  {sliderImages.map((image, index) => (
-                    <SwiperSlide key={index}>
-                      <div className="w-full h-full  rounded-lg sm:rounded-xl">
-                        <img
-                          src={image || "/placeholder.svg"}
-                          alt={`Slide ${index + 1}`}
-                          className="w-full  h-full object-contain"
-                          loading="eager"
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
+            <div className="space-y-6">
+              <h1 className="text-2xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+                Professional App for
+                <br />
+                Multi Purpose
+              </h1>
+              
+              <div className="w-20 h-1 bg-white"></div>
             </div>
+
+            <p className="sm:text-xl lg:text-2xl text-sm text-blue-100 leading-relaxed max-w-lg">
+              You can explore our app and feel free to comment and make indications
+            </p>
+
+            <motion.button
+              className="flex items-center gap-3 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore Now
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
+
+            <div className="text-blue-200 text-sm italic">
+              Make the try and interact
+              <br />
+              with the features
+            </div>
+
+            <motion.button
+              className="flex items-center gap-3 text-white/80 hover:text-white transition-colors mt-12"
+              whileHover={{ y: -2 }}
+            >
+              <ChevronDown className="w-5 h-5" />
+              <span>Explore More Down</span>
+            </motion.button>
+          </motion.div>
+
+          {/* Right Content - Tilted Phone */}
+          <motion.div 
+            className="flex justify-center lg:justify-end"
+            initial={{ opacity: 0, x: 50, rotate: -15 }}
+            animate={{ opacity: 1, x: 0, rotate: -15 }}
+            transition={{ duration: 1 }}
+          >
+            <motion.div
+              className="relative"
+              animate={{ 
+                y: [-5, 5, -5],
+                rotate: [-15, -12, -15]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              {/* Phone Frame */}
+              <div className="w-72 h-[580px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[3rem] p-2 shadow-2xl">
+                {/* Phone Screen */}
+                <div className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden relative">
+                  
+                  {/* Status Bar */}
+                  <div className="absolute top-0 left-0 right-0 h-8 bg-black flex items-center justify-between px-6 text-white text-xs z-20">
+                    <span>9:41</span>
+                    <div className="flex items-center gap-1">
+                      <div className="w-4 h-2 border border-white rounded-sm">
+                        <div className="w-2 h-1 bg-white rounded-sm ml-0.5"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* App Screen */}
+                  <div className="absolute inset-0 pt-8 bg-gradient-to-b from-gray-50 to-gray-200">
+                    <div className="p-4 pt-6">
+                      
+                      {/* First Row */}
+                      <div className="grid grid-cols-4 gap-3 mb-4">
+                        <div className="aspect-square bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl shadow-md"></div>
+                      </div>
+                      
+                      {/* Second Row */}
+                      <div className="grid grid-cols-4 gap-3 mb-4">
+                        <div className="aspect-square bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-pink-400 to-red-500 rounded-2xl shadow-md"></div>
+                      </div>
+                      
+                      {/* Third Row */}
+                      <div className="grid grid-cols-4 gap-3 mb-4">
+                        <div className="aspect-square bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-violet-400 to-purple-600 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-rose-400 to-pink-600 rounded-2xl shadow-md"></div>
+                      </div>
+                      
+                      {/* Fourth Row */}
+                      <div className="grid grid-cols-4 gap-3 mb-6">
+                        <div className="aspect-square bg-gradient-to-br from-lime-400 to-green-600 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-sky-400 to-blue-600 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-fuchsia-400 to-purple-600 rounded-2xl shadow-md"></div>
+                        <div className="aspect-square bg-gradient-to-br from-amber-400 to-orange-600 rounded-2xl shadow-md"></div>
+                      </div>
+                      
+                      {/* Bottom Dock */}
+                      <div className="absolute bottom-6 left-4 right-4">
+                        <div className="flex justify-center gap-4">
+                          <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl shadow-lg"></div>
+                          <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-2xl shadow-lg"></div>
+                          <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl shadow-lg"></div>
+                          <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl shadow-lg"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Phone Buttons */}
+                <div className="absolute right-[-2px] top-20 w-1 h-8 bg-gray-700 rounded-l"></div>
+                <div className="absolute right-[-2px] top-32 w-1 h-12 bg-gray-700 rounded-l"></div>
+                <div className="absolute right-[-2px] top-48 w-1 h-12 bg-gray-700 rounded-l"></div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
-    </motion.div>
-  )
-}
+    </div>
+  );
+};
 
-export default MatchingHeroSection
+export default HeroSection;
