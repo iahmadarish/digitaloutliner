@@ -44,11 +44,11 @@ const ModernAccordion = () => {
     <div className="min-h-screen sm:hidden block bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="sm:text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-white mb-4">
-            Our Most <span className="font-medium bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Services</span>
+            Our Most effective <span className="font-medium bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <p className="sm:text-lg text-gray-300 max-w-3xl mx-auto">
             Custom solutions designed to elevate your digital presence and drive business growth.
           </p>
         </div>

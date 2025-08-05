@@ -17,14 +17,14 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="space-y-6">
-              <h1 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+              <h1 className="text-4xl font-nunito lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
                 Professional Web & App for Multi Purpose
               </h1>
               
               <div className="w-20 h-1 bg-white"></div>
             </div>
 
-            <p className="sm:text-xl lg:text-2xl text-sm text-blue-100 leading-relaxed max-w-lg">
+            <p className="sm:text-xl lg:text-2xl text-sm text-blue-100 sm:leading-relaxed max-w-lg italic">
               You can explore our Web and app solutions and feel free to contact us and make indications
             </p>
 

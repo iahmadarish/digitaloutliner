@@ -113,7 +113,7 @@ const ctaVariants: Variants = {
                 {/* Card Container */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5">
                   {/* Image Container */}
-                  <div className="relative h-80 overflow-hidden">
+                  <div className="relative sm:h-80 overflow-hidden">
                     <motion.img
                       src={project.images[0].url}
                       alt={project.images[0].alt}
@@ -127,7 +127,7 @@ const ctaVariants: Variants = {
                   {/* Content Container */}
                   <div className="p-8">
                     {/* Title with Arrow */}
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="sm:flex items-start justify-between mb-4">
                       <h3 className="text-2xl font-bold text-white leading-tight flex-1 pr-4 group-hover:text-white/90 transition-colors">
                         {project.title}
                       </h3>
