@@ -3,7 +3,7 @@
 import { motion, type Easing } from "framer-motion"
 import ecommerceVideo from "@/assets/video/ec.mp4"
 import productSalesVideo from "@/assets/video/ecc.mp4"
-import { Link } from "react-router-dom"
+import LocalizedLink from "@/components/LocalizedLink";
 
 export default function CustomWeb() {
   const containerVariants = {
@@ -83,31 +83,28 @@ const videoVariants = {
               serve customers better, and scale faster.
             </motion.p>
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 pt-6 justify-center xl:justify-start"
-              variants={itemVariants}
-            >
-              <motion.button
-                className="group px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="relative z-10">Contact Now</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </motion.button>
+<motion.div
+      className="flex flex-col sm:flex-row gap-4 pt-6 justify-center xl:justify-start"
+    >
+      <motion.button
+        className="group px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        <span className="relative z-10">Contact Now</span>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </motion.button>
 
-              <Link to="/ecommere-web-solutions-with-conqueric">
-              
-              <motion.button
-                className="px-6 md:px-8 py-3 md:py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-2xl hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Discover More
-              </motion.button>  
-              </Link>
-
-            </motion.div>
+      <LocalizedLink to="ecommere-web-solutions-with-conqueric">
+        <motion.button
+          className="px-6 md:px-8 py-3 md:py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-2xl hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          Discover More
+        </motion.button>
+      </LocalizedLink>
+    </motion.div>
 
             <motion.div
               className="flex items-center gap-4 md:gap-8 pt-8 justify-center xl:justify-start"
