@@ -2,7 +2,6 @@ import type React from "react"
 import HeroSection from "../../components/home/HeroSection"
 import ServiceListingTab from "../../components/home/ServiceListingTab"
 import ScrollToTop from "../../components/ScrollToTop"
-import STRAccordionWithImages from "../../components/home/UrAccordionWithImages"
 // import SocialNavigation3D from "../../components/common/SocialNavigation3D"
 import ToolsetComponent from "@/components/home/toolsetData"
 import OurBenefit from "@/components/home/OurBenifit"
@@ -19,7 +18,6 @@ const Home: React.FC = () => {
       <HeroSection/>
       <CustomWeb/>
       <WebSolutions/>
-        <STRAccordionWithImages/>
         <ServiceListingTab/>
         <OurBenefit/>
         <FAQAccordion/>

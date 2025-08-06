@@ -1,0 +1,57 @@
+/* Base Swiper styles */
+.mySwiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Mobile specific styles (coverflow) */
+.mobile-swiper .swiper-slide {
+  width: 300px;
+}
+
+/* Desktop specific styles (centered) */
+.desktop-swiper .swiper-slide {
+  width: 70%;
+  max-width: 600px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.desktop-swiper .swiper-slide-active {
+  opacity: 1;
+}
+
+/* Pagination styles */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #007aff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .desktop-swiper .swiper-slide {
+    width: 80%;
+  }
+}
