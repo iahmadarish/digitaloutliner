@@ -17,14 +17,14 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="space-y-6">
-              <h1 className="text-3xl font-nunito lg:text-4xl xl:text-5xl font-bold text-[#2dfff1] leading-tight">
-                Sale anywhere with online store!
+              <h1 className="text-3xl font-nunito lg:text-4xl xl:text-5xl  font-light text-[#2dfff1] leading-tight">
+                Go Global with Your Online Shop! It's Time to Conquer the E-commerce World
               </h1>
               
               <div className="w-20 h-1 bg-white" aria-hidden="true"></div>
             </div>
 
-            <p className="sm:text-xl lg:text-2xl text-sm text-blue-100 sm:leading-relaxed max-w-lg italic">
+            <p className="sm:text-xl lg:text-xl text-sm text-blue-100 sm:leading-relaxed max-w-lg ">
               Boost your digital presence with our tailored web applications and mobile solutions designed to drive growth and enhance user engagement.
             </p>
 

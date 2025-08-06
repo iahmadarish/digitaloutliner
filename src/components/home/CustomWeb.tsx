@@ -17,35 +17,33 @@ export default function CustomWeb() {
     },
   }
 
-const itemVariants = {
-  hidden: { y: 30, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.42, 0, 1, 1] as Easing, // <-- fix here
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.42, 0, 1, 1] as Easing, // <-- fix here
+      },
     },
-  },
-}
+  }
 
 
-const videoVariants = {
-  hidden: { scale: 0.8, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: [0.42, 0, 1, 1] as Easing, // <-- fix here
+  const videoVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.42, 0, 1, 1] as Easing, // <-- fix here
+      },
     },
-  },
-}
+  }
   return (
-    <section className="min-h-screen font-nunito text-start bg-white py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-blue-50 rounded-full blur-3xl opacity-30 -translate-y-32 md:-translate-y-48 translate-x-32 md:translate-x-48"></div>
-      <div className="absolute bottom-0 left-0 w-60 md:w-80 h-60 md:h-80 bg-indigo-50 rounded-full blur-3xl opacity-40 translate-y-30 md:translate-y-40 -translate-x-30 md:-translate-x-40"></div>
+    <section className="min-h-screen font-nunito text-start bg-[#06140b] py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+
 
       <div className="container mx-auto relative">
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 md:gap-16 items-center">
@@ -58,24 +56,24 @@ const videoVariants = {
             viewport={{ once: true, margin: "-50px" }}
           >
             <motion.div variants={itemVariants} className="space-y-4">
-              <div className="inline-flex items-center px-4 py-2 bg-black text-blue-100 rounded-sm text-sm font-medium">
+              <div className="inline-flex items-center px-4 py-2 bg-white text-black rounded-sm text-sm font-medium">
                 <span className="w-2 h-2 bg-blue-500 rounded-sm mr-2 animate-pulse"></span>
                 CONQUERIC E-commerce Solutions
               </div>
 
-              <h1 className="text-2xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-900 leading-[0.9] tracking-tight">
+              <h1 className="text-2xl sm:text-5xl md:text-6xl xl:text-7xl font-light text-white leading-[0.9] tracking-tight">
                 Reach customers
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                <span className="block text-transparent bg-clip-text bg-[#fff]">
                   anywhere.
                 </span>
-                <span className="block text-xl sm:text-2xl md:text-3xl xl:text-4xl font-normal text-gray-600 mt-4">
+                <span className="block text-xl sm:text-2xl md:text-3xl xl:text-4xl font-light text-[#8becff] mt-4">
                   Build loyalty everywhere.
                 </span>
               </h1>
             </motion.div>
 
             <motion.p
-              className="text-sm md:text-xl text-gray-600 sm:leading-relaxed text-start max-w-lg sm:mx-auto xl:mx-0"
+              className="font-nunito font-light text-sm md:text-lg text-white sm:leading-relaxed text-start max-w-lg sm:mx-auto xl:mx-0"
               variants={itemVariants}
             >
               Sell seamlessly both in-store and online with confidence. CONQUERIC's custom website solutions ensure your
@@ -83,46 +81,46 @@ const videoVariants = {
               serve customers better, and scale faster.
             </motion.p>
 
-<motion.div
-      className="flex flex-col sm:flex-row gap-4 pt-6 justify-center xl:justify-start"
-    >
-      <motion.button
-        className="group px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-      >
-        <span className="relative z-10">Contact Now</span>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </motion.button>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 pt-6 justify-center xl:justify-start"
+            >
+              <motion.button
+                className="group px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span className="relative z-10">Contact Now</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.button>
 
-      <LocalizedLink to="ecommere-web-solutions-with-conqueric">
-        <motion.button
-          className="px-6 md:px-8 py-3 md:py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-2xl hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          Discover More
-        </motion.button>
-      </LocalizedLink>
-    </motion.div>
+              <LocalizedLink to="ecommere-web-solutions-with-conqueric">
+                <motion.button
+                  className="px-6 md:px-8 py-3 md:py-4 border-2 border-gray-200 text-white font-semibold rounded-2xl hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Discover More
+                </motion.button>
+              </LocalizedLink>
+            </motion.div>
 
             <motion.div
               className="flex items-center gap-4 md:gap-8 pt-8 justify-center xl:justify-start"
               variants={itemVariants}
             >
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-gray-900">500+</div>
-                <div className="text-xs md:text-sm text-gray-600">Happy Clients</div>
+                <div className="text-2xl md:text-3xl font-bold text-white">500+</div>
+                <div className="text-xs md:text-sm text-white">Happy Clients</div>
               </div>
               <div className="w-px h-8 md:h-12 bg-gray-200"></div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-gray-900">99.9%</div>
-                <div className="text-xs md:text-sm text-gray-600">Uptime</div>
+                <div className="text-2xl md:text-3xl font-bold text-white">99.9%</div>
+                <div className="text-xs md:text-sm text-white">Uptime</div>
               </div>
               <div className="w-px h-8 md:h-12 bg-gray-200"></div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-gray-900">24/7</div>
-                <div className="text-xs md:text-sm text-gray-600">Support</div>
+                <div className="text-2xl md:text-3xl font-bold text-white">24/7</div>
+                <div className="text-xs md:text-sm text-white">Support</div>
               </div>
             </motion.div>
           </motion.div>
@@ -151,7 +149,7 @@ const videoVariants = {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
                       {/* Video Label */}
-                      <div className="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800">
+                      <div className="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-white">
                         E-commerce Platform
                       </div>
 
@@ -176,7 +174,7 @@ const videoVariants = {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
                       {/* Video Label */}
-                      <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-gray-800">
+                      <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-white">
                         Sales Dashboard
                       </div>
                     </div>
@@ -218,8 +216,8 @@ const videoVariants = {
                   >
                     <div className="h-full bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="text-xl font-bold text-gray-900">24/7</div>
-                        <div className="text-xs text-gray-600">Online</div>
+                        <div className="text-xl font-bold text-black">24/7</div>
+                        <div className="text-xs text-black">Online</div>
                       </div>
                     </div>
                   </motion.div>
@@ -239,7 +237,7 @@ const videoVariants = {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
                       {/* Video Label */}
-                      <div className="absolute top-4 left-4 px-3 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800">
+                      <div className="absolute top-4 left-4 px-3 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-white">
                         E-commerce Platform
                       </div>
 
@@ -264,7 +262,7 @@ const videoVariants = {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
                       {/* Video Label */}
-                      <div className="absolute top-4 left-4 px-3 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800">
+                      <div className="absolute top-4 left-4 px-3 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-white">
                         Sales Dashboard
                       </div>
 
@@ -312,8 +310,8 @@ const videoVariants = {
                     >
                       <div className="h-20 bg-white rounded-xl shadow-lg border border-gray-100 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="text-lg font-bold text-gray-900">24/7</div>
-                          <div className="text-xs text-gray-600">Online</div>
+                          <div className="text-lg font-bold text-white">24/7</div>
+                          <div className="text-xs text-white">Online</div>
                         </div>
                       </div>
                     </motion.div>

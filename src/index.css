@@ -1,12 +1,4 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Share:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Varta:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 @import "tw-animate-css";
@@ -16,13 +8,7 @@
 /* mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 */
 /* Custom theme configuration */
 @theme {
-  --font-family-sans: "Inter", system-ui, sans-serif;
-  --font-family-small: "Pathway Extreme", sans-serif;
-  --font-family-Varta: "Varta", sans-serif;
-  --font-family-heading: "Libre Baskerville", serif;
-  --font-family-comfort:  "Comfortaa", sans-serif;
-  --font-family-mont:  "Montserrat", sans-serif;
-  --font-josefin:  "Josefin Sans", sans-serif;
+
   --font-nunito:  "Nunito", sans-serif;
 
   /* Primary colors */
