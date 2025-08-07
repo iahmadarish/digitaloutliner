@@ -7,7 +7,7 @@ import type React from "react"
 
 const About: React.FC = () => {
   return (
-    <div className="font-family-small   py-16 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] ">
+    <div className="font-family-small   py-16 bg-[#06140b] ">
       <ScrollToTop/>
       <p className="py-16  text-white">
         <AboutHero/>

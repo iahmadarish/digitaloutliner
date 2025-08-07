@@ -9,7 +9,7 @@ const Blog = () => {
   const regularPosts = blogs.slice(1);
 
   return (
-    <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]  pt-40 min-h-screen">
+    <div className="bg-[#06140b]  pt-40 min-h-screen">
       {/* Hero Section */}
       <div className="bg-[#]  md:lg:xl:2xl:sm:py-20 py-10  px-4 sm:px-6 lg:px-8 text-white">
         <div className=" space-y-8 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 text-center">

@@ -48,7 +48,7 @@ const faqData = [
 
 
   return (
-<div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+<div className="bg-[#06140b]">
 
     <div className="mx-auto max-w-7xl px-2 py-16 min-h-screen">
       <div className="mb-8">

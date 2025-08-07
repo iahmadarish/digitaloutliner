@@ -11,7 +11,7 @@ export default function Testimonial() {
     return (
         <section className=" overflow-hidden font-nunito">
 
-            <section className="bg-black text-white section-padding">
+            <section className="bg-[#06140b] text-white section-padding">
                 <div className="container text-center">
                     <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to Start Your Next Project?</h2>
                     <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">

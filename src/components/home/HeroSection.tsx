@@ -6,7 +6,7 @@ const HeroSection = () => {
     <header className="min-h-screen bg-[#06140b] overflow-hidden relative">
       
       {/* Main Content */}
-      <div className="container mx-auto px-20 py-26 lg:pt-54">
+      <div className="container mx-auto sm:px-20 py-26 lg:pt-54">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           
           {/* Left Content */}

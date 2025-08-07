@@ -114,7 +114,7 @@ const ServiceListingTab = () => {
               >
                 <div className="w-6 h-6 rounded-full bg-current flex items-center justify-center">
                   <ArrowRight
-                    className={`w-3 h-3 ${cardStyle.button.includes("bg-black-800") ? "text-black" : "text-blue-500"}`}
+                    className={`w-3 h-3 ${cardStyle.button.includes("bg-[#06140b]-800") ? "text-black" : "text-blue-500"}`}
                   />
                 </div>
                 <span className="underline">Learn more</span>
@@ -143,7 +143,7 @@ const ServiceListingTab = () => {
   }
 
   return (
-    <div className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+    <div className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#06140b]">
       <div className="mx-auto container">
         {/* Header Section */}
         <div className="mb-12 md:mb-16">

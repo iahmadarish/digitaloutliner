@@ -57,7 +57,7 @@ const TeamSection: React.FC = () => {
             >
               {/* LinkedIn Icon */}
               <div className="flex justify-end mb-4">
-                <div className="bg-black rounded-full p-2 cursor-pointer hover:bg-blue-800 transition-colors">
+                <div className="bg-[#06140b] rounded-full p-2 cursor-pointer hover:bg-blue-800 transition-colors">
                   <Linkedin className="w-4 h-4 text-white" />
                 </div>
               </div>
@@ -65,10 +65,10 @@ const TeamSection: React.FC = () => {
               {/* Profile Image with Blob Shape */}
               <div className="flex justify-center mb-6">
                 <div className="relative">
-                  <div className="w-44 h-44 bg-black rounded-full relative overflow-hidden">
+                  <div className="w-44 h-44 bg-[#06140b] rounded-full relative overflow-hidden">
                     {/* Blob shape overlay */}
                     <div
-                      className="absolute inset-0 bg-black"
+                      className="absolute inset-0 bg-[#06140b]"
                       style={{
                         clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
                       }}

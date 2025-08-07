@@ -28,7 +28,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
 
   return (
     <Dialog open={isOpen} onClose={onClose} className="fixed inset-0 z-50 overflow-y-auto">
-      <div className="min-h-screen px-4 text-center bg-black/60">
+      <div className="min-h-screen px-4 text-center bg-[#06140b]/60">
         <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
         <Dialog.Panel className="inline-block w-full max-w-4xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-gray-900 text-white shadow-xl rounded-2xl border border-gray-700">
           <div className="flex justify-between items-center mb-6">

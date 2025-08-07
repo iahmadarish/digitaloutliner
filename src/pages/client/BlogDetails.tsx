@@ -15,7 +15,7 @@ const BlogDetails = () => {
   return (
 
     <>
-      <main className="flex bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] justify-center md:lg:xl:2xpy-24">
+      <main className="flex bg-[#06140b] justify-center md:lg:xl:2xpy-24">
         <div className=""></div>
 
         <div className="section-padding  min-h-screen">

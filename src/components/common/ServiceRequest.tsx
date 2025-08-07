@@ -21,7 +21,6 @@ const ServiceRequest: React.FC = () => {
   };
 
   useEffect(() => {
-    // Clear timeout when component unmounts
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
     };
@@ -33,7 +32,6 @@ const ServiceRequest: React.FC = () => {
     setErrorMessage('');
     setShowSuccessPopup(false);
 
-    // Set a timeout for 20 seconds
     const id = setTimeout(() => {
       if (status === 'loading') {
         setStatus('delayed');
@@ -51,7 +49,6 @@ const ServiceRequest: React.FC = () => {
         body: JSON.stringify(formData),
       });
 
-      // Clear the timeout if request completes before 20s
       if (timeoutId) clearTimeout(timeoutId);
 
       if (!response.ok) {
@@ -77,12 +74,12 @@ const ServiceRequest: React.FC = () => {
   };
 
   const SuccessPopup = () => (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-8 rounded-xl max-w-md w-full mx-4 shadow-2xl animate-fade-in">
+    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 backdrop-blur-sm">
+      <div className="bg-gray-900 p-8 rounded-2xl max-w-md w-full mx-4 shadow-xl border border-gray-700 animate-pop-in">
         <div className="text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
             <svg
-              className="w-10 h-10 text-green-600"
+              className="w-12 h-12 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -96,13 +93,13 @@ const ServiceRequest: React.FC = () => {
               />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
-          <p className="text-gray-700 mb-6">
-            Thank you for your service request. Our team will get back to you within 24 hours.
+          <h3 className="text-3xl font-bold text-white mb-3">Request Received!</h3>
+          <p className="text-gray-300 mb-6 text-lg">
+            We've got your request and will get back to you within <span className="font-semibold text-blue-400">24 hours</span>.
           </p>
           <button
             onClick={() => setShowSuccessPopup(false)}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all shadow-md hover:shadow-lg font-medium"
           >
             Close
           </button>
@@ -112,214 +109,239 @@ const ServiceRequest: React.FC = () => {
   );
 
   return (
-    <div className="bg-black py-20">
-    <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-8 mt-10 mb-10 border border-gray-100">
-      <h2 className="text-3xl font-bold mb-6 text-center text-gray-900">Request a Service</h2>
-      <p className="text-gray-600 text-center mb-8">
-        Fill out the form below and our team will contact you shortly.
-      </p>
+    <div className="relative py-16 bg-[#06140b] overflow-hidden font-nunito">
 
-      <form onSubmit={handleSubmit} className="grid gap-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-              Your Name *
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-800">
+          {/* Header with gradient */}
+          <div className="bg-gradient-to-r from-blue-700 to-purple-800 p-8 text-center">
+            <h2 className="text-4xl font-bold text-white mb-2">Let's Build Something Amazing</h2>
+            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+              Tell us about your project and we'll get back to you with a customized solution.
+            </p>
           </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Your Email *
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-            Phone Number
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-900 mb-1">
-            Select a Service *
-          </label>
-          <select
-            id="service"
-            name="service"
-            required
-            value={formData.service}
-            onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          >
-            <option value="">Choose a service...</option>
-            <option value="Website Development">Website Development</option>
-            <option value="Mobile App Development">Mobile App Development</option>
-            <option value="Graphics Design">Graphics Design</option>
-            <option value="Custom Software">Custom Software</option>
-            <option value="2D/3D Design">2D/3D Design</option>
-            <option value="Others">Others</option>
-          </select>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-1">
-              Estimated Budget
-            </label>
-            <input
-              id="budget"
-              name="budget"
-              type="text"
-              value={formData.budget}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-          <div>
-            <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-1">
-              Project Timeline
-            </label>
-            <input
-              id="timeline"
-              name="timeline"
-              type="text"
-              placeholder="e.g., 2 weeks"
-              value={formData.timeline}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            Project Details *
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            value={formData.message}
-            onChange={handleChange}
-            rows={5}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
-        </div>
-
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition disabled:opacity-50 flex items-center justify-center"
-        >
-          {status === 'loading' ? (
-            <>
-              <svg
-                className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                ></circle>
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                ></path>
-              </svg>
-              Processing...
-            </>
-          ) : (
-            'Submit Request'
-          )}
-        </button>
-
-        {status === 'delayed' && (
-          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-            <div className="flex">
-              <div className="flex-shrink-0">
-                <svg
-                  className="h-5 w-5 text-yellow-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                    clipRule="evenodd"
+          
+          {/* Form section */}
+          <div className="p-8 md:p-10">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300">
+                    Your Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                    placeholder="John Doe"
                   />
-                </svg>
-              </div>
-              <div className="ml-3">
-                <p className="text-sm text-yellow-700">
-                  We're experiencing higher than usual volume. Your request is still being processed - please
-                  wait a moment longer. Thank you for your patience.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {status === 'error' && (
-          <div className="bg-red-50 border-l-4 border-red-400 p-4">
-            <div className="flex">
-              <div className="flex-shrink-0">
-                <svg
-                  className="h-5 w-5 text-red-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clipRule="evenodd"
+                </div>
+                <div className="space-y-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+                    Your Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                    placeholder="you@example.com"
                   />
-                </svg>
+                </div>
               </div>
-              <div className="ml-3">
-                <p className="text-sm text-red-700">{errorMessage}</p>
+
+              <div className="space-y-1">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-300">
+                  Phone Number
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                  placeholder="+1 (123) 456-7890"
+                />
               </div>
-            </div>
+
+              <div className="space-y-1">
+                <label htmlFor="service" className="block text-sm font-medium text-gray-300">
+                  Service Needed <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiAjd2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=')] bg-no-repeat bg-[right_1rem_center] bg-[length:1.5rem]"
+                >
+                  <option value="" className="text-gray-500">Select a service...</option>
+                  <option value="Website Development" className="text-white">Website Development</option>
+                  <option value="Mobile App Development" className="text-white">Mobile App Development</option>
+                  <option value="Graphics Design" className="text-white">Graphics Design</option>
+                  <option value="Custom Software" className="text-white">Custom Software</option>
+                  <option value="2D/3D Design" className="text-white">2D/3D Design</option>
+                  <option value="Others" className="text-white">Others</option>
+                </select>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-1">
+                  <label htmlFor="budget" className="block text-sm font-medium text-gray-300">
+                    Estimated Budget
+                  </label>
+                  <div className="relative">
+                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">$</span>
+                    <input
+                      id="budget"
+                      name="budget"
+                      type="text"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      className="w-full pl-8 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                      placeholder="5,000 - 10,000"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <label htmlFor="timeline" className="block text-sm font-medium text-gray-300">
+                    Project Timeline
+                  </label>
+                  <input
+                    id="timeline"
+                    name="timeline"
+                    type="text"
+                    value={formData.timeline}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                    placeholder="e.g., 3 months"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300">
+                  Project Details <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={6}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                  placeholder="Describe your project goals, requirements, and any specific needs..."
+                />
+              </div>
+
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-xl hover:opacity-90 transition-all shadow-lg hover:shadow-xl disabled:opacity-70 flex items-center justify-center font-medium text-lg"
+                >
+                  {status === 'loading' ? (
+                    <>
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-6 w-6 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      Processing Your Request...
+                    </>
+                  ) : (
+                    'Submit Project Request'
+                  )}
+                </button>
+              </div>
+
+              {status === 'delayed' && (
+                <div className="bg-yellow-900 bg-opacity-30 border-l-4 border-yellow-500 p-4 rounded-lg">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="h-5 w-5 text-yellow-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <h3 className="text-sm font-medium text-yellow-300">Processing taking longer than usual</h3>
+                      <div className="mt-2 text-sm text-yellow-200">
+                        <p>
+                          We're experiencing higher traffic than normal. Your request is still processing - please
+                          wait a moment longer. Thank you for your patience!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="bg-red-900 bg-opacity-30 border-l-4 border-red-500 p-4 rounded-lg">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="h-5 w-5 text-red-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <h3 className="text-sm font-medium text-red-300">Submission Error</h3>
+                      <div className="mt-2 text-sm text-red-200">
+                        <p>{errorMessage}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </form>
           </div>
-        )}
-      </form>
+        </div>
+      </div>
 
       {showSuccessPopup && <SuccessPopup />}
-    </div>
     </div>
   );
 };

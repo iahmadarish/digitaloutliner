@@ -68,7 +68,7 @@ const CONQUERICNavbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900 backdrop-blur-md shadow-lg" : "bg-transparent backdrop-blur-sm"
+        className={`fixed  top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#06140b] backdrop-blur-md shadow-lg" : "bg-transparent backdrop-blur-sm"
           }`}
         style={{
           transform: `translateY(${visible ? 0 : -100}px)`,
@@ -126,7 +126,7 @@ const CONQUERICNavbar = () => {
         </div>
 
         {/* Navigation Row - Desktop Only */}
-        <div className="hidden lg:block border-b border-cyan-400/30">
+        <div className="hidden lg:block border-b border-cyan-400/30 font-nunito uppercase">
           <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-2">
             <div className="flex justify-center items-center">
               <div className="flex items-center space-x-8 lg:space-x-12 pt-6">
@@ -153,13 +153,13 @@ const CONQUERICNavbar = () => {
         <div className="lg:hidden fixed inset-0 z-40">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-[#06140b]/80 backdrop-blur-sm"
             onClick={() => setIsMenuOpen(false)}
           />
 
           {/* Sidebar */}
           <div
-            className={`absolute top-0 right-0 h-full w-full max-w-[100%] bg-gradient-to-br from-gray-900 via-black to-gray-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+            className={`absolute top-0 right-0 h-full w-full max-w-[100%] bg-[#06140b] shadow-2xl transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
               }`}
           >
             {/* Sidebar Header */}
@@ -179,9 +179,9 @@ const CONQUERICNavbar = () => {
             </div>
 
             {/* Sidebar Content */}
-            <div className="px-6 py-8 h-full overflow-y-auto">
+            <div className="px-6 py-6 h-full overflow-y-auto font-nunito">
               {/* Navigation Links */}
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {navigation.map((item, index) => (
                   <div
                     key={item.name}
@@ -194,7 +194,7 @@ const CONQUERICNavbar = () => {
                     <Link
                       to={item.href}
                       onClick={handleNavClick}
-                      className={`block px-4 py-3 rounded-lg  text-lg font-medium transition-all duration-200 ${activeItem === item.name
+                      className={`block px-4 py-2 rounded-lg  text-lg font-medium transition-all duration-200 ${activeItem === item.name
                           ? "bg-cyan-400/20  text-cyan-400 border-l-4 border-cyan-400 shadow-lg"
                           : "text-white/90 hover:text-white hover:bg-white/10"
                         }`}
@@ -210,20 +210,20 @@ const CONQUERICNavbar = () => {
 
               {/* Contact Us Button */}
               <div
-                className="mt-8 opacity-0 translate-x-4 animate-slideIn"
+                className="sm:mt-8 mt-2 opacity-0 translate-x-4 animate-slideIn"
                 style={{
                   animationDelay: "400ms",
                   animationFillMode: "forwards"
                 }}
               >
-                <button className="w-full px-4 py-3 border border-cyan-400 rounded-lg text-cyan-400 text-lg font-medium hover:bg-cyan-400/10 transition-colors duration-200">
+                <button className="w-full px-6 py-2 border border-cyan-400 rounded-lg text-cyan-400 text-lg font-medium hover:bg-cyan-400/10 transition-colors duration-200">
                   Contact Us
                 </button>
               </div>
 
               {/* Contact Info */}
               <div
-                className="mt-8 pt-6 border-t border-cyan-400/30 space-y-4 opacity-0 translate-x-4 animate-slideIn"
+                className="mt-8 pt-6 border-t border-cyan-400/30 space-y-3 opacity-0 translate-x-4 animate-slideIn"
                 style={{
                   animationDelay: "500ms",
                   animationFillMode: "forwards"

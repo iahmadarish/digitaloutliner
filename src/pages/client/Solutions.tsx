@@ -337,7 +337,7 @@ export default function Solutions() {
     <div className="text-[#ffffff] min-h-screen mt-30" ref={containerRef}>
       <ScrollToTop />
       {/* Hero Section with Image */}
-      <section className="min-h-screen bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] flex items-center justify-center  px-4 md:px-8">
+      <section className="min-h-screen bg-[#06140b] flex items-center justify-center  px-4 md:px-8">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Text Content */}
           <motion.div
@@ -390,7 +390,7 @@ export default function Solutions() {
       </section>
 
       {/* Services Section */}
-      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="bg-[#06140b]">
 
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto  ">
           <motion.div
@@ -447,7 +447,7 @@ export default function Solutions() {
       </div>
 
       {/* Benefits Section */}
-      <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] py-12">
+      <div className="bg-[#06140b] py-12">
 
         <section className=" px-4 md:px-8 max-w-7xl mx-auto  rounded-3xl ">
           <motion.div
@@ -487,7 +487,7 @@ export default function Solutions() {
       </div>
 
       {/* Industries Section */}
-      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="bg-[#06140b]">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -520,7 +520,7 @@ export default function Solutions() {
         </section>
       </div>
       {/* Technology Stack Section */}
-      <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] py-12">
+      <div className="bg-[#06140b] py-12">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto rounded-3xl ">
           <motion.div
             className="text-center mb-16"
@@ -556,7 +556,7 @@ export default function Solutions() {
       </div>
 
       {/* key features section */}
-      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] ">
+      <div className="bg-[#06140b] ">
         {/* Features Section */}
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
           <motion.div
@@ -592,7 +592,7 @@ export default function Solutions() {
 
 
       {/* Process Section - Redesign */}
-      <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] overflow-x-hidden">
+      <div className="bg-[#06140b] overflow-x-hidden">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -670,7 +670,7 @@ export default function Solutions() {
 
       {/* Testimonials Section */}
 
-      <div className="hidden bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="hidden bg-[#06140b]">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto  rounded-3xl ">
           <motion.div
             className="text-center mb-16"
@@ -708,7 +708,7 @@ export default function Solutions() {
       </div>
 
       {/* Stats Section */}
-      <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="bg-[#06140b]">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
           <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
@@ -739,10 +739,10 @@ export default function Solutions() {
         </section>
       </div>
       {/* CTA Section */}
-      <div className="font-nunito bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]">
+      <div className="font-nunito bg-[#06140b]">
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto text-center ">
           <motion.div
-            className="bg-gradient-to-br from-gray-900 to-blue-900/30 rounded-2xl p-12 border border-gray-700 hover:border-blue-500 transition-all duration-300 relative overflow-hidden"
+            className="bg-[#06140b] rounded-2xl p-12 border border-gray-700 hover:border-blue-500 transition-all duration-300 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}

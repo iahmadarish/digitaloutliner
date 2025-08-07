@@ -178,7 +178,7 @@ const HRSupportServices: React.FC = () => {
     ];
 
     return (
-        <div className="bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] text-gray-100 lg:py-50 py-30">
+        <div className="bg-[#06140b] text-gray-100 lg:py-50 py-30">
             <ScrollToTop />
             {/* Hero Section */}
             <AnimatedSection variant={fadeIn}>

@@ -1,8 +1,6 @@
 "use client"
 
 import { motion, type Easing } from "framer-motion"
-import ecommerceVideo from "@/assets/video/ec.mp4"
-import productSalesVideo from "@/assets/video/ecc.mp4"
 import LocalizedLink from "@/components/LocalizedLink";
 
 export default function CustomWeb() {
@@ -16,6 +14,9 @@ export default function CustomWeb() {
       },
     },
   }
+
+let productSalesVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754534027/6994624-uhd_3840_2160_30fps_atp7ke.mp4"
+let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533621/ecc_pdcmp2.mp4"
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
@@ -149,8 +150,8 @@ export default function CustomWeb() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
                       {/* Video Label */}
-                      <div className="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-white">
-                        E-commerce Platform
+                      <div className="absolute top-6 left-6 px-4 py-2 bg-black backdrop-blur-sm rounded-lg text-sm font-medium text-white">
+                        Manage your E-commerce Platform
                       </div>
 
                       {/* Play Button Overlay */}
@@ -174,8 +175,8 @@ export default function CustomWeb() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
                       {/* Video Label */}
-                      <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-white">
-                        Sales Dashboard
+                      <div className="absolute top-4 left-4 px-3 py-1 bg-black backdrop-blur-sm rounded-lg text-xs font-medium text-white">
+                        Manage Your Product Sales
                       </div>
                     </div>
                   </div>

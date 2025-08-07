@@ -89,10 +89,10 @@ const ServicesPage = () => {
   const [projectInput, setProjectInput] = useState("")
 
   return (
-    <div className="bg-gray-950 text-white">
+    <div className="bg-[#06140b] font-nunito text-white">
       {/* Hero Section */}
       <div className="relative overflow-hidden sm:py-20">
-        <div className="absolute inset-0 bg-[url('/src/assets/bg-elements/Untitled-design-1.svg')] bg-cover opacity-15"></div>
+        <div className="absolute inset-0 bg-[url('/src/assets/bg-elements/')] bg-cover opacity-15"></div>
         <div className="container mx-auto px-6 py-24 md:py-32 lg:py-40 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -136,7 +136,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Services Section */}
-      <div className="py-20 bg-gray-900/50 relative">
+      <div className="py-20 bg-[#06140b] relative">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
@@ -155,7 +155,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="py-20 bg-gradient-to-r from-gray-900 to-gray-800">
+      <div className="py-20 bg-[#06140b]">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -176,7 +176,7 @@ const ServicesPage = () => {
 
       {/* CTA Section */}
       {/* CTA Section */}
-      <div className="py-20 bg-gray-950">
+      <div className="py-20 bg-[#06140b]">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}

@@ -7,7 +7,7 @@ import direct from "@/assets/directcommunication.png"
 
 export default function OurBenefit() {
   return (
-    <div className="bg-gradient-to-br from-[#0b0f19] via-[#111827] to-[#0b0f19] text-white min-h-screen py-8">
+    <div className="bg-[#06140b] text-white min-h-screen py-8">
       <div className=" mx-auto container">
         {/* Header */}
         <div className="mb-12">
@@ -23,7 +23,7 @@ export default function OurBenefit() {
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Clear Project Backlog */}
-          <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl p-6 border  shadow-sky-400 hover:shadow-sm border-gray-800">
+          <div className="bg-[#06140b] hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl p-6 border  shadow-sky-400 hover:shadow-sm border-gray-800">
             <h3 className="text-xl font-semibold mb-4">Clear Project Backlog</h3>
             <p className="text-gray-100 mb-6 sm:text-lg text-sm">
               Stay organized and informed with a transparent backlog of tasks, 
@@ -31,7 +31,7 @@ export default function OurBenefit() {
             </p>
             
             {/* Backlog Interface */}
-            <div className="bg-gray-800  rounded-lg p-4">
+            <div className="bg-[#06140b]  rounded-lg p-4">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-sm font-medium">Backlog</span>
                 <Search className="w-4 h-4 text-gray-100" />
@@ -72,7 +72,7 @@ export default function OurBenefit() {
           </div>
 
           {/* Top-Tier Security */}
-          <div className="bg-gray-900 rounded-xl shadow-sky-400 hover:shadow-sm p-6 border border-gray-800 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950">
+          <div className="bg-[#06140b] rounded-xl shadow-sky-400 hover:shadow-sm p-6 border border-gray-800 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950">
             <h3 className="text-xl font-semibold mb-4">Top-Tier Security</h3>
             <p className="text-gray-100 mb-6 sm:text-lg text-sm">
               Your data is safe with us. We implement the latest security 
@@ -86,7 +86,7 @@ export default function OurBenefit() {
           </div>
 
           {/* Tech Stack */}
-          <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl  shadow-sky-400 hover:shadow-sm p-6 border border-gray-800">
+          <div className="bg-[#06140b] hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl  shadow-sky-400 hover:shadow-sm p-6 border border-gray-800">
             <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
             <p className="text-gray-200 mb-6 sm:text-lg text-sm">
               Leveraging the latest tech for scalable, high-performance solutions.
@@ -106,7 +106,7 @@ export default function OurBenefit() {
           </div>
 
           {/* Exponential Growth */}
-          <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl py-6 px-2 border hover:shadow-sm shadow-blue-600 border-gray-800">
+          <div className="bg-[#06140b] hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl py-6 px-2 border hover:shadow-sm shadow-blue-600 border-gray-800">
             <h3 className="text-xl font-semibold mb-4">Exponential Growth</h3>
             <p className="text-gray-200 mb-6 sm:text-lg text-sm">
               Our solutions are built to scale with your business, 
@@ -131,7 +131,7 @@ export default function OurBenefit() {
           </div>
 
           {/* Direct Communication */}
-          <div className="bg-gray-900 hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl py-6 px-3 border border-gray-800 lg:col-span-2 hover:shadow-sm shadow-blue-600 ">
+          <div className="bg-[#06140b] hover:bg-linear-to-r/hsl from-indigo-950 to-teal-950 rounded-xl py-6 px-3 border border-gray-800 lg:col-span-2 hover:shadow-sm shadow-blue-600 ">
             <h3 className="text-xl font-semibold mb-4">Direct Communication</h3>
             <p className="text-gray-100 mb-6 sm:text-lg text-sm">
               From start to finish, you'll have direct access to our team of experts, 

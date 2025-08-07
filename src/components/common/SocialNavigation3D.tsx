@@ -59,7 +59,7 @@ const IsometricSocialCards: React.FC = () => {
   };
 
   return (
-    <div className="py-2 bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19]  relative overflow-hidden">
+    <div className="py-2 bg-[#06140b]  relative overflow-hidden">
 
       {/* Cards Container */}
       <div className="relative z-10 px-4">
@@ -152,7 +152,7 @@ const IsometricSocialCards: React.FC = () => {
 
                   {/* Drop Shadow */}
                   <div
-                    className="absolute -bottom-6 md:-bottom-8 left-4 md:left-6 lg:left-8 w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-black opacity-20 rounded-lg blur-sm"
+                    className="absolute -bottom-6 md:-bottom-8 left-4 md:left-6 lg:left-8 w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-[#06140b] opacity-20 rounded-lg blur-sm"
                     style={{
                       transform: 'rotateX(90deg) translateZ(-40px)',
                       filter: 'blur(8px)'
@@ -258,7 +258,7 @@ const IsometricSocialCards: React.FC = () => {
 
                   {/* Drop Shadow */}
                   <div
-                    className="absolute -bottom-6 left-6 w-36 h-24 bg-black opacity-15 rounded-lg blur-sm"
+                    className="absolute -bottom-6 left-6 w-36 h-24 bg-[#06140b] opacity-15 rounded-lg blur-sm"
                     style={{
                       transform: 'rotateX(90deg) translateZ(-30px)',
                       filter: 'blur(6px)'

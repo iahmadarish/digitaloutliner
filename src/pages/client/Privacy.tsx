@@ -2,7 +2,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Privacy() {
   return (
-<main className="py-30 font-family-comfort bg-gradient-to-tr from-[#0b0f19] via-[#111827] to-[#0b0f19] overflow-x-hidden">
+<main className="py-30 font-family-comfort bg-[#06140b] overflow-x-hidden">
 <ScrollToTop/>
 
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">

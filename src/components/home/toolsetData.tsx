@@ -210,7 +210,7 @@ const ToolsetComponent = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
-            className="bg-white rounded-lg p-6 shadow-md"
+            className="bg-white rounded-lg sm:p-6 p-2 shadow-md"
           >
             <div className="mb-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -221,7 +221,7 @@ const ToolsetComponent = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4">
               {toolsetData[activeCategory].icons.map((tool, toolIndex) => (
                 <motion.div
                   key={toolIndex}
@@ -236,8 +236,8 @@ const ToolsetComponent = () => {
                     />
                   </div>
                   <div className="mt-2 text-center">
-                    <h4 className="text-sm font-medium text-gray-900">{tool.name}</h4>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <h4 className="sm:text-sm text-[12px] font-medium text-gray-900">{tool.name}</h4>
+                    <p className="sm:text-xs text-[10px] text-gray-500 mt-1">
                       {tool.description}
                     </p>
                   </div>
