@@ -110,13 +110,13 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
               variants={itemVariants}
             >
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-white">500+</div>
-                <div className="text-xs md:text-sm text-white">Happy Clients</div>
+                <div className="text-2xl md:text-3xl font-bold text-white">60 Days</div>
+                <div className="text-xs md:text-sm text-white">Free Maintanance</div>
               </div>
               <div className="w-px h-8 md:h-12 bg-gray-200"></div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-white">99.9%</div>
-                <div className="text-xs md:text-sm text-white">Uptime</div>
+                <div className="text-2xl md:text-3xl font-bold text-white">100%</div>
+                <div className="text-xs md:text-sm text-white">SEO Friendly</div>
               </div>
               <div className="w-px h-8 md:h-12 bg-gray-200"></div>
               <div className="text-center">
@@ -146,12 +146,11 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
                         Your browser does not support the video tag.
                       </video>
                       {/* Blue Blend Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/40 via-blue-500/30 to-indigo-600/40 mix-blend-multiply"></div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+
 
                       {/* Video Label */}
-                      <div className="absolute top-6 left-6 px-4 py-2 bg-black backdrop-blur-sm rounded-lg text-sm font-medium text-white">
-                        Manage your E-commerce Platform
+                      <div className="absolute top-6 left-6 px-4 py-2 bg-black  rounded-lg text-sm font-medium text-white">
+                        Create your E-commerce Platform
                       </div>
 
                       {/* Play Button Overlay */}
@@ -176,7 +175,7 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
 
                       {/* Video Label */}
                       <div className="absolute top-4 left-4 px-3 py-1 bg-black backdrop-blur-sm rounded-lg text-xs font-medium text-white">
-                        Manage Your Product Sales
+                        Manage Your Online Store
                       </div>
                     </div>
                   </div>
@@ -184,15 +183,7 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
                   {/* Floating Elements - Desktop */}
                   <motion.div
                     className="col-span-3 row-span-3 col-start-1 row-start-10 relative"
-                    animate={{
-                      y: [0, -10, 0],
-                      rotate: [0, 2, 0],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Number.POSITIVE_INFINITY,
-                      ease: "easeInOut",
-                    }}
+     
                   >
                     <div className="h-full bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg flex items-center justify-center">
                       <div className="text-center text-white">
@@ -202,18 +193,10 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
                     </div>
                   </motion.div>
 
+
                   <motion.div
                     className="col-span-3 row-span-2 col-start-10 row-start-10 relative"
-                    animate={{
-                      y: [0, 8, 0],
-                      rotate: [0, -1, 0],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Number.POSITIVE_INFINITY,
-                      ease: "easeInOut",
-                      delay: 1,
-                    }}
+      
                   >
                     <div className="h-full bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center">
                       <div className="text-center">
@@ -222,6 +205,8 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
                       </div>
                     </div>
                   </motion.div>
+
+                  
                 </div>
 
                 {/* Mobile Layout - Videos Stacked Vertically */}
@@ -238,13 +223,13 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
                       {/* Video Label */}
-                      <div className="absolute top-4 left-4 px-3 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-white">
-                        E-commerce Platform
+                      <div className="absolute top-4 left-4 px-3 py-2 bg-white/90 backdrop-blur-sm rounded text-sm font-medium text-black">
+                        Create your E-commerce Platform
                       </div>
 
                       {/* Play Button Overlay */}
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded flex items-center justify-center">
                           <div className="w-0 h-0 border-l-[8px] border-l-white border-y-[6px] border-y-transparent ml-1"></div>
                         </div>
                       </div>
@@ -263,8 +248,8 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
                       {/* Video Label */}
-                      <div className="absolute top-4 left-4 px-3 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-white">
-                        Sales Dashboard
+                      <div className="absolute top-4 left-4 px-3 py-2 bg-white backdrop-blur-sm rounded text-sm font-medium text-black">
+                        Manage Your online store
                       </div>
 
                       {/* Play Button Overlay */}
@@ -280,14 +265,7 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
                   <div className="flex gap-4 justify-center mt-8">
                     <motion.div
                       className="flex-1 max-w-[120px]"
-                      animate={{
-                        y: [0, -8, 0],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                      }}
+                 
                     >
                       <div className="h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center">
                         <div className="text-center text-white">
@@ -299,20 +277,11 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
 
                     <motion.div
                       className="flex-1 max-w-[120px]"
-                      animate={{
-                        y: [0, 6, 0],
-                      }}
-                      transition={{
-                        duration: 4,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: 1,
-                      }}
                     >
                       <div className="h-20 bg-white rounded-xl shadow-lg border border-gray-100 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="text-lg font-bold text-white">24/7</div>
-                          <div className="text-xs text-white">Online</div>
+                          <div className="text-lg font-bold text-black">24/7</div>
+                          <div className="text-xs text-black">Online</div>
                         </div>
                       </div>
                     </motion.div>

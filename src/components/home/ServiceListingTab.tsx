@@ -143,7 +143,7 @@ const ServiceListingTab = () => {
   }
 
   return (
-    <div className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#06140b]">
+    <div className="py-12 md:py-20  bg-[#06140b]">
       <div className="mx-auto container">
         {/* Header Section */}
         <div className="mb-12 md:mb-16">
