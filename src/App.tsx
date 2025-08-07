@@ -25,7 +25,6 @@ import ProjectDetails from "./pages/client/ProjectDetails"
 import Solutions from "./pages/client/Solutions"
 import HRSupportServices from "./components/service/HRSupportServices"
 import EcommerceWebSolutions from "./pages/client/EcommerceWebSolutions"
-import BDEcommerceWebSolutions from "./pages/client/BDEcommerceWebSolutions"
 
 function App() {
   return (
@@ -48,7 +47,7 @@ function App() {
             <Route path="solutions" element={<Solutions />} />
             <Route path="business-solutions" element={<HRSupportServices />} />
             <Route path="global-ecommere-web-solutions-with-conqueric" element={<EcommerceWebSolutions />} />
-            <Route path="bd-ecommere-web-solutions-with-conqueric" element={<BDEcommerceWebSolutions />} />
+            <Route path="bd-ecommere-web-solutions-with-conqueric" element={<EcommerceWebSolutions />} />
           </Route>
 
           {/* Admin Login */}

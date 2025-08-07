@@ -1,132 +1,167 @@
-"use client";
+"use client"
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react"
+import { EffectCoverflow, Pagination } from "swiper/modules"
+import { motion } from "framer-motion"
+import { useNavigate } from "react-router-dom"
+import "swiper/css"
+import "swiper/css/effect-coverflow"
+import "swiper/css/pagination"
 
 const desktopImages = [
-    "/category/category1.png",
-    "/category/category2.png",
-    "/category/category3.png",
-    "/category/category4.png",
-    "/category/category5.png",
-    "/category/templete (2).png",
-    "/category/templete (3).png",
-    "/category/temtwo (2).png",
-    "/category/temtwo (3).png",
-    "/category/Thumbnail.png",
-        "/category/category4.png",
-    "/category/category5.png",
-    "/category/templete (2).png",
-    "/category/templete (3).png",
-    "/category/temtwo (2).png",
-    "/category/temtwo (3).png",
-];
+  "/category/category1.png",
+  "/category/category2.png",
+  "/category/category3.png",
+  "/category/category4.png",
+  "/category/category5.png",
+  "/category/templete (2).png",
+  "/category/templete (3).png",
+  "/category/temtwo (2).png",
+  "/category/temtwo (3).png",
+  "/category/Thumbnail.png",
+]
 
-const WebSolutions = () => {
-    return (
-        <section className="bg-[#06140b]  text-white py-16 px-4">
-            <div className="max-w-7xl mx-auto text-center">
-                <h2 className="text-3xl md:text-5xl text-justify font-normal mb-4">
-                    The one commerce platform behind it all
-                </h2>
-                <p className="text-3xl md:text-5xl text-gray-500 mb-12 font-normal text-justify leading-tight">
-                    <span className="hover:text-[#6afffa]">Sell in-store and online |</span> <span className="hover:text-[#6afffa]"> Sell near and far |</span> Sell B2C and B2B. Sell on mobile or desktop.
-                </p>
+export default function WebSolutions() {
+  const navigate = useNavigate()
 
+  const handleServiceClick = () => {
+    navigate('/creative-web-solutions')
+  }
+  return (
+    <section className="bg-[#06140b] text-white py-16 px-4">
+      <div className="max-w-7xl mx-auto text-center">
+        <motion.h2 
+          className="text-3xl md:text-5xl font-semibold mb-4 text-left"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          The one commerce platform behind it all
+        </motion.h2>
+        
+        <motion.p 
+          className="text-xl md:text-2xl text-gray-400 mb-12 text-left"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          <motion.span 
+            className="hover:text-[#6afffa]"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            Sell in-store and online |
+          </motion.span>{" "}
+          <motion.span 
+            className="hover:text-[#6afffa]"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            Sell near and far |
+          </motion.span>{" "}
+          Sell B2C and B2B. Sell on mobile or desktop.
+        </motion.p>
 
-                <div className="max-w-7xl mx-auto">
-
-                    <Swiper
-                        slidesPerView={"auto"}
-                        centeredSlides={true}
-                        spaceBetween={50}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        className="mySwiper"
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        >
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            loop={true}
+            spaceBetween={30}
+            pagination={{ clickable: true }}
+            modules={[EffectCoverflow, Pagination]}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.5,
+              },
+              768: {
+                slidesPerView: 3.5,
+              },
+            }}
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 200,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            className="mySwiper"
+          >
+            {desktopImages.map((src, index) => (
+              <SwiperSlide
+                key={index}
+                className="max-w-[300px] lg:max-w-[350px]"
+              >
+                <motion.div
+                  whileHover={{ 
+                    scale: 1.05,
+                    rotateY: 5,
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ 
+                    duration: 0.3,
+                    ease: "easeOut"
+                  }}
+                  className="relative overflow-hidden rounded-xl group cursor-pointer"
+                  
+                >
+                  <img
+                    src={src}
+                    alt={`Slide ${index + 1}`}
+                    className="rounded-xl w-full h-[250px] md:h-[300px] object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                  />
+                  
+                  {/* Get Service Button */}
+                  <motion.div
+                    className="absolute inset-0 flex items-center justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
+                    <motion.button
+                      className="bg-[#6afffa] text-[#06140b] px-6 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={handleServiceClick}
                     >
-                        <SwiperSlide>
-                            <div className="w-full flex gap-1 md:gap-5 justify-between items-center">
-                                <img
-                                    src={desktopImages[0]}
-                                    alt="image"
-                                    className="flex-1 max-w-[45%] md:w-[467px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                                <img
-                                    src={desktopImages[1]}
-                                    alt="image"
-                                    className="flex-1 max-w-[30%] md:w-[205px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                                <img
-                                    src={desktopImages[2]}
-                                    alt="image"
-                                    className="flex-1 max-w-[45%] md:w-[467px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="w-full flex gap-1 md:gap-5 justify-between items-center">
-                                <img
-                                    src={desktopImages[3]}
-                                    alt="image"
-                                    className="flex-1 max-w-[45%] md:w-[467px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                                <img
-                                    src={desktopImages[4]}
-                                    alt="image"
-                                    className="flex-1 max-w-[30%] md:w-[205px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                                <img
-                                    src={desktopImages[5]}
-                                    alt="image"
-                                    className="flex-1 max-w-[45%] md:w-[467px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="w-full flex gap-1 md:gap-5 justify-between items-center">
-                                <img
-                                    src={desktopImages[6]}
-                                    alt="image"
-                                    className="flex-1 max-w-[45%] md:w-[467px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                                <img
-                                    src={desktopImages[7]}
-                                    alt="image"
-                                    className="flex-1 max-w-[30%] md:w-[205px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                                <img
-                                    src={desktopImages[8]}
-                                    alt="image"
-                                    className="flex-1 max-w-[45%] md:w-[467px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="w-full flex gap-1 md:gap-5 justify-between items-center">
-                                <img
-                                    src={desktopImages[9]}
-                                    alt="image"
-                                    className="flex-1 max-w-[45%] md:w-[467px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                                <img
-                                    src={desktopImages[10]}
-                                    alt="image"
-                                    className="flex-1 max-w-[30%] md:w-[205px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                                <img
-                                    src={desktopImages[11]}
-                                    alt="image"
-                                    className="flex-1 max-w-[45%] md:w-[467px] h-[190px] md:h-[362px] object-cover rounded-lg"
-                                />
-                            </div>
-                        </SwiperSlide>
-                    </Swiper>
-                </div>
+                      Get Service
+                    </motion.button>
+                  </motion.div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
+      </div>
 
-            </div>
-        </section>
-    );
-};
-
-export default WebSolutions;
+      <style >{`
+        .swiper-pagination-bullet {
+          background: rgba(106, 255, 250, 0.3);
+          transition: all 0.3s ease;
+        }
+        
+        .swiper-pagination-bullet-active {
+          background: #6afffa;
+          transform: scale(1.2);
+        }
+        
+        .mySwiper {
+          padding-bottom: 50px;
+        }
+      `}</style>
+    </section>
+  )
+}
