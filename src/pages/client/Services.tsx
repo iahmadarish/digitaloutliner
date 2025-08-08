@@ -125,7 +125,7 @@ const ServicesPage = () => {
               <div className="absolute -top-10 -right-10 w-64 h-64  rounded-full blur-3xl"></div>
               <div className="relative rounded-2xl overflow-hidden  shadow-2xl">
                 <img
-                  src="/src/assets/bg-elements/DotsWithLines_illustration_UseBackgroundTurquoise_RGB.svg"
+                  src="/sbg2.png"
                   alt="Digital solutions"
                   className="w-full h-auto object-cover"
                 />
