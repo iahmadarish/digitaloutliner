@@ -16,14 +16,12 @@ import {
   Cloud,
   Lock,
   Settings,
-  MessageSquare,
   Award,
   Cog,
   Lightbulb
 } from 'lucide-react';
 import { motion, useScroll } from 'framer-motion';
 import { useRef, useState } from 'react';
-import image from "@/assets/bg-elements/transparent_png-randstad_operational_tech_illustration_10_rgb_usebackgroundnavy.png"
 import { Link } from 'react-router-dom';
 import ServiceModal from "@/components/solutions/ServiceModal"
 import { type Service } from '../../types/service'; // Adjust path as needed
@@ -42,21 +40,44 @@ export default function Solutions() {
 
 
   const services = [
+
     {
       icon: <DollarSign className="w-6 h-6" />,
       title: "Cost Reduction",
-      shortDescription: "Cut expenses while retaining quality.",
-      fullDescription: "Our strategic outsourcing solutions can reduce your operational costs by up to 60% while maintaining or even improving quality standards. We achieve this through optimized processes, competitive labor markets, and eliminating overhead expenses. Our cost-efficient model enables sustainable growth for your business without compromising on deliverables.",
+
+      shortDescription: "Maximize savings without sacrificing quality by leveraging strategic outsourcing, process automation, and global talent to achieve significant cost reductions and sustainable business growth.",
+
+      fullDescription: "Our strategic outsourcing and process optimization solutions empower businesses to cut operational expenses by up to 60%—while sustaining or even elevating product and service quality. By leveraging global talent pools, advanced automation tools, and data-driven process improvements, we help you eliminate waste, reduce inefficiencies, and achieve more with less. We focus on lowering payroll, infrastructure, and administrative costs without compromising speed, performance, or client satisfaction. Whether you're scaling rapidly, stabilizing your budget, or navigating market fluctuations, our cost-efficient models ensure sustainable growth and profitability.",
+
       benefits: [
-        "Reduced payroll and infrastructure costs",
-        "Pay-as-you-go pricing models",
-        "No recruitment or training expenses",
-        "Lower operational overhead"
+        "Up to 60% reduction in operational expenses",
+        "Access to global, highly-skilled talent at competitive rates",
+        "Pay-as-you-go pricing with zero hidden charges",
+        "No recruitment, onboarding, or training costs",
+        "Reduced payroll, infrastructure, and maintenance expenses",
+        "Enhanced efficiency through process automation",
+        "Improved ROI without lowering service quality"
       ],
       useCases: [
-        "Startups needing lean operations",
-        "Enterprises optimizing budgets",
-        "Seasonal businesses requiring flexibility"
+        "Startups needing lean and agile operations",
+        "Enterprises optimizing departmental budgets",
+        "Seasonal or project-based businesses requiring scalability",
+        "Companies shifting from in-house to hybrid or remote models",
+        "Organizations undergoing digital transformation to improve efficiency"
+      ],
+
+      strategyHighlights: [
+        "Data-driven process optimization to eliminate inefficiencies",
+        "Utilizing advanced software tools for task automation",
+        "Shifting non-core functions to specialized remote teams",
+        "Negotiating better vendor contracts through strategic partnerships"
+      ],
+      industriesServed: [
+        "E-commerce & Retail",
+        "IT & Software Development",
+        "Customer Support & BPO",
+        "Marketing & Creative Services",
+        "Logistics & Supply Chain"
       ],
       images: [
         {
@@ -70,25 +91,48 @@ export default function Solutions() {
         {
           url: "https://i.ibb.co/S7mm6VTd/Group-13-3.png",
           caption: "Cost-effective remote team setup"
+        },
+        {
+          url: "https://www.pragmatica.ch/wp-content/uploads/2024/02/workflow-optimization-process-automation-pragmatica.png",
+          caption: "Optimized workflow for reduced expenses"
         }
       ]
     },
+
     {
       icon: <Clock className="w-6 h-6" />,
       title: "24/7 Operations",
-      shortDescription: "Support around the clock.",
-      fullDescription: "We provide seamless 24/7/365 operations through our global delivery centers across multiple time zones. Our follow-the-sun model ensures your business never stops, with continuous workflows and always-available customer support. Whether you need night shifts, weekend coverage, or holiday support, we've got you covered with consistent quality at all hours.",
+      shortDescription: "Reliable, round-the-clock support to keep your business running without pause. Our 24/7/365 operations ensure that your business never sleeps.",
+      fullDescription: "Our 24/7/365 operations ensure that your business never sleeps. Through strategically positioned global delivery centers across multiple time zones, we follow a seamless 'follow-the-sun' model—providing uninterrupted workflows, instant response times, and consistent service quality. Whether it’s night shifts, weekends, or public holidays, our team ensures you have operational coverage exactly when you need it. From customer support to IT monitoring, we deliver constant oversight and rapid resolutions, enabling your business to serve clients worldwide without downtime.",
+
       benefits: [
-        "Reduced response times for customers",
-        "Faster project turnaround",
-        "Continuous monitoring and support",
-        "Global market coverage"
+        "Round-the-clock operational coverage for any time zone",
+        "Significantly reduced response and resolution times",
+        "Faster project delivery with continuous workflows",
+        "Improved customer satisfaction through 24/7 accessibility",
+        "Ability to serve global markets without operational gaps",
+        "Proactive issue detection through continuous monitoring"
       ],
       useCases: [
-        "Customer support centers",
-        "IT operations monitoring",
-        "Emergency response services",
-        "Global e-commerce businesses"
+        "Customer support and helpdesk services",
+        "IT operations and infrastructure monitoring",
+        "Emergency response teams",
+        "Global e-commerce and online marketplaces",
+        "Healthcare and telemedicine support",
+        "Financial and banking services requiring non-stop oversight"
+      ],
+      strategyHighlights: [
+        "Follow-the-sun operational model for seamless coverage",
+        "Dedicated night, weekend, and holiday shifts",
+        "Multilingual support teams for global customers",
+        "Real-time performance monitoring and escalation protocols"
+      ],
+      industriesServed: [
+        "E-commerce & Retail",
+        "Information Technology",
+        "Telecommunications",
+        "Healthcare & Medical Support",
+        "Banking & Financial Services"
       ],
       images: [
         {
@@ -105,22 +149,43 @@ export default function Solutions() {
         }
       ]
     },
+
     {
       icon: <Users className="w-6 h-6" />,
       title: "Skilled Workforce",
-      shortDescription: "Top talent with domain expertise.",
-      fullDescription: "Access our curated network of highly trained professionals with deep industry knowledge and specialized skills. We rigorously vet all candidates through technical assessments, language proficiency tests, and cultural fit evaluations. Our talent pool includes experts across IT, healthcare, finance, engineering, and more - ready to integrate with your team and deliver exceptional results.",
+      shortDescription: "Access elite talent with proven expertise to drive your business forward. Access our curated network of highly trained professionals with deep industry knowledge and specialized skills.",
+      fullDescription: "Gain immediate access to a curated network of highly skilled professionals with deep domain knowledge and specialized capabilities. Every candidate undergoes a rigorous vetting process, including technical assessments, language proficiency tests, and cultural compatibility evaluations. From IT and engineering to healthcare, finance, and customer experience, our workforce integrates seamlessly into your operations, ensuring productivity from day one. Whether you need short-term project specialists or long-term dedicated teams, our talent pool delivers measurable impact and exceptional results.",
+
       benefits: [
-        "Specialized skills on demand",
-        "Reduced hiring risks",
-        "Faster time-to-productivity",
-        "Continuous performance monitoring"
+        "On-demand access to specialized skills",
+        "Reduced recruitment time and hiring risks",
+        "Faster integration and time-to-productivity",
+        "Continuous skills development and performance monitoring",
+        "Scalable teams tailored to project requirements",
+        "Cost savings compared to traditional hiring models"
       ],
       useCases: [
         "Technical projects requiring niche expertise",
-        "Business process outsourcing",
-        "Knowledge-intensive tasks",
-        "Specialized customer support"
+        "Knowledge-intensive business processes",
+        "Specialized customer service teams",
+        "Healthcare and medical support services",
+        "Financial analysis and compliance projects",
+        "Engineering and R&D initiatives"
+      ],
+
+      strategyHighlights: [
+        "Rigorous multi-step vetting process for talent selection",
+        "Continuous training and upskilling programs",
+        "Industry-specific team formation for faster results",
+        "Dedicated account managers to ensure seamless collaboration"
+      ],
+
+      industriesServed: [
+        "Information Technology",
+        "Healthcare & Medical",
+        "Finance & Banking",
+        "Engineering & Manufacturing",
+        "E-commerce & Customer Support"
       ],
       images: [
         {
@@ -138,22 +203,43 @@ export default function Solutions() {
       ]
 
     },
+
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: "Scalability",
-      shortDescription: "Grow your team on-demand.",
-      fullDescription: "Scale your operations up or down dynamically with our flexible staffing solutions. Respond to market demands, seasonal peaks, or project requirements without the delays and costs of traditional hiring. Our elastic workforce model allows you to maintain optimal staffing levels with no fixed overheads or long-term commitments.",
+      shortDescription: "Expand or streamline your workforce instantly to match business demands. Scale your operations up or down dynamically with our flexible staffing solutions.",
+
+      fullDescription: "Our scalable staffing solutions allow you to adjust your team size quickly and efficiently, enabling you to meet changing market demands, seasonal surges, or short-term project needs without the burden of traditional hiring processes. Whether you’re launching a new product, expanding into new markets, or handling a sudden increase in workload, our elastic workforce model ensures you always have the right talent in place. With no fixed overheads or long-term commitments, you maintain agility while focusing on growth and innovation.",
       benefits: [
-        "Rapid team expansion when needed",
-        "Right-size during slow periods",
-        "No HR administrative burden",
-        "Access to multiple skill sets"
+        "Rapid team expansion during peak demand",
+        "Right-size operations during slow periods",
+        "Zero HR administrative overhead",
+        "Access to diverse skill sets on short notice",
+        "Reduced time-to-market for new projects",
+        "Flexible contracts with cost efficiency"
       ],
+
       useCases: [
-        "Seasonal businesses",
-        "Project-based work",
-        "Startups in growth phase",
-        "Product launches and campaigns"
+        "Seasonal or holiday-driven businesses",
+        "Large-scale product launches and marketing campaigns",
+        "Project-based assignments requiring specialized teams",
+        "Startups in rapid growth phases",
+        "Temporary coverage for employee absences"
+      ],
+
+      strategyHighlights: [
+        "On-demand workforce deployment",
+        "Multi-skill talent pool to meet diverse needs",
+        "Scalable from single hires to full project teams",
+        "Short-term or long-term engagement flexibility"
+      ],
+
+      industriesServed: [
+        "E-commerce & Retail",
+        "Marketing & Advertising",
+        "Information Technology",
+        "Events & Hospitality",
+        "Manufacturing & Logistics"
       ],
       images: [
         {
@@ -170,10 +256,11 @@ export default function Solutions() {
         }
       ]
     },
+
     {
       icon: <Shield className="w-6 h-6" />,
       title: "Data Security",
-      shortDescription: "High-standard compliance and safety.",
+      shortDescription: "Enterprise-grade protection with strict compliance standards, ensuring your data remains secure, private, and fully compliant with global regulations.",
       fullDescription: "Your sensitive data is protected with our enterprise-grade security protocols. We implement ISO 27001 certified processes, regular penetration testing, and comprehensive staff training. Our facilities feature biometric access controls, encrypted communications, and strict need-to-know policies to ensure complete confidentiality and compliance with GDPR, HIPAA, and other regulations.",
       benefits: [
         "Reduced security risks",
@@ -187,25 +274,35 @@ export default function Solutions() {
         "Legal document handling",
         "Confidential business operations"
       ],
+      strategyHighlights: [
+        "ISO 27001 certified security frameworks",
+        "Continuous vulnerability assessments",
+        "Employee security awareness training",
+        "Encrypted data transmission and storage"
+      ],
+      industriesServed: [
+        "Healthcare & Medical",
+        "Finance & Banking",
+        "Legal & Compliance",
+        "Technology & Software",
+        "Government & Public Sector"
+      ],
       images: [
         {
           url: "https://images.unsplash.com/photo-1740477959006-798042a324aa?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Security / Data / Protection
           caption: "Data encryption processes"
         },
         {
-          url: "https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg", // Compliance / Audit / Documents
-          caption: "Security compliance certification"
-        },
-        {
-          url: "https://images.pexels.com/photos/6044932/pexels-photo-6044932.jpeg", // Cybersecurity / Server / Firewall
+          url: "https://www.cisco.com/content/dam/cisco-cdc/site/images/legacy/assets/swa/img/anchor-info/what-is-network-infrastructure-info-628x353.jpg", 
           caption: "Network security infrastructure"
         }
       ]
     },
+
     {
       icon: <Target className="w-6 h-6" />,
       title: "Focus on Core",
-      shortDescription: "Let us handle the routine.",
+      shortDescription: "We handle routine operations so your team can prioritize strategic growth and innovation.",
       fullDescription: "Free up your internal resources from time-consuming operational tasks and redirect your energy toward strategic initiatives. We take care of the day-to-day execution so your team can concentrate on innovation, business development, and customer relationships. Our partnership approach ensures alignment with your core objectives while we manage the operational details.",
       benefits: [
         "Increased leadership bandwidth",
@@ -218,6 +315,19 @@ export default function Solutions() {
         "Innovation-driven companies",
         "Businesses undergoing transformation",
         "Teams with limited bandwidth"
+      ],
+      strategyHighlights: [
+        "Delegation of routine tasks to experts",
+        "Customized operational workflows",
+        "Seamless integration with your teams",
+        "Continuous performance monitoring and reporting"
+      ],
+      industriesServed: [
+        "Technology & SaaS",
+        "Financial Services",
+        "Healthcare",
+        "Manufacturing",
+        "Consulting & Professional Services"
       ],
       images: [
         {
@@ -234,6 +344,7 @@ export default function Solutions() {
         }
       ]
     }
+
   ];
   const benefits = [
     {
@@ -299,23 +410,6 @@ export default function Solutions() {
     { name: "Process Optimization", icon: <Settings className="w-6 h-6" /> }
   ];
 
-  const testimonials = [
-    {
-      quote: "Their BPO services transformed our customer support operations, reducing response times by 40% while improving satisfaction scores.",
-      author: "Sarah Johnson",
-      role: "COO, FinTech Solutions"
-    },
-    {
-      quote: "The seamless transition to their accounting services saved us over $200k annually in operational costs.",
-      author: "Michael Chen",
-      role: "CFO, Retail Chain"
-    },
-    {
-      quote: "Their multilingual support team helped us expand into 3 new markets without hiring additional staff.",
-      author: "Emma Rodriguez",
-      role: "Director of Operations, SaaS Company"
-    }
-  ];
 
 
 
@@ -360,7 +454,7 @@ export default function Solutions() {
             <div className="flex  sm:flex-row gap-2">
               <Link to="/contact">
                 <button className="bg-[#021688] hover:bg-blue-700 text-[#ffffff] px-8 py-4 rounded-lg font-semibold text-xs sm:text-lg transition-all duration-300 flex items-center gap-2">
-                  Get Started <ArrowRight className="w-5 h-5" /> 
+                  Get Started <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
 
@@ -381,7 +475,7 @@ export default function Solutions() {
             transition={{ duration: 0.8 }}
           >
             <img
-              src={image}
+              src="https://www.pragmatica.ch/wp-content/uploads/2024/02/workflow-optimization-process-automation-pragmatica.png"
               alt="Business Collaboration"
               className="rounded-xl "
             />
@@ -390,9 +484,8 @@ export default function Solutions() {
       </section>
 
       {/* Services Section */}
-      <div className="bg-[#06140b]">
-
-        <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto  ">
+      <div className="bg-[url(/solss.jpg)] bg-cover bg-center font-barlow">
+        <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -400,9 +493,11 @@ export default function Solutions() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-semibold mb-4 text-[#ffffff] text-start sm:text-center">Our Solutions </h2>
-            <p className="sm:text-xl text-start text-sm text-[#ffffff] max-w-3xl sm:mx-auto">
-              Discover our tailored services designed to meet your operational goals. We are new lunch in this sector, but We have extreme experience work with reputed company.
+            <h2 className="text-5xl font-semibold mb-4 text-black text-start sm:text-center">
+              Our Solutions
+            </h2>
+            <p className="sm:text-xl sm:text-center text-start text-sm text-black max-w-3xl sm:mx-auto">
+              Discover our tailored services designed to meet your operational goals. We may be newly launched in this sector, but we bring extensive experience working with reputed companies.
             </p>
           </motion.div>
 
@@ -414,17 +509,17 @@ export default function Solutions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg hover:border-blue-500 transition-all group flex flex-col"
+                className="border bg-white/70 border-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg hover:border-blue-500 transition-all group flex flex-col"
               >
                 <div className="text-blue-400 mb-4 group-hover:text-blue-300 transition-colors">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-[#ffffff] mb-2">{service.title}</h3>
-                <p className="text-[#ffffff] text mb-4 flex-grow">{service.shortDescription}</p>
+                <h3 className="text-xl font-semibold text-black mb-2">{service.title}</h3>
+                <p className="text-black mb-4 flex-grow">{service.shortDescription}</p>
                 <div className="mt-auto">
                   <button
                     onClick={() => openModal(service)}
-                    className="text-blue-400 hover:text-blue-300 font-medium flex items-center group-hover:underline transition-all"
+                    className="text-black hover:text-blue-300 font-medium flex items-center group-hover:underline transition-all"
                   >
                     Learn More
                     <svg
@@ -664,45 +759,6 @@ export default function Solutions() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-      </div>
-
-      {/* Testimonials Section */}
-
-      <div className="hidden bg-[#06140b]">
-        <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto  rounded-3xl ">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Success Stories</h2>
-            <p className="text-xl text-[#ffffff] max-w-3xl mx-auto">
-              Hear what our clients say about our BPO services
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-800/30 p-8 rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
-              >
-                <MessageSquare className="w-8 h-8 text-blue-400 mb-4" />
-                <p className="text-[#ffffff] italic mb-6">"{testimonial.quote}"</p>
-                <div>
-                  <p className="font-semibold">{testimonial.author}</p>
-                  <p className="text-sm text-[#ffffff]">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </section>
       </div>

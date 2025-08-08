@@ -9,6 +9,8 @@ interface Image {
 }
 
 interface Service {
+  industriesServed?: string[];
+  strategyHighlights?: string[];
   icon: ReactNode;
   title: string;
   fullDescription: string;
@@ -27,28 +29,28 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
   if (!service) return null;
 
   return (
-    <Dialog open={isOpen} onClose={onClose} className="fixed inset-0 z-50 overflow-y-auto">
-      <div className="min-h-screen px-4 text-center bg-[#06140b]/60">
+    <Dialog open={isOpen} onClose={onClose} className="fixed inset-0 z-50 overflow-y-auto font-barlow">
+      <div className="min-h-screen px-4 text-center bg-[#06140b]/70">
         <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-        <Dialog.Panel className="inline-block w-full max-w-4xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-gray-900 text-white shadow-xl rounded-2xl border border-gray-700">
+        <Dialog.Panel className="inline-block w-full max-w-7xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-gray-900 text-white shadow-xl rounded-2xl border border-gray-700">
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center space-x-4">
               <div className="text-blue-400">{service.icon}</div>
               <Dialog.Title className="text-2xl font-semibold">{service.title}</Dialog.Title>
             </div>
-            <button 
-              onClick={onClose} 
+            <button
+              onClick={onClose}
               className="p-1 rounded-full hover:bg-gray-700 transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column - Text Content */}
             <div className="lg:col-span-2">
               <p className="text-gray-300 mb-6 text-sm sm:text-lg">{service.fullDescription}</p>
-              
+
               {service.benefits && (
                 <div className="mb-6">
                   <h4 className="text-xl font-medium text-white mb-3">Key Benefits</h4>
@@ -64,14 +66,14 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
                   </ul>
                 </div>
               )}
-              
+
               {service.useCases && (
                 <div className="mb-6">
                   <h4 className="text-xl font-medium text-white mb-3">Ideal For</h4>
                   <div className="flex flex-wrap gap-2">
                     {service.useCases.map((useCase: string, i: number) => (
-                      <span 
-                        key={i} 
+                      <span
+                        key={i}
                         className="px-3 py-1 bg-gray-800 rounded-lg text-sm text-gray-100 border border-gray-700"
                       >
                         {useCase}
@@ -80,8 +82,37 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
                   </div>
                 </div>
               )}
+
+              {service.strategyHighlights && service.strategyHighlights.length > 0 && (
+                <div className="mb-6">
+                  <h4 className="text-xl font-medium text-white mb-3">Our Strategy</h4>
+                  <ul className="list-disc list-inside space-y-1 text-white text-sm sm:text-md">
+                    {service.strategyHighlights.map((point: string, i: number) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {service.industriesServed && service.industriesServed.length > 0 && (
+                <div className="mb-6">
+                  <h4 className="text-xl font-medium text-white mb-3">Industries Served</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {service.industriesServed.map((industry: string, i: number) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-gray-800 rounded-lg text-sm text-gray-100 border border-gray-700"
+                      >
+                        {industry}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+
             </div>
-            
+
             {/* Right Column - Images with Captions */}
             <div className="lg:col-span-1">
               <h4 className="text-xl font-medium text-white mb-4">Insights</h4>
@@ -89,9 +120,9 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
                 {service.images?.map((img: Image, i: number) => (
                   <div key={i} className="group">
                     <div className="relative rounded-lg overflow-hidden bg-gray-800 border border-gray-700">
-                      <img 
-                        src={img.url} 
-                        alt={img.caption} 
+                      <img
+                        src={img.url}
+                        alt={img.caption}
                         className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                         loading="lazy"
                       />
@@ -104,7 +135,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
               </div>
             </div>
           </div>
-          
+
           <div className="mt-8 flex justify-end">
             <button
               onClick={onClose}

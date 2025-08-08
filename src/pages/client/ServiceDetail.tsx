@@ -278,7 +278,7 @@ const ServiceDetail = () => {
   ]
 
   return (
-    <div className="min-h-screen sm:bg-[#06140b] bg-[#141313] text-gray-100">
+    <div className="min-h-screen  text-gray-100">
       <ScrollToTop />
       {/* Floating Navigation */}
       <motion.nav
