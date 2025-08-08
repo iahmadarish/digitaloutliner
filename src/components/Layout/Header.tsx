@@ -68,26 +68,18 @@ const CONQUERICNavbar = () => {
   return (
     <>
       <header
-        className={`fixed  top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#06140b] backdrop-blur-md shadow-lg" : "bg-transparent backdrop-blur-sm"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#06140b] backdrop-blur-md shadow-lg" : "bg-transparent backdrop-blur-sm"
           }`}
         style={{
           transform: `translateY(${visible ? 0 : -100}px)`,
           transition: "transform 0.3s ease-in-out"
         }}
       >
-        {/* Main Header Row */}
         <div className="border-b border-cyan-400/30">
           <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-4 lg:py-4">
             <div className="flex justify-between items-center">
-              {/* Contact Us Button - Left Side (Desktop) */}
-              <div className="hidden lg:flex items-center">
-                <button className="px-4 py-2 border border-blue-500 rounded-md text-white text-sm lg:text-base font-medium hover:bg-white/10 transition-colors duration-200">
-                  Contact Us
-                </button>
-              </div>
-
-              {/* CONQUERIC Logo - Center */}
-              <div className="absolute  left-1/5 transform -translate-x-1/5 lg:static lg:left-auto lg:transform-none">
+              {/* Logo - Left Side */}
+              <div className="flex items-center">
                 <Link to="/" className="block">
                   <img
                     src={logo}
@@ -97,39 +89,8 @@ const CONQUERICNavbar = () => {
                 </Link>
               </div>
 
-              {/* Contact Info - Right Side (Desktop) */}
-              <div className="hidden lg:flex flex-col items-end">
-                <span className="text-white/90 text-sm lg:text-base font-medium">
-                  info@conqueric.com
-                </span>
-                <span className="text-white/70 text-xs lg:text-sm">
-                  +880 1533-504728
-                </span>
-              </div>
-
-              {/* Mobile menu button */}
-              <div className="lg:hidden z-50 ml-auto">
-                <button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="p-2 rounded-full transition-colors hover:bg-white/10"
-                  aria-label="Toggle menu"
-                >
-                  {isMenuOpen ? (
-                    <X className="h-6 w-6 text-white" />
-                  ) : (
-                    <Menu className="h-6 w-6 text-white" />
-                  )}
-                </button>
-              </div>
-            </div>
-          </nav>
-        </div>
-
-        {/* Navigation Row - Desktop Only */}
-        <div className="hidden lg:block border-b border-cyan-400/30 font-nunito uppercase">
-          <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-2">
-            <div className="flex justify-center items-center">
-              <div className="flex items-center space-x-8 lg:space-x-12 pt-6">
+              {/* Desktop Navigation */}
+              <div className="hidden lg:flex items-center space-x-8 lg:space-x-12">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -142,6 +103,28 @@ const CONQUERICNavbar = () => {
                     {item.name}
                   </Link>
                 ))}
+              </div>
+
+              {/* Contact Us Button - Right Side */}
+              <div className="flex items-center">
+                <button className="hidden lg:block px-4 py-2 border border-blue-500 rounded-md text-white text-sm lg:text-base font-medium hover:bg-white/10 transition-colors duration-200">
+                  Contact Us
+                </button>
+                
+                {/* Mobile menu button */}
+                <div className="lg:hidden z-50 ml-4">
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="p-2 rounded-full transition-colors hover:bg-white/10"
+                    aria-label="Toggle menu"
+                  >
+                    {isMenuOpen ? (
+                      <X className="h-6 w-6 text-white" />
+                    ) : (
+                      <Menu className="h-6 w-6 text-white" />
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
           </nav>
@@ -200,7 +183,6 @@ const CONQUERICNavbar = () => {
                         }`}
                     >
                       <div className="flex items-center gap-x-2">
-
                         {item.name}
                       </div>
                     </Link>
@@ -267,4 +249,4 @@ const CONQUERICNavbar = () => {
   )
 }
 
-export default CONQUERICNavbar 
+export default CONQUERICNavbar

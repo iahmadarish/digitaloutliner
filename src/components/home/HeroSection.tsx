@@ -18,7 +18,7 @@ const HeroSection = () => {
           >
             <div className="space-y-6">
               <h1 className="text-3xl font-nunito lg:text-4xl xl:text-5xl  font-light text-[#2dfff1] leading-tight">
-                Go Global with Your Online Shop! It's Time to Conquer the E-commerce World
+                Explore Global with Your Digital Business! It's Time to Conquer the Digital World 
               </h1>
               
               <div className="w-20 h-1 bg-white" aria-hidden="true"></div>

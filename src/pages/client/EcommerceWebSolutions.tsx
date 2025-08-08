@@ -7,7 +7,7 @@ const EcommerceWebSolutions = () => {
 
   const slides = [
     {
-      title: "Seamless Omnichannel Selling",
+      title: "Get maximum order than your competitors",
       subtitle: "Unify your online and offline sales",
       description: "Integrate your physical store with your e-commerce platform for real-time inventory and sales synchronization.",
       image: "/hero/esl2.jpg",
@@ -48,27 +48,27 @@ const EcommerceWebSolutions = () => {
     {
       icon: Smartphone,
       title: "Mobile-First Experience",
-      description: "Optimized for smartphones and tablets to ensure a flawless shopping journey on any device."
+      description: "In the era of AI and mobile apps, our web solutions empower you to manage every type of user with ease. Our websites are fully optimized for smartphones and tablets, ensuring a flawless shopping experience on any device."
     },
     {
       icon: Globe,
       title: "Ready for Global Expansion",
-      description: "Seamlessly sell worldwide with multi-language, multi-currency, and localized checkout options."
+      description: "Seamlessly sell worldwide with multi-language (বাংলা/English/ Others) support, multi-currency pricing, and localized checkout options."
     },
     {
       icon: Zap,
       title: "Ultra-Fast Performance",
-      description: "Blazing-fast load times and optimized performance for a smooth and responsive experience."
+      description: "Blazing-fast load times and optimized performance for a smooth and responsive experience. Lightning-Fast Performance — Experience instant loading and seamless responsiveness on every device."
     },
     {
       icon: Shield,
       title: "Secure & Trustworthy Payments",
-      description: "Fully PCI-DSS compliant with robust fraud protection and support for global payment gateways."
+      description: "Fully PCI-DSS compliant with robust fraud protection and support for global payment gateways. Secure & Trustworthy Payments — Fully PCI-DSS compliant with advanced fraud protection and support for global payment gateways."
     },
     {
       icon: BarChart2,
       title: "Actionable Analytics",
-      description: "Track performance in real time and make data-driven decisions with built-in reporting tools."
+      description: "Track performance in real time and make data-driven decisions with built-in reporting tools. Actionable Analytics — Track performance in real time and make data-driven decisions with powerful built-in reporting tools."
     }
   ];
 
@@ -277,7 +277,7 @@ const EcommerceWebSolutions = () => {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 font-barlow">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

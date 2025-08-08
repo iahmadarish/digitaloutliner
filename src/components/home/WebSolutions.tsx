@@ -29,19 +29,19 @@ export default function WebSolutions() {
   }
   return (
     <section className="bg-[#06140b] text-white py-16 px-4">
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="container mx-auto text-center">
         <motion.h2 
-          className="text-3xl md:text-5xl font-semibold mb-4 text-left"
+          className="text-3xl md:text-5xl font-light mb-4 text-left"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          The one commerce platform behind it all
+          Your Entire Business, One Powerful Platform.
         </motion.h2>
         
         <motion.p 
-          className="text-xl md:text-2xl text-gray-400 mb-12 text-left"
+          className="text-xl md:text-6xl  text-gray-200 mb-12 font-light text-left font-barlow tracking-[1px]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -52,16 +52,31 @@ export default function WebSolutions() {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            Sell in-store and online |
+            Sell Your Product in online ?
           </motion.span>{" "}
           <motion.span 
             className="hover:text-[#6afffa]"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            Sell near and far |
+            Sell near and far ?
           </motion.span>{" "}
-          Sell B2C and B2B. Sell on mobile or desktop.
+          <motion.span 
+            className="hover:text-[#6afffa]"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            Sell B2C and B2B ?
+          </motion.span>{" "}
+          <motion.span 
+            className="hover:text-[#6afffa]"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+           Sell on mobile or desktop ?
+          </motion.span>{" "}
+
+        
         </motion.p>
 
         <motion.div
@@ -83,7 +98,7 @@ export default function WebSolutions() {
                 slidesPerView: 1.5,
               },
               768: {
-                slidesPerView: 3.5,
+                slidesPerView: 3,
               },
             }}
             coverflowEffect={{
@@ -126,18 +141,18 @@ export default function WebSolutions() {
                   
                   {/* Get Service Button */}
                   <motion.div
-                    className="absolute inset-0 flex items-center justify-center"
+                    className="absolute inset-0 flex items-center justify-center font-barlow"
                     initial={{ opacity: 0, y: 20 }}
                     whileHover={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
                   >
                     <motion.button
-                      className="bg-[#6afffa] text-[#06140b] px-6 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      className="bg-[#141515] text-[#ffffff] px-6 py-3 rounded-lg font-light text-lg shadow-lg hover:shadow-xl transform opacity-0 group-hover:opacity-100 transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={handleServiceClick}
                     >
-                      Get Service
+                      Get Offer
                     </motion.button>
                   </motion.div>
                 </motion.div>

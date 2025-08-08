@@ -62,14 +62,8 @@ let ecommerceVideo = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533
                 CONQUERIC E-commerce Solutions
               </div>
 
-              <h1 className="text-2xl sm:text-5xl md:text-6xl xl:text-7xl font-light text-white leading-[0.9] tracking-tight">
-                Reach customers
-                <span className="block text-transparent bg-clip-text bg-[#fff]">
-                  anywhere.
-                </span>
-                <span className="block text-xl sm:text-2xl md:text-3xl xl:text-4xl font-light text-[#8becff] mt-4">
-                  Build loyalty everywhere.
-                </span>
+              <h1 className="text-2xl sm:text-5xl md:text-6xl xl:text-5xl font-light text-white leading-[0.9] tracking-tight">
+                Reach customers  anywhere. Build loyalty everywhere.
               </h1>
             </motion.div>
 

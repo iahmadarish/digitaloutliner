@@ -83,7 +83,7 @@ const ServiceListingTab = () => {
           <div className="">
             {/* Service Title */}
             <div className="mb-4">
-              <h3 className="text-xl md:text-4xl font-family-comfort font-bold leading-tight">{service.serviceType}</h3>
+              <h3 className="text-xl md:text-4xl font-family-comfort font-bold leading-tight text-shadow-regal-blue text-shadow-lg">{service.serviceType}</h3>
             </div>
 
             {/* Service Description */}
