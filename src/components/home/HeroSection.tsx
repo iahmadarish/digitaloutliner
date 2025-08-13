@@ -30,7 +30,7 @@ const HeroSection = () => {
 
             <motion.a
               href="services"
-              className="flex items-center gap-3 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="flex items-center gap-3 px-8 py-4 bg-transparent border border-[#1c89d6] text-[#ffffff] font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Explore our services"

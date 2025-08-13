@@ -161,29 +161,29 @@ export const services = [
     ]
     ,
     images: [
-      "https://www.mindinventory.com/blog/wp-content/uploads/2018/12/benefits-of-mobile-app-for-business.webp",
-      "https://d37hsi2hgurnr6.cloudfront.net/wp-content/uploads/2025/02/11142837/mobile-app-development-for-small-business.png",
+      "https://res.cloudinary.com/dseipjxgc/image/upload/v1752764047/construction-company/ncfroapko85r9bz0vxvq.png",
+      "https://res.cloudinary.com/dseipjxgc/image/upload/v1752764021/construction-company/ua9yajmg4ziblivu7rrh.png",
     ],
     features: [
       {
         title: "Cross-Platform Compatibility",
         content: "With cross-platform app development using Flutter and React Native, we help you launch your mobile app on both Android and iOS without building two separate codebases. This approach saves time and cost while ensuring a consistent user experience across platforms. Whether you're a startup or an enterprise, our developers build robust, scalable apps that run seamlessly on multiple devices and screen sizes.",
-        image: "https://img.freepik.com/free-photo/phone-app-development_53876-96391.jpg",
+        image: "https://res.cloudinary.com/dseipjxgc/image/upload/v1755096767/pexels-rdne-7947951_zm6rdy.jpg",
       },
       {
         title: "Native Performance & UX",
         content: "Our apps are designed to deliver true native performance using platform-optimized UI components and hardware acceleration. We tailor the user interface and experience to match platform-specific design guidelines, ensuring intuitive navigation and lightning-fast interactions. Whether you're developing for iOS with Swift or Android with Kotlin, our native app development experts prioritize responsiveness and user satisfaction.",
-        image: "https://img.freepik.com/free-photo/app-interface-design_1098-16295.jpg",
+        image: "https://res.cloudinary.com/dseipjxgc/image/upload/v1755096780/pexels-rpnickson-3082341_loybvo.jpg",
       },
       {
         title: "Real-Time Functionality",
         content: "We integrate real-time features like live chat, geolocation tracking, push notifications, and instant data synchronization using technologies such as Firebase, WebSockets, and MQTT. Real-time app development is crucial for logistics, ride-sharing, social media, and on-demand platforms, ensuring that your users receive immediate updates and interactions without delay.",
-        image: "https://img.freepik.com/free-photo/real-time-technology_53876-126054.jpg",
+        image: "https://res.cloudinary.com/dseipjxgc/image/upload/v1755096764/pexels-pixabay-278430_nygbgx.jpg",
       },
       {
         title: "Secure & Scalable Backend",
         content: "Our mobile apps are powered by secure, cloud-ready backend systems built with Node.js, Express, MongoDB, and Firebase. We follow industry best practices for backend development, including encrypted API communication, role-based authentication, and data validation. Whether you're handling 100 or 100,000 users, our architecture ensures your app remains fast, secure, and scalable.",
-        image: "https://img.freepik.com/free-photo/data-cloud-storage-system_23-2149394164.jpg",
+        image: "https://res.cloudinary.com/dseipjxgc/image/upload/v1755096762/pexels-pixabay-38544_ykj58p.jpg",
       },
     ],
     faq: [

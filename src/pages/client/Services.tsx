@@ -86,54 +86,45 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
 }
 
 const ServicesPage = () => {
-  const [projectInput, setProjectInput] = useState("")
 
   return (
     <div className="bg-[#06140b] font-nunito text-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden sm:py-20">
-        <div className="absolute inset-0 bg-[url('/src/assets/bg-elements/')] bg-cover opacity-15"></div>
-        <div className="container mx-auto px-6 py-24 md:py-32 lg:py-40 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-block bg-blue-900/20 text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                Digital Excellence
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Transform Your <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Digital Presence</span>
-              </h1>
-              <p className="text-lg text-gray-400 mb-8 max-w-lg">
-                We craft exceptional digital experiences that drive growth, engagement, and measurable results for your business.
-              </p>
+<div className="relative overflow-hidden sm:py-20">
+  <div className="absolute inset-0 bg-[url('/src/assets/bg-elements/')] bg-cover opacity-15"></div>
+  <div className="container mx-auto px-6 py-24 md:py-32 lg:py-30 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div className="inline-block bg-blue-900/20 text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          Digital Excellence • Trusted Team
+        </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 max-w-xl">
-                <input
-                  type="text"
-                  placeholder="Describe your project..."
-                  value={projectInput}
-                  onChange={(e) => setProjectInput(e.target.value)}
-                  className="flex-1 px-6 py-4 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                />
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-all flex items-center justify-center whitespace-nowrap">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
-              </div>
-            </div>
+        {/* H1 — choose one of the H1 options above, here using the recommended */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Build Stunning <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Digital Platform</span> That Grow Your Business
+        </h1>
 
-            <div className="relative">
-              <div className="absolute -top-10 -right-10 w-64 h-64  rounded-full blur-3xl"></div>
-              <div className="relative rounded-2xl overflow-hidden  shadow-2xl">
-                <img
-                  src="/sbg2.png"
-                  alt="Digital solutions"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-          </div>
+        <p className="text-lg text-gray-400 mb-8 max-w-lg">
+          We design and develop responsive websites, high-performance mobile apps, exceptional graphics, and photoreal 3D visuals — backed by reliable BPO support to scale your operations.
+        </p>
+
+
+      </div>
+
+      <div className="relative">
+        <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full blur-3xl"></div>
+        <div className="relative rounded-2xl overflow-hidden">
+          <img
+            src="transparent_png-randstad_professional_tech_illustration_09_rgb_usebackgroundwhite_0.png"
+            alt="Illustration showing web, mobile, and 3D design workflow"
+            className="w-full h-auto object-cover"
+          />
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Services Section */}
       <div className="py-20 bg-[#06140b] relative">
