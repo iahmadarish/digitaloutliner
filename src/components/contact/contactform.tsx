@@ -47,7 +47,7 @@ export default function ModernContactForm() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mb-6 shadow-lg">
             <MessageSquare className="h-8 w-8 text-white" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-4">
+          <h1 className="text-5xl md:text-6xl font- text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-4">
             Let's Connect
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -58,7 +58,7 @@ export default function ModernContactForm() {
         <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
+            <div className="bg-/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
               <div className="flex items-center mb-8">
                 <div className="bg-gradient-to-r from-emerald-400 to-cyan-500 p-3 rounded-full mr-4">
                   <Send className="h-6 w-6 text-white" />
@@ -117,7 +117,7 @@ export default function ModernContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 hover:bg-white/20 text-white placeholder-gray-300"
+                      className="w-full px-4 py-4 bg-/10 backdrop-blur-md border border-white/20 rounded-xl focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 hover:bg-white/20 text-white placeholder-gray-300"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -153,7 +153,7 @@ export default function ModernContactForm() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-300 hover:bg-white/20 text-white placeholder-gray-300 resize-none"
+                    className="w-full px-4 py-4 bg-/10 backdrop-blur-md border border-white/20 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-300 hover:bg-white/20 text-white placeholder-gray-300 resize-none"
                     placeholder="Tell us about your project, ideas, or any questions you have..."
                   ></textarea>
                 </div>
@@ -183,14 +183,14 @@ export default function ModernContactForm() {
           {/* Contact Information Sidebar */}
           <div className="space-y-8">
             {/* Quick Contact */}
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
+            <div className="bg-/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                 <Globe className="h-6 w-6 mr-3 text-cyan-400" />
                 Quick Contact
               </h3>
 
               <div className="space-y-6">
-                <div className="flex items-center space-x-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center space-x-4 p-4 bg-/10 rounded-xl hover:bg-white/20 transition-all duration-300">
                   <div className="bg-gradient-to-r from-green-400 to-emerald-500 p-3 rounded-full">
                     <Phone className="h-5 w-5 text-white" />
                   </div>
@@ -202,26 +202,26 @@ export default function ModernContactForm() {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center space-x-4 p-4 bg-/10 rounded-xl hover:bg-white/20 transition-all duration-300">
                   <div className="bg-gradient-to-r from-purple-400 to-pink-500 p-3 rounded-full">
                     <Mail className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-300">Email Us</p>
                     <a href="mailto:admin@conqueric.com" className="text-white font-semibold hover:text-purple-300 transition-colors">
-                      admin@conqueric.com
+                      info@conqueric.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center space-x-4 p-4 bg-/10 rounded-xl hover:bg-white/20 transition-all duration-300">
                   <div className="bg-gradient-to-r from-orange-400 to-red-500 p-3 rounded-full">
                     <MapPin className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-300">Visit Us</p>
+                    <p className="text-sm text-gray-300">Office:</p>
                     <p className="text-white font-semibold">
-                      Mirpur-Dhaka, Bangladesh 1216
+                      Currently we don't have office. We are working only virtually.
                     </p>
                   </div>
                 </div>
@@ -235,7 +235,7 @@ export default function ModernContactForm() {
 
           </div>
           {/* Business Hours */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
+          <div className="bg-/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
               <Clock className="h-6 w-6 mr-3 text-yellow-400" />
               Business Hours
@@ -257,7 +257,7 @@ export default function ModernContactForm() {
             </div>
           </div>
           {/* Map */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-white/20">
+          <div className="bg-/10 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-white/20">
             <div className="p-6">
               <h3 className="text-2xl font-bold text-white flex items-center">
                 <MapPin className="h-6 w-6 mr-3 text-cyan-400" />

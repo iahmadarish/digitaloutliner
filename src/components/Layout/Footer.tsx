@@ -36,8 +36,8 @@ export default function Footer() {
           <div className="mb-6 sm:mb-0">
             <h3 className="text-orange-400 text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-3 text-gray-300">
-              <p className="text-sm sm:text-base">458 , New York, USA</p>
-              <p className="text-sm sm:text-base">+023 465 67890</p>
+              <p className="text-sm sm:text-base">We are working online only</p>
+              <p className="text-sm sm:text-base">We don't have office now</p>
               <p className="text-sm sm:text-base break-all">info@conqueric.com</p>
 
               {/* Social Media Icons */}

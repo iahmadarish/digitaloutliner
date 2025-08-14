@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Menu, X, Phone, Mail, Clock } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
-import logo from "@/assets/logo/Group 61 (1).png"
+import logo from "../../../public/logo/logo.png"
 
 const CONQUERICNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -15,7 +15,7 @@ const CONQUERICNavbar = () => {
     { name: " Solutions", href: "/solutions" },
     { name: "Human Resources", href: "/business-solutions" },
     { name: "Projects", href: "/projects" },
-    { name: "Blogs", href: "/blog" },
+    { name: "News", href: "/blog" },
     { name: "Company", href: "/about" },
   ]
 
@@ -83,7 +83,7 @@ const CONQUERICNavbar = () => {
                 <Link to="/" className="block">
                   <img
                     src={logo}
-                    className="h-8 sm:h-10 lg:h-8 xl:h-12 w-auto"
+                    className="h-6 sm:h-6 lg:h-7 xl:h-7 w-auto"
                     alt="conqueric Logo"
                   />
                 </Link>

@@ -1,5 +1,3 @@
-"use client"
-
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow, Pagination } from "swiper/modules"
 import { motion } from "framer-motion"
@@ -9,16 +7,25 @@ import "swiper/css/effect-coverflow"
 import "swiper/css/pagination"
 
 const desktopImages = [
-  "/category/category1.png",
-  "/category/category2.png",
-  "/category/category3.png",
-  "/category/category4.png",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755187729/Preview_1_birxjf.png",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755187724/6983b9548d5b9cdd515ee138ffd476f3af137d5d_1_qcp55u.png",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755187729/Thumbnail_1_cdotyr.png",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755187725/image_95_emqtsr.png",
   "/category/category5.png",
-  "/category/templete (2).png",
-  "/category/templete (3).png",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188779/Header_42_afz1em.jpg",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188779/Header_58_t6p4kf.jpg",
   "/category/temtwo (2).png",
   "/category/temtwo (3).png",
   "/category/Thumbnail.png",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188778/Header_41_xyui4q.jpg",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188778/Header_40_xseexl.jpg",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188777/Header_26_iqmh2x.jpg",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188777/Header_29_txsosb.jpg",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188777/Header_27_iujgfn.jpg",
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188777/Header_59_oo0rm7.jpg",
+
+  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188776/Header_14_gzmmhr.jpg",
+
 ]
 
 export default function WebSolutions() {
