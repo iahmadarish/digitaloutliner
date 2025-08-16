@@ -4,7 +4,7 @@ import { services } from "../../data/service"
 import { useNavigate } from "react-router-dom"
 import { ArrowRight, CheckCircle, Zap, Users, Shield, ChevronRight } from "lucide-react"
 import ScrollToTop from "@/components/ScrollToTop"
-import v from "@/assets/logo/clogo.png"
+
 const ServiceCard = ({ service, index }: { service: any; index: number }) => {
   const [isHovered, setIsHovered] = useState(false)
   const navigate = useNavigate()
@@ -165,16 +165,16 @@ const ServicesPage = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
+
       {/* CTA Section */}
       <div className="py-20 bg-[#06140b]">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <div>
-              <div className="bg-gradient-to-r from-transparent rounded-full via-blue-950 to-blue-800 ">
+              <div className="py-4">
 
-              <img src={v} className="" alt="" />
+              <img src="https://www.bayabumi.com.my/services/wp-content/uploads/2019/03/startbusiness.jpg" className="rounded-xl h-54 w-full " alt="" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to <span className="text-blue-400">Transform</span> Your Business?

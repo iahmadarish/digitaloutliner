@@ -160,9 +160,9 @@ export const services = [
       "Bug fixing and performance optimization: Our QA and development teams rigorously test and refine your app to eliminate bugs and boost performance. CONQUERIC ensures optimal speed, low crash rates, and a seamless user experience through code optimization and device-specific fine-tuning.",
     ]
     ,
-    images: [
-      "https://res.cloudinary.com/dseipjxgc/image/upload/v1752764047/construction-company/ncfroapko85r9bz0vxvq.png",
-      "https://res.cloudinary.com/dseipjxgc/image/upload/v1752764021/construction-company/ua9yajmg4ziblivu7rrh.png",
+  images: [
+      "https://externlabs.com/blogs/wp-content/uploads/2022/04/b2.jpg",
+      "https://externlabs.com/blogs/wp-content/uploads/2022/04/b2.jpg",
     ],
     features: [
       {
@@ -339,8 +339,7 @@ export const services = [
         description: "Your full design package—source files, exports, and usage guides—is delivered securely. Post-delivery, we remain available to support you with minor updates or implementation assistance to ensure your designs are used effectively."
       }
     ]
-  }
-  ,
+  },
 
 
   {
