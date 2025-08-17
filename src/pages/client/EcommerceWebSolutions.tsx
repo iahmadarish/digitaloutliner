@@ -5,32 +5,45 @@ import ScrollToTop from '@/components/ScrollToTop';
 const EcommerceWebSolutions = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [
-    {
-      title: "Get maximum order than your competitors",
-      subtitle: "Unify your online and offline sales",
-      description: "Integrate your physical store with your e-commerce platform for real-time inventory and sales synchronization.",
-      image: "/hero/esl2.jpg",
-      video: "/videos/ecommerce-demo.mp4",
-      color: "from-[#03140b] to-[#03140b]"
-    },
-    {
-      title: "Reach customers anywhere.",
-      subtitle: "Build loyalty everywhere",
-      description: "Our responsive designs ensure flawless shopping experiences on any device, increasing conversions by up to 70%.",
-      image: "/hero/esl.jpg",
-      video: "/videos/mobile-commerce.mp4",
-      color: "from-[#03140b] to-[#03140b]"
-    },
-    {
-      title: "Lightning Fast Checkout",
-      subtitle: "Reduce cart abandonment",
-      description: "Our optimized checkout process loads in under 2 seconds and converts 35% better than industry average.",
-      image: "/hero/esl3.jpg",
-      video: "/videos/fast-checkout.mp4",
-      color: "from-[#03140b] to-[#03140b]"
-    }
-  ];
+const slides = [
+  {
+    title: "Scale Your Business Beyond Limits",
+    subtitle: "Smart E-commerce That Grows With You",
+    description:
+      "From startups to enterprises, our solutions are built to handle high traffic, secure payments, and seamless order management—so you can focus on scaling.",
+    image: "/hero/esl.jpg",
+    video: "/videos/scale-business.mp4",
+    color: "from-[#03140b] to-[#03140b]",
+  },
+  {
+    title: "Convert Visitors Into Loyal Customers",
+    subtitle: "Personalized Shopping Experiences",
+    description:
+      "Boost conversions with AI-driven recommendations, loyalty programs, and user-friendly navigation designed to keep customers coming back.",
+    image: "/hero/esl2.jpg",
+    video: "/videos/personalized-experience.mp4",
+    color: "from-[#03140b] to-[#03140b]",
+  },
+  {
+    title: "Fast, Secure & Optimized Checkout",
+    subtitle: "Reduce Abandonment, Increase Sales",
+    description:
+      "Our one-click checkout and advanced fraud protection make transactions smoother and safer—helping you maximize revenue instantly.",
+    image: "/hero/esl3.jpg",
+    video: "/videos/secure-checkout.mp4",
+    color: "from-[#03140b] to-[#03140b]",
+  },
+  {
+    title: "Sell Everywhere, Manage From One Place",
+    subtitle: "Omnichannel Made Easy",
+    description:
+      "Unify your online store, mobile app, and physical shop into a single dashboard—track inventory, sales, and customers in real time.",
+    image: "https://a.storyblok.com/f/165154/1280x720/20af23f693/02_leverage-print-on-demand.jpg/m/",
+    video: "/videos/omnichannel.mp4",
+    color: "from-[#03140b] to-[#03140b]",
+  }
+
+];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -134,21 +147,18 @@ const EcommerceWebSolutions = () => {
             <div className="container mx-auto px-6 relative z-10 sm:mt-50 sm:mb-30 ">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="text-white ">
-                  <h1 className="text-xl md:text-5xl lg:text-6xl font-bold mt-10 mb-4 sm:leading-tight">
+                  <h1 className="text-xl md:text-4xl lg:text-5xl font-light mt-10 mb-4 sm:leading-tight">
                     {slide.title}
                   </h1>
-                  <h2 className="text-xl md:text-3xl font-medium mb-6">
+                  <h2 className="text-xl md:text-4xl lg:text-5xl font-light mb-6">
                     {slide.subtitle}
                   </h2>
                   <p className="sm:text-xl text-sm mb-8 sm:max-w-lg">
                     {slide.description}
                   </p>
                   <div className="flex   gap-x-3 sm:gap-4">
-                    <button className="bg-white text-gray-900 px-3 sm:px-8 py-1 sm:py-3 sm:rounded-full rounded-lg font-light sm:font-bold hover:bg-gray-100 transition duration-300">
+                    <button className="bg-white text-gray-900 px-3 sm:px-8 py-1 sm:py-3 sm:rounded-xl rounded-lg font-light sm:font-bold hover:bg-gray-100 transition duration-300">
                       Get Started
-                    </button>
-                    <button className="border-2 border-white text-white px-3 sm:px-8 py-1 sm:py-3 sm:rounded-full rounded-lg font-light sm:font-bold hover:bg-white hover:text-gray-900 transition duration-300">
-                      View Demo
                     </button>
                   </div>
                 </div>
@@ -158,13 +168,7 @@ const EcommerceWebSolutions = () => {
                     alt={slide.title}
                     className="w-full h-auto object-cover"
                   />
-                  {/* <div className="absolute inset-0 flex items-center justify-center bg-[#06140b]/30">
-                    <button className="bg-white/90 text-gray-900 rounded-full p-4 hover:scale-110 transition-transform">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                      </svg>
-                    </button>
-                  </div> */}
+
                 </div>
               </div>
             </div>
@@ -209,38 +213,55 @@ const EcommerceWebSolutions = () => {
                 </div>
                 <div className="h-full absolute top-5 right-[760px] w-px bg-white"></div>
                 <div>
-                  <div className="bg-[#03140b] rounded-xl shadow-lg italic">
-                    <h3 className="text-2xl font-bold text-[#ffffff] mb-8">Why Choose CONQUERIC?</h3>
-                    <ul className="space-y-8">
-                      <li className="flex items-start">
-                        <div className="bg-blue-100 p-2 rounded-full mr-4">
-                          <CreditCard className="text-blue-600 w-5 h-5" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-white">Unified Payments</h4>
-                          <p className="text-gray-200">Accept all payment methods with one integrated system (SSL/Stripe/Amar Pay/Paypal/Bkash/Nagad). </p>
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="bg-purple-100 p-2 rounded-full mr-4">
-                          <Cloud className="text-purple-600 w-5 h-5" />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-gray-200">Cloud Hosting</h4>
-                          <p className="text-gray-300">99.9% uptime with scalable cloud infrastructure</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="bg-green-100 p-2 rounded-full mr-4">
-                          <Headphones className="text-green-600 w-5 h-5" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-100">Dedicated Support</h4>
-                          <p className="text-gray-200">24/7 expert assistance for your e-commerce needs</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+<div className="bg-[#03140b] rounded-xl shadow-lg p-6 md:p-8">
+  <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
+    Why Choose <span className="text-blue-400">CONQUERIC?</span>
+  </h3>
+  <ul className="space-y-8">
+    {/* Unified Payments */}
+    <li className="flex items-start">
+      <div className="bg-blue-100 p-3 rounded-full mr-4">
+        <CreditCard className="text-blue-600 w-5 h-5" />
+      </div>
+      <div>
+        <h4 className="font-semibold text-white">Unified Payments</h4>
+        <p className="text-gray-300">
+          Accept every major payment method in one seamless system — 
+          including SSL, Stripe, AmarPay, PayPal, bKash, and Nagad.
+        </p>
+      </div>
+    </li>
+
+    {/* Cloud Hosting */}
+    <li className="flex items-start">
+      <div className="bg-purple-100 p-3 rounded-full mr-4">
+        <Cloud className="text-purple-600 w-5 h-5" />
+      </div>
+      <div>
+        <h4 className="font-semibold text-white">Cloud Hosting</h4>
+        <p className="text-gray-300">
+          99.9% uptime powered by scalable, secure cloud infrastructure —
+          so your business never slows down.
+        </p>
+      </div>
+    </li>
+
+    {/* Dedicated Support */}
+    <li className="flex items-start">
+      <div className="bg-green-100 p-3 rounded-full mr-4">
+        <Headphones className="text-green-600 w-5 h-5" />
+      </div>
+      <div>
+        <h4 className="font-semibold text-white">Dedicated 24/7 Support</h4>
+        <p className="text-gray-300">
+          We don’t just build your store — we stay by your side around the
+          clock until your online sales are growing successfully.
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+
                 </div>
               </div>
             </div>
