@@ -42,14 +42,14 @@ const CustomWebWithVideo = () => {
 
       <section className="min-h-screen font-nunito text-start bg-[#06140b] py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="container mx-auto relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
             {/* Left Content */}
             <motion.div
               className="space-y-6 md:space-y-8 sm:text-center lg:text-left"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "-40px" }}
             >
               <motion.div variants={itemVariants} className="space-y-4">
                 <div className="inline-flex items-center px-4 py-2 bg-white text-black rounded-sm text-sm font-medium">

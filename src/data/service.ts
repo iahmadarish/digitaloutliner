@@ -27,11 +27,14 @@ export const services = [
     shortDetails:
       "We create fast, responsive, and visually appealing websites tailored to your brand. Our web design and development services help attract visitors, enhance user experience, and drive business growth across all devices and platforms.",
     fullDetails: [
-      "We build SEO-optimized and user-friendly websites tailored for startups, SMEs, and enterprises.",
-      "Our stack includes MERN (MongoDB, Express, React, Node.js), Next.js, WordPress, and more.",
-      "We ensure high performance, secure architecture, and mobile responsiveness.",
-      "From landing pages to full e-commerce portals, we deliver complete web solutions.",
-    ],
+  "We build SEO-optimized and user-friendly websites tailored for startups, SMEs, and enterprises. At CONQUERIC, our primary goal is to create websites that don’t just look great but also deliver measurable business results. Whether you are a startup aiming to establish an online presence or an enterprise looking for a scalable platform, we design digital experiences that attract visitors, keep them engaged, and convert them into loyal customers.",
+  
+  "Our technology stack includes MERN (MongoDB, Express, React, Node.js), Next.js, WordPress, and other modern frameworks. This allows us to build everything from lightweight business websites to advanced, high-performing enterprise applications. By leveraging the latest technologies, we ensure that your website remains future-proof, fast, and capable of handling increased traffic as your business grows.",
+  
+  "We ensure high performance, secure architecture, and mobile responsiveness. At CONQUERIC, every project undergoes performance benchmarking, rigorous security testing, and responsive design checks across multiple devices. Our development standards guarantee quick load times, robust data protection, and seamless browsing experiences—giving your users the confidence and convenience they expect in a digital-first world.",
+  
+  "From landing pages to full e-commerce portals, we deliver complete web solutions. Whether you need a simple, conversion-driven landing page, a corporate portfolio, a content-driven blog, or a fully customized e-commerce ecosystem with advanced functionalities like inventory management, payment gateways, and analytics—we cover it all. Our end-to-end service ensures you have a one-stop partner for design, development, deployment, and ongoing maintenance."
+],
     bulletPoints: [
       "Custom web application developmentAt CONQUERIC:, we specialize in building scalable, secure, and high-performing custom web applications tailored to your unique business goals. Whether you need a powerful enterprise dashboard or a lightweight SaaS solution, our expert developers ensure seamless user experience, clean architecture, and robust performance to help your business grow digitally.",
 
@@ -137,11 +140,15 @@ export const services = [
     shortDetails:
       "We build high-quality cross-platform and native mobile apps that deliver smooth, user-friendly experiences. Our apps are designed to perform flawlessly on iOS and Android, helping businesses engage users and grow in today's mobile-first world.",
     fullDetails: [
-      "We develop Android, iOS, and hybrid mobile applications with intuitive UI and powerful backend.",
-      "Our apps are built using Flutter, React Native, Kotlin, Swift, and other technologies.",
-      "We offer full-cycle development from planning to deployment and maintenance.",
-      "Features like real-time chat, push notifications, location tracking, and payment gateways are seamlessly integrated.",
-    ],
+  "We develop Android, iOS, and hybrid mobile applications with intuitive UI and powerful backend. At CONQUERIC, our mobile app solutions are designed to deliver seamless user experiences while ensuring business scalability. From startups to enterprises, we create apps that not only look stunning but also provide smooth navigation, quick responsiveness, and reliable performance across all platforms.",
+  
+  "Our apps are built using Flutter, React Native, Kotlin, Swift, and other cutting-edge technologies. By leveraging cross-platform frameworks and native development tools, we ensure faster time-to-market, reduced development costs, and superior performance. Our expertise enables us to build both lightweight apps for small businesses and high-performing enterprise-grade applications with advanced functionalities.",
+  
+  "We offer full-cycle development from planning to deployment and maintenance. Our process begins with deep research and strategy building, followed by UI/UX design, robust coding, and quality assurance testing. After launch, we provide continuous monitoring, bug fixes, security updates, and feature enhancements, ensuring your mobile application remains competitive and future-proof.",
+  
+  "Features like real-time chat, push notifications, location tracking, and payment gateways are seamlessly integrated to boost user engagement and business growth. Whether it’s enabling secure transactions, geo-based services, instant communication, or personalized notifications, we make sure your app includes the latest functionality to enhance user satisfaction and maximize ROI."
+]
+,
     bulletPoints: [
       "Android and iOS native apps: CONQUERIC builds high-performance native mobile applications for Android and iOS platforms. Leveraging platform-specific capabilities, our expert developers ensure fluid user experiences, hardware optimization, and scalable architecture tailored to your unique business needs.",
 
@@ -240,12 +247,16 @@ export const services = [
     iconType: "image",
     shortDetails:
       "We deliver stunning, conversion-focused graphic design services that boost your brand’s visibility and impact. From custom logos to social media visuals, our creative solutions drive engagement, enhance branding, and set your business apart.",
-    fullDetails: [
-      "Our graphic design services are crafted to bring your brand to life through visually captivating and strategically aligned assets.",
-      "We specialize in creative visual storytelling that leaves a lasting impression across both digital and print channels.",
-      "Whether you're building a new brand or refreshing an existing one, we tailor every design element—from typography to color schemes—to reflect your unique identity and business objectives.",
-      "Our team stays ahead of design trends, leverages data-backed visual strategies, and creates consistent branding experiences that connect emotionally with your audience and drive measurable results."
-    ],
+  fullDetails: [
+  "Our graphic design services are crafted to bring your brand to life through visually captivating and strategically aligned assets. At CONQUERIC, we go beyond just creating attractive visuals—we design with purpose. Every graphic element we produce is aimed at enhancing your brand recognition, engaging your audience, and driving business growth. From sleek digital graphics to impactful print materials, we combine creativity and strategy to deliver results that matter.",
+  
+  "We specialize in creative visual storytelling that leaves a lasting impression across both digital and print channels. Whether it’s designing social media visuals, brochures, infographics, or marketing campaigns, we ensure that your brand communicates effectively through compelling visuals. Our designs are tailored to tell your brand’s story in a way that resonates with your audience and inspires action.",
+  
+  "Whether you're building a new brand or refreshing an existing one, we tailor every design element—from typography to color schemes—to reflect your unique identity and business objectives. We focus on creating cohesive visual systems that align with your brand guidelines while maintaining flexibility for multi-channel use. This ensures that every touchpoint—from your website to your social media posts—delivers a consistent and professional brand image.",
+  
+  "Our team stays ahead of design trends, leverages data-backed visual strategies, and creates consistent branding experiences that connect emotionally with your audience and drive measurable results. By combining design psychology, market research, and the latest creative tools, we help you stand out in crowded markets. From increasing customer engagement to boosting brand loyalty, our design solutions are built to make a lasting impact."
+]
+,
     bulletPoints: [
   "Professional logo and brand identity design: At CONQUERIC, we create distinctive logos and comprehensive brand identity systems that capture your business’s vision and values. From color palettes to typography and brand guidelines, we ensure a memorable and cohesive visual presence across all platforms.",
 
@@ -349,11 +360,16 @@ export const services = [
     iconType: "image",
     shortDetails:
       "Professional 2D/3D designs and modeling for animation, product mockups, and architecture. We create stunning 2D and 3D videos that tell your story with impact. From concept to final render, our visuals engage, inform, and inspire your audience.",
-    fullDetails: [
-      "We create realistic 3D models, visualizations, and 2D/3D animations for diverse industries.",
-      "Used in advertising, product design, architectural visualization, and explainer videos.",
-      "Our skilled artists use Blender, Maya, Cinema 4D, and Adobe After Effects.",
-    ],
+fullDetails: [
+  "We create realistic 3D models, high-quality visualizations, and engaging 2D/3D animations tailored for diverse industries. At CONQUERIC, our creative approach blends technical precision with artistic vision, ensuring every project tells a compelling story while maintaining accuracy and detail.",
+  
+  "Our 3D and animation services are widely used in advertising, product design, architectural visualization, gaming, simulations, and explainer videos. Whether you’re a brand looking to showcase your product, a real estate company needing architectural walkthroughs, or an educator creating immersive learning content, we deliver visuals that bring concepts to life.",
+  
+  "Our skilled artists use industry-leading tools such as Blender, Maya, Cinema 4D, and Adobe After Effects to produce stunning animations and realistic renders. By combining advanced techniques with creative storytelling, we ensure every project achieves a perfect balance of aesthetics, functionality, and engagement.",
+  
+  "We offer end-to-end solutions—from concept development and storyboarding to rendering and post-production. This full-cycle approach ensures consistency, quality, and timely delivery across all stages of the project, making it easier for businesses to communicate complex ideas in a visually impactful way."
+]
+,
     bulletPoints: [
   "3D product modeling and mockups: CONQUERIC creates realistic 3D product models and high-fidelity mockups to showcase your ideas with precision. From concept to final render, we help you visualize products before manufacturing or marketing, enhancing both presentations and decision-making.",
 

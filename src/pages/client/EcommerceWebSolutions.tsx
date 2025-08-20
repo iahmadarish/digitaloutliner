@@ -5,45 +5,45 @@ import ScrollToTop from '@/components/ScrollToTop';
 const EcommerceWebSolutions = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-const slides = [
-  {
-    title: "Scale Your Business Beyond Limits",
-    subtitle: "Smart E-commerce That Grows With You",
-    description:
-      "From startups to enterprises, our solutions are built to handle high traffic, secure payments, and seamless order management—so you can focus on scaling.",
-    image: "/hero/esl.jpg",
-    video: "/videos/scale-business.mp4",
-    color: "from-[#03140b] to-[#03140b]",
-  },
-  {
-    title: "Convert Visitors Into Loyal Customers",
-    subtitle: "Personalized Shopping Experiences",
-    description:
-      "Boost conversions with AI-driven recommendations, loyalty programs, and user-friendly navigation designed to keep customers coming back.",
-    image: "/hero/esl2.jpg",
-    video: "/videos/personalized-experience.mp4",
-    color: "from-[#03140b] to-[#03140b]",
-  },
-  {
-    title: "Fast, Secure & Optimized Checkout",
-    subtitle: "Reduce Abandonment, Increase Sales",
-    description:
-      "Our one-click checkout and advanced fraud protection make transactions smoother and safer—helping you maximize revenue instantly.",
-    image: "/hero/esl3.jpg",
-    video: "/videos/secure-checkout.mp4",
-    color: "from-[#03140b] to-[#03140b]",
-  },
-  {
-    title: "Sell Everywhere, Manage From One Place",
-    subtitle: "Omnichannel Made Easy",
-    description:
-      "Unify your online store, mobile app, and physical shop into a single dashboard—track inventory, sales, and customers in real time.",
-    image: "https://a.storyblok.com/f/165154/1280x720/20af23f693/02_leverage-print-on-demand.jpg/m/",
-    video: "/videos/omnichannel.mp4",
-    color: "from-[#03140b] to-[#03140b]",
-  }
+  const slides = [
+    {
+      title: "Scale Your Business Beyond Limits",
+      subtitle: "Smart E-commerce That Grows With You",
+      description:
+        "From startups to enterprises, our solutions are built to handle high traffic, secure payments, and seamless order management—so you can focus on scaling.",
+      image: "/hero/esl.jpg",
+      video: "/videos/scale-business.mp4",
+      color: "from-[#03140b] to-[#03140b]",
+    },
+    {
+      title: "Convert Visitors Into Loyal Customers",
+      subtitle: "Personalized Shopping Experiences",
+      description:
+        "Boost conversions with AI-driven recommendations, loyalty programs, and user-friendly navigation designed to keep customers coming back.",
+      image: "/hero/esl2.jpg",
+      video: "/videos/personalized-experience.mp4",
+      color: "from-[#03140b] to-[#03140b]",
+    },
+    {
+      title: "Fast, Secure & Optimized Checkout",
+      subtitle: "Reduce Abandonment, Increase Sales",
+      description:
+        "Our one-click checkout and advanced fraud protection make transactions smoother and safer—helping you maximize revenue instantly.",
+      image: "/hero/esl3.jpg",
+      video: "/videos/secure-checkout.mp4",
+      color: "from-[#03140b] to-[#03140b]",
+    },
+    {
+      title: "Sell Everywhere, Manage From One Place",
+      subtitle: "Omnichannel Made Easy",
+      description:
+        "Unify your online store, mobile app, and physical shop into a single dashboard—track inventory, sales, and customers in real time.",
+      image: "https://a.storyblok.com/f/165154/1280x720/20af23f693/02_leverage-print-on-demand.jpg/m/",
+      video: "/videos/omnichannel.mp4",
+      color: "from-[#03140b] to-[#03140b]",
+    }
 
-];
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -213,54 +213,54 @@ const slides = [
                 </div>
                 <div className="h-full absolute top-5 right-[760px] w-px bg-white"></div>
                 <div>
-<div className="bg-[#03140b] rounded-xl shadow-lg p-6 md:p-8">
-  <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
-    Why Choose <span className="text-blue-400">CONQUERIC?</span>
-  </h3>
-  <ul className="space-y-8">
-    {/* Unified Payments */}
-    <li className="flex items-start">
-      <div className="bg-blue-100 p-3 rounded-full mr-4">
-        <CreditCard className="text-blue-600 w-5 h-5" />
-      </div>
-      <div>
-        <h4 className="font-semibold text-white">Unified Payments</h4>
-        <p className="text-gray-300">
-          Accept every major payment method in one seamless system — 
-          including SSL, Stripe, AmarPay, PayPal, bKash, and Nagad.
-        </p>
-      </div>
-    </li>
+                  <div className="bg-[#03140b] rounded-xl shadow-lg p-6 md:p-8">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
+                      Why Choose <span className="text-blue-400">CONQUERIC?</span>
+                    </h3>
+                    <ul className="space-y-8">
+                      {/* Unified Payments */}
+                      <li className="flex items-start">
+                        <div className="bg-blue-100 p-3 rounded-full mr-4">
+                          <CreditCard className="text-blue-600 w-5 h-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-white">Unified Payments</h4>
+                          <p className="text-gray-300">
+                            Accept every major payment method in one seamless system —
+                            including SSL, Stripe, AmarPay, PayPal, bKash, and Nagad.
+                          </p>
+                        </div>
+                      </li>
 
-    {/* Cloud Hosting */}
-    <li className="flex items-start">
-      <div className="bg-purple-100 p-3 rounded-full mr-4">
-        <Cloud className="text-purple-600 w-5 h-5" />
-      </div>
-      <div>
-        <h4 className="font-semibold text-white">Cloud Hosting</h4>
-        <p className="text-gray-300">
-          99.9% uptime powered by scalable, secure cloud infrastructure —
-          so your business never slows down.
-        </p>
-      </div>
-    </li>
+                      {/* Cloud Hosting */}
+                      <li className="flex items-start">
+                        <div className="bg-purple-100 p-3 rounded-full mr-4">
+                          <Cloud className="text-purple-600 w-5 h-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-white">Cloud Hosting</h4>
+                          <p className="text-gray-300">
+                            99.9% uptime powered by scalable, secure cloud infrastructure —
+                            so your business never slows down.
+                          </p>
+                        </div>
+                      </li>
 
-    {/* Dedicated Support */}
-    <li className="flex items-start">
-      <div className="bg-green-100 p-3 rounded-full mr-4">
-        <Headphones className="text-green-600 w-5 h-5" />
-      </div>
-      <div>
-        <h4 className="font-semibold text-white">Dedicated 24/7 Support</h4>
-        <p className="text-gray-300">
-          We don’t just build your store — we stay by your side around the
-          clock until your online sales are growing successfully.
-        </p>
-      </div>
-    </li>
-  </ul>
-</div>
+                      {/* Dedicated Support */}
+                      <li className="flex items-start">
+                        <div className="bg-green-100 p-3 rounded-full mr-4">
+                          <Headphones className="text-green-600 w-5 h-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-white">Dedicated 24/7 Support</h4>
+                          <p className="text-gray-300">
+                            We don’t just build your store — we stay by your side around the
+                            clock until your online sales are growing successfully.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
 
                 </div>
               </div>
