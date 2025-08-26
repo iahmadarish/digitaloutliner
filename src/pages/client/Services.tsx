@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle, Zap, Users, Shield } from "lucide-react"
 import ScrollToTop from "@/components/ScrollToTop"
 import { motion } from "framer-motion"
 import { type Variants } from 'framer-motion';
+import { Helmet } from "react-helmet-async"
 
 const ServiceItem = ({ service, index }: { service: any; index: number }) => {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -159,6 +160,46 @@ const ServicesPage = () => {
   }
 };
   return (
+    <main>
+      <Helmet>
+  {/* Title */}
+  <title>Our Services | CONQUERIC - Web, App & Software Development</title>
+
+  {/* Meta Description */}
+  <meta
+    name="description"
+    content="Discover CONQUERIC's professional services in web development, mobile app development, custom software solutions, and digital strategy. We help businesses grow with powerful, user-friendly technology."
+  />
+
+  {/* Meta Keywords */}
+  <meta
+    name="keywords"
+    content="CONQUERIC services, web development, mobile app development, custom software development, UI/UX design, software company, IT solutions, digital strategy"
+  />
+
+  {/* Canonical URL */}
+  <link rel="canonical" href="https://www.conqueric.com/services" />
+
+  {/* Open Graph / Facebook */}
+  <meta property="og:title" content="Our Services | CONQUERIC" />
+  <meta
+    property="og:description"
+    content="Explore CONQUERIC's expert services in website development, mobile apps, and custom software solutions tailored to your business needs."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.conqueric.com/services" />
+  <meta property="og:image" content="https://www.conqueric.com/og-services.jpg" />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Our Services | CONQUERIC" />
+  <meta
+    name="twitter:description"
+    content="CONQUERIC provides cutting-edge web development, mobile app development, and software solutions to help your business succeed."
+  />
+  <meta name="twitter:image" content="https://www.conqueric.com/og-services.jpg" />
+</Helmet>
+
     <div className="bg-[#06140b] font-nunito text-white overflow-hidden">
       <ScrollToTop />
       
@@ -396,6 +437,7 @@ const ServicesPage = () => {
         </div>
       </motion.section>
     </div>
+    </main>
   )
 }
 

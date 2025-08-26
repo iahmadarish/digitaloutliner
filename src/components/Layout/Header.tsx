@@ -12,7 +12,7 @@ const CONQUERICNavbar = () => {
 
   const navigation = [
     { name: "Our Service", href: "/services" },
-    { name: " Solutions", href: "/solutions" },
+    { name: "Ecommerce Solutions", href: "/global-ecommere-web-solutions-with-conqueric" },
     { name: "Human Resources", href: "/business-solutions" },
     { name: "Projects", href: "/projects" },
     { name: "News", href: "/blog" },
@@ -217,7 +217,7 @@ const CONQUERICNavbar = () => {
                 </div>
                 <div className="flex items-center space-x-3 text-white/80">
                   <Mail className="h-5 w-5 text-cyan-400" />
-                  <span className="text-sm">info@conqueric.com</span>
+                  <span className="text-sm">weareconqueric@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-white/80">
                   <Clock className="h-5 w-5 text-cyan-400" />

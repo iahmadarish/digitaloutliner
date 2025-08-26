@@ -209,7 +209,7 @@ export default function ModernContactForm() {
                   <div>
                     <p className="text-sm text-gray-300">Email Us</p>
                     <a href="mailto:admin@conqueric.com" className="text-white font-semibold hover:text-purple-300 transition-colors">
-                      info@conqueric.com
+                      weareconqueric@gmail.com
                     </a>
                   </div>
                 </div>

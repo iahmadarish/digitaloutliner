@@ -6,7 +6,7 @@ const HeroSection = () => {
     <header className="min-h-screen bg-[#06140b] overflow-hidden relative">
 
       {/* Main Content */}
-      <div className="md:max-w-7xl container mx-auto  py-26 lg:pt-54">
+      <div className=" container mx-auto  py-26 lg:pt-54">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
 
           {/* Left Content */}
@@ -62,13 +62,13 @@ const HeroSection = () => {
           {/* Right Content - Tilted Phone */}
           <motion.div
             className="flex justify-center lg:justify-end"
-            initial={{ opacity: 0, x: 50, rotate: -15 }}
-            animate={{ opacity: 1, x: 0, rotate: -15 }}
+            initial={{ opacity: 0, x: 50, rotate: -1 }}
+            animate={{ opacity: 1, x: 0, rotate: -1 }}
             transition={{ duration: 1 }}
             aria-hidden="true"
           >
             <img
-              src="https://www.chawtechsolutions.com/wp-content/uploads/2019/07/right-side@2x-compressor.png"
+              src="/hero/hero.png"
               alt="Mobile application interface example"
               className="max-w-full h-auto"
               loading="lazy"

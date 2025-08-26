@@ -7,6 +7,7 @@ import { ArrowUpRight } from 'lucide-react'
 import ScrollToTop from "../../components/ScrollToTop"
 import projects from "../../data/projects.json"
 import type { Variants } from "framer-motion"
+import { Helmet } from "react-helmet-async"
 
 
 const Projects: React.FC = () => {
@@ -60,6 +61,32 @@ const ctaVariants: Variants = {
 
 
   return (
+      <main>
+        <Helmet>
+        <title>Our Projects | My Company</title>
+        <meta 
+          name="description" 
+          content="Explore our latest projects showcasing web development, design, and digital solutions." 
+        />
+        <meta 
+          name="keywords" 
+          content="projects, portfolio, web development, design, digital solutions" 
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="Our Projects | My Company" />
+        <meta 
+          property="og:description" 
+          content="Explore our latest projects showcasing web development, design, and digital solutions." 
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.conqueric.com/projects" />
+        <meta property="og:image" content="https://www.conqueric.com/images/projects-og.jpg" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
     <div className="min-h-screen py-50 px-4" style={{ background: "transparent" }}>
       <ScrollToTop />
       
@@ -198,7 +225,8 @@ const ctaVariants: Variants = {
         </motion.div>
       </div>
     </div>
-  )
+  </main>
+)
 }
 
 export default Projects

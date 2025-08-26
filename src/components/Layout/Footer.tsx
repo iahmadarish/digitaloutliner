@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="space-y-3 text-gray-300">
               <p className="text-sm sm:text-base">We are working online only</p>
               <p className="text-sm sm:text-base">We don't have office now</p>
-              <p className="text-sm sm:text-base break-all">info@conqueric.com</p>
+              <p className="text-sm sm:text-base break-all">weareconqueric@gmail.com</p>
 
               {/* Social Media Icons */}
               <div className="flex space-x-3 mt-4">

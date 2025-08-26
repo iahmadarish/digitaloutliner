@@ -278,6 +278,9 @@ const ServiceDetail = () => {
   ]
 
   return (
+    <main>
+\
+      
     <div className="min-h-screen  text-gray-100">
       <ScrollToTop />
       {/* Floating Navigation */}
@@ -873,6 +876,7 @@ const ServiceDetail = () => {
         </div>
       </section>
     </div>
+</main>
   )
 }
 

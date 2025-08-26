@@ -128,7 +128,7 @@ const MissionAbout = () => {
         </div>
 
         {/* Stats Section */}
-        <div className={`bg-gradient-to-r from-stone-200 to-stone-300 rounded-2xl shadow-xl p-8 md:p-12 text-black text-center mb-16 transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+        <div className={`bg-gradient-to-r from-stone-200 to-stone-300 hidden rounded-2xl shadow-xl p-8 md:p-12 text-black text-center mb-16 transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           <h2 className="text-3xl font-bold mb-8">Our Impact</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div>
