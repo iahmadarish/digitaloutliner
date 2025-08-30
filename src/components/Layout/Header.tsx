@@ -96,8 +96,8 @@ const CONQUERICNavbar = () => {
                     key={item.name}
                     to={item.href}
                     className={`transition-colors duration-200 text-base md:xl:2xl:lg:text-sm uppercase font-josefin font-medium ${activeItem === item.name
-                        ? "text-cyan-400 border-b-2 border-cyan-400 pb-1"
-                        : "text-white/90 hover:text-white"
+                      ? "text-cyan-400 border-b-2 border-cyan-400 pb-1"
+                      : "text-white/90 hover:text-white"
                       }`}
                   >
                     {item.name}
@@ -110,7 +110,7 @@ const CONQUERICNavbar = () => {
                 <button className="hidden lg:block px-4 py-2 border border-blue-500 rounded-md text-white text-sm lg:text-base font-medium hover:bg-white/10 transition-colors duration-200">
                   Contact Us
                 </button>
-                
+
                 {/* Mobile menu button */}
                 <div className="lg:hidden z-50 ml-4">
                   <button
@@ -178,8 +178,8 @@ const CONQUERICNavbar = () => {
                       to={item.href}
                       onClick={handleNavClick}
                       className={`block px-4 py-2 rounded-lg  text-lg font-medium transition-all duration-200 ${activeItem === item.name
-                          ? "bg-cyan-400/20  text-cyan-400 border-l-4 border-cyan-400 shadow-lg"
-                          : "text-white/90 hover:text-white hover:bg-white/10"
+                        ? "bg-cyan-400/20  text-cyan-400 border-l-4 border-cyan-400 shadow-lg"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
                         }`}
                     >
                       <div className="flex items-center gap-x-2">
@@ -191,17 +191,19 @@ const CONQUERICNavbar = () => {
               </div>
 
               {/* Contact Us Button */}
-              <div
-                className="sm:mt-8 mt-2 opacity-0 translate-x-4 animate-slideIn"
-                style={{
-                  animationDelay: "400ms",
-                  animationFillMode: "forwards"
-                }}
-              >
-                <button className="w-full px-6 py-2 border border-cyan-400 rounded-lg text-cyan-400 text-lg font-medium hover:bg-cyan-400/10 transition-colors duration-200">
-                  Contact Us
-                </button>
-              </div>
+              <Link to="contact">
+                <div
+                  className="sm:mt-8 mt-2 opacity-0 translate-x-4 animate-slideIn"
+                  style={{
+                    animationDelay: "400ms",
+                    animationFillMode: "forwards"
+                  }}
+                >
+                  <button className="w-full px-6 py-2 border border-cyan-400 rounded-lg text-cyan-400 text-lg font-medium hover:bg-cyan-400/10 transition-colors duration-200">
+                    Contact Us
+                  </button>
+                </div>
+              </Link>
 
               {/* Contact Info */}
               <div
