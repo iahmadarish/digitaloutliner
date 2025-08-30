@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.conqueric.com/" />
-        <meta property="og:image" content="https://www.conqueric.com/og-home.jpg" />
+        <meta property="og:image" content="https://conqueric.com/assets/logo-DcXsJPrF.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -50,11 +50,40 @@ const Home: React.FC = () => {
           name="twitter:description"
           content="CONQUERIC provides web development, mobile apps, ecommerce, and custom software solutions to help businesses grow with modern digital technology."
         />
-        <meta name="twitter:image" content="https://www.conqueric.com/og-home.jpg" />
+        <meta name="twitter:image" content="https://conqueric.com/hero/hero.png" />
+
+        {/* ✅ JSON-LD Structured Data */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "CONQUERIC",
+            "url": "https://www.conqueric.com",
+            "logo": "https://conqueric.com/assets/logo-DcXsJPrF.png",
+            "foundingDate": "2023",
+            "founder": {
+              "@type": "Person",
+              "name": "Md Ishaq ahmad"
+            },
+            "sameAs": [
+              "https://www.facebook.com/conqueric",
+              "www.linkedin.com/in/con-queric",
+              "https://www.instagram.com/we_are_conqueric/"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+8801568202839",
+              "contactType": "customer service",
+              "areaServed": "BD",
+              "availableLanguage": "en"
+            }
+          }
+          `}
+        </script>
       </Helmet>
 
       <ScrollToTop />
-
       <HeroSection />
       <CustomWeb />
       <WebSolutions />
@@ -62,10 +91,7 @@ const Home: React.FC = () => {
       <OurBenefit />
       <FAQAccordion />
       <ToolsetComponent />
-
       <Testimonial />
-
-
     </div>
   )
 }

@@ -2,9 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/public/index.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CONQUERIC | Global digital partner</title>
+
+    <title>CONQUERIC | Global Digital Partner</title>
+
+    <!-- SEO -->
+    <meta name="author" content="CONQUERIC" />
+    <meta name="theme-color" content="#06140b" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (default) -->
+    <meta property="og:site_name" content="CONQUERIC" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.conqueric.com" />
+    <meta property="og:image" content="https://conqueric.com/hero/hero.png" />
+
+    <!-- Twitter (default) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@conqueric" />
+
+    <!-- Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- ✅ Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZZCSWQYQY"></script>
@@ -13,6 +36,22 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-PZZCSWQYQY');
+    </script>
+
+    <!-- ✅ Fallback Organization Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CONQUERIC",
+      "url": "https://www.conqueric.com",
+      "logo": "https://conqueric.com/assets/logo-DcXsJPrF.png",
+      "sameAs": [
+        "https://www.facebook.com/conqueric",
+        "www.linkedin.com/in/con-queric",
+        "https://www.instagram.com/we_are_conqueric/"
+      ]
+    }
     </script>
   </head>
   <body>

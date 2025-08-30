@@ -14,8 +14,8 @@ const MultiPlatformChat = () => {
   const [loading, setLoading] = useState(false);
 
   // Contact information
-  const whatsappNumber = "8801744130027";
-  const facebookUsername = "minimoonira";
+  const whatsappNumber = "8801511521362";
+  const facebookUsername = "conqueric";
   const instagramUsername = "we_are_conqueric";
 
   // Predefined messages

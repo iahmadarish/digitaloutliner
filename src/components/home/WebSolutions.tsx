@@ -159,7 +159,7 @@ export default function WebSolutions() {
                       whileTap={{ scale: 0.95 }}
                       onClick={handleServiceClick}
                     >
-                      Get Offer
+                      Make it Yours
                     </motion.button>
                   </motion.div>
                 </motion.div>
