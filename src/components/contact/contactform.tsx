@@ -66,7 +66,7 @@ export default function ModernContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white font-sans">
+    <div className="min-h-screen  text-white font-sans">
       <div className="container mx-auto px-4 py-16">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -76,15 +76,15 @@ export default function ModernContactForm() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Touch</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="sm:text-xl text-gray-300 max-w-3xl  mx-auto">
             Have a project in mind? Let's collaborate to bring your ideas to life.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-5 sm:gap-8 max-w-7xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-gray-800/50 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 border border-gray-700">
+            <div className="sm:bg-gray-800/50 backdrop-blur-md rounded-2xl sm:shadow-xl p-2 md:p-8 sm:border border-gray-700">
               <div className="flex items-center mb-8">
                 <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full mr-4">
                   <Send className="h-6 w-6 text-white" />
@@ -279,7 +279,7 @@ export default function ModernContactForm() {
             </div>
 
             {/* Map */}
-            <div className="bg-gray-800/50 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-gray-700">
+            {/* <div className="bg-gray-800/50 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-gray-700">
               <div className="p-6 pb-4">
                 <h3 className="text-xl font-bold text-white flex items-center">
                   <MapPin className="h-5 w-5 mr-3 text-red-400" />
@@ -298,7 +298,7 @@ export default function ModernContactForm() {
                   className="rounded-b-2xl"
                 ></iframe>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

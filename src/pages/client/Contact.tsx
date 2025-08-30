@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
   return (
     <div className="section-padding bg-[#06140b]">
       <ScrollToTop/>
-      <div className="container">
+      <div className="">
         <ContactForm/>
       </div>
     </div>
