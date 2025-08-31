@@ -17,7 +17,7 @@ const CustomWebWithVideo = () => {
       },
     },
   };
-  const videoUrl = "https://res.cloudinary.com/dseipjxgc/video/upload/v1754533621/ecc_pdcmp2.mp4";
+  const videoUrl = "https://res.cloudinary.com/dseipjxgc/video/upload/v1756681870/Your_paragraph_text_ond6ca.mp4";
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
