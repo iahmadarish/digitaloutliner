@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FAQAccordion = () => {
 const [openItem, setOpenItem] = useState<number | null>(null);
@@ -117,9 +118,11 @@ const faqData = [
 
       <div className="mt-12 text-center">
         <p className="text-gray-600 mb-4">Still have questions?</p>
+        <Link to="/contact">
         <button className="bg-lime-400 hover:bg-lime-500 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors duration-200">
           Contact Us
         </button>
+        </ Link>
       </div>
     </div>
 </div>

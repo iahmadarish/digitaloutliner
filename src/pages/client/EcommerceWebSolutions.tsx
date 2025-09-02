@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ShoppingCart, Smartphone, Globe, Zap, Shield, BarChart2, Package, CreditCard, Headphones, Cloud, Database, Cpu } from 'lucide-react';
+import { ShoppingCart, Smartphone, Globe, Zap, Shield, BarChart2, Package, Database, Cpu } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Helmet } from 'react-helmet-async';
 
@@ -188,7 +188,7 @@ const EcommerceWebSolutions = () => {
               <div className="container mx-auto px-6 relative z-10 sm:mt-50 sm:mb-30 ">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className="text-white ">
-                    <h1 className="text-xl md:text-4xl lg:text-5xl font-light mt-10 mb-4 sm:leading-tight">
+                    <h1 className="text-xl md:text-4xl lg:text-4xl font-light mt-10 mb-4 sm:leading-tight">
                       {slide.title}
                     </h1>
                     <h2 className="text-xl md:text-4xl lg:text-5xl font-light mb-6">
@@ -230,87 +230,61 @@ const EcommerceWebSolutions = () => {
         </div>
 
         {/* Intro Section */}
-        <section className="py-20 bg-]">
-          <div className="bg-">
+<section className="py-20 bg-]">
+  <div className="bg-">
+    <div className=" bg-">
+      <div className="max-w-4xl px-4 mx-auto sm:text-center mb-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          Sell seamlessly both in-store and online with confidence
+        </h2>
+        <p className="sm:text-xl text-base text-white">
+          CONQUERIC's custom e-commerce solutions ensure your offline and online sales stay perfectly in sync—so you can manage your entire business from one place, serve customers better, and scale faster.
+        </p>
+      </div>
 
-            <div className=" bg-">
-              <div className="max-w-4xl px-4 mx-auto sm:text-center mb-16">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  Sell seamlessly both in-store and online with confidence
-                </h2>
-                <p className="sm:text-xl text-base text-white">
-                  CONQUERIC's custom e-commerce solutions ensure your offline and online sales stay perfectly in sync—so you can manage your entire business from one place, serve customers better, and scale faster.
+      <div className="container mx-auto">
+        <div className="bg-[#03140b] grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
+          <div>
+            <img
+              src="/hero/globe.png"
+              alt="Omnichannel ecommerce"
+              className="rounded-xl shadow-xl w-full"
+            />
+          </div>
+          <div className="h-full absolute top-5 right-[760px] w-px bg-white"></div>
+          <div>
+            <div className="bg-[#03140b] rounded-xl  p-6 md:p-8">
+              {/* Video Section Replacing Text Content */}
+              <div className="mb-6">
+                
+              </div>
+              
+              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden ">
+                <video 
+                  className="w-full h-auto" 
+                  autoPlay 
+                  muted 
+                  loop
+                  playsInline
+                  
+                >
+                  <source src="/video/whycc.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              <div className="mt-6 text-center">
+                <p className="text-gray-300 text-sm">
+                  See how our unified platform helps businesses grow both online and offline
                 </p>
               </div>
-
-              <div className="container mx-auto">
-                <div className="bg-[#03140b] grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
-                  <div>
-                    <img
-                      src="/hero/globe.png"
-                      alt="Omnichannel ecommerce"
-                      className="rounded-xl shadow-xl w-full"
-                    />
-                  </div>
-                  <div className="h-full absolute top-5 right-[760px] w-px bg-white"></div>
-                  <div>
-                    <div className="bg-[#03140b] rounded-xl shadow-lg p-6 md:p-8">
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
-                        Why Choose <span className="text-blue-400">CONQUERIC?</span>
-                      </h3>
-                      <ul className="space-y-8">
-                        {/* Unified Payments */}
-                        <li className="flex items-start">
-                          <div className="bg-blue-100 p-3 rounded-full mr-4">
-                            <CreditCard className="text-blue-600 w-5 h-5" />
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-white">Unified Payments</h4>
-                            <p className="text-gray-300">
-                              Accept every major payment method in one seamless system —
-                              including SSL, Stripe, AmarPay, PayPal, bKash, and Nagad.
-                            </p>
-                          </div>
-                        </li>
-
-                        {/* Cloud Hosting */}
-                        <li className="flex items-start">
-                          <div className="bg-purple-100 p-3 rounded-full mr-4">
-                            <Cloud className="text-purple-600 w-5 h-5" />
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-white">Cloud Hosting</h4>
-                            <p className="text-gray-300">
-                              99.9% uptime powered by scalable, secure cloud infrastructure —
-                              so your business never slows down.
-                            </p>
-                          </div>
-                        </li>
-
-                        {/* Dedicated Support */}
-                        <li className="flex items-start">
-                          <div className="bg-green-100 p-3 rounded-full mr-4">
-                            <Headphones className="text-green-600 w-5 h-5" />
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-white">Dedicated 24/7 Support</h4>
-                            <p className="text-gray-300">
-                              We don’t just build your store — we stay by your side around the
-                              clock until your online sales are growing successfully.
-                            </p>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
-
-        </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Features Section */}
         <section className="py-20 bg-[#fff8f8] ">
