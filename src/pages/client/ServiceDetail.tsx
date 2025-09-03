@@ -610,8 +610,8 @@ const ServiceDetail = () => {
                       whileHover={{ y: -8 }}
                       className="bg-white bg-cover bg-no-repeat backdrop-blur-sm rounded-xl sm:p-6 p-3 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 shadow-lg"
                     >
-                      <div className="sm:flex items-start sm:gap-4">
-                        <div className="bg-gradient-to-r from-[#000] to-[#0e0247] p-3 rounded-lg border border-emerald-400/30 flex-shrink-0">
+                      <div className=" sm:gap-4">
+                        <div className="md:bg-transparent bg-gradient-to-r from-[#000] to-[#0e0247] p-3 rounded-lg border border-emerald-400/30 flex-shrink-0">
                           <Zap className="w-5 h-5 text-white" />
                         </div>
                         <div>

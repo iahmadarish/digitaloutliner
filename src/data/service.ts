@@ -672,109 +672,109 @@ fullDetails: [
   },
 
 
-  {
-    id: 7,
-    serviceType: "Branding & Identity",
-    shortDetails:
-      "Build a memorable brand identity that resonates with your audience and stands out in the market.",
-    fullDetails: [
-      "We help businesses create a strong brand foundation with visual and verbal identity.",
-      "From logo design to brand guidelines, we ensure consistency across all touchpoints.",
-      "We craft stories and visuals that build trust and recognition for your brand.",
-    ],
-    bulletPoints: [
-  "Brand strategy and positioning: At CONQUERIC, we develop powerful brand strategies that define your purpose, values, voice, and market positioning. We help you connect with your ideal audience by crafting a compelling brand story that sets you apart from competitors.",
+//   {
+//     id: 7,
+//     serviceType: "Branding & Identity",
+//     shortDetails:
+//       "Build a memorable brand identity that resonates with your audience and stands out in the market.",
+//     fullDetails: [
+//       "We help businesses create a strong brand foundation with visual and verbal identity.",
+//       "From logo design to brand guidelines, we ensure consistency across all touchpoints.",
+//       "We craft stories and visuals that build trust and recognition for your brand.",
+//     ],
+//     bulletPoints: [
+//   "Brand strategy and positioning: At CONQUERIC, we develop powerful brand strategies that define your purpose, values, voice, and market positioning. We help you connect with your ideal audience by crafting a compelling brand story that sets you apart from competitors.",
 
-  "Logo and tagline creation: We create memorable logos and impactful taglines that reflect your brand identity and resonate with your target market. CONQUERIC combines creativity and strategy to ensure every visual and verbal element reinforces your brand message.",
+//   "Logo and tagline creation: We create memorable logos and impactful taglines that reflect your brand identity and resonate with your target market. CONQUERIC combines creativity and strategy to ensure every visual and verbal element reinforces your brand message.",
 
-  "Brand color palette and typography: Establish a cohesive visual identity with CONQUERIC’s carefully curated color palettes and typography systems. We select combinations that reflect your brand’s tone, improve readability, and ensure consistency across platforms.",
+//   "Brand color palette and typography: Establish a cohesive visual identity with CONQUERIC’s carefully curated color palettes and typography systems. We select combinations that reflect your brand’s tone, improve readability, and ensure consistency across platforms.",
 
-  "Brand style guide development: Maintain visual and messaging consistency with a detailed brand style guide. CONQUERIC documents logo usage, color rules, typography, image styles, tone of voice, and more—ensuring your brand stays unified as it grows.",
+//   "Brand style guide development: Maintain visual and messaging consistency with a detailed brand style guide. CONQUERIC documents logo usage, color rules, typography, image styles, tone of voice, and more—ensuring your brand stays unified as it grows.",
 
-  "Visual assets for print and digital: From business cards to web banners, CONQUERIC designs a full suite of visual assets optimized for both print and digital channels. Every asset is aligned with your brand identity and tailored to your marketing needs.",
+//   "Visual assets for print and digital: From business cards to web banners, CONQUERIC designs a full suite of visual assets optimized for both print and digital channels. Every asset is aligned with your brand identity and tailored to your marketing needs.",
 
-  "Rebranding and brand refresh: Whether you need a full rebrand or a modern refresh, CONQUERIC helps you evolve your identity without losing brand equity. We guide you through strategic and creative updates that reflect your current vision and market.",
+//   "Rebranding and brand refresh: Whether you need a full rebrand or a modern refresh, CONQUERIC helps you evolve your identity without losing brand equity. We guide you through strategic and creative updates that reflect your current vision and market.",
 
-  "Marketing collateral design: We design brochures, flyers, pitch decks, signage, and more—each piece reinforcing your brand identity. CONQUERIC ensures that every touchpoint looks professional, polished, and aligned with your brand narrative.",
+//   "Marketing collateral design: We design brochures, flyers, pitch decks, signage, and more—each piece reinforcing your brand identity. CONQUERIC ensures that every touchpoint looks professional, polished, and aligned with your brand narrative.",
 
-  "Social media branding kits: Elevate your online presence with custom social media branding kits from CONQUERIC. We provide profile images, cover banners, post templates, and highlight icons designed for consistency and audience engagement across platforms.",
-]
-,
-    images: [
-      "https://www.ied.edu/news/25464/image-thumb__25464__scaleByWidth1000/come-creare-una-brand-identity-header.jpg",
-      "https://res.cloudinary.com/vistaprint/images/f_auto,q_auto/v1705400952/ideas-and-advice-prod/blogadmin/brand-identity-design/brand-identity-design.jpg?_i=AA",
-    ],
-    features: [
-      {
-        title: "Strategic Brand Positioning",
-        content: "We define your brand’s mission, values, and unique market position to establish long-term relevance and recognition.",
-        image: "https://img.freepik.com/free-photo/brand-strategy-identity_53876-152845.jpg",
-      },
-      {
-        title: "Unified Visual Identity",
-        content: "Consistent brand visuals including logos, fonts, and color palettes that reflect your brand’s essence across platforms.",
-        image: "https://img.freepik.com/free-photo/branding-kit-design_53876-152681.jpg",
-      },
-      {
-        title: "Comprehensive Brand Guides",
-        content: "Detailed style guides to ensure brand consistency across digital, print, packaging, and beyond.",
-        image: "https://img.freepik.com/free-photo/brand-manual-guidelines_53876-152734.jpg",
-      },
-      {
-        title: "Storytelling Through Design",
-        content: "Crafting compelling narratives that emotionally connect your brand with your target audience.",
-        image: "https://img.freepik.com/free-photo/storytelling-digital-marketing_53876-146478.jpg",
-      },
-    ]
-    ,
-    faq: [
-      {
-        question: "What's included in a brand identity package?",
-        answer: "Logo variations, color palette, typography system, brand guidelines, and sample mockups for real-world usage."
-      },
-      {
-        question: "How do you approach logo design?",
-        answer: "Through research, brainstorming, and iteration — we present multiple concepts, refine with your feedback, and deliver final assets in all formats."
-      },
-      {
-        question: "What makes a strong brand identity?",
-        answer: "It’s memorable, scalable, aligned with your values, and resonates clearly with your target market."
-      },
-      {
-        question: "Can you help with rebranding?",
-        answer: "Yes, we specialize in refreshing outdated brands or repositioning existing ones while maintaining brand equity."
-      },
-      {
-        question: "How long does the branding process take?",
-        answer: "Typically 4–8 weeks, depending on complexity and feedback cycles."
-      }
-    ]
-    ,
-    process: [
-      {
-        step: "Discovery",
-        description: "Conducting research on your market, audience, and competitors to understand the brand landscape.",
-      },
-      {
-        step: "Strategy",
-        description: "Defining your brand’s voice, mission, values, and positioning for consistent messaging.",
-      },
-      {
-        step: "Design Exploration",
-        description: "Exploring multiple creative directions for your brand visuals including logo and style components.",
-      },
-      {
-        step: "Refinement",
-        description: "Finalizing and expanding the chosen visual identity into a cohesive and scalable system.",
-      },
-      {
-        step: "Guidelines",
-        description: "Creating a brand manual with clear usage rules for consistent deployment across channels.",
-      },
-      {
-        step: "Implementation",
-        description: "Rolling out the identity across key brand assets like business cards, social media, packaging, and web.",
-      },
-    ]
-  }
+//   "Social media branding kits: Elevate your online presence with custom social media branding kits from CONQUERIC. We provide profile images, cover banners, post templates, and highlight icons designed for consistency and audience engagement across platforms.",
+// ]
+// ,
+//     images: [
+//       "https://www.ied.edu/news/25464/image-thumb__25464__scaleByWidth1000/come-creare-una-brand-identity-header.jpg",
+//       "https://res.cloudinary.com/vistaprint/images/f_auto,q_auto/v1705400952/ideas-and-advice-prod/blogadmin/brand-identity-design/brand-identity-design.jpg?_i=AA",
+//     ],
+//     features: [
+//       {
+//         title: "Strategic Brand Positioning",
+//         content: "We define your brand’s mission, values, and unique market position to establish long-term relevance and recognition.",
+//         image: "https://img.freepik.com/free-photo/brand-strategy-identity_53876-152845.jpg",
+//       },
+//       {
+//         title: "Unified Visual Identity",
+//         content: "Consistent brand visuals including logos, fonts, and color palettes that reflect your brand’s essence across platforms.",
+//         image: "https://img.freepik.com/free-photo/branding-kit-design_53876-152681.jpg",
+//       },
+//       {
+//         title: "Comprehensive Brand Guides",
+//         content: "Detailed style guides to ensure brand consistency across digital, print, packaging, and beyond.",
+//         image: "https://img.freepik.com/free-photo/brand-manual-guidelines_53876-152734.jpg",
+//       },
+//       {
+//         title: "Storytelling Through Design",
+//         content: "Crafting compelling narratives that emotionally connect your brand with your target audience.",
+//         image: "https://img.freepik.com/free-photo/storytelling-digital-marketing_53876-146478.jpg",
+//       },
+//     ]
+//     ,
+//     faq: [
+//       {
+//         question: "What's included in a brand identity package?",
+//         answer: "Logo variations, color palette, typography system, brand guidelines, and sample mockups for real-world usage."
+//       },
+//       {
+//         question: "How do you approach logo design?",
+//         answer: "Through research, brainstorming, and iteration — we present multiple concepts, refine with your feedback, and deliver final assets in all formats."
+//       },
+//       {
+//         question: "What makes a strong brand identity?",
+//         answer: "It’s memorable, scalable, aligned with your values, and resonates clearly with your target market."
+//       },
+//       {
+//         question: "Can you help with rebranding?",
+//         answer: "Yes, we specialize in refreshing outdated brands or repositioning existing ones while maintaining brand equity."
+//       },
+//       {
+//         question: "How long does the branding process take?",
+//         answer: "Typically 4–8 weeks, depending on complexity and feedback cycles."
+//       }
+//     ]
+//     ,
+//     process: [
+//       {
+//         step: "Discovery",
+//         description: "Conducting research on your market, audience, and competitors to understand the brand landscape.",
+//       },
+//       {
+//         step: "Strategy",
+//         description: "Defining your brand’s voice, mission, values, and positioning for consistent messaging.",
+//       },
+//       {
+//         step: "Design Exploration",
+//         description: "Exploring multiple creative directions for your brand visuals including logo and style components.",
+//       },
+//       {
+//         step: "Refinement",
+//         description: "Finalizing and expanding the chosen visual identity into a cohesive and scalable system.",
+//       },
+//       {
+//         step: "Guidelines",
+//         description: "Creating a brand manual with clear usage rules for consistent deployment across channels.",
+//       },
+//       {
+//         step: "Implementation",
+//         description: "Rolling out the identity across key brand assets like business cards, social media, packaging, and web.",
+//       },
+//     ]
+//   }
 ]
