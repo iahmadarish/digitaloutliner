@@ -51,7 +51,7 @@ const faqData = [
   return (
 <div className="bg-[#06140b]">
 
-    <div className="mx-auto max-w-7xl px-2 py-16 min-h-screen">
+    <div className="mx-auto max-w-7xl px-6 py-16 min-h-screen">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-200 mb-2">Frequently Asked Questions</h1>
         <p className="text-gray-300">Everything you need to know about our services and process</p>
@@ -117,7 +117,7 @@ const faqData = [
       </div>
 
       <div className="mt-12 text-center">
-        <p className="text-gray-600 mb-4">Still have questions?</p>
+        <p className="text-gray-100 mb-4">Still have questions?</p>
         <Link to="/contact">
         <button className="bg-lime-400 hover:bg-lime-500 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors duration-200">
           Contact Us

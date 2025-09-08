@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import ScrollToTop from '../ScrollToTop';
 import image from "@/assets/bg-elements/DotsWithLines_illustration_UseBackgroundTurquoise_RGB.svg"
 import bpo from "@/assets/bpo/process.png"
 import { Link } from 'react-router-dom';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 interface ServiceCardProps {
     title: string;
     description: string;
@@ -16,10 +24,6 @@ interface FAQItem {
     question: string;
     answer: string;
 }
-
-
-
-// let imagesb= "https://wallpapers.com/images/hd/dark-gradient-background-v9vj0cpgzd3grcbr.jpg"
 
 // Animation variants
 const container = {
@@ -126,12 +130,12 @@ const HRSupportServices: React.FC = () => {
         {
             title: 'Graphics Designers',
             description: 'Creative professionals for branding, UI/UX, marketing materials, and visual content.',
-            icon: 'https://icon-library.com/images/graphic-designer-icon/graphic-designer-icon-8.jpg'
+            icon: '/graphics.png'
         },
         {
             title: '3D Designers',
             description: 'Talented 3D artists for product visualization, architectural rendering, and animation.',
-            icon: 'https://icon-library.com/images/3d-model-icon/3d-model-icon-5.jpg'
+            icon: '/thread.webp'
         },
         {
             title: 'QA Specialists',
@@ -167,18 +171,42 @@ const HRSupportServices: React.FC = () => {
         }
     ];
 
-
-
-
     const stats = [
         { value: '95%', label: 'Placement Success Rate' },
         { value: '48h', label: 'Average Time to First Candidate' },
-        { value: '500+', label: 'Technical Professionals Placed' },
+        { value: '10+', label: 'Technical Professionals Placed' },
         { value: '4.9/5', label: 'Client Satisfaction Score' }
     ];
 
+    const techStack = [
+        { name: 'React', icon: '⚛️' },
+        { name: 'Angular', icon: '🅰️' },
+        { name: 'Vue.js', icon: '🖖' },
+        { name: 'Node.js', icon: '⬢' },
+        { name: 'Python', icon: '🐍' },
+        { name: 'Django', icon: 'D' },
+        { name: 'Flask', icon: 'F' },
+        { name: 'Java', icon: '☕' },
+        { name: 'Spring', icon: '🌱' },
+        { name: '.NET', icon: '.NET' },
+        { name: 'Swift', icon: '🐦' },
+        { name: 'Kotlin', icon: 'K' },
+        { name: 'Flutter', icon: '💙' },
+        { name: 'React Native', icon: '📱' },
+        { name: 'AWS', icon: '☁️' },
+        { name: 'Azure', icon: '🔷' },
+        { name: 'Docker', icon: '🐳' },
+        { name: 'Kubernetes', icon: '⚓' },
+        { name: 'Figma', icon: '✏️' },
+        { name: 'Adobe Suite', icon: '🎨' },
+        { name: 'Blender', icon: '🌀' },
+        { name: 'Maya', icon: 'M' },
+        { name: 'Unity', icon: 'U' },
+        { name: 'Unreal Engine', icon: 'U' }
+    ];
+
     return (
-        <div className="bg-[#06140b] text-gray-100 lg:py-50 py-30">
+        <div className="bg-[#06140b] text-gray-100 lg:py-50 py-30 font-nunito">
             <ScrollToTop />
             {/* Hero Section */}
             <AnimatedSection variant={fadeIn}>
@@ -212,30 +240,9 @@ const HRSupportServices: React.FC = () => {
                         >
                             <img
                                 src={image}
-                                // https://www.randstad.se/s3fs-media/se-rs/public/2024-09/transparent_png-randstad_professional_tech_illustration_04_rgb_usebackgroundnavy.png?VersionId=ag2Yfnp1wz5WQCQMcwLabIWLChMvvohn
                                 alt="Team collaborating"
-                                className="rounded-xl  w-full max-w-xl mx-auto"
+                                className="rounded-xl rotate-45 w-full max-w-xl mx-auto"
                             />
-                        </motion.div>
-                    </div>
-                </section>
-            </AnimatedSection>
-
-            {/* Client Logos */}
-            <AnimatedSection>
-                <section className="py-12 bg-[url(https://wallpapers.com/images/hd/dark-gradient-background-v9vj0cpgzd3grcbr.jpg)] bg-cover bg-no-repeat">
-                    <div className="container mx-auto px-6">
-                        <h2 className="text-center text-blue-300 text-sm font-semibold mb-8 uppercase tracking-wider">
-
-                        </h2>
-                        <motion.div
-                            className="flex flex-wrap justify-center items-center gap-8 md:gap-16"
-                            variants={container}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                        >
-
                         </motion.div>
                     </div>
                 </section>
@@ -285,7 +292,7 @@ const HRSupportServices: React.FC = () => {
 
             {/* Stats Section */}
             <AnimatedSection>
-                <section className="py-16 bg-blue-900/30 backdrop-blur-sm">
+                <section className="py-16 bg-blue-900/30 backdrop-blur-sm overflow-x-hidden">
                     <div className="container mx-auto px-6">
                         <motion.div
                             className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
@@ -311,7 +318,7 @@ const HRSupportServices: React.FC = () => {
 
             {/* How We Work Section */}
             <AnimatedSection>
-                <section className="py-20 bg-gray-900/50">
+                <section className="py-20 bg-gray-900/50 overflow-x-hidden">
                     <div className="container mx-auto px-6">
                         <motion.div
                             className="sm:text-center mb-16"
@@ -380,7 +387,7 @@ const HRSupportServices: React.FC = () => {
                                                 className="flex gap-4"
                                                 initial="hidden"
                                                 animate="show"
-                                                variants={itemVariants}  // This should be your animation variants
+                                                variants={itemVariants}
                                                 whileHover={{ x: 5 }}
                                             >
                                                 <div className="flex-shrink-0 h-12 w-12 rounded-full bg-blue-900/50 text-blue-400 flex items-center justify-center text-xl font-bold border border-blue-400/30">
@@ -399,77 +406,9 @@ const HRSupportServices: React.FC = () => {
                 </section>
             </AnimatedSection>
 
-            {/* Testimonials */}
-            <AnimatedSection>
-                <section className="py-20 bg-gray-900/50">
-                    <div className="container mx-auto px-6">
-                        <motion.div
-                            className="text-center mb-16"
-                            variants={fadeIn}
-                        >
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                                What Our Clients Say
-                            </h2>
-                            <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-                                Success stories from companies we've helped grow
-                            </p>
-                        </motion.div>
-
-                        <motion.div
-                            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-                            variants={container}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                        >
-                            <motion.div
-                                variants={item}
-                                className="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700"
-                            >
-                                <div className="text-yellow-400 text-2xl mb-4">★★★★★</div>
-                                <blockquote className="text-gray-200 text-lg mb-6">
-                                    "The 3D designers provided by TechStaff Solutions were instrumental in completing our product visualization project on time. Their attention to detail and technical skills exceeded our expectations."
-                                </blockquote>
-                                <div className="flex items-center">
-                                    <img
-                                        src="https://img.freepik.com/premium-photo/happy-sexy-american-girl-beauty-glamour-model-woman-smiling_221213-2120.jpg"
-                                        alt="Sarah Johnson"
-                                        className="w-12 h-12 rounded-full mr-4"
-                                    />
-                                    <div>
-                                        <div className="font-bold text-white">Sarah Johnson</div>
-                                        <div className="text-gray-400">Product Manager, InnovateCorp</div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                variants={item}
-                                className="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700"
-                            >
-                                <div className="text-yellow-400 text-2xl mb-4">★★★★★</div>
-                                <blockquote className="text-gray-200 text-lg mb-6">
-                                    "Their temporary web developers helped us scale our team during a critical product launch phase. The seamless onboarding process and quality of talent saved us months of recruitment effort."
-                                </blockquote>
-                                <div className="flex items-center">
-                                    <img
-                                        src="https://www.blogtivvu.com/wp-content/uploads/2011/11/vanessa-hessler-350x262.jpg"
-                                        alt="Michael Chen"
-                                        className="w-12 h-12 rounded-full mr-4"
-                                    />
-                                    <div>
-                                        <div className="font-bold text-white">Saima Sen</div>
-                                        <div className="text-gray-400">CTO, StartupHub</div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </motion.div>
-                    </div>
-                </section>
-            </AnimatedSection>
-
             {/* Tech Stack Section */}
             <AnimatedSection>
-                <section className="py-20">
+                <section className="py-20 overflow-x-hidden">
                     <div className="container mx-auto px-6">
                         <motion.div
                             className="text-center mb-16"
@@ -483,39 +422,15 @@ const HRSupportServices: React.FC = () => {
                             </p>
                         </motion.div>
 
+                        {/* Desktop Grid View */}
                         <motion.div
-                            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+                            className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
                             variants={container}
                             initial="hidden"
                             whileInView="show"
                             viewport={{ once: true }}
                         >
-                            {[
-                                { name: 'React', icon: '⚛️' },
-                                { name: 'Angular', icon: '🅰️' },
-                                { name: 'Vue.js', icon: '🖖' },
-                                { name: 'Node.js', icon: '⬢' },
-                                { name: 'Python', icon: '🐍' },
-                                { name: 'Django', icon: 'D' },
-                                { name: 'Flask', icon: 'F' },
-                                { name: 'Java', icon: '☕' },
-                                { name: 'Spring', icon: '🌱' },
-                                { name: '.NET', icon: '.NET' },
-                                { name: 'Swift', icon: '🐦' },
-                                { name: 'Kotlin', icon: 'K' },
-                                { name: 'Flutter', icon: '💙' },
-                                { name: 'React Native', icon: '📱' },
-                                { name: 'AWS', icon: '☁️' },
-                                { name: 'Azure', icon: '🔷' },
-                                { name: 'Docker', icon: '🐳' },
-                                { name: 'Kubernetes', icon: '⚓' },
-                                { name: 'Figma', icon: '✏️' },
-                                { name: 'Adobe Suite', icon: '🎨' },
-                                { name: 'Blender', icon: '🌀' },
-                                { name: 'Maya', icon: 'M' },
-                                { name: 'Unity', icon: 'U' },
-                                { name: 'Unreal Engine', icon: 'U' }
-                            ].map((tech, index) => (
+                            {techStack.map((tech, index) => (
                                 <motion.div
                                     key={index}
                                     variants={item}
@@ -527,13 +442,48 @@ const HRSupportServices: React.FC = () => {
                                 </motion.div>
                             ))}
                         </motion.div>
+
+                        {/* Mobile Swiper View - 2x2 Grid Layout */}
+                        <div className="md:hidden">
+                            <Swiper
+                                modules={[Pagination]}
+                                spaceBetween={20}
+                                slidesPerView={1}
+                                pagination={{ 
+                                    clickable: true,
+                                    el: '.tech-swiper-pagination',
+                                }}
+                                className="pb-12"
+                                breakpoints={{
+                                    320: {
+                                        slidesPerView: 1,
+                                    },
+                                }}
+                            >
+                                {[...Array(Math.ceil(techStack.length / 4))].map((_, slideIndex) => (
+                                    <SwiperSlide key={slideIndex}>
+                                        <div className="grid grid-cols-2 gap-4">
+                                            {techStack.slice(slideIndex * 4, slideIndex * 4 + 4).map((tech, index) => (
+                                                <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col items-center border border-gray-700 h-full">
+                                                    <div className="text-3xl mb-2">{tech.icon}</div>
+                                                    <div className="font-medium text-gray-200 text-sm text-center">{tech.name}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                            
+                            {/* Custom Pagination */}
+                            <div className="tech-swiper-pagination flex justify-center mt-4 space-x-2"></div>
+                        </div>
                     </div>
                 </section>
             </AnimatedSection>
 
-            {/* FAQ Section */}
+            {/* FAQ Section with Video */}
             <AnimatedSection>
-                <section className="py-20 bg-gray-900/50">
+                <section className="py-20 overflow-x-hidden">
                     <div className="container mx-auto px-6">
                         <motion.div
                             className="text-center mb-16"
@@ -548,42 +498,80 @@ const HRSupportServices: React.FC = () => {
                         </motion.div>
 
                         <motion.div
-                            className="max-w-3xl mx-auto space-y-4"
+                            className="flex flex-col lg:flex-row gap-10"
                             variants={container}
                             initial="hidden"
                             whileInView="show"
                             viewport={{ once: true }}
                         >
-                            {faqs.map((faq, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={item}
-                                    className="bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-700"
-                                >
-                                    <button
-                                        className={`w-full px-6 py-4 text-left font-medium text-white flex justify-between items-center ${activeFaq === index ? 'bg-blue-900/30' : ''}`}
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        <span>{faq.question}</span>
-                                        <span className="text-blue-400 text-xl">
-                                            {activeFaq === index ? '−' : '+'}
-                                        </span>
-                                    </button>
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{
-                                            height: activeFaq === index ? 'auto' : 0,
-                                            opacity: activeFaq === index ? 1 : 0
-                                        }}
-                                        transition={{ duration: 0.3 }}
-                                        className="overflow-hidden"
-                                    >
-                                        <div className="px-6 pb-4 pt-2 text-gray-300">
-                                            {faq.answer}
+                            {/* FAQ Items - Left side on desktop, top on mobile */}
+                            <div className="lg:w-1/2">
+                                <div className="space-y-4">
+                                    {faqs.map((faq, index) => (
+                                        <motion.div
+                                            key={index}
+                                            variants={item}
+                                            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-lg overflow-hidden border border-gray-700 transition-all duration-300 hover:shadow-xl"
+                                        >
+                                            <button
+                                                className={`w-full px-5 py-4 text-left flex justify-between items-center transition-colors duration-300 ${activeFaq === index ? 'bg-blue-900/30' : 'hover:bg-gray-700/50'}`}
+                                                onClick={() => toggleFaq(index)}
+                                            >
+                                                <span className="font-medium text-white text-lg pr-4">{faq.question}</span>
+                                                <span className="flex-shrink-0 bg-blue-700/30 rounded-full w-7 h-7 flex items-center justify-center">
+                                                    <svg 
+                                                        className={`w-4 h-4 text-blue-400 transition-transform duration-300 ${activeFaq === index ? 'rotate-180' : ''}`} 
+                                                        fill="none" 
+                                                        stroke="currentColor" 
+                                                        viewBox="0 0 24 24" 
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{
+                                                    height: activeFaq === index ? 'auto' : 0,
+                                                    opacity: activeFaq === index ? 1 : 0
+                                                }}
+                                                transition={{ duration: 0.3 }}
+                                                className="overflow-hidden"
+                                            >
+                                                <div className="px-5 pb-4 pt-2 text-gray-300">
+                                                    {faq.answer}
+                                                </div>
+                                            </motion.div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Video - Right side on desktop, bottom on mobile */}
+                            <div className="lg:w-1/2 flex items-center justify-center">
+                                <div className="bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 w-full max-w-md mx-auto">
+                                    <div className="aspect-video bg-gray-700 rounded-lg flex items-center justify-center relative overflow-hidden">
+                                        {/* Video thumbnail with play button */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 flex items-center justify-center">
+                                            <button className="bg-blue-600 hover:bg-blue-700 rounded-full w-16 h-16 flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                                                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 5v14l11-7z" />
+                                                </svg>
+                                            </button>
                                         </div>
-                                    </motion.div>
-                                </motion.div>
-                            ))}
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                                            alt="Video thumbnail" 
+                                            className="w-full h-full object-cover absolute mix-blend-overlay opacity-30"
+                                        />
+                                    </div>
+                                    <div className="mt-4 text-center">
+                                        <h3 className="text-xl font-semibold text-white mb-2">See How We Work</h3>
+                                        <p className="text-gray-300">Watch our short video to learn about our recruitment process and success stories.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </motion.div>
                     </div>
                 </section>
@@ -591,13 +579,13 @@ const HRSupportServices: React.FC = () => {
 
             {/* CTA Section */}
             <AnimatedSection>
-                <section className="py-20 bg-gradient-to-r from-blue-900/70 to-blue-800/70 backdrop-blur-sm">
+                <section className="py-20 backdrop-blur-sm overflow-x-hidden">
                     <div className="container mx-auto px-6 text-center">
                         <motion.div variants={fadeIn}>
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">
                                 Ready to Build Your Technical Team?
                             </h2>
-                            <p className="text-xl text-blue-200 max-w-2xl mx-auto mb-8">
+                            <p className="text-xl text-blue-200 max-w-2xl mx-auto mb-8 text-justify">
                                 Whether you need one specialist or an entire team, we can help you find the right talent quickly and efficiently.
                             </p>
                         </motion.div>

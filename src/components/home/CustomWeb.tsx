@@ -72,12 +72,12 @@ const CustomWebWithVideo = () => {
               </motion.p>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start"
+                className="flex  sm:flex-row gap-4 pt-6 justify-center lg:justify-start"
                 variants={itemVariants}
               >
                 <Link to="/contact">
                   <motion.button
-                    className="group px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+                    className="group px-3 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -89,7 +89,7 @@ const CustomWebWithVideo = () => {
 
                 <Link to="/global-ecommere-web-solutions-with-conqueric">
                   <motion.button
-                    className="px-6 md:px-8 py-3 md:py-4 border-2 border-gray-200 text-white font-semibold rounded-2xl hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
+                    className="px-3 sm:px-6 md:px-8 py-3 md:py-4 border-1 border-gray-200 text-white font-semibold rounded-lg hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

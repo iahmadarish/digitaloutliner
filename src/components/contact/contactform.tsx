@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { MapPin, Phone, Mail, Send, User, Building, MessageSquare, Clock, Globe } from 'lucide-react';
 
 export default function ModernContactForm() {
@@ -12,7 +12,11 @@ export default function ModernContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' });
-
+  
+  // Video controls state
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+console.log(setIsMuted)
   const handleChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -20,6 +24,8 @@ export default function ModernContactForm() {
       [name]: value
     }));
   };
+
+
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -68,17 +74,38 @@ export default function ModernContactForm() {
   return (
     <div className="min-h-screen  text-white font-sans">
       <div className="container mx-auto px-4 py-16">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6 shadow-lg">
-            <MessageSquare className="h-10 w-10 text-white" />
+        {/* Header Section with Video */}
+        <div className="md:flex max-w-7xl mx-auto gap-8 items-center mb-16">
+          {/* Video Section */}
+          <div className="relative rounded-2xl overflow-hidden ">
+            <video
+              ref={videoRef}
+              autoPlay
+              muted={isMuted}
+              loop
+              // playsInline
+              className="w-full h-auto max-h-96 object-cover"
+              poster=""
+            >
+              <source src="/video/contactus.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            
+            
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Touch</span>
-          </h1>
-          <p className="sm:text-xl text-gray-300 max-w-3xl  mx-auto">
-            Have a project in mind? Let's collaborate to bring your ideas to life.
-          </p>
+          
+          {/* Content Section */}
+          <div className="text-center md:text-left">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6 shadow-lg">
+              <MessageSquare className="h-10 w-10 text-white" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Touch</span>
+            </h1>
+            <p className="sm:text-xl text-gray-300 max-w-3xl mx-auto md:mx-0">
+              Have a project in mind? Let's collaborate to bring your ideas to life.
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-5 sm:gap-8 max-w-7xl mx-auto">
@@ -277,28 +304,6 @@ export default function ModernContactForm() {
                 </div>
               </div>
             </div>
-
-            {/* Map */}
-            {/* <div className="bg-gray-800/50 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-gray-700">
-              <div className="p-6 pb-4">
-                <h3 className="text-xl font-bold text-white flex items-center">
-                  <MapPin className="h-5 w-5 mr-3 text-red-400" />
-                  Find Us
-                </h3>
-              </div>
-              <div className="h-56 relative">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116834.00977741619!2d90.349285767855!3d23.78077774449031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1651154250290!5m2!1sen!2sbd"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-b-2xl"
-                ></iframe>
-              </div>
-            </div> */}
           </div>
         </div>
 

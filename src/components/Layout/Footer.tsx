@@ -15,6 +15,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#000] font-family-comfort text-white py-8 sm:py-12">
       <div className="mx-auto container py-4">
+        <img src="/logo/logo.png" className="mx-auto pb-14 animate-in drop-shadow-blue-200 drop-shadow-4xl" alt="" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Section */}
           <div className="mb-2 sm:mb-0">

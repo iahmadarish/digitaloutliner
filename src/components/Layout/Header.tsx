@@ -107,9 +107,11 @@ const CONQUERICNavbar = () => {
 
               {/* Contact Us Button - Right Side */}
               <div className="flex items-center">
+                <Link to="/contact">
                 <button className="hidden lg:block px-4 py-2 border border-blue-500 rounded-md text-white text-sm lg:text-base font-medium hover:bg-white/10 transition-colors duration-200">
                   Contact Us
                 </button>
+                </Link>
 
                 {/* Mobile menu button */}
                 <div className="lg:hidden z-50 ml-4">
@@ -191,7 +193,7 @@ const CONQUERICNavbar = () => {
               </div>
 
               {/* Contact Us Button */}
-              <Link to="contact">
+              <Link to="/contact">
                 <div
                   className="sm:mt-8 mt-2 opacity-0 translate-x-4 animate-slideIn"
                   style={{
@@ -215,11 +217,11 @@ const CONQUERICNavbar = () => {
               >
                 <div className="flex items-center space-x-3 text-white/80">
                   <Phone className="h-5 w-5 text-cyan-400" />
-                  <span className="text-sm">+880 1568202839</span>
+                  <span className="text-sm">+880 1511521362</span>
                 </div>
                 <div className="flex items-center space-x-3 text-white/80">
                   <Mail className="h-5 w-5 text-cyan-400" />
-                  <span className="text-sm">weareconqueric@gmail.com</span>
+                  <span className="text-sm">info@conqueric.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-white/80">
                   <Clock className="h-5 w-5 text-cyan-400" />
