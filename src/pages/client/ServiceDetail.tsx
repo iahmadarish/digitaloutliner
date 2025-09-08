@@ -69,7 +69,7 @@ const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
   const [activeFeature, setActiveFeature] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
   const [activeSection, setActiveSection] = useState("overview")
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
   const [isSticky, setIsSticky] = useState(false)
@@ -108,8 +108,8 @@ const ServiceDetail = () => {
     
     // Resume auto-slide after 10 seconds of inactivity
     setTimeout(() => {
-      setIsPlaying(true)
-    }, 10000)
+      setIsPlaying(false)
+    }, 35)
   }
 
   // Services Grid Navigation
@@ -441,13 +441,13 @@ const ServiceDetail = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 shadow-lg"
+                className=" backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 shadow-lg"
               >
                 <div className="flex items-start gap-4">
-                  <div className="bg-cyan-600/20 p-1.5 rounded-full border border-cyan-400/30 flex-shrink-0">
+                  <div className=" p-1.5 rounded-full border border-cyan-400/30 flex-shrink-0">
                     <img className="w-8 h-8" src="/index.png" alt="" />
                   </div>
-                  <p className="text-gray-200 sm:leading-relaxed">{detail}</p>
+                  <p className="text-gray-200 text- text-lg font-nunito sm:leading-relaxed">{detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -456,211 +456,293 @@ const ServiceDetail = () => {
       </section>
 
       {/* Features Section - Fixed Auto-Sliding */}
-      {service.features && service.features.length > 0 && (
-        <section
-          id="features"
-          className="py-16 md:py-24 overflow-hidden"
-          ref={setSectionRef('features')}
-        >
-          <div className="container mx-auto sm:px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Key Features</h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6" />
-            </motion.div>
 
-            {/* Auto-sliding Features Container */}
-            <div className="relative font-nunito h-[500px] md:h-[600px] w-full overflow-hidden rounded-2xl sm:rounded-bl-[120px] sm:bg-gray-800/50 border sm:border-gray-700 border-[#00f1dd] shadow-xl">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeFeature}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 flex flex-col md:flex-row"
-                >
-                  {/* Feature Content */}
-                  <div className="w-full md:w-1/2 sm:p-8 p-3 md:p-12 flex flex-col justify-center">
-                    <div className="mb-4 flex items-center gap-2">
-                      <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold">
-                        {activeFeature + 1}
-                      </div>
-                      <span className="text-sm text-blue-400">Feature {activeFeature + 1}/{service.features.length}</span>
-                    </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                      {service.features[activeFeature].title}
-                    </h3>
-                    <p className="text-gray-300 sm:mb-6 sm:text-lg text-sm sm:leading-relaxed mb-4">
-                      {service.features[activeFeature].content}
-                    </p>
-                    
-                    {/* Play/Pause button */}
-                    <button
-                      onClick={() => setIsPlaying(!isPlaying)}
-                      className="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-2 mt-4"
-                    >
-                      {isPlaying ? "Pause Auto-slide" : "Resume Auto-slide"}
-                    </button>
-                  </div>
+{service.features && service.features.length > 0 && (
+  <section
+    id="features"
+    className="py-16 md:py-24 relative overflow-hidden"
+    ref={setSectionRef('features')}
+    style={{
+      background: "#06140b"
+    }}
+  >
+    {/* Background elements */}
+    <div className="absolute inset-0 opacity-5">
+      <div className="absolute top-0 right-0 w-72 h-72 bg-cyan-500 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-600 rounded-full filter blur-3xl"></div>
+    </div>
+    
+    <div className="container mx-auto px-4 relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="text-center mb-16"
+      >
 
-                  {/* Feature Image */}
-                  <div className="w-full md:w-1/2 h-64 md:h-full relative bg-gray-700">
-                    <img
-                      src={
-                        service.features[activeFeature].image ||
-                        `/placeholder.svg?height=600&width=800&query=${service.features[activeFeature].title}`
-                      }
-                      alt={service.features[activeFeature].title}
-                      className="w-full h-full object-cover absolute inset-0"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-black/60 via-black/30 to-transparent" />
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+      </motion.div>
+
+      {/* Manual Navigation Features Container */}
+      <div className="relative h-auto md:h-[500px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 shadow-2xl">
+        <div className="flex flex-col md:flex-row h-full">
+          {/* Feature Content */}
+          <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center relative">
+            {/* Background pattern */}
+            <div className="absolute top-0 left-0 w-full h-full opacity-5">
+              <div className="absolute top-10 right-10 w-32 h-32 bg-cyan-500 rounded-full filter blur-xl"></div>
+              <div className="absolute bottom-10 left-10 w-24 h-24 bg-blue-500 rounded-full filter blur-xl"></div>
             </div>
-
-            {/* Navigation Dots */}
-            <div className="flex justify-center gap-3 mt-8">
-              {service.features.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleFeatureChange(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${index === activeFeature
-                    ? "bg-blue-500 scale-125"
-                    : "bg-gray-600 hover:bg-gray-500"
-                    }`}
-                />
-              ))}
+            
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                  {activeFeature + 1}
+                </div>
+                <span className="text-blue-400 font-medium">
+                  Feature {activeFeature + 1}/{service.features.length}
+                </span>
+              </div>
+              
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
+                {service.features[activeFeature].title}
+              </h3>
+              
+              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                {service.features[activeFeature].content}
+              </p>
             </div>
           </div>
-        </section>
-      )}
 
-      {/* Enhanced Services Grid with Navigation */}
-      <section
-        id="services"
-        className="py-16 md:py-24 bg-[#ecfbfc] sm:rounded-br-[120px] sm:rounded-tl-[120px] sm:px-4 sm:m-2"
-        ref={setSectionRef('services')}
-      >
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="sm:text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">What We Offer</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 sm:mx-auto mb-6" />
-            <p className="sm:text-lg text-sm text-gray-900 max-w-3xl mx-auto">
-              Complete range of services to meet your requirements
-            </p>
-          </motion.div>
-
-          {/* Services Container with Navigation */}
-          <div className="relative">
-            {/* Navigation Arrows for Desktop */}
-            {!isMobile && service?.bulletPoints && service.bulletPoints.length > 4 && (
-              <>
-                <button
-                  onClick={prevServices}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-gray-900 hover:bg-gray-800 text-white p-1 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-                >
-                  {/* <ChevronLeft className="w-6 h-6" /> */}
-                  <img className="w-8 h-8" src="/index.png" alt="" />
-                </button>
-                <button
-                  onClick={nextServices}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-gray-900 hover:bg-gray-800 text-white p-1 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-                >
-                  <img className="w-8 h-8" src="/index.png" alt="" />
-                  {/* <ChevronRight className="w-6 h-6" /> */}
-                </button>
-              </>
-            )}
-
-            {/* Services Grid */}
-            <div 
-              className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'} sm:gap-6 gap-3 overflow-hidden`}
-              onTouchStart={isMobile ? handleTouchStart : undefined}
-              onTouchMove={isMobile ? handleTouchMove : undefined}
-              onTouchEnd={isMobile ? handleTouchEnd : undefined}
-            >
-              <AnimatePresence mode="wait">
-                {getVisibleServices().map((serviceItem, index) => {
-                  // Safety check for string content
-                  if (!serviceItem.content || typeof serviceItem.content !== 'string') {
-                    return null
-                  }
-
-                  const [title, ...rest] = serviceItem.content.split(":");
-                  const description = rest.join(":").trim();
-
-                  return (
-                    <motion.div
-                      key={`${currentServiceIndex}-${index}`}
-                      initial={{ opacity: 0, x: isMobile ? 100 : 0, y: isMobile ? 0 : 30 }}
-                      animate={{ opacity: 1, x: 0, y: 0 }}
-                      exit={{ opacity: 0, x: isMobile ? -100 : 0, y: isMobile ? 0 : -30 }}
-                      transition={{ duration: 0.5, delay: isMobile ? 0 : index * 0.1 }}
-                      whileHover={{ y: -8 }}
-                      className="bg-white bg-cover bg-no-repeat backdrop-blur-sm rounded-xl sm:p-6 p-3 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 shadow-lg"
-                    >
-                      <div className=" sm:gap-4">
-                        <div className="md:bg-transparent bg-gradient-to-r from-[#000] to-[#0e0247] p-3 rounded-lg border border-emerald-400/30 flex-shrink-0">
-                          <Zap className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="sm:text-2xl italic font-nunito font-semibold text-[#19012c] mb-2 sm:mt-0 mt-3 sm:mb-2">
-                            {title.trim()}
-                          </h3>
-                          <p className="text-gray-900 text-sm bg-amber-50 italic p-1">{description}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </AnimatePresence>
+          {/* Feature Image */}
+          <div className="w-full md:w-1/2 h-80 md:h-full relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-indigo-900/20 z-10"></div>
+            <img
+              src={
+                service.features[activeFeature].image ||
+                `/placeholder.svg?height=600&width=800&query=${service.features[activeFeature].title}`
+              }
+              alt={service.features[activeFeature].title}
+              className="w-full h-full object-cover absolute inset-0"
+            />
+            
+            {/* Decorative elements */}
+            <div className="absolute top-6 right-6 w-12 h-12 border-2 border-blue-500/30 rounded-lg z-20"></div>
+            <div className="absolute bottom-6 left-6 w-8 h-8 border-2 border-cyan-500/30 rounded-full z-20"></div>
+            
+            {/* Navigation Arrows - Right Side */}
+            <div className="absolute bottom-6 right-6 flex gap-3 z-20">
+              <button
+                onClick={() => handleFeatureChange((activeFeature - 1 + service.features.length) % service.features.length)}
+                className="w-12 h-12 bg-gray-900/80 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-gray-700 hover:bg-blue-600 transition-all duration-300 hover:scale-110"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={() => handleFeatureChange((activeFeature + 1) % service.features.length)}
+                className="w-12 h-12 bg-gray-900/80 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-gray-700 hover:bg-blue-600 transition-all duration-300 hover:scale-110"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
-
-            {/* Mobile Navigation Dots */}
-            {isMobile && service?.bulletPoints && service.bulletPoints.length > 1 && (
-              <div className="flex justify-center gap-2 mt-6">
-                {service.bulletPoints.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentServiceIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${index === currentServiceIndex
-                      ? "bg-emerald-500 scale-125"
-                      : "bg-gray-400 hover:bg-gray-500"
-                      }`}
-                  />
-                ))}
-              </div>
-            )}
-
-            {/* Desktop Navigation Indicators */}
-            {!isMobile && service?.bulletPoints && service.bulletPoints.length > 4 && (
-              <div className="flex justify-center gap-2 mt-8">
-                {Array.from({ length: Math.ceil(service.bulletPoints.length / 4) }).map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentServiceIndex(index * 4)}
-                    className={`w-3 h-3 rounded-full transition-all ${Math.floor(currentServiceIndex / 4) === index
-                      ? "bg-emerald-500 scale-125"
-                      : "bg-gray-400 hover:bg-gray-500"
-                      }`}
-                  />
-                ))}
-              </div>
-            )}
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Navigation Dots */}
+      <div className="mt-10">
+        <div className="flex justify-center gap-4">
+          {service.features.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveFeature(index)}
+              className={`flex flex-col items-center group ${index === activeFeature ? "text-white" : "text-gray-500"}`}
+            >
+              <div className={`w-4 h-4 rounded-full transition-all mb-2 ${
+                index === activeFeature 
+                  ? "bg-gradient-to-r from-blue-500 to-cyan-500 scale-125 shadow-lg shadow-blue-500/30" 
+                  : "bg-gray-600 group-hover:bg-gray-500"
+              }`} />
+              <span className="text-xs font-medium transition-all">
+                {index + 1}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Quick Stats */}
+
+    </div>
+  </section>
+)}
+
+      {/* Enhanced Services Grid with Navigation */}
+<section
+  id="services"
+  className="py-16 md:py-24 relative overflow-hidden"
+  ref={setSectionRef('services')}
+  style={{
+    background: "#06140b",
+  }}
+>
+  <div className="absolute inset-0 opacity-10">
+    <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+')]"></div>
+  </div>
+  
+  <div className="container mx-auto px-4 relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Offer</h2>
+      <div className="w-20 h-1 bg-gradient-to-r from-teal-400 to-cyan-600 mx-auto mb-6" />
+      <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+        Comprehensive solutions tailored to elevate your business
+      </p>
+    </motion.div>
+
+    {/* Services Container with Enhanced Navigation */}
+    <div className="relative">
+      {/* Navigation Arrows */}
+      {service?.bulletPoints && service.bulletPoints.length > (isMobile ? 1 : 4) && (
+        <>
+          <button
+            onClick={prevServices}
+            className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-teal-500 to-cyan-600 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-cyan-500/30 hidden md:flex items-center justify-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={nextServices}
+            className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-teal-500 to-cyan-600 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-cyan-500/30 hidden md:flex items-center justify-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </>
+      )}
+
+      {/* Services Grid */}
+      <div 
+        className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'} gap-6 overflow-hidden`}
+        onTouchStart={isMobile ? handleTouchStart : undefined}
+        onTouchMove={isMobile ? handleTouchMove : undefined}
+        onTouchEnd={isMobile ? handleTouchEnd : undefined}
+      >
+        <AnimatePresence mode="wait">
+          {getVisibleServices().map((serviceItem, index) => {
+            if (!serviceItem.content || typeof serviceItem.content !== 'string') {
+              return null;
+            }
+
+            const [title, ...rest] = serviceItem.content.split(":");
+            const description = rest.join(":").trim();
+
+            return (
+              <motion.div
+                key={`${currentServiceIndex}-${index}`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                whileHover={{ 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
+                }}
+                className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 relative overflow-hidden h-full flex flex-col"
+              >
+                {/* Hover effect background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-cyan-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Icon container */}
+                <div className="relative z-10 mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Zap className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
+                    {title.trim()}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4 flex-1">
+                    {description}
+                  </p>
+                  
+                  {/* Learn more link */}
+                  <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 mt-auto">
+                    <span className="text-sm font-medium">Learn more</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+      </div>
+
+      {/* Mobile Navigation Dots */}
+      {isMobile && service?.bulletPoints && service.bulletPoints.length > 1 && (
+        <div className="flex justify-center gap-2 mt-8">
+          {service.bulletPoints.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentServiceIndex(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentServiceIndex
+                ? "bg-cyan-500 scale-125"
+                : "bg-gray-600 hover:bg-gray-500"
+                }`}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Desktop Navigation Indicators */}
+      {!isMobile && service?.bulletPoints && service.bulletPoints.length > 4 && (
+        <div className="flex justify-center gap-2 mt-8">
+          {Array.from({ length: Math.ceil(service.bulletPoints.length / 4) }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentServiceIndex(index * 4)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${Math.floor(currentServiceIndex / 4) === index
+                ? "bg-cyan-500 scale-125"
+                : "bg-gray-600 hover:bg-gray-500"
+                }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+
+    {/* CTA Button */}
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.5 }}
+      className="text-center mt-12"
+    >
+      <button className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 flex items-center justify-center mx-auto">
+        <span>Explore All Services</span>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </motion.div>
+  </div>
+</section>
 
       {/* Process Section */}
       {service.process && service.process.length > 0 && (

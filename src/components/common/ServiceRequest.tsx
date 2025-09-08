@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const ServiceRequest: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +15,9 @@ const ServiceRequest: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'delayed'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [showDelayPopup, setShowDelayPopup] = useState(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [delayTimeoutId, setDelayTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,14 +26,22 @@ const ServiceRequest: React.FC = () => {
   useEffect(() => {
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
+      if (delayTimeoutId) clearTimeout(delayTimeoutId);
     };
-  }, [timeoutId]);
+  }, [timeoutId, delayTimeoutId]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMessage('');
     setShowSuccessPopup(false);
+    setShowDelayPopup(false);
+
+    // Set timeout for showing delay message after 10 seconds
+    const delayId = setTimeout(() => {
+      setShowDelayPopup(true);
+    }, 10000);
+    setDelayTimeoutId(delayId);
 
     const id = setTimeout(() => {
       if (status === 'loading') {
@@ -50,6 +61,7 @@ const ServiceRequest: React.FC = () => {
       });
 
       if (timeoutId) clearTimeout(timeoutId);
+      if (delayTimeoutId) clearTimeout(delayTimeoutId);
 
       if (!response.ok) {
         throw new Error('Server error');
@@ -57,6 +69,7 @@ const ServiceRequest: React.FC = () => {
 
       setStatus('success');
       setShowSuccessPopup(true);
+      setShowDelayPopup(false);
       setFormData({
         name: '',
         email: '',
@@ -69,15 +82,16 @@ const ServiceRequest: React.FC = () => {
     } catch (error) {
       console.error(error);
       setStatus('error');
+      setShowDelayPopup(false);
       setErrorMessage('Something went wrong. Please try again.');
     }
   };
 
   const SuccessPopup = () => (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 backdrop-blur-sm">
-      <div className="bg-gray-900 p-8 rounded-2xl max-w-md w-full mx-4 shadow-xl border border-gray-700 animate-pop-in">
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl max-w-md w-full mx-4 shadow-xl border border-cyan-500/30 animate-pop-in">
         <div className="text-center">
-          <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
             <svg
               className="w-12 h-12 text-white"
               fill="none"
@@ -95,11 +109,11 @@ const ServiceRequest: React.FC = () => {
           </div>
           <h3 className="text-3xl font-bold text-white mb-3">Request Received!</h3>
           <p className="text-gray-300 mb-6 text-lg">
-            We've got your request and will get back to you within <span className="font-semibold text-blue-400">24 hours</span>.
+            We've got your request and will get back to you within <span className="font-semibold text-cyan-400">24 hours</span>.
           </p>
           <button
             onClick={() => setShowSuccessPopup(false)}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all shadow-md hover:shadow-lg font-medium"
+            className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all shadow-md hover:shadow-lg font-medium"
           >
             Close
           </button>
@@ -108,16 +122,76 @@ const ServiceRequest: React.FC = () => {
     </div>
   );
 
-  return (
-    <div className="relative py-16 bg-[#06140b] overflow-hidden font-nunito">
+  const DelayPopup = () => (
+    <div className="fixed inset-0 bg-black/20 bg-opacity-20 flex items-center justify-center z-50 backdrop-blur-sm">
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl max-w-md w-full mx-4 shadow-xl border border-amber-500/30 animate-pop-in">
+        <div className="text-center">
+          <div className="w-20 h-20 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <svg
+              className="w-12 h-12 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <h3 className="text-3xl font-bold text-white mb-3">Processing Your Request</h3>
+          <p className="text-gray-300 mb-6 text-lg">
+            Sorry for the delay. We are working on your submitting request. Please wait a moment.
+          </p>
+          <div className="flex justify-center mb-6">
+            <div className="flex space-x-2">
+              <div className="w-3 h-3 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+              <div className="w-3 h-3 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '200ms' }}></div>
+              <div className="w-3 h-3 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '400ms' }}></div>
+            </div>
+          </div>
+          <button
+            onClick={() => setShowDelayPopup(false)}
+            className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all shadow-md hover:shadow-lg font-medium"
+          >
+            Continue Waiting
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-800">
+  return (
+    <div className="relative py-16 bg-[#06140b] overflow-hidden font-nunito" id="project-request">
+      {/* Background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 right-0 w-72 h-72 bg-cyan-500 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-10 left-0 w-96 h-96 bg-blue-600 rounded-full filter blur-3xl"></div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold text-white mb-4">Start Your Project</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Ready to bring your idea to life? Fill out the form below and our team will contact you within 24 hours.
+          </p>
+        </motion.div>
+
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
           {/* Header with gradient */}
-          <div className="bg-gradient-to-r from-blue-700 to-purple-800 p-8 text-center">
-            <h2 className="text-4xl font-bold text-white mb-2">Let's Build Something Amazing</h2>
-            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Tell us about your project and we'll get back to you with a customized solution.
+          <div className="bg-gradient-to-r from-cyan-700 to-blue-800 p-8 text-center">
+            <h2 className="text-3xl font-bold text-white mb-2">Get Your Free Consultation</h2>
+            <p className="text-cyan-200 text-lg">
+              Let's discuss your project and create a custom solution for your business
             </p>
           </div>
           
@@ -125,7 +199,7 @@ const ServiceRequest: React.FC = () => {
           <div className="p-8 md:p-10">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300">
                     Your Name <span className="text-red-500">*</span>
                   </label>
@@ -136,11 +210,11 @@ const ServiceRequest: React.FC = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-white placeholder-gray-500"
                     placeholder="John Doe"
                   />
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                     Your Email <span className="text-red-500">*</span>
                   </label>
@@ -151,13 +225,13 @@ const ServiceRequest: React.FC = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-white placeholder-gray-500"
                     placeholder="you@example.com"
                   />
                 </div>
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-2">
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-300">
                   Phone Number
                 </label>
@@ -167,12 +241,12 @@ const ServiceRequest: React.FC = () => {
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-white placeholder-gray-500"
                   placeholder="+1 (123) 456-7890"
                 />
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-2">
                 <label htmlFor="service" className="block text-sm font-medium text-gray-300">
                   Service Needed <span className="text-red-500">*</span>
                 </label>
@@ -182,20 +256,23 @@ const ServiceRequest: React.FC = () => {
                   required
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiAjd2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=')] bg-no-repeat bg-[right_1rem_center] bg-[length:1.5rem]"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-white appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=')] bg-no-repeat bg-[right_1rem_center] bg-[length:1.5rem]"
                 >
                   <option value="" className="text-gray-500">Select a service...</option>
                   <option value="Website Development" className="text-white">Website Development</option>
                   <option value="Mobile App Development" className="text-white">Mobile App Development</option>
-                  <option value="Graphics Design" className="text-white">Graphics Design</option>
+                  <option value="UI/UX Design" className="text-white">UI/UX Design</option>
+                  <option value="Digital Marketing" className="text-white">Digital Marketing</option>
+                  <option value="E-commerce Solutions" className="text-white">E-commerce Solutions</option>
                   <option value="Custom Software" className="text-white">Custom Software</option>
                   <option value="2D/3D Design" className="text-white">2D/3D Design</option>
+                  <option value="IT Consultancy" className="text-white">IT Consultancy</option>
                   <option value="Others" className="text-white">Others</option>
                 </select>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <label htmlFor="budget" className="block text-sm font-medium text-gray-300">
                     Estimated Budget
                   </label>
@@ -207,12 +284,12 @@ const ServiceRequest: React.FC = () => {
                       type="text"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="w-full pl-8 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                      className="w-full pl-8 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-white placeholder-gray-500"
                       placeholder="5,000 - 10,000"
                     />
                   </div>
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <label htmlFor="timeline" className="block text-sm font-medium text-gray-300">
                     Project Timeline
                   </label>
@@ -222,13 +299,13 @@ const ServiceRequest: React.FC = () => {
                     type="text"
                     value={formData.timeline}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-white placeholder-gray-500"
                     placeholder="e.g., 3 months"
                   />
                 </div>
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-2">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300">
                   Project Details <span className="text-red-500">*</span>
                 </label>
@@ -239,7 +316,7 @@ const ServiceRequest: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-white placeholder-gray-500"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-white placeholder-gray-500"
                   placeholder="Describe your project goals, requirements, and any specific needs..."
                 />
               </div>
@@ -248,7 +325,7 @@ const ServiceRequest: React.FC = () => {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-xl hover:opacity-90 transition-all shadow-lg hover:shadow-xl disabled:opacity-70 flex items-center justify-center font-medium text-lg"
+                  className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-4 px-6 rounded-xl hover:opacity-90 transition-all shadow-lg hover:shadow-xl disabled:opacity-70 flex items-center justify-center font-medium text-lg"
                 >
                   {status === 'loading' ? (
                     <>
@@ -281,11 +358,11 @@ const ServiceRequest: React.FC = () => {
               </div>
 
               {status === 'delayed' && (
-                <div className="bg-yellow-900 bg-opacity-30 border-l-4 border-yellow-500 p-4 rounded-lg">
+                <div className="bg-amber-900 bg-opacity-30 border-l-4 border-amber-500 p-4 rounded-lg">
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <svg
-                        className="h-5 w-5 text-yellow-400"
+                        className="h-5 w-5 text-amber-400"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                         fill="currentColor"
@@ -298,8 +375,8 @@ const ServiceRequest: React.FC = () => {
                       </svg>
                     </div>
                     <div className="ml-3">
-                      <h3 className="text-sm font-medium text-yellow-300">Processing taking longer than usual</h3>
-                      <div className="mt-2 text-sm text-yellow-200">
+                      <h3 className="text-sm font-medium text-amber-300">Processing taking longer than usual</h3>
+                      <div className="mt-2 text-sm text-amber-200">
                         <p>
                           We're experiencing higher traffic than normal. Your request is still processing - please
                           wait a moment longer. Thank you for your patience!
@@ -342,6 +419,7 @@ const ServiceRequest: React.FC = () => {
       </div>
 
       {showSuccessPopup && <SuccessPopup />}
+      {showDelayPopup && <DelayPopup />}
     </div>
   );
 };

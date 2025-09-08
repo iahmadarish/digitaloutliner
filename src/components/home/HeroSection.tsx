@@ -68,7 +68,7 @@ const HeroSection = () => {
             aria-hidden="true"
           >
             <img
-              src="/hero/hero.png"
+              src="https://res.cloudinary.com/dseipjxgc/image/upload/v1757355582/hero_buifbi.png"
               alt="Mobile application interface example"
               className="max-w-full h-auto"
               loading="lazy"

@@ -7,9 +7,7 @@ import app from "../../public/app.png"
 
 import web1 from "@/components/service/service/web design and development/image 29.png"
 import web2 from "@/components/service/service/web design and development/Group 12.png"
-import web3 from "@/components/service/service/web design and development/Group 12.png"
-import web4 from "@/components/service/service/web design and development/image (5).jpg"
-import web5 from "@/components/service/service/web design and development/image (5).jpg"
+
 
 
 // graphics design
@@ -53,38 +51,44 @@ export const services = [
       web1,
       web2,
     ],
-    features: [
-      {
-        title: "Lightning Fast Performance",
-        content:
-          "Experience blazing-fast website speed with optimized code, global CDN integration, image optimization, and modern frameworks like Next.js and React. Our frontend performance enhancements ensure lower bounce rates and higher user engagement—essential for both user satisfaction and SEO ranking.",
-        image: "https://seospacecastle.com/assets/img/landing/web-slider-dev.png"
-      },
-      {
-        title: "Scalable Architecture",
-        content:
-          "Our web solutions are built using scalable, modular architectures that grow effortlessly with your business. From microservices and RESTful APIs to efficient cloud-based infrastructure, we future-proof your website to handle increasing traffic and complex features—ideal for high-growth startups and enterprises.",
-        image: "https://res.cloudinary.com/jerrick/image/upload/v1636098022/6184dfe6e810a7001d9f9809.jpg"
-      },
-      {
-        title: "SEO-Friendly Design",
-        content:
-          "Boost your search engine visibility with our SEO-optimized web development approach. We implement semantic HTML5, structured data (schema markup), clean URLs, responsive design, optimized images, and fast load times—all of which improve your Google rankings and organic traffic.",
-        image: web3
-      },
-      {
-        title: "Cross-Platform Compatibility",
-        content:
-          "Deliver a seamless user experience on all devices and screen sizes. We ensure your website is fully responsive, mobile-first, and compatible with all major browsers including Chrome, Safari, Firefox, and Edge—leading to better user retention and higher SEO scores in mobile search results.",
-        image: web4
-      },
-      {
-        title: "Secure Web Applications",
-        content:
-          "Protect your users and data with advanced web security protocols. We enforce HTTPS, SSL/TLS encryption, secure login systems, input sanitization, role-based access control, and regular security audits—ensuring your application meets modern cybersecurity standards and builds user trust.",
-        image: web5
-      }
-    ],
+   features: [
+  {
+    title: "Lightning Fast Performance",
+    content:
+      "Deliver blazing-fast user experiences with optimized code, Next.js/React frameworks, global CDN, and advanced caching. Speed is not just about user satisfaction—it’s directly linked to higher SEO rankings and better conversion rates.",
+    image: "https://seospacecastle.com/assets/img/landing/web-slider-dev.png"
+  },
+  {
+    title: "Scalable & Future-Proof Architecture",
+    content:
+      "Built with modular, microservice-based architectures and cloud-native infrastructure, our solutions scale seamlessly as your business grows. From startups to enterprises, your site stays reliable under any traffic load.",
+    image: "https://res.cloudinary.com/jerrick/image/upload/v1636098022/6184dfe6e810a7001d9f9809.jpg"
+  },
+  {
+    title: "SEO-Optimized Development",
+    content:
+      "Maximize online visibility with SEO-first design: semantic HTML5, schema markup, clean URLs, lightning-fast load times, and mobile-first responsiveness. Every line of code is written with search engine optimization in mind.",
+    image: "https://images.pexels.com/photos/669622/pexels-photo-669622.jpeg"
+  },
+  {
+    title: "Cross-Platform Responsiveness",
+    content:
+      "Your website looks flawless everywhere—whether it’s desktop, tablet, or mobile. We ensure cross-browser compatibility (Chrome, Safari, Firefox, Edge) and pixel-perfect responsiveness for consistent brand experiences.",
+    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg"
+  },
+  {
+    title: "Enterprise-Grade Security",
+    content:
+      "Protect business-critical data with top-tier security: HTTPS, SSL/TLS, secure authentication, input validation, role-based access, and proactive vulnerability monitoring. Build user trust with rock-solid security foundations.",
+    image: "https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg"
+  },
+  {
+    title: "AI-Powered Support Chatbot",
+    content:
+      "Enhance customer engagement with a custom-built AI chatbot tailored to your business. Available 24/7, it handles FAQs, service requests, and lead capture—reducing support costs and improving user satisfaction instantly.",
+    image: "https://www.silvertouch.ca/wp-content/themes/sttl/assets/images/Ai-Chatbot-Banner-Image.png"
+  }
+],
     faq: [
       {
         question: "How long does it take to develop a custom website?",
