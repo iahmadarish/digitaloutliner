@@ -1,4 +1,3 @@
-
 type ReactI18NextChildren = React.ReactNode;
 export interface Blog {
   [x: string]: ReactI18NextChildren | Iterable<ReactI18NextChildren>;
@@ -12,128 +11,281 @@ export interface Blog {
   author: string;
   authorRole: string;
   category: string;
+  tags?: string[];
+  metaTitle?: string;
+  metaDescription?: string;
   images: string[];
-  iconName: string; // Changed from ReactNode to string
+  iconName: string;
 }
 
 export const blogs: Blog[] = [
-{
-  id: 1,
-  title: "Top 5 Web Development Trends in 2024: What Every Developer Should Know",
-  excerpt: "Explore the top 5 web development trends that are revolutionizing the digital world in 2024, from WebAssembly to AI integration. Stay ahead in the fast-paced tech industry.The web development landscape continues to evolve at a rapid pace, and 2024 is no exception. With the rise of new technologies and the maturing of existing tools, developers and businesses alike need to stay ahead of the curve to remain competitive. Whether you are a full-stack developer, a startup founder, or a tech enthusiast, understanding the latest trends in web development is crucial.",
-  description: [
-    "The web development landscape continues to evolve at a rapid pace, and 2024 is no exception. With the rise of new technologies and the maturing of existing tools, developers and businesses alike need to stay ahead of the curve to remain competitive. Whether you are a full-stack developer, a startup founder, or a tech enthusiast, understanding the latest trends in web development is crucial.",
-    "In this article, we explore the **top five web development trends in 2024** that are shaping the way websites and web applications are being built. From the growing adoption of **WebAssembly** to the increasing use of **AI-powered development tools**, these trends are more than just buzzwords — they represent the future of how we interact with the web.",
-    "By implementing these innovative strategies, developers can create more powerful, efficient, and user-friendly digital experiences. Let’s dive into what’s making waves in web development this year."
-  ],
-  bulletPoints: [
-    "**WebAssembly (Wasm)** is seeing widespread adoption, enabling near-native performance for web apps and expanding the languages developers can use beyond JavaScript.",
-    "**AI and Machine Learning integration** in development workflows is streamlining debugging, code completion, and testing using tools like GitHub Copilot and ChatGPT.",
-    "**Serverless Architecture** is becoming a preferred choice for scalable applications, reducing infrastructure management and speeding up deployment cycles.",
-    "**Jamstack Frameworks** (e.g., Next.js, Astro, Nuxt) are dominating modern development with improved performance, security, and development flexibility.",
-    "**Progressive Web Apps (PWAs)** are delivering app-like experiences on mobile and desktop, with improved offline capabilities and faster load times."
-  ],
-  date: "June 10, 2024",
-  readTime: "6 min read",
-  author: "Alex Johnson",
-  authorRole: "Senior Web Developer",
-  category: "Web Development",
-  tags: ["Web Development", "2024 Trends", "AI in Web Dev", "WebAssembly", "PWAs", "Jamstack", "Serverless"],
-  metaTitle: "Top 5 Web Development Trends in 2024 | Stay Ahead with AI, Wasm, and PWAs",
-  metaDescription: "Discover the top web development trends in 2024 including WebAssembly, AI tools, PWAs, and serverless architecture. Learn how to stay ahead in the evolving web tech landscape.",
-  images: [
-    "https://metasoft.io/wp-content/uploads/2024/10/Top-Web-Development-Frameworks-1.jpg",
-    "https://www.cdmi.in/courses@2x/web-developments.webp",
-    "https://www.creative-tim.com/blog/content/images/2022/01/which-development-job-is-right-for-you.jpg"
-  ],
-  iconName: "code"
-}
-,
   {
-  id: 2,
-  title: "Why Cross-Platform Mobile App Development is the Future",
-  excerpt: "Explore how cross-platform app development helps businesses save costs, speed up delivery, and reach more users effectively.",
+    id: 1,
+    title: "Top 5 Web Development Trends in 2024: What Every Developer Should Know",
+    excerpt:
+      "Explore the top 5 web development trends that are revolutionizing the digital world in 2024, from WebAssembly to AI integration. Stay ahead in the fast-paced tech industry.",
+    description: [
+      "The web development landscape continues to evolve at a rapid pace, and 2024 is no exception. With the rise of new technologies and the maturing of existing tools, developers and businesses alike need to stay ahead of the curve to remain competitive.",
+      "In this article, we explore the **top five web development trends in 2024** that are shaping the way websites and web applications are being built. From the growing adoption of **WebAssembly** to the increasing use of **AI-powered development tools**, these trends represent the future of how we interact with the web.",
+      "By implementing these innovative strategies, developers can create more powerful, efficient, and user-friendly digital experiences."
+    ],
+    bulletPoints: [
+      "**WebAssembly (Wasm)** for near-native performance",
+      "**AI & Machine Learning integration** for faster coding",
+      "**Serverless Architecture** for scalable apps",
+      "**Jamstack Frameworks** for flexibility & speed",
+      "**Progressive Web Apps (PWAs)** for app-like experiences"
+    ],
+    date: "June 10, 2024",
+    readTime: "6 min read",
+    author: "Alex Johnson",
+    authorRole: "Senior Web Developer",
+    category: "Web Development",
+    tags: ["Web Development", "2024 Trends", "AI in Web Dev", "WebAssembly", "PWAs", "Jamstack", "Serverless"],
+    metaTitle: "Top 5 Web Development Trends in 2024 | Stay Ahead with AI, Wasm, and PWAs",
+    metaDescription:
+      "Discover the top web development trends in 2024 including WebAssembly, AI tools, PWAs, and serverless architecture. Learn how to stay ahead in the evolving web tech landscape.",
+    images: [
+      "https://images.pexels.com/photos/3182774/pexels-photo-3182774.jpeg",
+      "https://www.cdmi.in/courses@2x/web-developments.webp",
+      "https://images.pexels.com/photos/109371/pexels-photo-109371.jpeg",
+    ],
+    iconName: "code"
+  },
+  {
+    id: 2,
+    title: "Why Cross-Platform Mobile App Development is the Future",
+    excerpt:
+      "Cross-platform mobile app development with Flutter and React Native saves cost, speeds up delivery, and ensures wider reach for businesses.",
+    description: [
+      "In today’s mobile-first world, businesses need apps that run smoothly on both Android and iOS. Cross-platform frameworks like **Flutter** and **React Native** make this possible with a single codebase.",
+      "Companies can save costs, launch faster, and maintain UI/UX consistency across devices. Cross-platform solutions are ideal for startups, SMEs, and enterprises looking for scalability."
+    ],
+    bulletPoints: [
+      "One codebase for Android & iOS",
+      "Reduced development costs",
+      "Faster product launches",
+      "Consistent design across platforms",
+      "Easy scalability & updates"
+    ],
+    date: "July 9, 2024",
+    readTime: "5 min read",
+    author: "Sophia Kim",
+    authorRole: "Mobile App Engineer",
+    category: "Mobile App Development",
+    tags: ["Cross Platform Apps", "React Native", "Flutter", "Mobile Development"],
+    metaTitle: "Why Cross-Platform Mobile App Development is the Future | Flutter & React Native",
+    metaDescription:
+      "Learn why cross-platform mobile app development with Flutter and React Native is cost-effective, scalable, and future-ready.",
+    images: [
+      "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg",
+      "https://media.geeksforgeeks.org/wp-content/uploads/React-Native-android-ios.png",
+      "https://images.pexels.com/photos/1884777/pexels-photo-1884777.jpeg"
+    ],
+    iconName: "smartphone"
+  },
+  {
+    id: 3,
+    title: "The Power of Visual Branding: Why Graphic Design Matters",
+    excerpt:
+      "Professional graphic design strengthens your brand, builds trust, and drives customer engagement in a competitive digital market.",
+    description: [
+      "Visual branding plays a vital role in how customers perceive your business. From your **logo design** to **social media posts**, every element influences trust and credibility.",
+      "A consistent, professional design improves recognition, encourages engagement, and boosts conversion rates. Businesses that invest in design achieve higher brand recall."
+    ],
+    bulletPoints: [
+      "Build trust with professional design",
+      "Improve engagement through visuals",
+      "Stand out in competitive markets",
+      "Boost conversions with eye-catching content",
+      "Strengthen online presence"
+    ],
+    date: "July 5, 2024",
+    readTime: "4 min read",
+    author: "Daniel Rivera",
+    authorRole: "Creative Director",
+    category: "Graphic Design",
+    tags: ["Graphic Design", "Branding", "Visual Identity", "Marketing"],
+    metaTitle: "The Power of Visual Branding | Why Graphic Design Matters for Business Growth",
+    metaDescription:
+      "Learn how graphic design builds brand identity, increases engagement, and improves conversions. Discover why visual branding is crucial for business success.",
+    images: [
+      "https://media.tekpon.com/2023/04/What-Is-Graphic-Design.webp",
+      "https://images.pexels.com/photos/414974/pexels-photo-414974.jpeg",
+      "https://images.pexels.com/photos/109479/pexels-photo-109479.jpeg",
+      "https://images.pexels.com/photos/1137752/pexels-photo-1137752.jpeg",
+      "https://images.pexels.com/photos/8378726/pexels-photo-8378726.jpeg"
+    ],
+    iconName: "palette"
+  },
+  {
+    id: 4,
+    title: "How 3D Design Transforms Product Visualization and Marketing",
+    excerpt:
+      "3D design and modeling help brands showcase products realistically, improve marketing campaigns, and speed up decision-making.",
+    description: [
+      "Static images are no longer enough in marketing. 3D design allows businesses to showcase products from every angle, simulate experiences, and create immersive content.",
+      "Industries like **e-commerce, gaming, and architecture** now rely heavily on 3D visualization tools such as Blender and Cinema 4D."
+    ],
+    bulletPoints: [
+      "Realistic product mockups",
+      "Architectural visualization",
+      "Immersive 3D animations",
+      "Faster approval in product development",
+      "Engaging customer experiences"
+    ],
+    date: "June 30, 2024",
+    readTime: "6 min read",
+    author: "Liam Chen",
+    authorRole: "3D Artist & Animator",
+    category: "3D Design",
+    tags: ["3D Design", "Product Visualization", "Animation", "E-commerce"],
+    metaTitle: "How 3D Design is Revolutionizing Product Marketing",
+    metaDescription:
+      "Discover how 3D design transforms product visualization, improves marketing, and enhances user experience for brands worldwide.",
+    images: [
+      "https://niimblr.com/wp-content/uploads/2024/09/3D-Product-Visualization-with-Platforms.jpg",
+      "https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg",
+      "https://images.pexels.com/photos/8657665/pexels-photo-8657665.jpeg",
+      "https://images.pexels.com/photos/8657160/pexels-photo-8657160.jpeg",
+      "https://images.pexels.com/photos/7976210/pexels-photo-7976210.jpeg",
+    ],
+    iconName: "cube"
+  },
+  {
+    id: 5,
+    title: "Digital Marketing Strategies That Drive Business Growth in 2024",
+    excerpt:
+      "Learn the most effective digital marketing strategies in 2024, including SEO, content marketing, paid ads, and social media growth.",
+    description: [
+      "Digital marketing continues to evolve, with **SEO optimization, content marketing, and paid ads** leading the way. Businesses must embrace data-driven strategies to attract and retain customers.",
+      "Social media platforms, influencer collaborations, and automation tools also play a key role in driving conversions and boosting brand awareness."
+    ],
+    bulletPoints: [
+      "SEO for higher search rankings",
+      "Content marketing that converts",
+      "Paid ads for targeted reach",
+      "Social media growth strategies",
+      "Analytics-driven decision making"
+    ],
+    date: "August 15, 2024",
+    readTime: "7 min read",
+    author: "Emily Carter",
+    authorRole: "Digital Marketing Strategist",
+    category: "Digital Marketing",
+    tags: ["SEO", "Digital Marketing", "Social Media", "Content Marketing"],
+    metaTitle: "Best Digital Marketing Strategies in 2024 | SEO, Content, Paid Ads",
+    metaDescription:
+      "Explore top digital marketing strategies in 2024, including SEO, paid ads, content marketing, and social media growth hacks.",
+    images: [
+      "https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg",
+      "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg",
+      "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg",
+      "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg",
+      "https://images.pexels.com/photos/6956303/pexels-photo-6956303.jpeg",
+    ],
+    iconName: "megaphone"
+  },
+  {
+  id: 6,
+  title: "Why Your Business Needs a Website in 2024",
+  excerpt:
+    "In 2024, having a professional website is no longer optional. A website builds credibility, generates leads, and drives business growth.",
   description: [
-    "In the fast-paced digital world, businesses need mobile apps that are cost-effective, fast to develop, and work seamlessly across devices. Cross-platform development using frameworks like Flutter and React Native offers the perfect solution.",
-    "With a single codebase for iOS and Android, companies save time and money while maintaining performance and UI consistency. Moreover, cross-platform apps are easier to maintain and update, ensuring long-term scalability.",
-    "From startups to enterprises, mobile apps are a powerful channel to engage users, streamline operations, and drive business growth in the mobile-first era."
+    "In today’s digital-first world, a website is your **business identity**. Customers search online before making any purchase decision, which makes a well-structured website essential.",
+    "From **SEO optimization** to **lead generation**, a website works as your 24/7 sales tool, bringing in new opportunities and strengthening brand trust."
   ],
   bulletPoints: [
-    "Write once, deploy on both Android and iOS",
-    "Reduce development and maintenance costs",
-    "Faster time-to-market for MVPs and updates",
-    "Consistent UI/UX across platforms",
-    "Ideal for startups and mid-sized businesses"
+    "Builds credibility and trust",
+    "24/7 customer accessibility",
+    "Improves lead generation",
+    "Strengthens brand identity",
+    "Boosts SEO visibility"
   ],
-  date: "July 9, 2024",
+  date: "September 2, 2024",
   readTime: "5 min read",
+  author: "Michael Evans",
+  authorRole: "Business Consultant",
+  category: "Web Development",
+  tags: ["Website Development", "Business Growth", "SEO", "Online Presence"],
+  metaTitle: "Why Every Business Needs a Website in 2024",
+  metaDescription:
+    "Discover why a professional website is crucial for business success in 2024. Build trust, generate leads, and grow online visibility.",
+  images: [
+    "https://images.pexels.com/photos/7289723/pexels-photo-7289723.jpeg",
+    "https://images.pexels.com/photos/33785778/pexels-photo-33785778.jpeg",
+    "https://images.pexels.com/photos/6969962/pexels-photo-6969962.jpeg",
+    "https://images.pexels.com/photos/6214452/pexels-photo-6214452.jpeg",
+    "https://images.pexels.com/photos/7289717/pexels-photo-7289717.jpeg",
+  ],
+  iconName: "globe"
+},
+{
+  id: 7,
+  title: "How AI is Changing Mobile App Development",
+  excerpt:
+    "AI integration in mobile app development brings personalization, smarter automation, and better user experiences.",
+  description: [
+    "Artificial Intelligence is revolutionizing mobile apps by introducing **personalization, predictive analytics, and chatbots**.",
+    "From **voice recognition** to **AI-powered recommendations**, businesses can now build smarter apps that understand user behavior and provide real-time assistance."
+  ],
+  bulletPoints: [
+    "AI chatbots for customer support",
+    "Voice and image recognition",
+    "Personalized recommendations",
+    "Predictive analytics for engagement",
+    "Automation for better efficiency"
+  ],
+  date: "September 10, 2024",
+  readTime: "6 min read",
   author: "Sophia Kim",
   authorRole: "Mobile App Engineer",
   category: "Mobile App Development",
+  tags: ["AI in Apps", "Mobile Development", "Artificial Intelligence", "User Experience"],
+  metaTitle: "AI in Mobile App Development | Smarter Apps in 2024",
+  metaDescription:
+    "Learn how AI transforms mobile app development with personalization, predictive analytics, and smarter automation.",
   images: [
-    "https://cdn.prod.website-files.com/6349395c9738c5d053d3ceba/64a55abc0bf10e2cd3ac59d1_Cross-Platform%20Mobile%20App%20Development_%20All%20You%20Need%20to%20Know.png",
-    "https://www.mindinventory.com/blog/wp-content/uploads/2024/06/benefits-of-cross-platform.webp",
-    "https://media.geeksforgeeks.org/wp-content/uploads/React-Native-android-ios.png"
+    "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+    "https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg",
+    "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg",
+    "https://images.pexels.com/photos/18069694/pexels-photo-18069694.png",
+    "https://images.pexels.com/photos/9783812/pexels-photo-9783812.jpeg",
   ],
-  iconName: "smartphone"
+  iconName: "brain"
 },
 {
-  id: 3,
-  title: "The Power of Visual Branding: Why Graphic Design Matters",
-  excerpt: "Discover how professional graphic design builds trust, improves engagement, and drives brand recognition.",
+  id: 8,
+  title: "E-commerce Website Development Best Practices in 2024",
+  excerpt:
+    "A high-performing e-commerce website in 2024 requires speed, security, mobile-first design, and SEO optimization.",
   description: [
-    "Graphic design plays a crucial role in establishing your brand’s identity. From your logo to social media posts, every visual speaks volumes about your business.",
-    "A well-designed brand not only looks professional but also fosters emotional connection and trust with your audience. Colors, typography, and layout work together to deliver a consistent brand experience.",
-    "Whether you’re building a startup or scaling an enterprise, investing in good design can significantly boost engagement, conversions, and brand recall."
+    "The e-commerce industry is booming, but competition is tough. Businesses must build websites that are **fast, secure, and mobile-friendly** to convert visitors into customers.",
+    "From **payment gateway integration** to **AI-powered product recommendations**, modern e-commerce websites must deliver flawless shopping experiences."
   ],
   bulletPoints: [
-    "Build trust through professional visuals",
-    "Improve user engagement with consistent design",
-    "Stand out in a crowded market",
-    "Boost conversions with eye-catching graphics",
-    "Strengthen social media presence"
+    "Mobile-first, responsive design",
+    "Fast checkout & secure payments",
+    "SEO-optimized product pages",
+    "AI-driven recommendations",
+    "User-friendly navigation"
   ],
-  date: "July 5, 2024",
-  readTime: "4 min read",
-  author: "Daniel Rivera",
-  authorRole: "Creative Director",
-  category: "Graphic Design",
+  date: "September 20, 2024",
+  readTime: "7 min read",
+  author: "Emily Carter",
+  authorRole: "E-commerce Strategist",
+  category: "E-commerce Development",
+  tags: ["E-commerce", "Website Development", "Online Store", "SEO"],
+  metaTitle: "Best Practices for E-commerce Website Development in 2024",
+  metaDescription:
+    "Explore e-commerce website development best practices in 2024, including mobile-first design, secure payments, and AI recommendations.",
   images: [
-    "https://cdn.mos.cms.futurecdn.net/HqEPv3K54CgPmRso4N3pH8-1200-80.jpg",
-    "https://media.tekpon.com/2023/04/What-Is-Graphic-Design.webp",
-    "https://cdn.mos.cms.futurecdn.net/HqEPv3K54CgPmRso4N3pH8-1200-80.jpg"
+    "https://images.pexels.com/photos/953864/pexels-photo-953864.jpeg",
+    "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg",
+    "https://images.pexels.com/photos/38519/macbook-laptop-ipad-apple-38519.jpeg",
+    "https://images.pexels.com/photos/6214476/pexels-photo-6214476.jpeg",
+    "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg",
   ],
-  iconName: "palette"
-},
-
-{
-  id: 4,
-  title: "How 3D Design Transforms Product Visualization and Marketing",
-  excerpt: "Learn how 3D modeling and animation help brands showcase products with precision and creativity.",
-  description: [
-    "In modern product marketing, static images are no longer enough. 3D design enables brands to present products from every angle, animate features, and create immersive experiences.",
-    "Architects, e-commerce brands, and game developers now rely on 3D modeling for prototyping, simulations, and realistic mockups. With tools like Blender and Cinema 4D, the creative possibilities are endless.",
-    "3D visuals not only impress but also reduce design errors and speed up approvals, making them essential in product development workflows."
-  ],
-  bulletPoints: [
-    "High-fidelity product mockups",
-    "Architectural visualization with walkthroughs",
-    "Engaging 3D animations for marketing",
-    "Ideal for gaming, e-commerce, and manufacturing",
-    "Saves time and cost in prototyping"
-  ],
-  date: "June 30, 2024",
-  readTime: "6 min read",
-  author: "Liam Chen",
-  authorRole: "3D Artist & Animator",
-  category: "3D Design",
-  images: [
-    "https://cdn.prod.website-files.com/62d1070c12d3c8115209b019/6748d79ab9e4a4b6a7cd3891_66c448634692b0029db23f3b_66c43f1a2666f307fcec5a36_step%252520(19).png",
-    "https://niimblr.com/wp-content/uploads/2024/09/3D-Product-Visualization-with-Platforms.jpg",
-    "https://cdn.prod.website-files.com/62d1070c12d3c8115209b019/6748d79ab9e4a4b6a7cd3891_66c448634692b0029db23f3b_66c43f1a2666f307fcec5a36_step%252520(19).png"
-  ],
-  iconName: "cube"
+  iconName: "shopping-cart"
 }
-
-  
 ];

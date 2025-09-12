@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   ArrowLeft,
@@ -946,6 +946,8 @@ const ServiceDetail = () => {
               </div>
             </div>
 
+            <Link to="/contact">
+            
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
@@ -954,6 +956,7 @@ const ServiceDetail = () => {
               <span>Get Free Consultation</span>
               <ArrowRight className="w-5 h-5" />
             </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>

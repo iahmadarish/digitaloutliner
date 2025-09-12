@@ -1,23 +1,19 @@
 "use client"
 
 import { Shield, BarChart2, Clock, Cpu, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function DigitalTransformationBenefits() {
   return (
     <div className="bg-[#06140b] text-white py-16 md:py-24">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-12 md:mb-20 text-center">
-          <p className="text-teal-400 text-sm md:text-base mb-3 font-medium tracking-wider">
-            OUR SERVICE BENEFITS
-          </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light mb-6 leading-tight">
-            Transform Your Business With <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-teal-400 to-emerald-500 bg-clip-text text-transparent">
-              Our Solutions
-            </span>
+        <div className="mb-12 md:mb-20 text-start">
+
+          <h1 className="text-start text-3xl sm:text-4xl md:text-5xl font-light mb-6 leading-tight">
+            Transform Your Business With  Our Solutions
           </h1>
-          <p className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto">
+          <p className="text-gray-300 text-base md:text-lg max-w-3xl ">
             Custom solutions designed to enhance your operations, secure your assets, and drive measurable growth through strategic digital implementation.
           </p>
         </div>
@@ -37,9 +33,9 @@ export default function DigitalTransformationBenefits() {
             </p>
             <div className="bg-[#06140b] rounded-lg p-3 overflow-hidden">
               <div className="aspect-w-16 aspect-h-9">
-                <img 
-                  src="https://cdn.prod.website-files.com/5d9ffc249511353e753840c9/682ee79bdb544108d71235b2_how%20to%20use%20utilization%20data.gif" 
-                  alt="Workflow automation" 
+                <img
+                  src="https://cdn.prod.website-files.com/5d9ffc249511353e753840c9/682ee79bdb544108d71235b2_how%20to%20use%20utilization%20data.gif"
+                  alt="Workflow automation"
                   className="rounded w-full h-auto object-cover"
                 />
               </div>
@@ -62,9 +58,9 @@ export default function DigitalTransformationBenefits() {
               Enterprise-grade protection with encryption, access controls, and continuous monitoring tailored to your specific needs.
             </p>
             <div className="flex justify-center mb-4">
-              <img 
-                src="https://cdn.prod.website-files.com/5d9ffc249511353e753840c9/62dfbc0deb697408b752833f_how%20to%20improve%20operational%20efficiency.gif" 
-                alt="Security" 
+              <img
+                src="https://cdn.prod.website-files.com/5d9ffc249511353e753840c9/62dfbc0deb697408b752833f_how%20to%20improve%20operational%20efficiency.gif"
+                alt="Security"
                 className="rounded-lg w-full h-auto max-h-40 object-cover"
               />
             </div>
@@ -88,9 +84,9 @@ export default function DigitalTransformationBenefits() {
               Transform data into strategic decisions with our customized analytics and real-time reporting dashboards.
             </p>
             <div className="bg-[#06140b] rounded-lg p-3 flex flex-col md:flex-row items-center">
-              <img 
-                src="https://cdn.prod.website-files.com/5d9ffc249511353e753840c9/637b5045ee84b0d8ef23d990_timeboxing.gif" 
-                alt="Data analytics" 
+              <img
+                src="https://cdn.prod.website-files.com/5d9ffc249511353e753840c9/637b5045ee84b0d8ef23d990_timeboxing.gif"
+                alt="Data analytics"
                 className="rounded w-full md:w-1/2 h-auto mb-3 md:mb-0 md:mr-3"
               />
               <div className="w-full">
@@ -173,9 +169,11 @@ export default function DigitalTransformationBenefits() {
                 <span className="text-sm">Ongoing optimization</span>
               </div>
             </div>
-            <button className="w-full py-2.5 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 rounded-lg text-sm font-medium transition-colors">
-              Get Custom Quote
-            </button>
+            <Link to="/contact">
+              <button className="w-full py-2.5 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 rounded-lg text-sm font-medium transition-colors">
+                Get Custom Quote
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { blogs } from "../../data/blogData";
 import { Calendar, Clock, User, ArrowRight } from "lucide-react";
 import BlogIcon from "../../components/blog/BlogIcon";
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
   // Get featured post (first blog) and regular posts
@@ -10,6 +11,51 @@ const Blog = () => {
 
   return (
     <div className="bg-[#06140b]  pt-40 min-h-screen">
+
+
+      <Helmet>
+        {/* Title */}
+        <title>Blog | CONQUERIC - Web, Mobile App & Software Development Experts</title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="CONQUERIC is a passionate team of developers, designers, and strategists dedicated to transforming ideas into powerful digital experiences. We specialize in web development, mobile apps, and custom software solutions."
+        />
+
+        {/* Meta Keywords */}
+        <meta
+          name="keywords"
+          content="CONQUERIC, Blog CONQUERIC, software company, web development, mobile app development, custom software solutions, UI/UX design, Custom Ecommerce development, shopify website development, shopify development, wordpress development, digital strategy."
+        />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.conqueric.com/blog" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="BLog | CONQUERIC" />
+        <meta
+          property="og:description"
+          content="We are a team of developers, designers, and strategists passionate about building impactful digital solutions. Discover more about CONQUERIC."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.conqueric.com/blog" />
+        <meta property="og:image" content="https://conqueric.com/logo/logo.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog | CONQUERIC" />
+        <meta
+          name="twitter:description"
+          content="CONQUERIC builds innovative websites, mobile apps, and custom software solutions. Learn more about our mission and values."
+        />
+        <meta name="twitter:image" content="https://conqueric.com/logo/logo.png" />
+      </Helmet>
+
+
+
+
+
       {/* Hero Section */}
       <div className="bg-[#]  md:lg:xl:2xl:sm:py-20 py-10  px-4 sm:px-6 lg:px-8 text-white">
         <div className=" space-y-8 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 text-center">

@@ -12,20 +12,6 @@ const desktopImages = [
   "https://res.cloudinary.com/dseipjxgc/image/upload/v1755187729/Thumbnail_1_cdotyr.png",
   "https://res.cloudinary.com/dseipjxgc/image/upload/v1755187725/image_95_emqtsr.png",
   "/category/category5.png",
-  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188779/Header_42_afz1em.jpg",
-  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188779/Header_58_t6p4kf.jpg",
-  "/category/temtwo (2).png",
-  "/category/temtwo (3).png",
-  "/category/Thumbnail.png",
-  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188778/Header_41_xyui4q.jpg",
-  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188778/Header_40_xseexl.jpg",
-  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188777/Header_26_iqmh2x.jpg",
-  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188777/Header_29_txsosb.jpg",
-  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188777/Header_27_iujgfn.jpg",
-  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188777/Header_59_oo0rm7.jpg",
-
-  "https://res.cloudinary.com/dseipjxgc/image/upload/v1755188776/Header_14_gzmmhr.jpg",
-
 ]
 
 export default function WebSolutions() {

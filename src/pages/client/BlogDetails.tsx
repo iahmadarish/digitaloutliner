@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import { blogs } from "../../data/blogData";
-import { ArrowLeft, Calendar, Clock, User, Share2, MessageSquare } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User,  } from "lucide-react";
 import BlogIcon from "@/components/blog/BlogIcon";
 import ScrollToTop from "@/components/ScrollToTop";
+import { Helmet } from "react-helmet-async";
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -16,11 +17,51 @@ const BlogDetails = () => {
 
     <>
       <main className="flex bg-[#06140b] justify-center md:lg:xl:2xpy-24">
+
+   <Helmet>
+        {/* Title */}
+        <title>Blog | CONQUERIC - Web, Mobile App & Software Development Experts</title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="CONQUERIC is a passionate team of developers, designers, and strategists dedicated to transforming ideas into powerful digital experiences. We specialize in web development, mobile apps, and custom software solutions."
+        />
+
+        {/* Meta Keywords */}
+        <meta
+          name="keywords"
+          content="CONQUERIC, Blog CONQUERIC, software company, web development, mobile app development, custom software solutions, UI/UX design, Custom Ecommerce development, shopify website development, shopify development, wordpress development, digital strategy."
+        />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.conqueric.com/blog" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="BLog | CONQUERIC" />
+        <meta
+          property="og:description"
+          content="We are a team of developers, designers, and strategists passionate about building impactful digital solutions. Discover more about CONQUERIC."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.conqueric.com/blog" />
+        <meta property="og:image" content="https://conqueric.com/logo/logo.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog | CONQUERIC" />
+        <meta
+          name="twitter:description"
+          content="CONQUERIC builds innovative websites, mobile apps, and custom software solutions. Learn more about our mission and values."
+        />
+        <meta name="twitter:image" content="https://conqueric.com/logo/logo.png" />
+      </Helmet>
+
         <div className=""></div>
 
         <div className="section-padding  min-h-screen">
           <ScrollToTop />
-          <div className="container py-20 mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <div className="container py-20 mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
             <button
               onClick={() => window.history.back()}
               className="flex items-center text-blue-400 mb-8 hover:text-blue-300 transition-colors"
@@ -76,17 +117,6 @@ const BlogDetails = () => {
                   {paragraph}
                 </p>
               ))}
-
-              <h2 className="text-2xl font-bold text-gray-200 mt-8 mb-4">Key Highlights</h2>
-              <ul className="space-y-3 mb-8">
-                {blog.bulletPoints.map((point, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="inline-block w-2 h-2 rounded-full bg-blue-500 mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-gray-300">{point}</span>
-                  </li>
-                ))}
-              </ul>
-
               {/* Additional Images */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
                 {blog.images.slice(1).map((image, index) => (
@@ -101,29 +131,20 @@ const BlogDetails = () => {
                   />
                 ))}
               </div>
-            </div>
+              <h2 className="text-2xl font-bold text-gray-200 mt-8 mb-4">Key Highlights</h2>
+              <ul className="space-y-3 mb-8">
+                {blog.bulletPoints.map((point, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="inline-block w-2 h-2 rounded-full bg-blue-500 mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="text-gray-300">{point}</span>
+                  </li>
+                ))}
+              </ul>
 
-            {/* Social Sharing */}
-            <div className="border-t border-gray-700 pt-8 mt-8">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center space-x-4">
-                  <button className="flex items-center text-gray-400 hover:text-blue-400 transition-colors">
-                    <MessageSquare className="w-5 h-5 mr-2" />
-                    <span>Leave a comment</span>
-                  </button>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <span className="text-gray-400">Share:</span>
-                  <button className="text-gray-400 hover:text-blue-400 transition-colors">
-                    <Share2 className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
-
-        <div className=""></div>
       </main>
 
     </>

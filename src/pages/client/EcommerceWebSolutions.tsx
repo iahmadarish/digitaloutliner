@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ShoppingCart, Smartphone, Globe, Zap, Shield, BarChart2, Package, Database, Cpu } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 const EcommerceWebSolutions = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -362,11 +363,14 @@ const EcommerceWebSolutions = () => {
               Schedule a free consultation with our e-commerce experts to discuss your project
             </p>
             <div className="flex flex-wrap justify-center gap-4">
+              <Link to='/contact'>
               <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition duration-300 text-lg">
                 Get Started Today
-              </button>
+              </button>  
+              </Link>
+
               <button className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-blue-600 transition duration-300 text-lg">
-                Call Us Now
+                01511521362
               </button>
             </div>
           </div>
