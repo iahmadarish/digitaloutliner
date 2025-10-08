@@ -15,7 +15,7 @@ const CONQUERICNavbar = () => {
     { name: "Ecommerce Solutions", href: "/global-ecommere-web-solutions-with-conqueric" },
     { name: "Human Resources", href: "/business-solutions" },
     { name: "Projects", href: "/projects" },
-    { name: "News", href: "/blog" },
+    { name: "Blogs", href: "/blog" },
     { name: "Company", href: "/about" },
   ]
 
