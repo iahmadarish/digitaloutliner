@@ -3,10 +3,10 @@ import { ChevronDown, ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <header className="min-h-screen bg-[#06140b] overflow-hidden relative">
+    <header className="min-h-screen bg-[#06140b] overflow-hidden relative md:py-0 pt-20">
 
       {/* Main Content */}
-      <div className=" container mx-auto  py-26 lg:pt-54">
+      <div className=" container mx-auto md:py-15 py-26 lg:pt-54">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
 
           <motion.div

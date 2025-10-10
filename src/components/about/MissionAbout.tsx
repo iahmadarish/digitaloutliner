@@ -62,10 +62,10 @@ const MissionAbout = () => {
         
         {/* Header */}
         <div className={`sm:text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          <h1 className="text-2xl md:text-5xl font-bold text-white mb-4">
+          <h3 className="text-2xl md:text-5xl font-bold text-white mb-4">
             Our Mission &
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Vision</span>
-          </h1>
+          </h3>
           <p className="sm:text-xl  text-white max-w-3xl mx-auto">
             Transforming ideas into powerful digital solutions through innovative technology and exceptional service
           </p>

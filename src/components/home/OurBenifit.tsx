@@ -10,9 +10,9 @@ export default function DigitalTransformationBenefits() {
         {/* Header */}
         <div className="mb-12 md:mb-20 text-start">
 
-          <h1 className="text-start text-3xl sm:text-4xl md:text-5xl font-light mb-6 leading-tight">
+          <h3 className="text-start text-3xl sm:text-4xl md:text-5xl font-light mb-6 leading-tight">
             Transform Your Business With  Our Solutions
-          </h1>
+          </h3>
           <p className="text-gray-300 text-base md:text-lg max-w-3xl ">
             Custom solutions designed to enhance your operations, secure your assets, and drive measurable growth through strategic digital implementation.
           </p>

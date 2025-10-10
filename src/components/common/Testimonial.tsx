@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 export default function Testimonial() {
 
 
-
-
-
     return (
         <section className=" overflow-hidden font-nunito">
 

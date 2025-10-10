@@ -175,9 +175,9 @@ const ToolsetComponent = () => {
           <div className="text-blue-600 text-sm mb-3 font-medium">
             OUR TECHNOLOGICAL ARSENAL
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h3 className="text-3xl sm:text-4xl font-bold mb-4">
             Expert Tools
-          </h1>
+          </h3>
           <p className="text-gray-600 max-w-2xl mx-auto">
             We leverage cutting-edge technologies to build exceptional digital experiences.
           </p>

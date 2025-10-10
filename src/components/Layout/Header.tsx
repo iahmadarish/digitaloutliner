@@ -90,12 +90,12 @@ const CONQUERICNavbar = () => {
               </div>
 
               {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center space-x-8 lg:space-x-12">
+              <div className="hidden lg:flex items-center space-x-8 lg:space-x-8">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`transition-colors duration-200 text-base md:xl:2xl:lg:text-sm uppercase font-josefin font-medium ${activeItem === item.name
+                    className={`transition-colors duration-200 text-base md:xl:2xl:lg:text-lg  font-josefin  ${activeItem === item.name
                       ? "text-cyan-400 border-b-2 border-cyan-400 pb-1"
                       : "text-white/90 hover:text-white"
                       }`}

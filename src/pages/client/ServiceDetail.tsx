@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
+import { Helmet } from "react-helmet-async"
 import {
   ArrowLeft,
   ChevronDown,
@@ -84,6 +85,11 @@ const ServiceDetail = () => {
   }
 
   const service = findServiceBySlug(slug!)!
+const metaTitle = service?.metaTitle || `${service?.serviceType} | Conqueric`
+const metaDescription = service?.metaDescription || service?.shortDetails?.slice(0, 150)
+const metaKeywords = service?.metaKeywords || service?.serviceType
+
+
   const relatedServices = services.filter((s) => s.id !== service?.id).slice(0, 3)
 
   // Fixed Features Auto-sliding
@@ -279,7 +285,20 @@ const ServiceDetail = () => {
 
   return (
     <main>
-\
+<Helmet>
+  <title>{metaTitle}</title>
+  <meta name="description" content={metaDescription} />
+  <meta name="keywords" content={metaKeywords} />
+  <meta property="og:title" content={metaTitle} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={`https://conqueric.com/services/${slug}`} />
+  <meta property="og:image" content={service?.icon || "/default-og-image.jpg"} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={metaTitle} />
+  <meta name="twitter:description" content={metaDescription} />
+</Helmet>
+
       
     <div className="min-h-screen  text-gray-100">
       <ScrollToTop />

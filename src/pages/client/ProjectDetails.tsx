@@ -229,7 +229,7 @@ const ProjectDetails: React.FC = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="bg-blue-900/20 p-8 rounded-lg border border-blue-900/30 mb-12"
+              className="bg-blue-900/20 p-8 rounded-lg border border-blue-900/30 mb-12 hidden"
             >
               <h2 className="text-2xl font-bold text-blue-200 mb-6">Client Feedback</h2>
               <div className="flex flex-col md:flex-row gap-6">

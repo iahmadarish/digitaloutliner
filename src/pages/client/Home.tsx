@@ -8,7 +8,7 @@ import OurBenefit from "@/components/home/OurBenifit"
 import FAQAccordion from "@/components/home/FAQAccordion"
 import Testimonial from "@/components/common/Testimonial"
 import CustomWeb from "@/components/home/CustomWeb"
-import WebSolutions from "@/components/home/WebSolutions"
+// import WebSolutions from "@/components/home/WebSolutions"
 import { Helmet } from "react-helmet-async"
 
 const Home: React.FC = () => {
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
       <HeroSection />
       <CustomWeb />
       
-      <WebSolutions />
+      {/* <WebSolutions /> */}
       <ServiceListingTab />
       <OurBenefit />
       <FAQAccordion />
